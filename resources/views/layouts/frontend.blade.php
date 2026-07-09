@@ -137,7 +137,7 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="/" class="flex items-center space-x-2">
-                <img src="{{ asset('images/logo.png') }}" class="h-12 w-auto object-contain py-1" alt="KKSB Studios">
+                <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain py-0.5" alt="KKSB Studios">
             </a>
 
             <!-- Desktop Links -->
@@ -231,7 +231,7 @@
             <!-- Col 1: About Brand -->
             <div class="space-y-4">
                 <a href="/" class="inline-block">
-                    <img src="{{ asset('images/logo.png') }}" class="h-12 w-auto object-contain -ml-2" alt="KKSB Studios">
+                    <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain -ml-2" alt="KKSB Studios">
                 </a>
                 <p class="text-xs text-gray-500 leading-relaxed max-w-xs">
                     {{ App\Models\Setting::get('site_name', 'KKSB Studios') }} is Himachal\'s premier digital creative agency, delivering video diaries, social retainers, SEO strategy, and custom web designs that elevate local and regional brands.
