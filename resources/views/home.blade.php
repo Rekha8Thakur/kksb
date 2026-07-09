@@ -130,43 +130,50 @@
                             $cols = 'lg:col-span-8';
                         }
                     @endphp
-                    <div class="{{ $cols }} bg-[#F8F8F8] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl rounded-[32px] p-8 lg:p-12 transition duration-500 group flex flex-col justify-between overflow-hidden relative min-h-[380px]" data-aos="fade-up">
+                    <div class="{{ $cols }} bg-zinc-950 text-white rounded-[32px] p-8 lg:p-12 transition duration-500 group flex flex-col justify-end overflow-hidden relative min-h-[420px] border border-zinc-800 hover:border-zinc-700 hover:shadow-2xl" data-aos="fade-up">
                         
-                        <!-- Background Image Hover Zoom -->
+                        <!-- Background Image Hover Zoom (Motion) -->
                         @if($service->image_path)
-                        <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition duration-700 bg-cover bg-center scale-105 group-hover:scale-100" style="background-image: url('{{ $service->image_path }}');"></div>
+                        <div class="absolute inset-0 z-0 opacity-40 group-hover:opacity-30 transition-all duration-700 ease-out bg-cover bg-center scale-100 group-hover:scale-110" style="background-image: url('{{ $service->image_path }}');"></div>
                         @endif
                         
-                        <div class="relative z-10 space-y-6">
+                        <!-- Dark Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10 transition-all duration-500 group-hover:from-zinc-950/90"></div>
+
+                        <!-- Content wrapper -->
+                        <div class="relative z-20 space-y-6">
                             <!-- Icon -->
-                            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#2E7D32] shadow-sm group-hover:bg-[#2E7D32] group-hover:text-white transition duration-300">
+                            <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white border border-white/15 shadow-sm group-hover:bg-[#2E7D32] group-hover:text-white transition duration-300">
                                 <i data-lucide="{{ $service->icon ?? 'briefcase' }}" class="w-5 h-5"></i>
                             </div>
                             
                             <div class="space-y-3">
-                                <h3 class="text-2xl font-bold tracking-tight text-[#111111] group-hover:text-[#2E7D32] transition duration-300">{{ $service->title }}</h3>
-                                <p class="text-xs text-gray-500 leading-relaxed max-w-xl">{{ $service->short_description }}</p>
+                                <h3 class="text-2xl font-bold tracking-tight text-white group-hover:text-[#2E7D32] transition duration-300">{{ $service->title }}</h3>
+                                <p class="text-xs text-zinc-300 leading-relaxed max-w-xl transition-all duration-500 group-hover:text-white">{{ $service->short_description }}</p>
                             </div>
 
-                            <!-- Features List -->
+                            <!-- Expandable Features List with Motion -->
                             @if(!empty($service->features))
-                                <ul class="space-y-2 pt-2 opacity-80">
-                                    @foreach(array_slice($service->features, 0, 3) as $feature)
-                                        <li class="flex items-center space-x-2 text-[11px] text-gray-600">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-[#2E7D32]"></span>
-                                            <span>{{ $feature }}</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                <div class="max-h-0 opacity-0 overflow-hidden group-hover:max-h-40 group-hover:opacity-100 transition-all duration-700 ease-in-out">
+                                    <ul class="space-y-2 pt-4 border-t border-white/10">
+                                        @foreach(array_slice($service->features, 0, 3) as $feature)
+                                            <li class="flex items-center space-x-2 text-[11px] text-zinc-300">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#2E7D32]"></span>
+                                                <span>{{ $feature }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             @endif
-                        </div>
-
-                        <div class="relative z-10 pt-8 flex items-center justify-between">
-                            <a href="/services/{{ $service->slug }}" class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#111111] border-b-2 border-transparent hover:border-[#2E7D32] hover:text-[#2E7D32] transition pb-0.5">
-                                <span>Learn More</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition group-hover:translate-x-1"></i>
-                            </a>
-                            <span class="text-[10px] font-extrabold text-[#2E7D32] bg-[#2E7D32]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">Free of Cost</span>
+                            
+                            <!-- Card CTA Actions -->
+                            <div class="pt-4 flex items-center justify-between border-t border-white/10 group-hover:border-transparent transition-all duration-500">
+                                <a href="/services/{{ $service->slug }}" class="inline-flex items-center space-x-1.5 text-xs font-bold text-white hover:text-[#2E7D32] transition pb-0.5">
+                                    <span>Learn More</span>
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition group-hover:translate-x-1"></i>
+                                </a>
+                                <span class="text-[9px] font-extrabold text-[#2E7D32] bg-[#2E7D32]/20 px-2.5 py-1 rounded-full uppercase tracking-wider">Free of Cost</span>
+                            </div>
                         </div>
                     </div>
                 @endforeach
