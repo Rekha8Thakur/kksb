@@ -68,7 +68,7 @@
                     <p class="font-medium text-base">No authors found</p>
                     <p class="text-xs text-gray-400 mt-1">Get started by creating your first blog author profile.</p>
                 </div>
-            @forelse
+            @endforelse
         </div>
     </div>
 </x-admin-layout>
