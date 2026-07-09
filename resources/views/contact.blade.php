@@ -17,48 +17,42 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
             <!-- Left panel: Contact details and Map -->
-            <div class="lg:col-span-5 space-y-12">
-                <!-- Info cards -->
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold tracking-tight text-gray-900">Office Coordinates</h3>
+            <div class="lg:col-span-5 space-y-8">
+                <!-- Image & Address Card -->
+                <div class="relative overflow-hidden rounded-[32px] p-8 lg:p-10 text-white min-h-[380px] flex flex-col justify-between shadow-lg" data-aos="fade-right">
+                    <!-- Background image -->
+                    <div class="absolute inset-0 z-0 bg-zinc-900 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/75 to-transparent z-10"></div>
                     
-                    <div class="space-y-4 text-sm text-gray-500">
-                        <div class="flex items-start space-x-3">
-                            <span class="text-[#2E7D32] mt-0.5"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Studio Address</h4>
-                                <p class="text-xs mt-0.5">{{ App\Models\Setting::get('contact_address', 'Solan, Himachal Pradesh, India') }}</p>
-                            </div>
-                        </div>
+                    <div class="relative z-20">
+                        <span class="text-[9px] font-extrabold text-[#2E7D32] bg-white px-2.5 py-1 rounded-full uppercase tracking-wider">KKSB Studio</span>
+                    </div>
 
-                        <div class="flex items-start space-x-3">
-                            <span class="text-[#2E7D32] mt-0.5"><i data-lucide="mail" class="w-5 h-5"></i></span>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Email Address</h4>
-                                <p class="text-xs mt-0.5"><a href="mailto:{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}" class="hover:underline">{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}</a></p>
+                    <div class="relative z-20 space-y-4">
+                        <h3 class="text-2xl font-bold tracking-tight">Let's build something together.</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs opacity-90 pt-2 border-t border-white/20">
+                            <div class="space-y-1">
+                                <span class="font-bold block uppercase text-[9px] text-[#2E7D32] tracking-wider">Studio Address</span>
+                                <p>{{ App\Models\Setting::get('contact_address', 'Solan, Himachal Pradesh, India') }}</p>
                             </div>
-                        </div>
-
-                        <div class="flex items-start space-x-3">
-                            <span class="text-[#2E7D32] mt-0.5"><i data-lucide="phone" class="w-5 h-5"></i></span>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Phone Support</h4>
-                                <p class="text-xs mt-0.5">{{ App\Models\Setting::get('contact_phone', '+91 78761 46013') }}</p>
+                            <div class="space-y-1">
+                                <span class="font-bold block uppercase text-[9px] text-[#2E7D32] tracking-wider">Email Address</span>
+                                <p class="truncate"><a href="mailto:{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}" class="hover:underline">{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}</a></p>
                             </div>
-                        </div>
-
-                        <div class="flex items-start space-x-3">
-                            <span class="text-[#2E7D32] mt-0.5"><i data-lucide="clock" class="w-5 h-5"></i></span>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Working Hours</h4>
-                                <p class="text-xs mt-0.5">{{ App\Models\Setting::get('business_hours', 'Mon - Sat: 10:00 AM - 7:00 PM') }}</p>
+                            <div class="space-y-1">
+                                <span class="font-bold block uppercase text-[9px] text-[#2E7D32] tracking-wider">Phone Support</span>
+                                <p>{{ App\Models\Setting::get('contact_phone', '+91 78761 46013') }}</p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="font-bold block uppercase text-[9px] text-[#2E7D32] tracking-wider">Hours</span>
+                                <p>{{ App\Models\Setting::get('business_hours', 'Mon - Sat: 10:00 AM - 7:00 PM') }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Google Maps Embed -->
-                <div class="aspect-video w-full rounded-3xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <div class="aspect-video w-full rounded-3xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50" data-aos="fade-right" data-aos-delay="100">
                     <iframe class="w-full h-full" src="{{ App\Models\Setting::get('google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.6267568579044!2d77.1082697!3d30.9111166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f86c2aa27fae7%3A0x7d6f51278ffbdc0d!2sSolan%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin') }}" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
