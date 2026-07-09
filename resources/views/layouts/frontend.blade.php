@@ -185,13 +185,9 @@
             </div>
 
             <!-- Hamburger Button for Mobile -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-[#111111] hover:text-[#2E7D32] focus:outline-none">
-                <template x-if="!mobileMenuOpen">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </template>
-                <template x-if="mobileMenuOpen">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </template>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-[#111111] hover:text-[#2E7D32] focus:outline-none flex items-center justify-center">
+                <i data-lucide="menu" class="w-6 h-6" x-show="!mobileMenuOpen"></i>
+                <i data-lucide="x" class="w-6 h-6" x-show="mobileMenuOpen" style="display: none;"></i>
             </button>
         </div>
 
