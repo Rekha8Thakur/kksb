@@ -86,7 +86,7 @@
             <div class="animate-marquee flex items-center space-x-12 whitespace-nowrap">
                 <!-- First Set of Logos -->
                 @foreach($clients as $client)
-                    <a href="{{ $client->website_url }}" target="_blank" class="h-10 w-28 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
+                    <a href="{{ $client->website_url }}" target="_blank" class="h-16 w-44 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
                         <img src="{{ asset($client->logo) }}" 
                              class="max-h-full max-w-full object-contain hover:scale-110 transition duration-300 transform" 
                              alt="{{ $client->name }}">
@@ -94,7 +94,7 @@
                 @endforeach
                 <!-- Duplicate Set for Continuous Loop -->
                 @foreach($clients as $client)
-                    <a href="{{ $client->website_url }}" target="_blank" class="h-10 w-28 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
+                    <a href="{{ $client->website_url }}" target="_blank" class="h-16 w-44 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
                         <img src="{{ asset($client->logo) }}" 
                              class="max-h-full max-w-full object-contain hover:scale-110 transition duration-300 transform" 
                              alt="{{ $client->name }}">
