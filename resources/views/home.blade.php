@@ -33,17 +33,17 @@
         <div class="absolute inset-0 bg-zinc-950/65 z-0"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-8 space-y-6" data-aos="fade-right">
-                <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-[#2E7D32]/20 text-[#2E7D32] border border-[#2E7D32]/30 uppercase tracking-wider">Himachal's Premier Creative Agency</span>
-                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
+            <div class="lg:col-span-8 space-y-6">
+                <span class="hero-badge inline-flex px-3 py-1 rounded-full text-xs font-bold bg-[#2E7D32]/20 text-[#2E7D32] border border-[#2E7D32]/30 uppercase tracking-wider opacity-0">Himachal's Premier Creative Agency</span>
+                <h1 class="hero-title text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight opacity-0">
                     {{ App\Models\Setting::get('home_hero_title', 'Let’s Build Something People Remember.') }}
                 </h1>
-                <p class="text-base sm:text-lg text-zinc-350 leading-relaxed max-w-xl">
+                <p class="hero-subtitle text-base sm:text-lg text-zinc-350 leading-relaxed max-w-xl opacity-0">
                     {{ App\Models\Setting::get('home_hero_subtitle', 'From social media campaigns to high-impact video production, tell us what you’re building — we’ll help you make it stand out.') }}
                 </p>
 
                 <!-- CTA & Contact buttons -->
-                <div class="flex flex-wrap items-center gap-4 pt-4">
+                <div class="hero-cta flex flex-wrap items-center gap-4 pt-4 opacity-0">
                     <a href="/contact" class="inline-flex items-center space-x-2 bg-white hover:bg-zinc-100 text-[#111111] text-sm font-bold px-6 py-3.5 rounded-full transition shadow-lg">
                         <span>Start Your Project</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -53,6 +53,18 @@
                         <i data-lucide="phone-call" class="w-4 h-4 text-[#2E7D32]"></i>
                         <span>WhatsApp Us</span>
                     </a>
+                </div>
+            </div>
+
+            <!-- Interactive Staggered Grid Column -->
+            <div class="lg:col-span-4 hidden lg:flex items-center justify-center relative" id="interactive-grid-container">
+                <!-- Outer glowing ring -->
+                <div class="absolute w-[340px] h-[340px] border border-emerald-500/10 rounded-full animate-pulse z-0"></div>
+                <div class="grid grid-cols-5 gap-3 max-w-[280px] relative z-10">
+                    <!-- 25 interactive boxes for the wave effect -->
+                    @for($i = 0; $i < 25; $i++)
+                        <div class="interactive-el aspect-square w-11 rounded-xl bg-gradient-to-br from-emerald-500/15 to-teal-500/5 border border-emerald-500/20 hover:border-emerald-400 hover:from-emerald-500/30 cursor-pointer shadow-md opacity-0"></div>
+                    @endfor
                 </div>
             </div>
         </div>
@@ -413,6 +425,79 @@
                 </a>
             </div>
         </div>
-    </section>
+    <!-- Anime.js Animations Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial Timeline for Hero Text
+            const tl = anime.timeline({
+                easing: 'easeOutExpo',
+                duration: 1000
+            });
+            
+            tl
+            .add({
+                targets: '.hero-badge',
+                translateY: [30, 0],
+                opacity: [0, 1],
+                delay: 200
+            })
+            .add({
+                targets: '.hero-title',
+                translateY: [40, 0],
+                opacity: [0, 1],
+                offset: '-=700'
+            })
+            .add({
+                targets: '.hero-subtitle',
+                translateY: [30, 0],
+                opacity: [0, 1],
+                offset: '-=750'
+            })
+            .add({
+                targets: '.hero-cta',
+                translateY: [20, 0],
+                opacity: [0, 1],
+                offset: '-=800'
+            });
+
+            // Grid Entrance Animation
+            anime({
+                targets: '#interactive-grid-container .interactive-el',
+                scale: [0, 1],
+                opacity: [0, 1],
+                delay: anime.stagger(50, {grid: [5, 5], from: 'center'}),
+                duration: 1200,
+                easing: 'easeOutElastic(1, .8)',
+                delay: 600
+            });
+
+            // Ripple Click animation for interactive grid
+            const container = document.getElementById('interactive-grid-container');
+            if (container) {
+                container.addEventListener('click', (e) => {
+                    const el = e.target.closest('.interactive-el');
+                    if (!el) return;
+                    
+                    const els = Array.from(container.querySelectorAll('.interactive-el'));
+                    const index = els.indexOf(el);
+                    
+                    anime({
+                        targets: '#interactive-grid-container .interactive-el',
+                        scale: [
+                            {value: 0.8, easing: 'easeOutSine', duration: 150},
+                            {value: 1.15, easing: 'easeInOutQuad', duration: 250},
+                            {value: 1.0, easing: 'easeOutQuad', duration: 200}
+                        ],
+                        backgroundColor: [
+                            {value: '#10b981', duration: 150}, // Glow green
+                            {value: 'rgba(16, 185, 129, 0.2)', duration: 450} // Back to transparent gradient
+                        ],
+                        rotate: '1turn',
+                        delay: anime.stagger(50, {grid: [5, 5], from: index})
+                    });
+                });
+            }
+        });
+    </script>
 
 </x-frontend-layout>
