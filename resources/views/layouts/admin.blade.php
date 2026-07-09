@@ -87,9 +87,7 @@
                 <!-- Sidebar Header -->
                 <div class="h-16 flex items-center justify-between px-6 border-b border-zinc-800">
                     <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2">
-                        <span class="text-xl font-bold tracking-tight text-white flex items-center">
-                            KKSB<span class="text-emerald-500 ml-1">STUDIOS</span>
-                        </span>
+                        <img src="{{ asset('images/logo.png') }}" class="h-8 w-auto object-contain invert" alt="KKSB Studios">
                         <span class="bg-zinc-800 text-[10px] text-zinc-400 font-semibold px-2 py-0.5 rounded">CMS</span>
                     </a>
                     <button @click="sidebarOpen = false" class="lg:hidden text-zinc-400 hover:text-white">
