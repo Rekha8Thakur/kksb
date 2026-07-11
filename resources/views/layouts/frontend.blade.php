@@ -151,14 +151,15 @@
             </div>
 
             <!-- Hamburger Button for Mobile -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden {{ request()->routeIs('home') ? 'text-white hover:text-emerald-400' : 'text-[#111111] hover:text-zinc-600' }} focus:outline-none flex items-center justify-center">
-                <i data-lucide="menu" class="w-6 h-6" x-show="!mobileMenuOpen"></i>
-                <i data-lucide="x" class="w-6 h-6" x-show="mobileMenuOpen" style="display: none;"></i>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                    class="md:hidden w-10 h-10 rounded-full flex items-center justify-center transition focus:outline-none {{ request()->routeIs('home') ? 'bg-white/10 text-white hover:bg-white/20' : 'bg-gray-100 text-[#111111] hover:bg-gray-200' }}">
+                <i data-lucide="menu" class="w-5 h-5" x-show="!mobileMenuOpen"></i>
+                <i data-lucide="x" class="w-5 h-5" x-show="mobileMenuOpen" style="display: none;"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div x-show="mobileMenuOpen" x-transition class="md:hidden {{ request()->routeIs('home') ? 'liquid-glass border-t border-white/10' : 'bg-white border-t border-gray-100' }}" style="display: none;">
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden {{ request()->routeIs('home') ? 'bg-zinc-950/95 border-t border-white/10' : 'bg-white border-t border-gray-100' }}" style="display: none;">
             <nav class="flex flex-col p-6 space-y-4 text-base font-semibold">
                 <a href="/" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Home</a>
                 <a href="/about" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">About Us</a>

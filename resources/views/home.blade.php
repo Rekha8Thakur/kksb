@@ -80,7 +80,7 @@
         </div>
         <div class="absolute inset-0 bg-zinc-950/40 z-0"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-24 md:pt-0">
             <div class="lg:col-span-9 space-y-6 text-left">
                 <span class="hero-badge liquid-glass inline-flex px-4 py-1.5 rounded-full text-xs font-bold text-white border border-white/10 uppercase tracking-widest opacity-0 font-barlow">// Himachal's Premier Creative Agency</span>
                 
