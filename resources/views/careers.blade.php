@@ -3,7 +3,7 @@
     <!-- Hero Header -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Work With Us</span>
+            <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Work With Us</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 Grow Your Career At KKSB
             </h1>
@@ -38,7 +38,7 @@
                             </p>
                             @if(!empty($job->requirements))
                                 <div class="pt-2">
-                                    <span class="text-[10px] uppercase font-bold text-[#2E7D32] tracking-wider block">Requirements:</span>
+                                    <span class="text-[10px] uppercase font-bold text-zinc-600 tracking-wider block">Requirements:</span>
                                     <ul class="list-disc pl-4 text-[10px] text-gray-500 space-y-0.5 mt-1 font-semibold">
                                         @foreach($job->requirements as $req)
                                             <li>{{ $req }}</li>
@@ -50,7 +50,7 @@
 
                         <div>
                             <button @click="activeJobId = {{ $job->id }}; activeJobTitle = '{{ $job->title }}'; openApplyModal = true"
-                                    class="inline-flex items-center space-x-1.5 bg-[#111111] hover:bg-[#2E7D32] text-white text-xs font-bold px-6 py-3 rounded-full transition shadow-sm">
+                                    class="inline-flex items-center space-x-1.5 bg-[#111111] hover:bg-zinc-800 text-white text-xs font-bold px-6 py-3 rounded-full transition shadow-sm">
                                 <span>Apply Now</span>
                                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </button>
@@ -72,7 +72,7 @@
                     <div class="flex justify-between items-center mb-6">
                         <div class="space-y-1">
                             <h3 class="text-lg font-bold text-gray-900">Submit Application</h3>
-                            <p class="text-xs text-[#2E7D32] font-semibold" x-text="'Position: ' + activeJobTitle"></p>
+                            <p class="text-xs text-zinc-700 font-semibold" x-text="'Position: ' + activeJobTitle"></p>
                         </div>
                         <button @click="openApplyModal = false" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
                     </div>
@@ -84,19 +84,19 @@
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-gray-500 uppercase">Full Name</label>
                             <input type="text" name="name" required placeholder="e.g. Kuldeep Sharma" 
-                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-emerald-500">
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-zinc-800 focus:border-zinc-800">
                         </div>
 
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-gray-500 uppercase">Email Address</label>
                             <input type="email" name="email" required placeholder="e.g. kuldeep@gmail.com" 
-                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-emerald-500">
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-zinc-800 focus:border-zinc-800">
                         </div>
 
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-gray-500 uppercase">Phone Number</label>
                             <input type="text" name="phone" placeholder="e.g. +91 78761 00000" 
-                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-emerald-500">
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-xs text-[#111111] focus:ring-zinc-800 focus:border-zinc-800">
                         </div>
 
                         <div class="space-y-1">
@@ -108,12 +108,12 @@
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-gray-500 uppercase">Cover Letter / Note</label>
                             <textarea name="cover_letter" rows="3" placeholder="Brief outline of your background and why you wish to join us..."
-                                      class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2 text-xs text-[#111111] focus:ring-emerald-500"></textarea>
+                                      class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2 text-xs text-[#111111] focus:ring-zinc-800 focus:border-zinc-800"></textarea>
                         </div>
 
                         <div class="flex justify-end space-x-3 pt-4 border-t border-gray-100">
                             <button type="button" @click="openApplyModal = false" class="px-4 py-2 border border-gray-300 hover:bg-gray-100 rounded-xl text-xs font-semibold text-gray-700">Cancel</button>
-                            <button type="submit" class="bg-[#111111] hover:bg-[#2E7D32] text-white font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-sm">Send Resume</button>
+                            <button type="submit" class="bg-[#111111] hover:bg-zinc-800 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-sm">Send Resume</button>
                         </div>
                     </form>
                 </div>

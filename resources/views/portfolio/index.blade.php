@@ -3,7 +3,7 @@
     <!-- Hero -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Our Work</span>
+            <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Our Work</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 Case Studies & Visual Results
             </h1>
@@ -47,12 +47,12 @@
                                 <p class="text-xs text-gray-500 leading-relaxed font-semibold">Client: {{ $project->client }}</p>
                                 
                                 <div class="bg-[#F8F8F8] p-4 rounded-2xl border border-gray-100 space-y-1">
-                                    <span class="text-[10px] uppercase font-bold text-[#2E7D32] tracking-wider">Key Result Achieved</span>
+                                    <span class="text-[10px] uppercase font-bold text-zinc-600 tracking-wider">Key Result Achieved</span>
                                     <p class="text-sm text-gray-700 font-semibold">{{ $project->results }}</p>
                                 </div>
                             </div>
                             
-                            <a href="/portfolio/{{ $project->slug }}" class="inline-flex items-center space-x-2 text-xs font-bold text-[#111111] hover:text-[#2E7D32] transition group">
+                            <a href="/portfolio/{{ $project->slug }}" class="inline-flex items-center space-x-2 text-xs font-bold text-[#111111] hover:text-black transition group">
                                 <span>Read Case Study</span>
                                 <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
                             </a>

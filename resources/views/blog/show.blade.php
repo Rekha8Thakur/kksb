@@ -3,7 +3,7 @@
     <!-- Hero Header -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-3xl mx-auto px-6 text-center space-y-6">
-            <div class="flex items-center justify-center space-x-2 text-xs font-bold text-[#2E7D32] uppercase tracking-wider">
+            <div class="flex items-center justify-center space-x-2 text-xs font-bold text-zinc-600 uppercase tracking-wider">
                 <span>{{ $blog->category->name }}</span>
                 <span>•</span>
                 <span>{{ $readingTime }} Min Read</span>
@@ -69,7 +69,7 @@
                                     @endif
                                 </a>
                                 <div class="space-y-1.5">
-                                    <h4 class="font-bold text-sm text-[#111111] group-hover:text-[#2E7D32] transition line-clamp-2 leading-snug">
+                                    <h4 class="font-bold text-sm text-[#111111] group-hover:text-black transition line-clamp-2 leading-snug">
                                         <a href="/blog/{{ $rel->slug }}">{{ $rel->title }}</a>
                                     </h4>
                                     <p class="text-[11px] text-gray-400 leading-relaxed line-clamp-2">{{ $rel->summary }}</p>

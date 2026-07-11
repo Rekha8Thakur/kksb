@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">{{ $project->category->name }}</span>
+            <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">{{ $project->category->name }}</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 {{ $project->title }}
             </h1>
@@ -35,21 +35,21 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 border-b border-gray-100 pb-16">
                 <!-- Challenge -->
                 <div class="space-y-4">
-                    <div class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest">01 / The Challenge</div>
+                    <div class="text-xs font-bold text-zinc-600 uppercase tracking-widest">01 / The Challenge</div>
                     <h3 class="text-xl font-bold tracking-tight text-gray-900">What they faced</h3>
                     <p class="text-sm text-gray-500 leading-relaxed whitespace-pre-line">{{ $project->challenge }}</p>
                 </div>
                 
                 <!-- Solution -->
                 <div class="space-y-4">
-                    <div class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest">02 / Our Solution</div>
+                    <div class="text-xs font-bold text-zinc-600 uppercase tracking-widest">02 / Our Solution</div>
                     <h3 class="text-xl font-bold tracking-tight text-gray-900">What we executed</h3>
                     <p class="text-sm text-gray-500 leading-relaxed whitespace-pre-line">{{ $project->solution }}</p>
                 </div>
 
                 <!-- Results -->
                 <div class="space-y-4">
-                    <div class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest">03 / The Results</div>
+                    <div class="text-xs font-bold text-zinc-600 uppercase tracking-widest">03 / The Results</div>
                     <h3 class="text-xl font-bold tracking-tight text-gray-900">What was achieved</h3>
                     <p class="text-sm text-gray-700 font-semibold leading-relaxed whitespace-pre-line bg-[#F8F8F8] p-6 rounded-3xl border border-gray-150">{{ $project->results }}</p>
                 </div>

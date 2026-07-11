@@ -3,7 +3,7 @@
     <!-- Hero -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Agency Blog</span>
+            <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Agency Blog</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 Insights, Guides & Case Summaries
             </h1>
@@ -37,8 +37,7 @@
                     @if(request('category'))
                         <input type="hidden" name="category" value="{{ request('category') }}">
                     @endif
-                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Search articles..." 
-                           class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2 text-xs focus:ring-emerald-500 focus:border-emerald-500">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Search articles..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2 text-xs focus:ring-zinc-800 focus:border-zinc-800">
                     <button type="submit" class="bg-[#111111] hover:bg-zinc-800 text-white font-bold text-xs px-4 py-2 rounded-xl transition">
                         Find
                     </button>
@@ -60,7 +59,7 @@
                             </div>
                             <div class="p-6 space-y-3">
                                 <span class="text-[10px] text-gray-400 font-semibold">{{ $blog->published_at ? $blog->published_at->format('M d, Y') : $blog->created_at->format('M d, Y') }}</span>
-                                <h3 class="text-xl font-bold tracking-tight text-gray-900 group-hover:text-[#2E7D32] transition line-clamp-2 leading-tight">
+                                <h3 class="text-xl font-bold tracking-tight text-gray-900 group-hover:text-black transition line-clamp-2 leading-tight">
                                     <a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a>
                                 </h3>
                                 <p class="text-xs text-gray-500 leading-relaxed line-clamp-3">
@@ -82,7 +81,7 @@
                                 <span class="text-[10px] font-bold text-gray-700">{{ $blog->author->name }}</span>
                             </div>
                             
-                            <a href="/blog/{{ $blog->slug }}" class="inline-flex items-center space-x-1 text-xs font-bold text-[#111111] hover:text-[#2E7D32] transition">
+                            <a href="/blog/{{ $blog->slug }}" class="inline-flex items-center space-x-1 text-xs font-bold text-[#111111] hover:text-black transition">
                                 <span>Read Post</span>
                                 <i data-lucide="arrow-right" class="w-3 h-3"></i>
                             </a>
