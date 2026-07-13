@@ -88,3 +88,156 @@
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03);
 }
 
+/* ------------------------------------------------------------------ */
+/* Homepage Light Theme overrides                                     */
+/* ------------------------------------------------------------------ */
+body.bg-white {
+  background-color: #ffffff !important;
+}
+
+body.bg-white section:not(.h-screen) {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Alternating background color for sections and marquee */
+body.bg-white section.py-10,
+body.bg-white section:nth-of-type(even):not(.h-screen),
+body.bg-white section#portfolio {
+  background-color: #F8F8F8 !important;
+}
+
+/* Set section headings and text colors */
+body.bg-white section:not(.h-screen) h2,
+body.bg-white section:not(.h-screen) h3,
+body.bg-white section:not(.h-screen) h4,
+body.bg-white section:not(.h-screen) p,
+body.bg-white section:not(.h-screen) span,
+body.bg-white section:not(.h-screen) li {
+  color: inherit !important;
+}
+
+body.bg-white section:not(.h-screen) h2,
+body.bg-white section:not(.h-screen) h3,
+body.bg-white section:not(.h-screen) h4 {
+  color: #111111 !important;
+}
+
+body.bg-white section:not(.h-screen) p,
+body.bg-white section:not(.h-screen) li,
+body.bg-white section:not(.h-screen) .text-white\/60,
+body.bg-white section:not(.h-screen) .text-white\/70,
+body.bg-white section:not(.h-screen) .text-white\/80,
+body.bg-white section:not(.h-screen) .text-white\/90 {
+  color: #555555 !important;
+}
+
+body.bg-white section:not(.h-screen) .text-emerald-400,
+body.bg-white section:not(.h-screen) .text-emerald-500 {
+  color: #059669 !important; /* emerald-600 */
+}
+
+body.bg-white section:not(.h-screen) .text-white {
+  color: #111111 !important;
+}
+
+body.bg-white section:not(.h-screen) a.border-white\/10 {
+  border-color: rgba(228, 228, 231, 0.8) !important;
+  color: #111111 !important;
+}
+
+body.bg-white section:not(.h-screen) a.border-white\/10:hover {
+  background-color: #F3F4F6 !important;
+  border-color: rgba(209, 213, 219, 0.8) !important;
+}
+
+/* Modify dark glass components to soft light glass card aesthetics */
+body.bg-white .liquid-glass {
+  background: #ffffff !important;
+  border-color: rgba(228, 228, 231, 0.8) !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03) !important;
+  color: #111111 !important;
+}
+
+body.bg-white .liquid-glass::before {
+  display: none !important;
+}
+
+/* Stats list counters */
+body.bg-white .text-4xl.sm\:text-5xl.font-black.text-white {
+  color: #111111 !important;
+}
+
+/* FAQ dropdown lines */
+body.bg-white .border-t.border-white\/5 {
+  border-color: rgba(228, 228, 231, 0.6) !important;
+}
+
+/* Timeline step numbers */
+body.bg-white .w-10.h-10.liquid-glass.rounded-full {
+  background: #F3F4F6 !important;
+  color: #374151 !important;
+  border-color: rgba(228, 228, 231, 0.8) !important;
+}
+
+/* Bento card gradient overlays (transform to white gradient) */
+body.bg-white .bg-gradient-to-t {
+  background-image: linear-gradient(to top, rgba(248, 248, 248, 0.98) 0%, rgba(248, 248, 248, 0.70) 50%, rgba(248, 248, 248, 0.20) 100%) !important;
+}
+
+body.bg-white .group:hover .bg-gradient-to-t {
+  background-image: linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0.90) 50%, rgba(255, 255, 255, 0.30) 100%) !important;
+}
+
+body.bg-white .border-white\/10 {
+  border-color: rgba(228, 228, 231, 0.8) !important;
+}
+
+body.bg-white .group-hover\:border-emerald-500:hover,
+body.bg-white .group:hover .border-white\/10 {
+  border-color: rgba(209, 213, 219, 0.8) !important;
+}
+
+/* Hide background video on mid-page sections for cleaner load */
+body.bg-white section video:not(#hero-video) {
+  display: none !important;
+}
+
+body.bg-white section .absolute.inset-0.bg-zinc-950\/70,
+body.bg-white section .absolute.inset-0.bg-zinc-950\/40,
+body.bg-white section .absolute.inset-0.bg-zinc-950\/50 {
+  display: none !important;
+}
+
+/* Exclude Hero section content from light overrides */
+body.bg-white section.h-screen {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+}
+
+body.bg-white section.h-screen h1,
+body.bg-white section.h-screen h2,
+body.bg-white section.h-screen p,
+body.bg-white section.h-screen span {
+  color: #ffffff !important;
+}
+
+body.bg-white section.h-screen .bg-zinc-950\/40 {
+  display: block !important;
+}
+
+body.bg-white section.h-screen video {
+  display: block !important;
+}
+
+/* Custom testimonial controls */
+body.bg-white .border.border-white\/10.rounded-full {
+  border-color: rgba(228, 228, 231, 0.8) !important;
+  color: #374151 !important;
+}
+
+body.bg-white .border.border-white\/10.rounded-full:hover {
+  background-color: #F3F4F6 !important;
+}
+
+

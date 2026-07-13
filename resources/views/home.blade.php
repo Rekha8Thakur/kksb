@@ -76,7 +76,7 @@
                 this.rafId = requestAnimationFrame(step);
             }
         }" class="absolute inset-0 z-0 h-full w-full pointer-events-none opacity-65">
-            <video x-ref="video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" :style="{ opacity: opacity, width: '120%', height: '120%', transform: 'translate(-10%, -10%)' }" autoplay muted playsinline preload="auto" class="w-full h-full object-cover object-top max-w-none"></video>
+            <video id="hero-video" x-ref="video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" :style="{ opacity: opacity, width: '120%', height: '120%', transform: 'translate(-10%, -10%)' }" autoplay muted playsinline preload="auto" class="w-full h-full object-cover object-top max-w-none"></video>
         </div>
         <div class="absolute inset-0 bg-zinc-950/40 z-0"></div>
 

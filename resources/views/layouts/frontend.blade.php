@@ -55,7 +55,7 @@
         }
     </style>
 </head>
-<body class="{{ request()->routeIs('home') ? 'bg-zinc-950' : 'bg-white' }} antialiased {{ request()->routeIs('home') ? 'selection:bg-emerald-500' : 'selection:bg-zinc-800' }} selection:text-white" x-data="{ mobileMenuOpen: false }">
+<body class="bg-white antialiased selection:bg-zinc-800 selection:text-white" x-data="{ mobileMenuOpen: false }">
 
     <!-- Success / Error Toast notifications -->
     <div x-data="{ 
@@ -84,7 +84,7 @@
          x-transition:leave="transition ease-in duration-200"
          class="fixed bottom-5 right-5 z-50 flex items-center space-x-3 bg-white border border-gray-100 px-5 py-4 rounded-2xl shadow-xl max-w-sm" 
          style="display: none;">
-        <span :class="type === 'success' ? '{{ request()->routeIs('home') ? 'text-emerald-500' : 'text-zinc-800' }}' : 'text-rose-500'" class="flex-shrink-0">
+        <span :class="type === 'success' ? 'text-zinc-800' : 'text-rose-500'" class="flex-shrink-0">
             <template x-if="type === 'success'">
                 <i data-lucide="check-circle-2" class="w-5 h-5"></i>
             </template>
@@ -101,26 +101,23 @@
     </div>
 
     <!-- Navigation Header -->
-    <header class="{{ request()->routeIs('home') ? 'absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent opacity-0' : 'sticky top-0 z-40 bg-white/90 border-b border-gray-100 backdrop-blur-md' }} transition-all duration-300 header-animate !overflow-visible">
+    <header class="sticky top-0 z-40 bg-white/90 border-b border-gray-100 backdrop-blur-md transition-all duration-300 header-animate !overflow-visible">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="/" class="flex items-center space-x-2">
-                <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain py-0.5 {{ request()->routeIs('home') ? 'filter invert' : '' }}" alt="KKSB Studios">
+                <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain py-0.5" alt="KKSB Studios">
             </a>
 
             <!-- Desktop Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
-                <a href="/" class="{{ request()->routeIs('home') ? 'text-white hover:text-emerald-400' : 'text-[#111111] hover:text-zinc-500' }} transition">Home</a>
-                <a href="/about" class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition">About Us</a>
-                <a href="/portfolio" class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition">Work</a>
-                <a href="/blog" class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition">Blog</a>
-                <a href="/careers" class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition">Careers</a>
+                <a href="/" class="{{ request()->routeIs('home') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">Home</a>
+                <a href="/about" class="{{ request()->routeIs('about') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">About Us</a>
 
-                <!-- Mega Menu Dropdown -->
+                <!-- Work Dropdown (displays Services list) -->
                 <div class="relative" x-data="{ open: false }">
                     <button @click="open = !open" @mouseenter="open = true" @click.away="open = false" 
-                            class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition flex items-center space-x-1 focus:outline-none">
-                        <span>Services</span>
+                            class="{{ request()->routeIs('portfolio*') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition flex items-center space-x-1 focus:outline-none">
+                        <span>Work</span>
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
                     </button>
                     <!-- Dropdown box -->
@@ -128,23 +125,30 @@
                          x-transition:enter="transition ease-out duration-150"
                          x-transition:enter-start="opacity-0 translate-y-1"
                          x-transition:enter-end="opacity-100 translate-y-0"
-                         class="!absolute left-0 top-full mt-3 w-64 {{ request()->routeIs('home') ? 'liquid-glass border border-white/10' : 'bg-white border border-gray-100' }} rounded-2xl shadow-xl py-3 z-50 grid grid-cols-1"
+                         class="!absolute left-0 top-full mt-3 w-64 bg-white border border-gray-100 rounded-2xl shadow-xl py-3 z-50 grid grid-cols-1"
                          style="display: none;">
+                        <a href="/portfolio" class="px-4 py-2.5 hover:bg-[#F8F8F8] flex items-center space-x-3 group border-b border-gray-100 transition">
+                            <span class="text-emerald-600"><i data-lucide="grid" class="w-4 h-4"></i></span>
+                            <span class="text-xs font-black text-[#111111] uppercase tracking-wider">All Projects</span>
+                        </a>
                         @foreach(App\Models\Service::where('is_active', true)->orderBy('order')->get() as $navService)
-                            <a href="/services/{{ $navService->slug }}" class="px-4 py-2.5 {{ request()->routeIs('home') ? 'hover:bg-white/5' : 'hover:bg-[#F8F8F8]' }} flex items-center space-x-3 group transition">
-                                <span class="{{ request()->routeIs('home') ? 'text-white/60 group-hover:text-emerald-400' : 'text-gray-400 group-hover:text-zinc-900' }}"><i data-lucide="{{ $navService->icon ?? 'chevron-right' }}" class="w-4 h-4"></i></span>
-                                <span class="text-xs font-bold {{ request()->routeIs('home') ? 'text-white/90 group-hover:text-white' : 'text-gray-800 group-hover:text-[#111111]' }}">{{ $navService->title }}</span>
+                            <a href="/services/{{ $navService->slug }}" class="px-4 py-2.5 hover:bg-[#F8F8F8] flex items-center space-x-3 group transition">
+                                <span class="text-gray-400 group-hover:text-zinc-900"><i data-lucide="{{ $navService->icon ?? 'chevron-right' }}" class="w-4 h-4"></i></span>
+                                <span class="text-xs font-bold text-gray-800 group-hover:text-[#111111]">{{ $navService->title }}</span>
                             </a>
                         @endforeach
                     </div>
                 </div>
 
-                <a href="/contact" class="{{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} transition">Contact</a>
+                <a href="/blog" class="{{ request()->routeIs('blog*') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">Blog</a>
+                <a href="/careers" class="{{ request()->routeIs('careers') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">Careers</a>
+                <a href="/services" class="{{ request()->routeIs('services*') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">Services</a>
+                <a href="/contact" class="{{ request()->routeIs('contact') ? 'text-[#111111]' : 'text-gray-600' }} hover:text-zinc-900 transition">Contact</a>
             </nav>
 
             <!-- CTA Let's talk -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="/contact" class="inline-flex items-center space-x-2 {{ request()->routeIs('home') ? 'bg-white hover:bg-zinc-200 text-black' : 'bg-[#111111] hover:bg-zinc-800 text-white' }} text-xs font-bold px-5 py-3 rounded-full transition shadow-sm">
+                <a href="/contact" class="inline-flex items-center space-x-2 bg-[#111111] hover:bg-zinc-800 text-white text-xs font-bold px-5 py-3 rounded-full transition shadow-sm">
                     <span>Let's Talk</span>
                     <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -152,32 +156,41 @@
 
             <!-- Hamburger Button for Mobile -->
             <button @click="mobileMenuOpen = !mobileMenuOpen" 
-                    class="md:hidden w-10 h-10 rounded-full flex items-center justify-center transition focus:outline-none {{ request()->routeIs('home') ? 'bg-white/10 text-white hover:bg-white/20' : 'bg-gray-100 text-[#111111] hover:bg-gray-200' }}">
+                    class="md:hidden w-10 h-10 rounded-full flex items-center justify-center transition focus:outline-none bg-gray-100 text-[#111111] hover:bg-gray-200">
                 <i data-lucide="menu" class="w-5 h-5" x-show="!mobileMenuOpen"></i>
                 <i data-lucide="x" class="w-5 h-5" x-show="mobileMenuOpen" style="display: none;"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div x-show="mobileMenuOpen" x-transition class="md:hidden {{ request()->routeIs('home') ? 'bg-zinc-950/95 border-t border-white/10' : 'bg-white border-t border-gray-100' }}" style="display: none;">
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white border-t border-gray-100" style="display: none;">
             <nav class="flex flex-col p-6 space-y-4 text-base font-semibold">
-                <a href="/" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Home</a>
-                <a href="/about" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">About Us</a>
-                <a href="/portfolio" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Work</a>
-                <a href="/blog" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Blog</a>
-                <a href="/careers" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Careers</a>
-                <div class="space-y-2">
-                    <span class="text-xs {{ request()->routeIs('home') ? 'text-white/50' : 'text-gray-400' }} font-bold uppercase tracking-wider">Services</span>
-                    <div class="grid grid-cols-1 pl-4 gap-2 border-l {{ request()->routeIs('home') ? 'border-white/10' : 'border-gray-100' }}">
+                <a href="/" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">Home</a>
+                <a href="/about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">About Us</a>
+
+                <!-- Collapsible Work Dropdown (displays Services list) on Mobile -->
+                <div class="space-y-2" x-data="{ open: false }">
+                    <button @click="open = !open" class="flex items-center justify-between w-full text-gray-800 hover:text-zinc-900 font-semibold focus:outline-none">
+                        <span>Work</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" x-transition class="grid grid-cols-1 pl-4 gap-2 border-l border-gray-100" style="display: none;">
+                        <a href="/portfolio" @click="mobileMenuOpen = false" class="text-sm text-zinc-900 font-bold py-1 flex items-center space-x-2">
+                            <span>All Projects</span>
+                        </a>
                         @foreach(App\Models\Service::where('is_active', true)->orderBy('order')->get() as $navService)
-                            <a href="/services/{{ $navService->slug }}" @click="mobileMenuOpen = false" class="text-sm {{ request()->routeIs('home') ? 'text-white/70 hover:text-emerald-400' : 'text-gray-600 hover:text-zinc-900' }} py-1 flex items-center space-x-2">
+                            <a href="/services/{{ $navService->slug }}" @click="mobileMenuOpen = false" class="text-sm text-gray-600 hover:text-zinc-900 py-1">
                                 <span>{{ $navService->title }}</span>
                             </a>
                         @endforeach
                     </div>
                 </div>
-                <a href="/contact" @click="mobileMenuOpen = false" class="{{ request()->routeIs('home') ? 'text-white/90 hover:text-emerald-400' : 'text-gray-800 hover:text-zinc-900' }}">Contact</a>
-                <a href="/contact" @click="mobileMenuOpen = false" class="inline-flex items-center justify-center space-x-2 {{ request()->routeIs('home') ? 'bg-white hover:bg-zinc-200 text-black' : 'bg-[#111111] hover:bg-zinc-800 text-white' }} text-xs font-bold py-3 rounded-full transition w-full">
+
+                <a href="/blog" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">Blog</a>
+                <a href="/careers" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">Careers</a>
+                <a href="/services" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">Services</a>
+                <a href="/contact" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-zinc-900">Contact</a>
+                <a href="/contact" @click="mobileMenuOpen = false" class="inline-flex items-center justify-center space-x-2 bg-[#111111] hover:bg-zinc-800 text-white text-xs font-bold py-3 rounded-full transition w-full">
                     <span>Let's Talk</span>
                     <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -191,57 +204,57 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="{{ request()->routeIs('home') ? 'bg-zinc-950 border-t border-white/10 text-white' : 'bg-[#F8F8F8] border-t border-gray-200/50 text-[#111111]' }} pt-16 pb-12">
+    <footer class="bg-[#F8F8F8] border-t border-gray-200/50 text-[#111111] pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <!-- Col 1: About Brand -->
             <div class="space-y-4">
                 <a href="/" class="inline-block">
-                    <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain -ml-2 {{ request()->routeIs('home') ? 'filter invert' : '' }}" alt="KKSB Studios">
+                    <img src="{{ asset('images/logo.png') }}" class="h-14 md:h-16 w-auto object-contain -ml-2" alt="KKSB Studios">
                 </a>
-                <p class="text-xs {{ request()->routeIs('home') ? 'text-white/70' : 'text-gray-500' }} leading-relaxed max-w-xs font-barlow">
+                <p class="text-xs text-gray-500 leading-relaxed max-w-xs font-barlow">
                     {{ App\Models\Setting::get('site_name', 'KKSB Studios') }} is Himachal's premier digital creative agency, delivering video diaries, social retainers, SEO strategy, and custom web designs that elevate local and regional brands.
                 </p>
-                <div class="flex space-x-4 pt-2 {{ request()->routeIs('home') ? 'text-white/80' : 'text-[#111111]' }}">
-                    <a href="{{ App\Models\Setting::get('social_instagram', 'https://instagram.com/kksbstudios') }}" target="_blank" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_youtube', '#') }}" target="_blank" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_linkedin', '#') }}" target="_blank" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_facebook', '#') }}" target="_blank" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <div class="flex space-x-4 pt-2 text-[#111111]">
+                    <a href="{{ App\Models\Setting::get('social_instagram', 'https://instagram.com/kksbstudios') }}" target="_blank" class="hover:text-zinc-900 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_youtube', '#') }}" target="_blank" class="hover:text-zinc-900 transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_linkedin', '#') }}" target="_blank" class="hover:text-zinc-900 transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_facebook', '#') }}" target="_blank" class="hover:text-zinc-900 transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
                 </div>
             </div>
 
             <!-- Col 2: Services Quick Links -->
             <div class="space-y-4">
-                <h4 class="font-bold uppercase tracking-wider text-xs {{ request()->routeIs('home') ? 'text-white' : 'text-[#111111]' }} font-barlow">Our Services</h4>
-                <nav class="flex flex-col space-y-2 text-xs {{ request()->routeIs('home') ? 'text-white/70' : 'text-gray-500' }} font-medium font-barlow font-light">
+                <h4 class="font-bold uppercase tracking-wider text-xs text-[#111111] font-barlow">Our Services</h4>
+                <nav class="flex flex-col space-y-2 text-xs text-gray-500 font-medium font-barlow font-light">
                     @foreach(App\Models\Service::where('is_active', true)->orderBy('order')->take(5)->get() as $footService)
-                        <a href="/services/{{ $footService->slug }}" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">{{ $footService->title }}</a>
+                        <a href="/services/{{ $footService->slug }}" class="hover:text-zinc-900 transition">{{ $footService->title }}</a>
                     @endforeach
                 </nav>
             </div>
 
             <!-- Col 3: Company Sitemap -->
             <div class="space-y-4">
-                <h4 class="font-bold uppercase tracking-wider text-xs {{ request()->routeIs('home') ? 'text-white' : 'text-[#111111]' }} font-barlow">Sitemap</h4>
-                <nav class="flex flex-col space-y-2 text-xs {{ request()->routeIs('home') ? 'text-white/70' : 'text-gray-500' }} font-medium font-barlow font-light">
-                    <a href="/" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">Home</a>
-                    <a href="/about" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">About Us</a>
-                    <a href="/portfolio" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">Featured Work</a>
-                    <a href="/blog" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">Blog Articles</a>
-                    <a href="/careers" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">Careers</a>
-                    <a href="/contact" class="{{ request()->routeIs('home') ? 'hover:text-emerald-400' : 'hover:text-zinc-900' }} transition">Contact Us</a>
+                <h4 class="font-bold uppercase tracking-wider text-xs text-[#111111] font-barlow">Sitemap</h4>
+                <nav class="flex flex-col space-y-2 text-xs text-gray-500 font-medium font-barlow font-light">
+                    <a href="/" class="hover:text-zinc-900 transition">Home</a>
+                    <a href="/about" class="hover:text-zinc-900 transition">About Us</a>
+                    <a href="/portfolio" class="hover:text-zinc-900 transition">Featured Work</a>
+                    <a href="/blog" class="hover:text-zinc-900 transition">Blog Articles</a>
+                    <a href="/careers" class="hover:text-zinc-900 transition">Careers</a>
+                    <a href="/contact" class="hover:text-zinc-900 transition">Contact Us</a>
                 </nav>
             </div>
 
             <!-- Col 4: Newsletter Subscriber Form -->
             <div class="space-y-4 font-barlow">
-                <h4 class="font-bold uppercase tracking-wider text-xs {{ request()->routeIs('home') ? 'text-white' : 'text-[#111111]' }}">Subscribe to Newsletter</h4>
-                <p class="text-xs {{ request()->routeIs('home') ? 'text-white/70' : 'text-gray-500' }} leading-relaxed font-light">Stay updated with marketing strategies and reels tips delivered straight to your inbox.</p>
+                <h4 class="font-bold uppercase tracking-wider text-xs text-[#111111]">Subscribe to Newsletter</h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-light">Stay updated with marketing strategies and reels tips delivered straight to your inbox.</p>
                 
                 <form method="POST" action="/newsletter/subscribe" class="flex flex-col sm:flex-row gap-2">
                     @csrf
                     <input type="email" name="email" required placeholder="Enter your email" 
-                           class="flex-grow {{ request()->routeIs('home') ? 'bg-white/5 border-white/10 text-white placeholder-white/30' : 'bg-white border-gray-300 text-[#111111]' }} border rounded-xl px-4 py-2.5 text-xs focus:ring-emerald-500 focus:border-emerald-500">
-                    <button type="submit" class="{{ request()->routeIs('home') ? 'bg-white text-black hover:bg-zinc-200' : 'bg-[#111111] text-white hover:bg-zinc-800' }} text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+                           class="flex-grow bg-white border-gray-300 text-[#111111] border rounded-xl px-4 py-2.5 text-xs focus:ring-emerald-500 focus:border-emerald-500">
+                    <button type="submit" class="bg-[#111111] text-white hover:bg-zinc-800 text-xs font-semibold px-4 py-2.5 rounded-xl transition">
                         Join
                     </button>
                 </form>
@@ -249,15 +262,15 @@
         </div>
 
         <!-- Footer Bottom Meta -->
-        <div class="max-w-7xl mx-auto px-6 border-t {{ request()->routeIs('home') ? 'border-white/10' : 'border-gray-200/50' }} mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] {{ request()->routeIs('home') ? 'text-white/40' : 'text-gray-400' }} font-semibold gap-4 font-barlow">
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-200/50 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-400 font-semibold gap-4 font-barlow">
             <div>
                 &copy; {{ date('Y') }} {{ App\Models\Setting::get('site_name', 'KKSB Studios').'.' }} All rights reserved.
             </div>
             <div class="flex space-x-6">
-                <a href="/privacy-policy" class="{{ request()->routeIs('home') ? 'hover:text-white font-light' : 'hover:text-[#111111]' }} transition">Privacy Policy</a>
-                <a href="/terms-conditions" class="{{ request()->routeIs('home') ? 'hover:text-white font-light' : 'hover:text-[#111111]' }} transition">Terms & Conditions</a>
-                <a href="/cookie-policy" class="{{ request()->routeIs('home') ? 'hover:text-white font-light' : 'hover:text-[#111111]' }} transition">Cookie Policy</a>
-                <a href="/sitemap.xml" target="_blank" class="{{ request()->routeIs('home') ? 'hover:text-white font-light' : 'hover:text-[#111111]' }} transition">Sitemap XML</a>
+                <a href="/privacy-policy" class="hover:text-[#111111] transition">Privacy Policy</a>
+                <a href="/terms-conditions" class="hover:text-[#111111] transition">Terms & Conditions</a>
+                <a href="/cookie-policy" class="hover:text-[#111111] transition">Cookie Policy</a>
+                <a href="/sitemap.xml" target="_blank" class="hover:text-[#111111] transition">Sitemap XML</a>
             </div>
         </div>
     </footer>
