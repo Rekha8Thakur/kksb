@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom fonts styling scoped for pages that need it */
+/* Apply Brand Typography */
+body {
+  font-family: "Inter", sans-serif;
+  color: #111111;
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
 .font-barlow {
-  font-family: "Barlow", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -134,7 +144,7 @@ body.bg-white section:not(.h-screen) .text-white\/90 {
 
 body.bg-white section:not(.h-screen) .text-emerald-400,
 body.bg-white section:not(.h-screen) .text-emerald-500 {
-  color: #059669 !important; /* emerald-600 */
+  color: #FF6A00 !important; /* brand orange */
 }
 
 body.bg-white section:not(.h-screen) .text-white {

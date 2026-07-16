@@ -3,8 +3,8 @@
         <link rel="preload" as="video" type="video/mp4" href="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4">
     @endsection
 
-    <!-- Inject Google Font Barlow -->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Inject Google Font Inter and Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Hero Section with Background Fading Video -->
     <section class="relative h-screen flex items-center bg-zinc-950 text-white overflow-hidden">

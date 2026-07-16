@@ -1,6 +1,6 @@
 <x-frontend-layout>
-    <!-- Inject Google Font Barlow -->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Inject Google Font Inter and Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Hero Header (Static Dark Theme, No Video/Text Animations) -->
     <section class="relative bg-zinc-950 text-white py-24 border-b border-white/10">
