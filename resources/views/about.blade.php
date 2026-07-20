@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">About KKSB Studios</span>
+            <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">About KKSB Studios</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 {{ App\Models\Setting::get('about_hero_title', 'Built in Himachal. Creating Beyond Boundaries.') }}
             </h1>
@@ -17,7 +17,7 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-6 space-y-6" data-aos="fade-right">
-                <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Our Background</span>
+                <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Our Background</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     {{ App\Models\Setting::get('about_story_title', 'It Started With Stories. It Grew Into a Studio.') }}
                 </h2>
@@ -40,32 +40,6 @@
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="py-24 bg-[#F8F8F8] border-y border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Mission -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 space-y-4" data-aos="fade-up">
-                <div class="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center text-zinc-800">
-                    <i data-lucide="target" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-xl font-bold tracking-tight text-[#111111]">Our Mission</h3>
-                <p class="text-xs text-gray-500 leading-relaxed">
-                    {{ App\Models\Setting::get('about_mission', 'To elevate regional brands onto the national stage through world-class storytelling and metrics-driven digital strategy.') }}
-                </p>
-            </div>
-            
-            <!-- Vision -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 space-y-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center text-zinc-800">
-                    <i data-lucide="eye" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-xl font-bold tracking-tight text-[#111111]">Our Vision</h3>
-                <p class="text-xs text-gray-500 leading-relaxed">
-                    {{ App\Models\Setting::get('about_vision', 'To build one of the most trusted creative and marketing companies in India, powered by local talent and global vision.') }}
-                </p>
-            </div>
-        </div>
-    </section>
 
     <!-- Founders Quote/Details -->
     <section class="py-24 bg-white">
@@ -77,7 +51,7 @@
             </div>
 
             <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
-                <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">The Founder</span>
+                <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">The Founder</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111111]">
                     {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
                 </h2>
@@ -98,7 +72,7 @@
     <section class="py-24 bg-[#F8F8F8]">
         <div class="max-w-7xl mx-auto px-6 space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
-                <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Creative Minds</span>
+                <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Creative Minds</span>
                 <h2 class="text-4xl font-extrabold tracking-tight text-[#111111]">Meet Our Team</h2>
                 <p class="text-sm text-gray-500">A collective of local designers, editors, copywriters and shoot directors.</p>
             </div>
@@ -131,7 +105,7 @@
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
-                <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Behind The Camera</span>
+                <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Behind The Camera</span>
                 <h2 class="text-4xl font-extrabold tracking-tight text-[#111111]">Behind the Scenes</h2>
                 <p class="text-sm text-gray-500">Snapshots of our dynamic outdoor shoots, editing table sessions, and team brainstorm sessions.</p>
             </div>

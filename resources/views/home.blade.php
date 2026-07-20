@@ -1,685 +1,998 @@
 <x-frontend-layout>
-    @section('head')
-        <link rel="preload" as="video" type="video/mp4" href="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4">
-    @endsection
-
-    <!-- Inject Google Font Inter and Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Hero Section with Background Fading Video -->
-    <section class="relative h-screen flex items-center bg-zinc-950 text-white overflow-hidden">
-        
-        <!-- Fading Background Video (Matches React FadingVideo component) -->
-        <div x-data="{
-            sources: ['https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4'],
-            index: 0,
-            opacity: 0,
-            fadingOut: false,
-            rafId: null,
-            fadeInMs: 500,
-            fadeOutMs: 550,
-            fadeOutThreshold: 0.55,
-            init() {
-                const video = this.$refs.video;
-                if (!video) return;
-                
-                const onMetadataLoaded = () => {
-                    this.fadingOut = false;
-                    this.animateOpacity(0, 1, this.fadeInMs);
-                };
-                
-                if (video.readyState >= 1) {
-                    onMetadataLoaded();
-                } else {
-                    video.addEventListener('loadedmetadata', onMetadataLoaded);
-                }
-                
-                video.addEventListener('timeupdate', () => {
-                    if (!video.duration || this.fadingOut) return;
-                    const remaining = video.duration - video.currentTime;
-                    if (remaining <= this.fadeOutThreshold) {
-                        this.fadingOut = true;
-                        this.animateOpacity(1, 0, this.fadeOutMs);
-                    }
-                });
-                
-                video.addEventListener('ended', () => {
-                    if (this.sources.length === 1) {
-                        video.currentTime = 0;
-                        this.fadingOut = false;
-                        video.play().catch(() => {});
-                        this.animateOpacity(0, 1, this.fadeInMs);
-                    } else {
-                        this.fadingOut = false;
-                        this.index = (this.index + 1) % this.sources.length;
-                        video.src = this.sources[this.index];
-                        video.load();
-                        video.play().catch(() => {});
-                    }
-                });
-
-                // Explicitly load and start playing on mount to trigger loadedmetadata
-                video.load();
-                video.play().catch(() => {});
-            },
-            animateOpacity(from, to, duration) {
-                const start = performance.now();
-                const step = (now) => {
-                    const elapsed = now - start;
-                    const t = Math.min(elapsed / duration, 1);
-                    this.opacity = from + (to - from) * t;
-                    if (t < 1) {
-                        this.rafId = requestAnimationFrame(step);
-                    }
-                };
-                if (this.rafId) cancelAnimationFrame(this.rafId);
-                this.rafId = requestAnimationFrame(step);
-            }
-        }" class="absolute inset-0 z-0 h-full w-full pointer-events-none opacity-65">
-            <video id="hero-video" x-ref="video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" :style="{ opacity: opacity, width: '120%', height: '120%', transform: 'translate(-10%, -10%)' }" autoplay muted playsinline preload="auto" class="w-full h-full object-cover object-top max-w-none"></video>
-        </div>
-        <div class="absolute inset-0 bg-zinc-950/40 z-0"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-24 md:pt-0">
-            <div class="lg:col-span-9 space-y-6 text-left">
-                <span class="hero-badge liquid-glass inline-flex px-4 py-1.5 rounded-full text-xs font-bold text-white border border-white/10 uppercase tracking-widest opacity-0 font-barlow">// Himachal's Premier Creative Agency</span>
-                
-                <h1 class="hero-title blur-reveal font-barlow italic text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-[0.9] tracking-[-3px] uppercase opacity-0 text-left">
-                    {{ App\Models\Setting::get('home_hero_title', 'Let’s Build Something People Remember.') }}
-                </h1>
-                
-                <p class="hero-subtitle text-base sm:text-lg text-white/80 leading-relaxed max-w-xl opacity-0 font-barlow font-light text-left">
-                    {{ App\Models\Setting::get('home_hero_subtitle', 'From social media campaigns to high-impact video production, tell us what you’re building — we’ll help you make it stand out.') }}
-                </p>
-
-                <!-- CTA & Contact buttons -->
-                <div class="hero-cta flex flex-wrap items-center gap-4 pt-4 opacity-0">
-                    <a href="/contact" class="inline-flex items-center space-x-2 bg-white hover:bg-zinc-100 text-black text-sm font-bold px-6 py-3.5 rounded-full transition shadow-lg">
-                        <span>Start Your Project</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://wa.me/{{ str_replace(' ', '', App\Models\Setting::get('contact_whatsapp', '917876146353')) }}" target="_blank" 
-                       class="liquid-glass-strong inline-flex items-center space-x-2 border border-white/10 hover:bg-white/10 text-white text-sm font-bold px-6 py-3.5 rounded-full transition">
-                        <i data-lucide="phone-call" class="w-4 h-4 text-emerald-500"></i>
-                        <span>WhatsApp Us</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Logo Showcase (Infinite Marquee) -->
-    @if($clients->isNotEmpty())
-    <section class="py-10 border-y border-white/10 bg-zinc-950 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-6 mb-3">
-            <p class="text-center text-xs font-bold text-white/50 uppercase tracking-widest font-barlow">// Trusted By Leading Brands</p>
-        </div>
-        
-        <!-- Marquee Row -->
-        <div class="relative w-full overflow-hidden flex items-center py-4 bg-zinc-950">
-            <!-- Left/Right Fade Mask -->
-            <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none"></div>
-            
-            <div class="animate-marquee flex items-center space-x-12 whitespace-nowrap">
-                <!-- First Set of Logos -->
-                @foreach($clients as $client)
-                    <a href="{{ $client->website_url }}" target="_blank" class="h-16 w-44 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
-                        <img src="{{ asset($client->logo) }}" 
-                             class="max-h-full max-w-full object-contain opacity-80 hover:opacity-100 hover:scale-110 transition duration-300 transform" 
-                             alt="{{ $client->name }}">
-                    </a>
-                @endforeach
-                <!-- Duplicate Set for Continuous Loop -->
-                @foreach($clients as $client)
-                    <a href="{{ $client->website_url }}" target="_blank" class="h-16 w-44 flex-shrink-0 flex items-center justify-center group transition-all duration-300">
-                        <img src="{{ asset($client->logo) }}" 
-                             class="max-h-full max-w-full object-contain opacity-80 hover:opacity-100 hover:scale-110 transition duration-300 transform" 
-                             alt="{{ $client->name }}">
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom CSS for Infinite Scrolling -->
+    <!-- CSS Animations for Infinite Marquee & Parallax Optimization -->
     <style>
         @keyframes marquee {
-            0% { transform: translateX(0); }
+            0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 20s linear infinite;
+            animation: marquee 30s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+        [data-parallax-speed] {
+            will-change: transform;
+        }
     </style>
-    @endif
 
-    <!-- Services Section -->
-    <section class="py-24 bg-zinc-950 relative overflow-hidden" id="services">
-        <!-- Capabilities Background Video -->
-        <div x-data="{
-            sources: ['https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_093722_ccfc7ebf-182f-419f-8a62-2dc02db7dd9d.mp4'],
-            index: 0,
-            opacity: 0,
-            fadingOut: false,
-            rafId: null,
-            fadeInMs: 500,
-            fadeOutMs: 550,
-            fadeOutThreshold: 0.55,
-            init() {
-                const video = this.$refs.video;
-                if (!video) return;
-                
-                const onMetadataLoaded = () => {
-                    this.fadingOut = false;
-                    this.animateOpacity(0, 1, this.fadeInMs);
-                };
-                
-                if (video.readyState >= 1) {
-                    onMetadataLoaded();
-                } else {
-                    video.addEventListener('loadedmetadata', onMetadataLoaded);
-                }
-                
-                video.addEventListener('timeupdate', () => {
-                    if (!video.duration || this.fadingOut) return;
-                    const remaining = video.duration - video.currentTime;
-                    if (remaining <= this.fadeOutThreshold) {
-                        this.fadingOut = true;
-                        this.animateOpacity(1, 0, this.fadeOutMs);
-                    }
-                });
-                
-                video.addEventListener('ended', () => {
-                    if (this.sources.length === 1) {
-                        video.currentTime = 0;
-                        this.fadingOut = false;
-                        video.play().catch(() => {});
-                        this.animateOpacity(0, 1, this.fadeInMs);
-                    } else {
-                        this.fadingOut = false;
-                        this.index = (this.index + 1) % this.sources.length;
-                        video.src = this.sources[this.index];
-                        video.load();
-                        video.play().catch(() => {});
-                    }
-                });
-
-                // Explicitly load and start playing on mount
-                video.load();
-                video.play().catch(() => {});
-            },
-            animateOpacity(from, to, duration) {
-                const start = performance.now();
-                const step = (now) => {
-                    const elapsed = now - start;
-                    const t = Math.min(elapsed / duration, 1);
-                    this.opacity = from + (to - from) * t;
-                    if (t < 1) {
-                        this.rafId = requestAnimationFrame(step);
-                    }
-                };
-                if (this.rafId) cancelAnimationFrame(this.rafId);
-                this.rafId = requestAnimationFrame(step);
+    <!-- Page Container -->
+    <div class="relative overflow-hidden selection:bg-[#111111] selection:text-white" x-data="{
+        scrollToShowreel() {
+            const el = document.getElementById('showreel-section');
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
             }
-        }" class="absolute inset-0 z-0 h-full w-full pointer-events-none opacity-35">
-            <video x-ref="video" :src="sources[index]" :style="{ opacity: opacity }" autoplay muted playsinline preload="auto" class="w-full h-full object-cover"></video>
-        </div>
-        <div class="absolute inset-0 bg-zinc-950/70 z-0"></div>
+        }
+    }">
 
-        <div class="max-w-7xl mx-auto px-6 space-y-16 relative z-10">
-            <!-- Section Header (Liquid Glass Capsule with frosted light sheen) -->
-            <div class="text-center space-y-4 max-w-2xl mx-auto p-8 rounded-3xl liquid-glass border border-white/10 bg-white/5 backdrop-blur-md">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest font-barlow block">// What We Do</span>
-                <h2 class="blur-reveal font-barlow italic text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[0.9]">Our Creative Services</h2>
-                <p class="text-xs sm:text-sm text-white/90 max-w-md mx-auto font-barlow font-light">End-to-end creative and digital solutions to help your brand stand out and grow consistently.</p>
+        <!-- HERO SECTION -->
+        <section class="relative bg-white pt-10 lg:pt-16 pb-12 lg:pb-20 overflow-hidden">
+            <!-- Ambient Parallax Background Glow Effects -->
+            <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/12 via-[#FF6A00]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
+                 data-parallax-speed="0.25"></div>
+            <div class="absolute bottom-0 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#FF6A00]/8 to-transparent rounded-full blur-2xl pointer-events-none -z-10"
+                 data-parallax-speed="-0.2"></div>
+            
+            <!-- Floating Background Graphic Parallax Text -->
+            <div class="absolute top-8 left-1/2 -translate-x-1/2 text-[140px] md:text-[220px] font-black text-gray-900/[0.02] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap -z-10"
+                 data-parallax-speed="0.35">
+                KKSB STUDIOS
             </div>
 
-            <!-- Staggered Bento Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                @foreach($services as $index => $service)
-                    @php
-                        // Create a staggered pattern for 12 columns: 8, 4, 4, 8, 8, 4
-                        $mod = $index % 4;
-                        $cols = 'lg:col-span-4';
-                        if ($mod == 0 || $mod == 3) {
-                            $cols = 'lg:col-span-8';
-                        }
-                    @endphp
-                    <div class="{{ $cols }} liquid-glass text-white rounded-[32px] p-8 lg:p-12 transition duration-500 group flex flex-col justify-end overflow-hidden relative min-h-[420px] border border-white/10 hover:border-white/20 hover:shadow-2xl" data-aos="fade-up">
-                        
-                        <!-- Background Image Hover Zoom (Motion) -->
-                        @if($service->image_path)
-                        <div class="absolute inset-0 z-0 opacity-25 group-hover:opacity-35 transition-all duration-700 ease-out bg-cover bg-center scale-100 group-hover:scale-110" style="background-image: url('{{ $service->image_path }}');"></div>
-                        @endif
-                        
-                        <!-- Dark Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20 z-10 transition-all duration-500 group-hover:from-black/100 group-hover:via-black/85 group-hover:to-black/30"></div>
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Left Content (50%) -->
+                <div class="lg:col-span-6 space-y-5 md:space-y-6" data-aos="fade-up" data-aos-duration="1000" data-parallax-speed="-0.04">
+                    <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold text-[#111111] tracking-tight">
+                        We Build Brands That Grow and Inspire<span class="text-[#FF6A00]">.</span>
+                    </h1>
+                    <p class="text-[15px] sm:text-[16px] text-[#666666] leading-relaxed font-light max-w-xl">
+                        KKSB Studios helps ambitious businesses stand out with creative strategy, compelling content and performance-driven marketing.
+                    </p>
 
-                        <!-- Content wrapper -->
-                        <div class="relative z-20 space-y-6">
-                            <!-- Icon -->
-                            <div class="w-12 h-12 liquid-glass rounded-2xl flex items-center justify-center text-white border border-white/10 shadow-sm group-hover:bg-emerald-600 group-hover:border-emerald-500 transition duration-300">
-                                <i data-lucide="{{ $service->icon ?? 'briefcase' }}" class="w-5 h-5"></i>
-                            </div>
-                            
-                            <div class="space-y-3">
-                                <h3 class="text-2xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition duration-300 font-barlow">{{ $service->title }}</h3>
-                                <p class="text-sm text-white/90 leading-relaxed max-w-xl transition-all duration-500 group-hover:text-white font-barlow">{{ $service->short_description }}</p>
-                            </div>
+                    <!-- CTAs -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                        <a href="/services" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 shadow-md shadow-[#FF6A00]/25 hover:shadow-lg hover:shadow-[#FF6A00]/35 hover:-translate-y-0.5 group">
+                            <span>Our Services</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
+                        </a>
+                        <a href="/portfolio" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-[#ECECEC] text-[#111111] hover:border-[#111111] hover:bg-[#FAFAFA] font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 hover:-translate-y-0.5 shadow-sm group">
+                            <span>View Work</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
+                        </a>
+                    </div>
 
-                            <!-- Expandable Features List with Motion -->
-                            @if(!empty($service->features))
-                                <div class="transition-all duration-300">
-                                    <ul class="space-y-2 pt-4 border-t border-white/10">
-                                        @foreach(array_slice($service->features, 0, 3) as $feature)
-                                            <li class="flex items-center space-x-2 text-[12px] text-white/90">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                                <span class="font-barlow">{{ $feature }}</span>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            
-                            <!-- Card CTA Actions -->
-                            <div class="pt-4 flex items-center justify-between border-t border-white/10 group-hover:border-transparent transition-all duration-500">
-                                <a href="/services/{{ $service->slug }}" class="inline-flex items-center space-x-1.5 text-sm font-bold text-white hover:text-emerald-400 transition pb-0.5 font-barlow">
-                                    <span>Learn More</span>
-                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition group-hover:translate-x-1"></i>
-                                </a>
-                                <span class="text-[10px] font-extrabold text-emerald-400 bg-emerald-400/20 px-2.5 py-1 rounded-full uppercase tracking-wider font-barlow">Free of Cost</span>
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center gap-y-2.5 gap-x-5 pt-6 border-t border-[#ECECEC] mt-6 text-[13px] text-[#666666] font-medium">
+                        <span class="flex items-center space-x-2">
+                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                            <span>Strategy</span>
+                        </span>
+                        <span class="flex items-center space-x-2">
+                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                            <span>Production</span>
+                        </span>
+                        <span class="flex items-center space-x-2">
+                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                            <span>Marketing</span>
+                        </span>
+                        <span class="flex items-center space-x-2">
+                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                            <span>Growth</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Side Image with Parallax Depth -->
+                <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-parallax-speed="0.08">
+                    <div class="relative overflow-hidden rounded-[20px] shadow-xl aspect-[16/10] bg-gray-100 group border border-[#ECECEC]">
+                        <img src="{{ asset('images/landing-shoot.jpg') }}" 
+                             alt="KKSB Studios Video Production Shoot" 
+                             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+
+                        <!-- Floating Live Badge with Parallax -->
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md border border-white/40 rounded-full px-3.5 py-1.5 flex items-center space-x-2 shadow-md"
+                             data-parallax-speed="-0.12">
+                            <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping"></span>
+                            <span class="text-[11px] font-bold text-[#111111] tracking-wide">KKSB Production</span>
+                        </div>
+
+                        <!-- Floating Glassmorphic Card Effect with Counter Parallax -->
+                        <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-3.5 text-white flex items-center space-x-3.5 shadow-xl max-w-xs"
+                             data-parallax-speed="0.12">
+                            <div class="w-9 h-9 rounded-lg bg-[#FF6A00] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#FF6A00]/30">
+                                <i data-lucide="video" class="w-4.5 h-4.5"></i>
+                            </div>
+                            <div>
+                                <p class="text-[12.5px] font-bold text-white leading-tight">High-Impact Production</p>
+                                <p class="text-[10.5px] text-gray-300 font-light mt-0.5">Creating content that connects & converts</p>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us / Statistics -->
-    <section class="py-24 bg-zinc-950 text-white relative">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
-                <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest font-barlow">// Why Choose Us</span>
-                <h2 class="blur-reveal font-barlow italic text-4xl sm:text-6xl font-extrabold tracking-tight leading-[0.9] text-white">Results that speak for themselves.</h2>
-                <p class="text-sm text-white/70 leading-relaxed font-barlow font-light">
-                    We combine local market understanding with premium production quality to execute campaigns that don't just look good, but drive real business metrics.
-                </p>
-                <div class="pt-4">
-                    <a href="/about" class="inline-flex items-center space-x-2 bg-white hover:bg-zinc-200 text-black text-xs font-bold px-6 py-3.5 rounded-full transition shadow-md">
-                        <span>Our Studio Story</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Statistics Grid -->
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <!-- Stat 1 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 space-y-2" data-aos="fade-up">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-barlow">250+</div>
-                    <h4 class="font-bold text-sm text-white font-barlow">Businesses Worked With</h4>
-                    <p class="text-xs text-white/60 font-barlow font-light">From local Himachali resorts to state campaigns and corporate brands.</p>
+        <!-- TRUST STATS -->
+        <section class="py-16 bg-white border-t border-[#ECECEC] relative overflow-hidden">
+            <!-- Background Parallax Text -->
+            <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
+                 data-parallax-speed="-0.2">
+                STATS
+            </div>
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+                <div class="text-center mb-10" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
+                        <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Impact & Performance
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111111] tracking-tight uppercase">
+                        TRUST <span class="text-[#FF6A00]">STATS</span>
+                    </h2>
                 </div>
-                <!-- Stat 2 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 space-y-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl sm:text-5xl font-black text-emerald-500 font-barlow">Millions+</div>
-                    <h4 class="font-bold text-sm text-white font-barlow">Organic Views Generated</h4>
-                    <p class="text-xs text-white/60 font-barlow font-light">Through our viral Reels strategy and story-based vertical videos.</p>
-                </div>
-                <!-- Stat 3 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 space-y-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-barlow">Himachal</div>
-                    <h4 class="font-bold text-sm text-white font-barlow">Focused Market Experts</h4>
-                    <p class="text-xs text-white/60 font-barlow font-light">We understand the local culture, demographics, and tourism dynamics.</p>
-                </div>
-                <!-- Stat 4 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 space-y-2" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl sm:text-5xl font-black text-emerald-500 font-barlow">End-to-End</div>
-                    <h4 class="font-bold text-sm text-white font-barlow">Strategy & Distribution</h4>
-                    <p class="text-xs text-white/60 font-barlow font-light">We don't just shoot videos; we script, produce, and distribute them for ROI.</p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Stat 1 -->
+                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">Over 300+</span>
+                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
+                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">7+</span>
+                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                        <span class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
+                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Projects (Portfolio) -->
-    @if($projects->isNotEmpty())
-    <section class="py-24 bg-zinc-950 text-white" id="portfolio">
-        <div class="max-w-7xl mx-auto px-6 space-y-16">
-            <!-- Header -->
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest font-barlow">// Our Work</span>
-                    <h2 class="blur-reveal font-barlow italic text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[0.9]">Featured Projects & Results</h2>
+        <!-- CLIENT LOGOS MARQUEE -->
+        <section class="py-16 bg-[#FAFAFA] border-t border-b border-[#ECECEC] overflow-hidden">
+            <div class="max-w-[1440px] mx-auto">
+                <div class="text-center mb-10 px-4" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
+                        <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111111] tracking-tight uppercase max-w-4xl mx-auto leading-tight">
+                        TRUSTED BY BRANDS THAT <span class="text-[#FF6A00]">CHOOSE TO GROW</span>
+                    </h2>
                 </div>
-                <a href="/portfolio" class="inline-flex items-center space-x-2 border border-white/10 hover:border-white/30 hover:bg-white/5 text-white text-xs font-bold px-6 py-3.5 rounded-full transition">
-                    <span>View All Work</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </a>
-            </div>
+                
+                <!-- Infinite Horizontal Scrolling Logo Marquee -->
+                <div class="relative w-full flex items-center overflow-x-hidden">
+                    <div class="animate-marquee flex items-center space-x-8 text-center select-none py-2">
+                        <!-- List of 21 Real Brand Logos (Set 1) -->
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/hero.png') }}" alt="Hero MotoCorp" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
 
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                @foreach($projects as $project)
-                    <div class="liquid-glass border border-white/10 hover:border-white/20 shadow-sm hover:shadow-2xl rounded-3xl overflow-hidden group transition duration-300 flex flex-col" data-aos="fade-up">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
-                            <img src="{{ asset($project->main_image) }}" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-500" alt="{{ $project->title }}">
-                            <span class="absolute top-4 left-4 liquid-glass text-[10px] font-bold text-white px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
-                                {{ $project->category->name }}
+                        <!-- List of 21 Real Brand Logos (Set 2 Duplicated for Seamless Infinite Loop) -->
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/hero.png') }}" alt="Hero MotoCorp" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                        </div>
+                        <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
+                            <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION (SINGLE ROW LAYOUT) -->
+        <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <!-- Ambient Parallax Backdrop -->
+            <div class="absolute -right-20 top-1/3 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-3xl pointer-events-none -z-10" data-parallax-speed="-0.25"></div>
+            
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                    <div class="space-y-3" data-parallax-speed="-0.03">
+                        <span class="text-[13px] font-semibold text-[#FF6A00] tracking-[0.2em] uppercase block">
+                            OUR SERVICES
+                        </span>
+                        <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
+                            Everything You Need to Scale Your Brand.
+                        </h2>
+                    </div>
+                    <div>
+                        <a href="/services" class="inline-flex items-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white text-[14px] font-semibold px-7 py-3.5 rounded-[12px] transition duration-300 group shadow-md shadow-[#FF6A00]/20">
+                            <span>Explore All Services</span>
+                            <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services Single Row Layout (6 Cards Side-by-Side) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-5">
+                    <!-- Service 1: Social Media Management -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50" data-parallax-speed="0.03">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Social Media Management" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="share-2" class="w-4 h-4"></i>
                             </span>
                         </div>
-                        <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
-                            <div class="space-y-4">
-                                <h3 class="text-2xl font-bold text-white leading-tight font-barlow">{{ $project->title }}</h3>
-                                <p class="text-xs text-white/70 leading-relaxed font-semibold font-barlow font-light">Client: {{ $project->client }}</p>
-                                
-                                <div class="liquid-glass p-4 rounded-2xl border border-white/10 space-y-1">
-                                    <span class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider font-barlow">// Key Result Achieved</span>
-                                    <p class="text-sm text-white font-semibold font-barlow">{{ $project->results }}</p>
-                                </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Social Media Management</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    Engaging content that connects with your audience and builds your brand organically.
+                                </p>
                             </div>
-                            
-                            <a href="/portfolio/{{ $project->slug }}" class="inline-flex items-center space-x-2 text-xs font-bold text-white hover:text-emerald-400 transition group font-barlow">
-                                <span>Read Case Study</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition text-emerald-400"></i>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    @endif
 
-    <!-- Our Simple Process -->
-    <section class="py-24 bg-zinc-950 text-white">
-        <div class="max-w-7xl mx-auto px-6 space-y-16">
-            <div class="text-center space-y-4 max-w-2xl mx-auto">
-                <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest font-barlow">// How We Work</span>
-                <h2 class="blur-reveal font-barlow italic text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[0.9]">Our Simple Process</h2>
-                <p class="text-sm text-white/70 font-barlow">A transparent and proven process that ensures great results every time.</p>
+                    <!-- Service 2: Video Production -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.07">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Video Production" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="video" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Video Production</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    High-quality corporate videos, reels, and reels marketing commercials that tell your brand story.
+                                </p>
+                            </div>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Brand Strategy -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150" data-parallax-speed="0.03">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Brand Strategy" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="compass" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Brand Strategy</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    Research-driven messaging guides and brand guidelines designed for long-term growth.
+                                </p>
+                            </div>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Digital Campaigns -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Digital Campaigns" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Digital Campaigns</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    Paid acquisition and ad strategy campaigns generating conversions and measurable ROI.
+                                </p>
+                            </div>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Influencer Marketing -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="250" data-parallax-speed="0.03">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Influencer Marketing" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="users" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Influencer Marketing</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    Curating, negotiating, and managing creative campaigns with matching regional creators.
+                                </p>
+                            </div>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Websites & Digital Presence -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.07">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Websites & Digital Presence" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                                <i data-lucide="globe" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                            <div class="space-y-2">
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Websites & Digital Presence</h3>
+                                <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
+                                    Designing and developing fast, mobile-friendly landing pages and custom websites.
+                                </p>
+                            </div>
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                <span>Learn More</span>
+                                <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW WE WORK SECTION -->
+        <section class="py-20 bg-[#FAFAFA] border-t border-[#ECECEC] relative overflow-hidden">
+            <!-- Background Parallax Accent -->
+            <div class="absolute top-10 left-1/2 -translate-x-1/2 text-[160px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
+                 data-parallax-speed="-0.18">
+                PROCESS
             </div>
 
-            <!-- Timeline steps -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 shadow-sm relative group space-y-4" data-aos="fade-up">
-                    <div class="w-10 h-10 liquid-glass rounded-full flex items-center justify-center font-bold text-white text-sm border border-white/10">01</div>
-                    <h3 class="font-bold text-lg text-white font-barlow">We Review</h3>
-                    <p class="text-xs text-white/70 leading-relaxed font-barlow font-light">We review your enquiry details, business model, and existing marketing footprints.</p>
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
+                <div class="text-center space-y-3 mb-16" data-parallax-speed="-0.03">
+                    <span class="text-[13px] font-bold text-[#FF5500] tracking-[0.2em] uppercase block">
+                        // HOW WE WORK
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold text-[#111111] italic tracking-tight">
+                        Our Simple Process
+                    </h2>
+                    <p class="text-[15px] text-[#666666] font-light max-w-xl mx-auto">
+                        A transparent and proven process that ensures great results every time.
+                    </p>
                 </div>
-                <!-- Step 2 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 shadow-sm relative group space-y-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-10 h-10 liquid-glass rounded-full flex items-center justify-center font-bold text-white text-sm border border-white/10">02</div>
-                    <h3 class="font-bold text-lg text-white font-barlow">We Understand</h3>
-                    <p class="text-xs text-white/70 leading-relaxed font-barlow font-light">We suggestion alignment call to understand your target audience, goals, and content vision.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 shadow-sm relative group space-y-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-10 h-10 liquid-glass rounded-full flex items-center justify-center font-bold text-white text-sm border border-white/10">03</div>
-                    <h3 class="font-bold text-lg text-white font-barlow">We Recommend</h3>
-                    <p class="text-xs text-white/70 leading-relaxed font-barlow font-light">We present a tailormade strategy outline: shoot lists, posting calendars, or funnel structures.</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="liquid-glass p-8 rounded-3xl border border-white/10 shadow-sm relative group space-y-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-10 h-10 liquid-glass rounded-full flex items-center justify-center font-bold text-white text-sm border border-white/10">04</div>
-                    <h3 class="font-bold text-lg text-white font-barlow">We Connect</h3>
-                    <p class="text-xs text-white/70 leading-relaxed font-barlow font-light">We schedule the shoots and launch marketing execution with weekly optimization cycles.</p>
+
+                <!-- 4 Process Step Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Step 01 -->
+                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <div class="space-y-6">
+                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
+                                01
+                            </span>
+                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
+                                We Review
+                            </h3>
+                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
+                                We review your enquiry details, business model, and existing marketing footprints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.08">
+                        <div class="space-y-6">
+                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
+                                02
+                            </span>
+                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
+                                We Understand
+                            </h3>
+                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
+                                We suggestion alignment call to understand your target audience, goals, and content vision.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <div class="space-y-6">
+                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
+                                03
+                            </span>
+                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
+                                We Recommend
+                            </h3>
+                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
+                                We present a tailormade strategy outline: shoot lists, posting calendars, or funnel structures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.08">
+                        <div class="space-y-6">
+                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
+                                04
+                            </span>
+                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
+                                We Connect
+                            </h3>
+                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
+                                We schedule the shoots and launch marketing execution with weekly optimization cycles.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    @if($testimonials->isNotEmpty())
-    <section class="py-24 bg-zinc-950 text-white">
-        <div class="max-w-4xl mx-auto px-6 space-y-12 text-center" x-data="{ active: 0, count: {{ $testimonials->count() }} }">
-            <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest block font-barlow">// Client Feedback</span>
-            
-            <div class="relative min-h-[220px] flex items-center justify-center">
-                @foreach($testimonials as $index => $testimonial)
-                    <div x-show="active === {{ $index }}" 
-                         x-transition:enter="transition ease-out duration-300"
-                         x-transition:enter-start="opacity-0 scale-95"
-                         x-transition:enter-end="opacity-100 scale-100"
-                         class="space-y-6" style="display: none;">
-                        <p class="text-xl sm:text-2xl font-medium text-white italic leading-relaxed font-barlow">
-                            "{{ $testimonial->feedback }}"
-                        </p>
-                        <div class="flex items-center justify-center space-x-3">
-                            @if($testimonial->client_avatar)
-                                <img src="{{ asset($testimonial->client_avatar) }}" class="w-10 h-10 rounded-full object-cover border border-white/10" alt="">
-                            @endif
-                            <div class="text-left">
-                                <h4 class="font-bold text-sm text-white font-barlow">{{ $testimonial->client_name }}</h4>
-                                <p class="text-xs text-white/60 font-semibold font-barlow font-light">{{ $testimonial->client_company }}</p>
+        <!-- FEATURED WORK (PORTFOLIO SINGLE ROW LAYOUT) -->
+        <section id="portfolio-section" class="py-20 lg:py-28 bg-[#FAFAFA] border-t border-b border-[#ECECEC] relative overflow-hidden">
+            <!-- Background Parallax Accent -->
+            <div class="absolute top-1/2 right-10 -translate-y-1/2 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
+                 data-parallax-speed="-0.22">
+                WORK
+            </div>
+
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6" data-parallax-speed="-0.03">
+                    <div class="space-y-3">
+                        <span class="text-[13px] font-semibold text-[#FF6A00] tracking-[0.2em] uppercase block">
+                            FEATURED WORK
+                        </span>
+                        <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
+                            Work That Speaks Before We Do.
+                        </h2>
+                    </div>
+                    <div>
+                        <a href="/portfolio" class="inline-flex items-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white text-[14px] font-semibold px-7 py-3.5 rounded-[12px] transition duration-300 group shadow-md shadow-[#FF6A00]/20">
+                            <span>View All Projects</span>
+                            <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Single Row Layout (4 Cards Side-by-Side) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Project 1: The Himalayan Resort -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="The Himalayan Resort" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Hospitality & Tourism
+                            </span>
+                        </div>
+                        
+                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE HIMALAYAN RESORT</span>
+                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Himalayan Resort</h3>
+                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                    Cinematic brand shoot and targeted social ad campaign showcasing luxury mountain stays.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3 pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[13px] font-extrabold text-emerald-700">+250% Bookings</span>
+                                </div>
+
+                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                    <span>Read Case Study</span>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
 
-            <!-- slider controls -->
-            <div class="flex justify-center items-center space-x-4 pt-4">
-                <button @click="active = (active - 1 + count) % count" class="p-2 border border-white/10 rounded-full hover:bg-white/5 text-white/70 transition focus:outline-none">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                </button>
-                <button @click="active = (active + 1) % count" class="p-2 border border-white/10 rounded-full hover:bg-white/5 text-white/70 transition focus:outline-none">
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-    @endif
-
-    <!-- FAQs Section -->
-    @if($faqs->isNotEmpty())
-    <section class="py-24 bg-zinc-950 text-white">
-        <div class="max-w-4xl mx-auto px-6 space-y-12" x-data="{ active: null }">
-            <div class="text-center space-y-4 max-w-xl mx-auto">
-                <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest block font-barlow">// Questions</span>
-                <h2 class="blur-reveal font-barlow italic text-4xl font-extrabold tracking-tight text-white leading-[0.9]">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="space-y-4">
-                @foreach($faqs as $index => $faq)
-                    <div class="liquid-glass rounded-2xl border border-white/10 overflow-hidden transition duration-300">
-                        <button @click="active = (active === {{ $index }} ? null : {{ $index }})" 
-                                class="w-full flex items-center justify-between p-6 font-bold text-left text-sm sm:text-base text-white hover:text-emerald-400 focus:outline-none font-barlow">
-                            <span>{{ $faq->question }}</span>
-                            <span class="text-white/60 transition-transform duration-200" :class="active === {{ $index }} ? 'rotate-45' : ''">
-                                <i data-lucide="plus" class="w-4 h-4"></i>
+                    <!-- Project 2: The Café Project -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.08">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="The Café Project" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Food & Beverage
                             </span>
-                        </button>
-                        <div x-show="active === {{ $index }}" x-transition class="p-6 pt-0 text-xs sm:text-sm text-white/70 leading-relaxed border-t border-white/5 font-barlow font-light">
-                            {{ $faq->answer }}
+                        </div>
+                        
+                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE CAFÉ PROJECT</span>
+                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Café Project</h3>
+                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                    Micro-influencer food campaign and viral Instagram reels series driving weekend footfall.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3 pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[13px] font-extrabold text-emerald-700">3X Footfall</span>
+                                </div>
+
+                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                    <span>Read Case Study</span>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                @endforeach
+
+                    <!-- Project 3: Bhalla Dental Clinic -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Bhalla Dental Clinic" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Healthcare
+                            </span>
+                        </div>
+                        
+                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">BHALLA DENTAL CLINIC</span>
+                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Bhalla Dental Clinic</h3>
+                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                    Patient testimonial videos and localized lead generation campaigns establishing authority.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3 pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[13px] font-extrabold text-emerald-700">200% Inquiries</span>
+                                </div>
+
+                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                    <span>Read Case Study</span>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Peter England Solan -->
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.08">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Peter England Solan" 
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Retail
+                            </span>
+                        </div>
+                        
+                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">PETER ENGLAND SOLAN</span>
+                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Peter England Solan</h3>
+                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                    Seasonal apparel launch commercial shoots and hyper-targeted regional customer ad drives.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3 pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
+                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[13px] font-extrabold text-emerald-700">180% Store Visits</span>
+                                </div>
+
+                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
+                                    <span>Read Case Study</span>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    @endif
+        </section>
 
-    <!-- Call To Action (CTA) banner with fading loop backdrop -->
-    <section class="relative bg-zinc-950 text-white py-24 overflow-hidden">
-        <!-- Background Video for CTA -->
-        <div x-data="{
-            sources: ['https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4'],
-            index: 0,
-            opacity: 0,
-            fadingOut: false,
-            rafId: null,
-            fadeInMs: 500,
-            fadeOutMs: 550,
-            fadeOutThreshold: 0.55,
-            init() {
-                const video = this.$refs.video;
-                if (!video) return;
-                
-                const onMetadataLoaded = () => {
-                    this.fadingOut = false;
-                    this.animateOpacity(0, 1, this.fadeInMs);
-                };
-                
-                if (video.readyState >= 1) {
-                    onMetadataLoaded();
-                } else {
-                    video.addEventListener('loadedmetadata', onMetadataLoaded);
-                }
-                
-                video.addEventListener('timeupdate', () => {
-                    if (!video.duration || this.fadingOut) return;
-                    const remaining = video.duration - video.currentTime;
-                    if (remaining <= this.fadeOutThreshold) {
-                        this.fadingOut = true;
-                        this.animateOpacity(1, 0, this.fadeOutMs);
-                    }
-                });
-                
-                video.addEventListener('ended', () => {
-                    if (this.sources.length === 1) {
-                        video.currentTime = 0;
-                        this.fadingOut = false;
-                        video.play().catch(() => {});
-                        this.animateOpacity(0, 1, this.fadeInMs);
-                    } else {
-                        this.fadingOut = false;
-                        this.index = (this.index + 1) % this.sources.length;
-                        video.src = this.sources[this.index];
-                        video.load();
-                        video.play().catch(() => {});
-                    }
-                });
-
-                // Explicitly load and start playing on mount
-                video.load();
-                video.play().catch(() => {});
-            },
-            animateOpacity(from, to, duration) {
-                const start = performance.now();
-                const step = (now) => {
-                    const elapsed = now - start;
-                    const t = Math.min(elapsed / duration, 1);
-                    this.opacity = from + (to - from) * t;
-                    if (t < 1) {
-                        this.rafId = requestAnimationFrame(step);
-                    }
-                };
-                if (this.rafId) cancelAnimationFrame(this.rafId);
-                this.rafId = requestAnimationFrame(step);
-            }
-        }" class="absolute inset-0 z-0 h-full w-full pointer-events-none opacity-45">
-            <video x-ref="video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" :style="{ opacity: opacity, width: '120%', height: '120%', transform: 'translate(-10%, -10%)' }" autoplay muted playsinline preload="auto" class="w-full h-full object-cover object-top max-w-none"></video>
-        </div>
-        <div class="absolute inset-0 bg-zinc-950/40 z-0"></div>
-
-        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center space-y-8" data-aos="fade-up">
-            <h2 class="blur-reveal font-barlow italic text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[0.9]">
-                Have a project in mind?<br>Let's talk.
-            </h2>
-            <p class="text-sm text-white/70 max-w-md mx-auto leading-relaxed font-barlow font-light">
-                Tell us your goal, timeline and budget — we'll help you figure out the right next step to elevate your brand.
-            </p>
-            <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
-                <a href="/contact" class="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-6 py-3.5 rounded-full transition shadow-lg">
-                    <span>Send Enquiry</span>
-                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                </a>
-                <a href="https://wa.me/{{ str_replace(' ', '', App\Models\Setting::get('contact_whatsapp', '917876146353')) }}" target="_blank" 
-                   class="liquid-glass-strong inline-flex items-center space-x-2 border border-white/10 hover:bg-white/10 text-white text-xs font-bold px-6 py-3.5 rounded-full transition">
-                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-500"></i>
-                    <span>WhatsApp Us</span>
-                </a>
+        <!-- WHY KKSB STUDIOS -->
+        <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <!-- Background Parallax Accent -->
+            <div class="absolute bottom-10 left-10 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
+                 data-parallax-speed="-0.2">
+                AGENCY
             </div>
-        </div>
-    </section>
 
-    <!-- Anime.js Animations Script & BlurReveal Handler -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initial Timeline for Hero Text
-            const tl = anime.timeline({
-                easing: 'easeOutExpo',
-                duration: 1000
-            });
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+                <div class="text-center space-y-3" data-parallax-speed="-0.03">
+                    <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
+                        WHY KKSB STUDIOS
+                    </span>
+                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
+                        Not Just Content. A System Built for Growth.
+                    </h2>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                    <!-- Feature 1 -->
+                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
+                        <span class="text-[#111111] block">
+                            <i data-lucide="search" class="w-8 h-8"></i>
+                        </span>
+                        <h3 class="text-[18px] font-semibold text-[#111111]">Research Before Execution</h3>
+                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                        <span class="text-[#111111] block">
+                            <i data-lucide="home" class="w-8 h-8"></i>
+                        </span>
+                        <h3 class="text-[18px] font-semibold text-[#111111]">Strategy + Production In-house</h3>
+                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
+                        <span class="text-[#111111] block">
+                            <i data-lucide="map-pin" class="w-8 h-8"></i>
+                        </span>
+                        <h3 class="text-[18px] font-semibold text-[#111111]">Regional Market Insights</h3>
+                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
+                        <span class="text-[#111111] block">
+                            <i data-lucide="trending-up" class="w-8 h-8"></i>
+                        </span>
+                        <h3 class="text-[18px] font-semibold text-[#111111]">Creator Thinking + Agency Execution</h3>
+                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CINEMATIC PARALLAX BANNER (HIGH VISIBILITY TYPOGRAPHY) -->
+        <section class="relative py-32 lg:py-44 bg-fixed bg-cover bg-center overflow-hidden my-16 lg:my-24 shadow-2xl" 
+                 style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');">
+            <!-- Strong High-Contrast Dark Backdrop Mask -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90 backdrop-blur-[2px]"></div>
             
-            tl
-            .add({
-                targets: '.header-animate',
-                translateY: [-20, 0],
-                opacity: [0, 1],
-                duration: 800,
-                delay: 100
-            })
-            .add({
-                targets: '.hero-badge',
-                translateY: [30, 0],
-                opacity: [0, 1],
-                offset: '-=600'
-            })
-            .add({
-                targets: '.hero-title',
-                translateY: [40, 0],
-                opacity: [0, 1],
-                offset: '-=700'
-            })
-            .add({
-                targets: '.hero-subtitle',
-                translateY: [30, 0],
-                opacity: [0, 1],
-                offset: '-=750'
-            })
-            .add({
-                targets: '.hero-cta',
-                translateY: [20, 0],
-                opacity: [0, 1],
-                offset: '-=800'
-            });
+            <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-[90px] text-center text-white space-y-8" data-aos="fade-up" data-parallax-speed="-0.08">
+                <!-- Tag Badge -->
+                <div>
+                    <span class="inline-block bg-white/15 border border-white/30 text-white text-[13px] font-extrabold tracking-[0.25em] uppercase px-5 py-2 rounded-full backdrop-blur-md shadow-lg">
+                        BEHIND THE LENS • CINEMATIC STORYTELLING
+                    </span>
+                </div>
 
-            // Word-by-word Blur reveal script (Replicating React BlurText)
-            const reveals = document.querySelectorAll('.blur-reveal');
-            reveals.forEach((el) => {
-                const text = el.textContent.trim();
-                el.textContent = ''; // clear
-                const words = text.split(/\s+/);
+                <!-- Main Heading with Drop Shadows -->
+                <h2 class="text-4xl sm:text-5xl lg:text-[68px] font-black tracking-tight leading-tight max-w-4xl mx-auto text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+                    Capturing Himachal's Soul.<br>
+                    <span class="text-gray-100">Delivering National Impact.</span>
+                </h2>
+
+                <!-- Subtext -->
+                <p class="text-[17px] sm:text-[20px] text-gray-100 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                    We combine high-altitude field shoots, cinema-grade camera rigs, and growth-driven digital marketing strategy to turn brand stories into iconic campaigns.
+                </p>
+
+                <!-- High-Impact Action Buttons -->
+                <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-5">
+                    <a href="/portfolio" 
+                       class="w-full sm:w-auto bg-white text-[#111111] hover:bg-gray-100 font-extrabold px-9 py-4.5 rounded-[12px] text-[15px] transition duration-300 shadow-2xl flex items-center justify-center space-x-2 group hover:scale-105">
+                        <span>Explore Portfolio</span>
+                        <span class="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+                    </a>
+                    <a href="/about" 
+                       class="w-full sm:w-auto bg-white/10 border-2 border-white text-white hover:bg-white hover:text-[#111111] font-bold px-9 py-4 rounded-[12px] text-[15px] transition-all duration-300 shadow-xl backdrop-blur-md">
+                        Meet The Studio Team
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOWREEL SECTION -->
+        <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
+            <div class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden shadow-xl" data-aos="fade-up">
+                <!-- Dotgrid Pattern -->
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-4xl mx-auto space-y-8 text-center">
+                    <div class="space-y-3" data-parallax-speed="-0.03">
+                        <span class="text-[13px] font-semibold text-gray-400 tracking-[0.2em] uppercase block">
+                            SHOWREEL
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight">
+                            See What We Create.
+                        </h2>
+                        <p class="text-[15px] sm:text-[16px] text-gray-400 font-light max-w-xl mx-auto leading-relaxed">
+                            A glimpse of our work, our process and the results we create for brands.
+                        </p>
+                    </div>
+
+                    <!-- Video Embed Frame with Parallax Shift -->
+                    <div class="relative aspect-video max-w-4xl mx-auto rounded-[20px] overflow-hidden border border-white/20 shadow-2xl bg-zinc-950" data-parallax-speed="0.06">
+                        <iframe class="w-full h-full rounded-[20px]" 
+                                src="https://www.youtube.com/embed/QxdBSSKpsN8" 
+                                title="Is Raulane Really a ‘Fairy Festival’? Truth Revealed | Kinnaur" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="/portfolio" 
+                           class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
+                            <span>Explore Portfolio</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- INDUSTRIES WE UNDERSTAND -->
+        <section class="py-16 bg-[#FAFAFA] border-t border-b border-[#ECECEC]">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+                <span class="text-[11px] font-bold text-[#666666] tracking-[0.2em] uppercase text-center block mb-8">
+                    INDUSTRIES WE UNDERSTAND
+                </span>
                 
-                words.forEach((word, index) => {
-                    const span = document.createElement('span');
-                    span.textContent = word;
-                    span.style.display = 'inline-block';
-                    span.style.marginRight = '0.28em';
-                    span.style.filter = 'blur(10px)';
-                    span.style.opacity = '0';
-                    span.style.transform = 'translateY(30px)';
-                    span.style.transition = 'filter 0.8s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out';
-                    span.style.transitionDelay = `${index * 80}ms`;
-                    el.appendChild(span);
-                });
+                <!-- Modern Chips Grid with Subtle Parallax Depth -->
+                <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
+                        Hospitality & Tourism
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
+                        Healthcare
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
+                        Education
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
+                        Retail
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
+                        Real Estate
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
+                        Food & Lifestyle
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
+                        Local Businesses
+                    </div>
+                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm text-gray-400" data-parallax-speed="-0.03">
+                        & More
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            const spans = el.querySelectorAll('span');
-                            spans.forEach((span) => {
-                                span.style.filter = 'blur(0px)';
-                                span.style.opacity = '1';
-                                span.style.transform = 'translateY(0)';
-                            });
-                            observer.unobserve(el);
+
+
+        <!-- MOBILE STICKY BOTTOM BAR -->
+        <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECECEC] py-3 px-5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+            <div class="grid grid-cols-3 gap-3">
+                <a href="tel:+917876148313" 
+                   class="flex flex-col items-center justify-center h-[52px] text-[12px] font-semibold text-[#111111] border border-[#ECECEC] rounded-[10px] bg-[#FAFAFA] hover:border-[#111111] transition">
+                    <span class="mb-0.5"><i data-lucide="phone" class="w-4 h-4"></i></span>
+                    <span>Call</span>
+                </a>
+                <a href="https://wa.me/917876148313" target="_blank"
+                   class="flex flex-col items-center justify-center h-[52px] text-[12px] font-semibold text-[#111111] border border-[#ECECEC] rounded-[10px] bg-[#FAFAFA] hover:border-[#111111] transition">
+                    <span class="mb-0.5"><i data-lucide="message-circle" class="w-4 h-4"></i></span>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="/contact" 
+                   class="flex flex-col items-center justify-center h-[52px] text-[12px] font-semibold text-white border border-[#111111] rounded-[10px] bg-[#111111] hover:bg-[#222222] transition">
+                    <span class="mb-0.5"><i data-lucide="rocket" class="w-4 h-4"></i></span>
+                    <span>Start Project</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SMOOTH HARDWARE-ACCELERATED PARALLAX ENGINE -->
+    <script>
+        (function() {
+            function initParallax() {
+                const parallaxEls = document.querySelectorAll('[data-parallax-speed]');
+                if (!parallaxEls.length) return;
+
+                let ticking = false;
+
+                function updateParallax() {
+                    const viewportHeight = window.innerHeight;
+
+                    parallaxEls.forEach(el => {
+                        const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0.1');
+                        const rect = el.getBoundingClientRect();
+
+                        if (rect.bottom >= -350 && rect.top <= viewportHeight + 350) {
+                            const elementCenter = rect.top + rect.height / 2;
+                            const distanceFromCenter = elementCenter - viewportHeight / 2;
+                            const translateY = (distanceFromCenter * speed * -1).toFixed(1);
+                            
+                            el.style.transform = `translate3d(0, ${translateY}px, 0)`;
                         }
                     });
-                }, { threshold: 0.15 });
 
-                observer.observe(el);
-            });
-        });
+                    ticking = false;
+                }
+
+                window.addEventListener('scroll', function() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(updateParallax);
+                        ticking = true;
+                    }
+                }, { passive: true });
+
+                window.addEventListener('resize', updateParallax, { passive: true });
+                updateParallax();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initParallax);
+            } else {
+                initParallax();
+            }
+        })();
     </script>
 </x-frontend-layout>

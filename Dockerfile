@@ -1,4 +1,4 @@
-# Stage 1: Build front-end assets
+    # Stage 1: Build front-end assets
 FROM node:20-alpine AS asset-builder
 WORKDIR /app
 COPY package*.json ./
