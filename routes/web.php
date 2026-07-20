@@ -38,6 +38,29 @@ Route::view('/privacy-policy', 'pages.privacy')->name('privacy');
 Route::view('/terms-conditions', 'pages.terms')->name('terms');
 Route::view('/cookie-policy', 'pages.cookie')->name('cookie');
 
+// One-Click Admin Account Setup Route (For Hostinger deployment)
+Route::get('/init-admin', function () {
+    try {
+        \Artisan::call('migrate', ['--force' => true]);
+        \Artisan::call('db:seed', ['--class' => 'RolesAndPermissionsSeeder', '--force' => true]);
+        \Artisan::call('db:seed', ['--class' => 'AgencyCmsSeeder', '--force' => true]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Hostinger Database Migrated & Seeded Successfully!',
+            'admin_login_url' => url('/login'),
+            'credentials' => [
+                'email' => 'admin@kksb.com',
+                'password' => 'password'
+            ]
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
+
 // Auth Dashboard Redirect
 Route::get('/dashboard', function () {
     return redirect()->route('admin.dashboard');
