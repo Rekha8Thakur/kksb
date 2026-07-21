@@ -4,8 +4,8 @@
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
             <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">About KKSB Studios</span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
-                {{ App\Models\Setting::get('about_hero_title', 'Built in Himachal. Creating Beyond Boundaries.') }}
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                <span class="text-[#111111]">Built in Himachal.</span> <span class="text-gray-400">Creating Beyond Boundaries.</span>
             </h1>
             <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
                 {{ App\Models\Setting::get('about_hero_subtitle', 'KKSB Studios is a creative and marketing agency combining strategy, storytelling, content production and digital execution to help brands grow.') }}
@@ -73,7 +73,9 @@
         <div class="max-w-7xl mx-auto px-6 space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Creative Minds</span>
-                <h2 class="text-4xl font-extrabold tracking-tight text-[#111111]">Meet Our Team</h2>
+                <h2 class="text-4xl font-extrabold tracking-tight">
+                    <span class="text-[#111111]">Meet Our</span> <span class="text-gray-400">Team</span>
+                </h2>
                 <p class="text-sm text-gray-500">A collective of local designers, editors, copywriters and shoot directors.</p>
             </div>
 
@@ -106,7 +108,9 @@
         <div class="max-w-7xl mx-auto px-6 space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#2E7D32] uppercase tracking-widest block">Behind The Camera</span>
-                <h2 class="text-4xl font-extrabold tracking-tight text-[#111111]">Behind the Scenes</h2>
+                <h2 class="text-4xl font-extrabold tracking-tight">
+                    <span class="text-[#111111]">Behind the</span> <span class="text-gray-400">Scenes</span>
+                </h2>
                 <p class="text-sm text-gray-500">Snapshots of our dynamic outdoor shoots, editing table sessions, and team brainstorm sessions.</p>
             </div>
 

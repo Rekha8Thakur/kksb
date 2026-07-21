@@ -86,8 +86,8 @@
                             <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                                 TELL US ABOUT YOUR PROJECT
                             </span>
-                            <h2 class="text-3xl lg:text-[44px] lg:leading-[1.2] font-bold text-[#111111] tracking-tight">
-                                We're Here to Bring Your Ideas to Life.
+                            <h2 class="text-3xl lg:text-[44px] lg:leading-[1.2] font-bold tracking-tight">
+                                <span class="text-[#111111]">We're Here</span> <span class="text-gray-400">to Bring Your Ideas to Life.</span>
                             </h2>
                             <p class="text-[16px] text-[#666666] leading-relaxed font-light">
                                 Fill out the form and our team will get back to you within 24 hours.
@@ -233,8 +233,8 @@
                     <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                         WHAT CAN WE HELP YOU WITH
                     </span>
-                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111]">
-                        Our Services
+                    <h2 class="text-3xl lg:text-[48px] font-bold">
+                        <span class="text-[#111111]">Our</span> <span class="text-gray-400">Services</span>
                     </h2>
                 </div>
 
@@ -354,8 +354,8 @@
                     <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                         WHY BRANDS CHOOSE KKSB STUDIOS
                     </span>
-                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111]">
-                        Results That Speak for Themselves.
+                    <h2 class="text-3xl lg:text-[48px] font-bold">
+                        <span class="text-[#111111]">Results That Speak</span> <span class="text-gray-400">for Themselves.</span>
                     </h2>
                 </div>
 
@@ -415,8 +415,8 @@
                     <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                         WHAT HAPPENS NEXT
                     </span>
-                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111]">
-                        Our Simple Process
+                    <h2 class="text-3xl lg:text-[48px] font-bold">
+                        <span class="text-[#111111]">Our Simple</span> <span class="text-gray-400">Process</span>
                     </h2>
                 </div>
 
@@ -544,8 +544,8 @@
                     <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                         QUESTIONS? WE'VE GOT ANSWERS
                     </span>
-                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111]">
-                        Frequently Asked Questions
+                    <h2 class="text-3xl lg:text-[48px] font-bold">
+                        <span class="text-[#111111]">Frequently Asked</span> <span class="text-gray-400">Questions</span>
                     </h2>
                 </div>
 

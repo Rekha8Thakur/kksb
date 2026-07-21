@@ -139,7 +139,7 @@
         <div class="max-w-[1440px] mx-auto px-5 lg:px-[90px] h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="/" class="flex items-center space-x-2 group">
-                <img src="{{ asset('images/logo.png') }}" class="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain py-1 transition-transform duration-300 group-hover:scale-105" alt="KKSB Studios Logo">
+                <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain py-1 transition-transform duration-300 group-hover:scale-105" alt="KKSB Studios Logo">
             </a>
 
             <!-- Desktop Links -->
@@ -147,28 +147,7 @@
                 <a href="/" class="{{ request()->is('/') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">Home</a>
                 <a href="/about" class="{{ request()->is('about') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">About</a>
                 
-                <!-- Mega Menu Dropdown for Services -->
-                <div class="relative" x-data="{ open: false }">
-                    <button @click="open = !open" @mouseenter="open = true" @click.away="open = false" 
-                            class="{{ request()->is('services*') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition flex items-center space-x-1 focus:outline-none">
-                        <span>Services</span>
-                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
-                    </button>
-                    <!-- Dropdown box -->
-                    <div x-show="open" @mouseleave="open = false" 
-                         x-transition:enter="transition ease-out duration-150"
-                         x-transition:enter-start="opacity-0 translate-y-1"
-                         x-transition:enter-end="opacity-100 translate-y-0"
-                         class="absolute left-0 mt-3 w-64 bg-white border border-[#ECECEC] rounded-2xl shadow-xl py-3 z-50 grid grid-cols-1"
-                         style="display: none;">
-                        @foreach(App\Models\Service::where('is_active', true)->orderBy('order')->get() as $navService)
-                            <a href="/services/{{ $navService->slug }}" class="px-4 py-2.5 hover:bg-[#FAFAFA] flex items-center space-x-3 group transition">
-                                <span class="text-gray-400 group-hover:text-[#FF6A00]"><i data-lucide="{{ $navService->icon ?? 'chevron-right' }}" class="w-4 h-4"></i></span>
-                                <span class="text-xs font-semibold text-gray-800 group-hover:text-[#111111]">{{ $navService->title }}</span>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
+                <a href="/services" class="{{ request()->is('services*') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">Services</a>
 
                 <a href="/portfolio" class="{{ request()->is('portfolio*') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">Work</a>
                 <a href="/blog" class="{{ request()->is('blog*') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">Blog</a>
@@ -199,16 +178,7 @@
             <nav class="flex flex-col p-5 space-y-4 text-base font-semibold">
                 <a href="/" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Home</a>
                 <a href="/about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">About Us</a>
-                <div class="space-y-2">
-                    <span class="text-xs text-gray-400 font-bold uppercase tracking-wider">Services</span>
-                    <div class="grid grid-cols-1 pl-4 gap-2 border-l border-gray-100">
-                        @foreach(App\Models\Service::where('is_active', true)->orderBy('order')->get() as $navService)
-                            <a href="/services/{{ $navService->slug }}" @click="mobileMenuOpen = false" class="text-sm text-gray-600 hover:text-[#FF6A00] py-1 flex items-center space-x-2">
-                                <span>{{ $navService->title }}</span>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
+                <a href="/services" @click="mobileMenuOpen = false" class="{{ request()->is('services*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }}">Services</a>
                 <a href="/portfolio" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Work</a>
                 <a href="/blog" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Blog</a>
                 <a href="/contact" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Contact</a>
@@ -236,7 +206,7 @@
             <!-- Col 1: About Brand -->
             <div class="md:col-span-5 space-y-6">
                 <a href="/" class="inline-block group">
-                    <img src="{{ asset('images/logo.png') }}" class="h-12 md:h-16 lg:h-20 w-auto object-contain -ml-2 transition-transform duration-300 group-hover:scale-105 filter invert brightness-200" alt="KKSB Studios Logo">
+                    <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-12 md:h-16 lg:h-20 w-auto object-contain -ml-2 transition-transform duration-300 group-hover:scale-105 filter invert brightness-200" alt="KKSB Studios Logo">
                 </a>
                 <p class="text-[15px] text-gray-400 leading-relaxed max-w-sm font-light">
                     A creative marketing agency focused on building brands that grow and inspire in the digital world.

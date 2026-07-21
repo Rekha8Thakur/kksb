@@ -4,8 +4,8 @@
     <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
             <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Agency Blog</span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
-                Insights, Guides & Case Summaries
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                <span class="text-[#111111]">Insights & Guides</span> <span class="text-gray-400">for Growth</span>
             </h1>
             <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
                 Read our latest insights about social media growth, shoot production workflows, web design benchmarks, and local tourism trends in Himachal.

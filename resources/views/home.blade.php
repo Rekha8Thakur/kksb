@@ -45,8 +45,8 @@
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <!-- Left Content (50%) -->
                 <div class="lg:col-span-6 space-y-5 md:space-y-6" data-aos="fade-up" data-aos-duration="1000" data-parallax-speed="-0.04">
-                    <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold text-[#111111] tracking-tight">
-                        We Build Brands That Grow and Inspire<span class="text-[#FF6A00]">.</span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold tracking-tight">
+                        <span class="text-[#111111]">We Build Brands</span> <span class="text-gray-400">That Grow & Inspire</span><span class="text-[#FF6A00]">.</span>
                     </h1>
                     <p class="text-[15px] sm:text-[16px] text-[#666666] leading-relaxed font-light max-w-xl">
                         KKSB Studios helps ambitious businesses stand out with creative strategy, compelling content and performance-driven marketing.
@@ -130,8 +130,8 @@
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Impact & Performance
                     </span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111111] tracking-tight uppercase">
-                        TRUST <span class="text-[#FF6A00]">STATS</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase">
+                        <span class="text-[#111111]">TRUST</span> <span class="text-gray-400">STATS</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -169,8 +169,8 @@
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
                     </span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111111] tracking-tight uppercase max-w-4xl mx-auto leading-tight">
-                        TRUSTED BY BRANDS THAT <span class="text-[#FF6A00]">CHOOSE TO GROW</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
+                        <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
                     </h2>
                 </div>
                 
@@ -322,8 +322,8 @@
                         <span class="text-[13px] font-semibold text-[#FF6A00] tracking-[0.2em] uppercase block">
                             OUR SERVICES
                         </span>
-                        <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
-                            Everything You Need to Scale Your Brand.
+                        <h2 class="text-3xl lg:text-[48px] font-bold tracking-tight">
+                            <span class="text-[#111111]">Everything You Need</span> <span class="text-gray-400">to Scale Your Brand.</span>
                         </h2>
                     </div>
                     <div>
@@ -502,8 +502,8 @@
                     <span class="text-[13px] font-bold text-[#FF5500] tracking-[0.2em] uppercase block">
                         // HOW WE WORK
                     </span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold text-[#111111] italic tracking-tight">
-                        Our Simple Process
+                    <h2 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold italic tracking-tight">
+                        <span class="text-[#111111]">Our Simple</span> <span class="text-gray-400">Process</span>
                     </h2>
                     <p class="text-[15px] text-[#666666] font-light max-w-xl mx-auto">
                         A transparent and proven process that ensures great results every time.
@@ -589,8 +589,8 @@
                         <span class="text-[13px] font-semibold text-[#FF6A00] tracking-[0.2em] uppercase block">
                             FEATURED WORK
                         </span>
-                        <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
-                            Work That Speaks Before We Do.
+                        <h2 class="text-3xl lg:text-[48px] font-bold tracking-tight">
+                            <span class="text-[#111111]">Work That Speaks</span> <span class="text-gray-400">Before We Do.</span>
                         </h2>
                     </div>
                     <div>
@@ -759,8 +759,8 @@
                     <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
                         WHY KKSB STUDIOS
                     </span>
-                    <h2 class="text-3xl lg:text-[48px] font-bold text-[#111111] tracking-tight">
-                        Not Just Content. A System Built for Growth.
+                    <h2 class="text-3xl lg:text-[48px] font-bold tracking-tight">
+                        <span class="text-[#111111]">Not Just Content.</span> <span class="text-gray-400">A System Built for Growth.</span>
                     </h2>
                 </div>
 
@@ -857,7 +857,7 @@
                             SHOWREEL
                         </span>
                         <h2 class="text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight">
-                            See What We Create.
+                            <span class="text-white">See What</span> <span class="text-gray-400">We Create.</span>
                         </h2>
                         <p class="text-[15px] sm:text-[16px] text-gray-400 font-light max-w-xl mx-auto leading-relaxed">
                             A glimpse of our work, our process and the results we create for brands.
