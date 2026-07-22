@@ -171,6 +171,10 @@
                         <i data-lucide="mail" class="w-4 h-4"></i>
                         <span>Contact Enquiries</span>
                     </a>
+                    <a href="{{ route('admin.join-applications.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.join-applications.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                        <i data-lucide="user-plus" class="w-4 h-4"></i>
+                        <span>Join Us Applications</span>
+                    </a>
                     @endcan
 
                     @can('manage newsletter')

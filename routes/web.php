@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\PortfolioController as FrontendPortfolioContro
 use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\CareerController as FrontendCareerController;
+use App\Http\Controllers\Frontend\JoinController;
 use App\Http\Controllers\Frontend\SitemapController;
 use App\Http\Controllers\ProfileController;
 
@@ -29,6 +30,9 @@ Route::post('/newsletter/subscribe', [ContactController::class, 'subscribeNewsle
 
 Route::get('/careers', [FrontendCareerController::class, 'index'])->name('careers.index');
 Route::post('/careers/apply', [FrontendCareerController::class, 'apply'])->name('careers.apply');
+
+Route::get('/join-us', [JoinController::class, 'index'])->name('join-us');
+Route::post('/join-us/apply', [JoinController::class, 'apply'])->name('join-us.apply');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
@@ -87,6 +91,7 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\JoinApplicationController;
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -129,6 +134,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('enquiries/export', [ContactEnquiryController::class, 'exportCsv'])->name('enquiries.export');
     Route::post('enquiries/{enquiry}/status', [ContactEnquiryController::class, 'updateStatus'])->name('enquiries.status');
     Route::resource('enquiries', ContactEnquiryController::class)->only(['index', 'show', 'destroy']);
+
+    // Join Us Applications CRUD
+    Route::post('join-applications/{application}/status', [JoinApplicationController::class, 'updateStatus'])->name('join-applications.status');
+    Route::resource('join-applications', JoinApplicationController::class)->only(['index', 'show', 'destroy']);
 
     Route::get('newsletter/export', [NewsletterController::class, 'exportCsv'])->name('newsletter.export');
     Route::resource('newsletter', NewsletterController::class)->only(['index', 'destroy']);

@@ -82,10 +82,10 @@ class AgencyCmsSeeder extends Seeder
         $blogCat2 = Category::create(['name' => 'Video Production', 'slug' => 'video-production-blog', 'type' => 'blog']);
         $blogCat3 = Category::create(['name' => 'Branding', 'slug' => 'branding', 'type' => 'blog']);
 
-        $portCat1 = Category::create(['name' => 'Social Media Management', 'slug' => 'social-media-management', 'type' => 'portfolio']);
-        $portCat2 = Category::create(['name' => 'Video Production', 'slug' => 'video-production', 'type' => 'portfolio']);
-        $portCat3 = Category::create(['name' => 'Website Revamp', 'slug' => 'website-revamp', 'type' => 'portfolio']);
-        $portCat4 = Category::create(['name' => 'Brand Strategy', 'slug' => 'brand-strategy', 'type' => 'portfolio']);
+        $portCat1 = Category::create(['name' => 'Hospitality & Tourism', 'slug' => 'hospitality-tourism', 'type' => 'portfolio']);
+        $portCat2 = Category::create(['name' => 'Food & Beverage', 'slug' => 'food-beverage', 'type' => 'portfolio']);
+        $portCat3 = Category::create(['name' => 'Healthcare', 'slug' => 'healthcare', 'type' => 'portfolio']);
+        $portCat4 = Category::create(['name' => 'Retail', 'slug' => 'retail', 'type' => 'portfolio']);
 
         // 3. Authors
         $author1 = Author::create([
@@ -181,68 +181,68 @@ class AgencyCmsSeeder extends Seeder
                 'title' => 'The Himalayan Resort',
                 'slug' => 'the-himalayan-resort',
                 'category_id' => $portCat1->id,
-                'client' => 'Himalayan Leisure Group',
+                'client' => 'The Himalayan Resort',
                 'project_date' => '2025-06-15',
-                'description' => 'A luxury hospitality social media management and content shoot.',
-                'challenge' => 'The Himalayan Resort had low online presence, and bookings were heavily reliant on third-party aggregators (OTAs) with high commissions. They lacked high-quality content representing the actual property vibe.',
-                'solution' => 'We executed a full social media management plan, including cinematic property tours, reels showcasing local food experiences, guest testimonial videos, and local influencer collaborations.',
-                'results' => 'A massive boost in brand visibility and inquiries. Direct bookings increased by 250% over a 4-month period, reducing reliance on OTA channels.',
-                'technologies_used' => ['Social Media Strategy', 'Cinematography', 'Influencer Collabs', 'Ad Management'],
+                'description' => 'Cinematic brand shoot and targeted social ad campaign showcasing luxury mountain stays.',
+                'challenge' => 'The resort needed to increase direct bookings and establish a premium brand presence to reduce heavy OTA commission reliance.',
+                'solution' => 'We executed a high-end cinematic drone & interior photography shoot, coupled with hyper-targeted meta ad campaigns focused on luxury travelers.',
+                'results' => '+250% Bookings',
+                'technologies_used' => ['Cinematography', 'Drone Shoot', 'Meta Ads', 'Social Ads'],
                 'main_image' => 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop',
-                'gallery_images' => ['https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600', 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=600'],
+                'gallery_images' => ['https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600'],
                 'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
                 'is_featured' => true,
                 'order' => 1
             ],
             [
-                'title' => 'The Cafe Project',
+                'title' => 'The Café Project',
                 'slug' => 'the-cafe-project',
                 'category_id' => $portCat2->id,
-                'client' => 'The Solan Roastery',
+                'client' => 'The Café Project',
                 'project_date' => '2025-09-10',
-                'description' => 'A high-energy content shoot and reels strategy to increase footfall.',
-                'challenge' => 'Low footfall during weekdays and limited awareness among tourists visiting the Solan region.',
-                'solution' => 'We designed a weekly Reels strategy highlighting food aesthetics, "Behind the Brew" stories, and interactive micro-influencer meetups. We utilized trendy audio tracks and cinematic close-up shots.',
-                'results' => 'Accumulated 1M+ views across reels in 3 months. Weekday footfall grew by 300% as tourists began using cafe reels as navigation landmarks.',
-                'technologies_used' => ['Reels Strategy', 'Food Styling', 'Influencer Outreach', 'Local SEO'],
-                'main_image' => 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop',
+                'description' => 'Micro-influencer food campaign and viral Instagram reels series driving weekend footfall.',
+                'challenge' => 'Increasing competition and lack of organic engagement from local tourists in Solan.',
+                'solution' => 'Designed a weekly high-aesthetic reels calendar featuring specialty coffee stories, combined with micro-influencer meetups and community campaigns.',
+                'results' => '3X Footfall',
+                'technologies_used' => ['Reels Production', 'Food Styling', 'Influencer Outreach'],
+                'main_image' => 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80',
                 'gallery_images' => ['https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=600', 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600'],
                 'video_url' => null,
                 'is_featured' => true,
                 'order' => 2
             ],
             [
-                'title' => 'Hillview Homes',
-                'slug' => 'hillview-homes',
+                'title' => 'Bhalla Dental Clinic',
+                'slug' => 'bhalla-dental-clinic',
                 'category_id' => $portCat3->id,
-                'client' => 'Hillview Real Estate',
-                'project_date' => '2025-11-01',
-                'description' => 'A website revamp and lead funnel configuration for luxury cottages.',
-                'challenge' => 'The client was receiving low-quality, spam leads from basic social media ads and had an outdated, slow website that didn\'t display cottage layouts properly.',
-                'solution' => 'We designed and developed a premium, fast Laravel-based website showing detailed 3D layouts, integrated a detailed lead form with validation, and set up Google search and Facebook ad funnels.',
-                'results' => 'Generated 500+ highly qualified leads in 2 months with a 40% increase in lead-to-site conversion rates.',
-                'technologies_used' => ['Web Development', 'UI/UX Design', 'Lead Funnel Opt', 'Facebook Ads'],
-                'main_image' => 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop',
-                'gallery_images' => ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600'],
+                'client' => 'Bhalla Dental Clinic',
+                'project_date' => '2025-11-15',
+                'description' => 'Patient testimonial videos and localized lead generation campaigns establishing authority.',
+                'challenge' => 'Need to build local trust and establish leadership in dental implants and cosmetic treatments in the region.',
+                'solution' => 'Shot raw, high-trust patient testimonials and deployed localized lead generation ads highlighting clinic hygiene and advanced tech.',
+                'results' => '200% Inquiries',
+                'technologies_used' => ['Patient Testimonials', 'Lead Generation', 'Local SEO'],
+                'main_image' => 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
+                'gallery_images' => ['https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600'],
                 'video_url' => null,
                 'is_featured' => true,
                 'order' => 3
             ],
             [
-                'title' => 'Future Edge Academy',
-                'slug' => 'future-edge-academy',
+                'title' => 'Peter England Solan',
+                'slug' => 'peter-england-solan',
                 'category_id' => $portCat4->id,
-                'client' => 'Future Edge Edu Society',
-                'project_date' => '2026-02-20',
-                'description' => 'Content strategy, student video diaries, and lead generation.',
-                'challenge' => 'Declining course enrollment and difficulty standing out from competitor academies in the region.',
-                'solution' => 'We implemented a content strategy focused on student success diaries, video walkthroughs of classrooms, and local lead-generation social ads targeting parents.',
-                'results' => 'Achieved a 3X increase in physical inquiries and 200% overall social reach growth within a single enrollment cycle.',
-                'technologies_used' => ['Content Strategy', 'Video Diaries', 'Parent Targeting Ads', 'Graphic Design'],
-                'main_image' => 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop',
-                'gallery_images' => ['https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600'],
+                'client' => 'Peter England Solan',
+                'project_date' => '2026-02-10',
+                'description' => 'Seasonal apparel launch commercial shoots and hyper-targeted regional customer ad drives.',
+                'challenge' => 'Low store visits during seasonal transitions and offline promotions yielding poor ROI.',
+                'solution' => 'Produced high-energy localized apparel commercials for local cinemas & social media, combined with location-based geo-fenced mobile ads.',
+                'results' => '180% Store Visits',
+                'technologies_used' => ['Commercial Shoots', 'Hyperlocal Ads', 'Retail Marketing'],
+                'main_image' => 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80',
+                'gallery_images' => ['https://images.unsplash.com/photo-1441984969893-c53657968b4f?q=80&w=600'],
                 'video_url' => null,
-                'is_featured' => false,
+                'is_featured' => true,
                 'order' => 4
             ]
         ];

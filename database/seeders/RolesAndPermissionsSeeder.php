@@ -128,36 +128,6 @@ class RolesAndPermissionsSeeder extends Seeder
                 'email' => 'superadmin@kksb.com',
                 'role' => 'Super Admin',
             ],
-            [
-                'name' => 'KKSB Admin',
-                'email' => 'admin@kksb.com',
-                'role' => 'Admin',
-            ],
-            [
-                'name' => 'KKSB Content Manager',
-                'email' => 'manager@kksb.com',
-                'role' => 'Content Manager',
-            ],
-            [
-                'name' => 'KKSB Editor',
-                'email' => 'editor@kksb.com',
-                'role' => 'Editor',
-            ],
-            [
-                'name' => 'KKSB Marketing',
-                'email' => 'marketing@kksb.com',
-                'role' => 'Marketing',
-            ],
-            [
-                'name' => 'KKSB HR Specialist',
-                'email' => 'hr@kksb.com',
-                'role' => 'HR',
-            ],
-            [
-                'name' => 'KKSB Viewer',
-                'email' => 'viewer@kksb.com',
-                'role' => 'Viewer',
-            ],
         ];
 
         foreach ($usersData as $userData) {
@@ -170,5 +140,8 @@ class RolesAndPermissionsSeeder extends Seeder
             );
             $user->syncRoles([$userData['role']]);
         }
+
+        // Delete any other users to keep only the Super Admin
+        User::where('email', '!=', 'superadmin@kksb.com')->delete();
     }
 }

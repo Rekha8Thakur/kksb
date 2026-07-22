@@ -154,11 +154,10 @@
                 <a href="/contact" class="{{ request()->is('contact') ? 'text-[#111111] border-b-2 border-[#FF6A00] pb-1' : 'text-[#666666] hover:text-[#111111] pb-1' }} transition">Contact</a>
             </nav>
 
-            <!-- CTA Let's talk -->
+            <!-- CTA Join Us -->
             <div class="hidden md:flex items-center">
-                <a href="/contact" class="inline-flex items-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white text-[13px] font-semibold px-6 py-3 rounded-full transition shadow-md shadow-[#FF6A00]/20">
-                    <span>Let's Talk</span>
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                <a href="/join-us" class="inline-flex items-center justify-center bg-[#111111] hover:bg-[#222222] text-white text-[14px] font-semibold h-[42px] px-6 rounded-[8px] transition shadow-md">
+                    <span>Join Us</span>
                 </a>
             </div>
 
@@ -177,14 +176,14 @@
         <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white border-t border-[#ECECEC]" style="display: none;">
             <nav class="flex flex-col p-5 space-y-4 text-base font-semibold">
                 <a href="/" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Home</a>
-                <a href="/about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">About Us</a>
+                <a href="/about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">About</a>
                 <a href="/services" @click="mobileMenuOpen = false" class="{{ request()->is('services*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }}">Services</a>
                 <a href="/portfolio" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Work</a>
+                <a href="/join-us" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Join Us</a>
                 <a href="/blog" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Blog</a>
                 <a href="/contact" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Contact</a>
-                <a href="/contact" @click="mobileMenuOpen = false" class="inline-flex items-center justify-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white text-sm font-bold h-[52px] rounded-[12px] px-5 transition w-full shadow-md">
-                    <span>Let's Talk</span>
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                <a href="/join-us" @click="mobileMenuOpen = false" class="inline-flex items-center justify-center bg-[#111111] hover:bg-[#222222] text-white text-sm font-bold h-[52px] rounded-[12px] px-5 transition w-full shadow-md">
+                    <span>Join Us</span>
                 </a>
             </nav>
         </div>
@@ -223,11 +222,12 @@
             <div class="md:col-span-2 space-y-4">
                 <h4 class="font-semibold text-[#FF6A00] uppercase tracking-wider text-[11px]">Quick Links</h4>
                 <nav class="flex flex-col space-y-2 text-[14px] text-gray-400">
-                    <a href="/" class="hover:text-white transition">About Us</a>
+                    <a href="/about" class="hover:text-white transition">About</a>
                     <a href="/services" class="hover:text-white transition">Services</a>
                     <a href="/portfolio" class="hover:text-white transition">Our Work</a>
                     <a href="/blog" class="hover:text-white transition">Blog</a>
                     <a href="/contact" class="hover:text-white transition">Contact</a>
+                    <a href="/join-us" class="hover:text-white transition">Join Us</a>
                 </nav>
             </div>
 
@@ -288,15 +288,6 @@
             <i data-lucide="arrow-up" class="w-5 h-5"></i>
         </button>
     </div>
-
-    <!-- Initialize Lucide Icons -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-    </script>
-</body>
-</html>
 
     <!-- Initialize Lucide Icons -->
     <script>
