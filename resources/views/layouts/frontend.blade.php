@@ -156,7 +156,7 @@
 
             <!-- CTA Join Us -->
             <div class="hidden md:flex items-center">
-                <a href="/join-us" class="inline-flex items-center justify-center bg-gradient-to-r from-[#FF6A00] to-[#FF8533] text-white hover:from-[#E55F00] hover:to-[#FF6A00] text-[13px] font-semibold h-[42px] px-6 rounded-[10px] transition-all duration-300 shadow-md shadow-[#FF6A00]/25 hover:shadow-lg hover:shadow-[#FF6A00]/35 hover:-translate-y-0.5 group">
+                <a href="/join-us" style="background: linear-gradient(135deg, #FF6A00, #FF8533); color: #ffffff;" class="inline-flex items-center justify-center text-[13px] font-semibold h-[42px] px-6 rounded-[10px] transition-all duration-300 shadow-md shadow-[#FF6A00]/25 hover:shadow-lg hover:shadow-[#FF6A00]/35 hover:-translate-y-0.5 group">
                     <span>Join Us</span>
                     <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1.5 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
                 </a>
@@ -183,7 +183,7 @@
                 <a href="/join-us" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Join Us</a>
                 <a href="/blog" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Blog</a>
                 <a href="/contact" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Contact</a>
-                <a href="/join-us" @click="mobileMenuOpen = false" class="inline-flex items-center justify-center bg-gradient-to-r from-[#FF6A00] to-[#FF8533] text-white text-sm font-bold h-[52px] rounded-[12px] px-5 transition w-full shadow-md shadow-[#FF6A00]/20">
+                <a href="/join-us" @click="mobileMenuOpen = false" style="background: linear-gradient(135deg, #FF6A00, #FF8533); color: #ffffff;" class="inline-flex items-center justify-center text-sm font-bold h-[52px] rounded-[12px] px-5 transition w-full shadow-md shadow-[#FF6A00]/20">
                     <span>Join Us</span>
                     <i data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></i>
                 </a>
