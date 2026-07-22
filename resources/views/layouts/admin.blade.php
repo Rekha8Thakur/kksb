@@ -81,129 +81,128 @@
     <div class="min-h-screen flex">
         
         <!-- Sidebar Navigation -->
-        <aside class="fixed inset-y-0 left-0 z-40 w-64 bg-zinc-900 text-zinc-300 border-r border-zinc-800 flex flex-col justify-between transform transition-transform duration-300 lg:translate-x-0 lg:static lg:flex-shrink-0"
-               :class="sidebarOpen ? 'translate-x-0' : '-translate-x-0'">
-            <div>
-                <!-- Sidebar Header -->
-                <div class="h-16 flex items-center justify-between px-6 border-b border-zinc-800">
-                    <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2">
-                        <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-10 w-auto object-contain invert" alt="KKSB Studios">
-                        <span class="bg-zinc-800 text-[10px] text-zinc-400 font-semibold px-2 py-0.5 rounded">CMS</span>
-                    </a>
-                    <button @click="sidebarOpen = false" class="lg:hidden text-zinc-400 hover:text-white">
-                        <i data-lucide="x" class="w-5 h-5"></i>
-                    </button>
-                </div>
-
-                <!-- Navigation List -->
-                <nav class="p-4 space-y-1 overflow-y-auto max-h-[calc(100vh-10rem)]">
-                    <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.dashboard') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
-                        <span>Dashboard</span>
-                    </a>
-
-                    <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">CMS MODULES</div>
-
-                    @can('manage services')
-                    <a href="{{ route('admin.services.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.services.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="briefcase" class="w-4 h-4"></i>
-                        <span>Services</span>
-                    </a>
-                    @endcan
-
-                    @can('manage portfolio')
-                    <a href="{{ route('admin.projects.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.projects.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="folder-kanban" class="w-4 h-4"></i>
-                        <span>Portfolio (Projects)</span>
-                    </a>
-                    @endcan
-
-                    @can('manage blogs')
-                    <a href="{{ route('admin.blogs.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.blogs.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="file-text" class="w-4 h-4"></i>
-                        <span>Blogs</span>
-                    </a>
-                    <a href="{{ route('admin.authors.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.authors.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="users" class="w-4 h-4"></i>
-                        <span>Authors</span>
-                    </a>
-                    @endcan
-
-                    @can('manage testimonials')
-                    <a href="{{ route('admin.testimonials.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.testimonials.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="message-square-quote" class="w-4 h-4"></i>
-                        <span>Testimonials</span>
-                    </a>
-                    @endcan
-
-                    @can('manage faqs')
-                    <a href="{{ route('admin.faqs.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.faqs.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="help-circle" class="w-4 h-4"></i>
-                        <span>FAQs</span>
-                    </a>
-                    @endcan
-
-                    @can('manage clients')
-                    <a href="{{ route('admin.clients.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.clients.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="images" class="w-4 h-4"></i>
-                        <span>Clients Showcase</span>
-                    </a>
-                    @endcan
-
-                    @can('manage gallery')
-                    <a href="{{ route('admin.gallery.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.gallery.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="image" class="w-4 h-4"></i>
-                        <span>BTS Gallery</span>
-                    </a>
-                    @endcan
-
-                    <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">INBOX & LEADS</div>
-
-                    @can('manage career jobs')
-                    <a href="{{ route('admin.careers.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.careers.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="contact" class="w-4 h-4"></i>
-                        <span>Careers & Jobs</span>
-                    </a>
-                    @endcan
-
-                    @can('manage contact enquiries')
-                    <a href="{{ route('admin.enquiries.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.enquiries.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        <span>Contact Enquiries</span>
-                    </a>
-                    <a href="{{ route('admin.join-applications.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.join-applications.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="user-plus" class="w-4 h-4"></i>
-                        <span>Join Us Applications</span>
-                    </a>
-                    @endcan
-
-                    @can('manage newsletter')
-                    <a href="{{ route('admin.newsletter.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.newsletter.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        <span>Newsletter</span>
-                    </a>
-                    @endcan
-
-                    <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">SYSTEM</div>
-
-                    @can('manage settings')
-                    <a href="{{ route('admin.settings.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.settings.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="settings" class="w-4 h-4"></i>
-                        <span>CMS Settings</span>
-                    </a>
-                    @endcan
-
-                    @can('manage users')
-                    <a href="{{ route('admin.users.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.users.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                        <i data-lucide="user-cog" class="w-4 h-4"></i>
-                        <span>Users & Roles</span>
-                    </a>
-                    @endcan
-                </nav>
+        <aside class="fixed inset-y-0 left-0 z-40 w-64 bg-zinc-900 text-zinc-300 border-r border-zinc-800 flex flex-col justify-between transform transition-transform duration-300 lg:translate-x-0 lg:static lg:flex-shrink-0 h-screen"
+               :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'">
+            
+            <!-- Sidebar Header -->
+            <div class="h-16 flex-shrink-0 flex items-center justify-between px-6 border-b border-zinc-800">
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2">
+                    <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-10 w-auto object-contain invert" alt="KKSB Studios">
+                    <span class="bg-zinc-800 text-[10px] text-zinc-400 font-semibold px-2 py-0.5 rounded">CMS</span>
+                </a>
+                <button @click="sidebarOpen = false" class="lg:hidden text-zinc-400 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
             </div>
 
+            <!-- Navigation List (Flex Grow & Scroll) -->
+            <nav class="flex-grow p-4 space-y-1 overflow-y-auto">
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.dashboard') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">CMS MODULES</div>
+
+                @can('manage services')
+                <a href="{{ route('admin.services.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.services.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    <span>Services</span>
+                </a>
+                @endcan
+
+                @can('manage portfolio')
+                <a href="{{ route('admin.projects.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.projects.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+                    <span>Portfolio (Projects)</span>
+                </a>
+                @endcan
+
+                @can('manage blogs')
+                <a href="{{ route('admin.blogs.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.blogs.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span>Blogs</span>
+                </a>
+                <a href="{{ route('admin.authors.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.authors.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                    <span>Authors</span>
+                </a>
+                @endcan
+
+                @can('manage testimonials')
+                <a href="{{ route('admin.testimonials.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.testimonials.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="message-square-quote" class="w-4 h-4"></i>
+                    <span>Testimonials</span>
+                </a>
+                @endcan
+
+                @can('manage faqs')
+                <a href="{{ route('admin.faqs.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.faqs.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span>FAQs</span>
+                </a>
+                @endcan
+
+                @can('manage clients')
+                <a href="{{ route('admin.clients.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.clients.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="images" class="w-4 h-4"></i>
+                    <span>Clients Showcase</span>
+                </a>
+                @endcan
+
+                @can('manage gallery')
+                <a href="{{ route('admin.gallery.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.gallery.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="image" class="w-4 h-4"></i>
+                    <span>BTS Gallery</span>
+                </a>
+                @endcan
+
+                <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">INBOX & LEADS</div>
+
+                @can('manage career jobs')
+                <a href="{{ route('admin.careers.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.careers.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="contact" class="w-4 h-4"></i>
+                    <span>Careers & Jobs</span>
+                </a>
+                @endcan
+
+                @can('manage contact enquiries')
+                <a href="{{ route('admin.enquiries.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.enquiries.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Contact Enquiries</span>
+                </a>
+                <a href="{{ route('admin.join-applications.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.join-applications.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="user-plus" class="w-4 h-4"></i>
+                    <span>Join Us Applications</span>
+                </a>
+                @endcan
+
+                @can('manage newsletter')
+                <a href="{{ route('admin.newsletter.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.newsletter.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Newsletter</span>
+                </a>
+                @endcan
+
+                <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">SYSTEM</div>
+
+                @can('manage settings')
+                <a href="{{ route('admin.settings.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.settings.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="settings" class="w-4 h-4"></i>
+                    <span>CMS Settings</span>
+                </a>
+                @endcan
+
+                @can('manage users')
+                <a href="{{ route('admin.users.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.users.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="user-cog" class="w-4 h-4"></i>
+                    <span>Users & Roles</span>
+                </a>
+                @endcan
+            </nav>
+
             <!-- Sidebar Footer / Logout -->
-            <div class="p-4 border-t border-zinc-800">
+            <div class="p-4 flex-shrink-0 border-t border-zinc-800">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-rose-950/30 hover:text-rose-400 text-zinc-400 transition-colors">
