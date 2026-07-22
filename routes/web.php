@@ -48,9 +48,13 @@ Route::get('/init-admin', function () {
         \Artisan::call('migrate', ['--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'RolesAndPermissionsSeeder', '--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'AgencyCmsSeeder', '--force' => true]);
+        \Artisan::call('view:clear');
+        \Artisan::call('cache:clear');
+        \Artisan::call('config:clear');
+        \Artisan::call('route:clear');
         return response()->json([
             'status' => 'success',
-            'message' => 'Hostinger Database Migrated & Seeded Successfully!',
+            'message' => 'Hostinger Database Migrated, Seeded, and Application Cache Cleared Successfully!',
             'admin_login_url' => url('/login'),
             'credentials' => [
                 'email' => 'admin@kksb.com',
