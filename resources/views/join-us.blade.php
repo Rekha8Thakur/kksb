@@ -7,7 +7,7 @@
         <!-- HERO SECTION -->
         <section class="relative bg-white pt-8 lg:pt-10 pb-8 overflow-hidden">
             <!-- Floating Background Graphic Parallax Text -->
-            <div class="absolute top-4 left-1/2 -translate-x-1/2 text-[140px] md:text-[220px] font-black text-gray-900/[0.015] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap -z-10">
+            <div class="absolute top-4 left-1/2 -translate-x-1/2 text-[140px] md:text-[220px] font-black text-gray-200/60 select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap -z-10">
                 JOIN US
             </div>
 
