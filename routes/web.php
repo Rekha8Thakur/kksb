@@ -137,7 +137,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Join Us Applications CRUD
     Route::post('join-applications/{application}/status', [JoinApplicationController::class, 'updateStatus'])->name('join-applications.status');
-    Route::resource('join-applications', JoinApplicationController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('join-applications', JoinApplicationController::class)->only(['index', 'show', 'destroy'])->parameters(['join-applications' => 'application']);
 
     Route::get('newsletter/export', [NewsletterController::class, 'exportCsv'])->name('newsletter.export');
     Route::resource('newsletter', NewsletterController::class)->only(['index', 'destroy']);
