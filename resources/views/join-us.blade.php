@@ -50,19 +50,19 @@
 
                             <!-- Icons Row -->
                             <div class="flex flex-wrap gap-2.5 pt-6">
-                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-nowrap">
+                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-normal sm:whitespace-nowrap">
                                     <i data-lucide="handshake" class="w-4 h-4 text-[#FF6A00]"></i>
                                     <span>Brand Collaborations</span>
                                 </div>
-                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-nowrap">
+                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-normal sm:whitespace-nowrap">
                                     <i data-lucide="megaphone" class="w-4 h-4 text-[#FF6A00]"></i>
                                     <span>Influencer Campaigns</span>
                                 </div>
-                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-nowrap">
+                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-normal sm:whitespace-nowrap">
                                     <i data-lucide="plane" class="w-4 h-4 text-[#FF6A00]"></i>
                                     <span>Travel & Event Opportunities</span>
                                 </div>
-                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-nowrap">
+                                <div class="flex items-center space-x-2 bg-[#FAFAFA] border border-[#ECECEC] rounded-lg px-3 py-2 text-[#111111] text-[12px] font-semibold whitespace-normal sm:whitespace-nowrap">
                                     <i data-lucide="star" class="w-4 h-4 text-[#FF6A00]"></i>
                                     <span>Exclusive Access</span>
                                 </div>
@@ -99,7 +99,7 @@
                             <!-- Talent requirements box -->
                             <div class="bg-[#FAFAFA] border border-[#ECECEC] rounded-[16px] p-5">
                                 <p class="text-[12px] font-bold text-[#111111] uppercase tracking-wider mb-3">We're looking for talent in:</p>
-                                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[13px] text-[#666666] font-medium">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-[13px] text-[#666666] font-medium">
                                     <div class="flex items-center space-x-2">
                                         <span class="w-1.5 h-1.5 bg-[#FF6A00] rounded-full"></span>
                                         <span>Video Editors</span>
