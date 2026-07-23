@@ -15,7 +15,7 @@
         </div>
 
         <!-- Quick Stats Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <!-- Card 1: Contact Enquiries -->
             <div class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm flex items-center space-x-4">
                 <div class="p-3 bg-zinc-100 dark:bg-zinc-800 rounded-xl text-zinc-800 dark:text-white">
@@ -45,18 +45,6 @@
                             {{ $stats['applications_pending'] }} Pending
                         </span>
                     @endif
-                </div>
-            </div>
-
-            <!-- Card 3: Newsletter Subscribers -->
-            <div class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm flex items-center space-x-4">
-                <div class="p-3 bg-zinc-100 dark:bg-zinc-800 rounded-xl text-zinc-800 dark:text-white">
-                    <i data-lucide="send" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <div class="text-2xl font-bold text-gray-900 dark:text-white">{{ $stats['subscribers_count'] }}</div>
-                    <div class="text-xs font-medium text-gray-500 dark:text-zinc-400">Newsletter Subscribers</div>
-                    <span class="inline-block mt-1 text-[10px] bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded-full border border-emerald-100 dark:border-emerald-900/30">Active</span>
                 </div>
             </div>
 
@@ -397,30 +385,7 @@
                     </a>
                     @endcan
 
-                    <!-- Newsletter Card -->
-                    @can('manage newsletter')
-                    <a href="{{ route('admin.newsletter.index') }}" class="group relative bg-white dark:bg-zinc-900 p-4.5 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-500/30 flex flex-col justify-between overflow-hidden">
-                        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
-                        <div class="space-y-3.5 relative z-10">
-                            <div class="flex items-center justify-between">
-                                <div class="p-2 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                                    <i data-lucide="send" class="w-5 h-5"></i>
-                                </div>
-                                <span class="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded-full border border-gray-100 dark:border-zinc-800">
-                                    {{ $stats['subscribers_count'] }} Active
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 text-sm">Newsletter</h3>
-                                <p class="text-[11px] text-gray-500 dark:text-zinc-400 mt-1 line-clamp-2 leading-relaxed">Manage subscribers and mailing list.</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-2.5 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-[11px] text-gray-400 dark:text-zinc-500 relative z-10">
-                            <span class="group-hover:text-gray-700 dark:group-hover:text-zinc-300 transition-colors font-medium">Open Panel</span>
-                            <i data-lucide="arrow-right" class="w-3 h-3 transform group-hover:translate-x-1 transition-transform"></i>
-                        </div>
-                    </a>
-                    @endcan
+
                 </div>
             </div>
 

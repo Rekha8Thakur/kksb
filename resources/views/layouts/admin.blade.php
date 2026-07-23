@@ -177,12 +177,7 @@
                 </a>
                 @endcan
 
-                @can('manage newsletter')
-                <a href="{{ route('admin.newsletter.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.newsletter.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                    <i data-lucide="send" class="w-4 h-4"></i>
-                    <span>Newsletter</span>
-                </a>
-                @endcan
+
 
                 <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-3 pt-4 pb-1">SYSTEM</div>
 
