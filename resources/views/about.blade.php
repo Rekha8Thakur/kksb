@@ -118,7 +118,7 @@
     <section class="py-12 lg:py-16 bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <!-- Left Column: Portrait -->
-            <div class="lg:col-span-5" data-aos="fade-right">
+            <div class="lg:col-span-5 max-w-sm sm:max-w-md lg:max-w-none mx-auto lg:mx-0 w-full" data-aos="fade-right">
                 <div class="rounded-[24px] overflow-hidden shadow-xl bg-zinc-950 border border-gray-100">
                     <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover" alt="Founder Portrait">
                 </div>
@@ -148,7 +148,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Creative Minds</span>
-                <h2 class="text-4xl font-extrabold tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     <span class="text-[#111111]">Meet Our</span> <span class="text-gray-400">Team</span>
                 </h2>
                 <p class="text-sm text-gray-500">A collective of local designers, editors, copywriters and shoot directors.</p>
@@ -183,7 +183,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Behind The Camera</span>
-                <h2 class="text-4xl font-extrabold tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     <span class="text-[#111111]">Behind the</span> <span class="text-gray-400">Scenes</span>
                 </h2>
                 <p class="text-sm text-gray-500">Snapshots of our dynamic outdoor shoots, editing table sessions, and team brainstorm sessions.</p>
