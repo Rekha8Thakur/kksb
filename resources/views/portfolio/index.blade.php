@@ -1,7 +1,7 @@
 <x-frontend-layout>
     
     <!-- Hero -->
-    <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
+    <section class="bg-[#F8F8F8] pt-8 pb-16 lg:pt-10 lg:pb-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
             <span class="text-xs font-bold text-zinc-600 uppercase tracking-widest block">Our Work</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
@@ -14,25 +14,11 @@
     </section>
 
     <!-- Filters & Portfolio Grid -->
-    <section class="py-24 bg-white">
+    <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-6 space-y-12">
             
-            <!-- Category Filter Tabs -->
-            <div class="flex flex-wrap items-center justify-center gap-3">
-                <a href="/portfolio" 
-                   class="px-5 py-2.5 rounded-full text-xs font-bold transition {{ !request('category') ? 'bg-[#111111] text-white shadow' : 'bg-[#F8F8F8] text-gray-600 hover:bg-gray-200' }}">
-                    All Projects
-                </a>
-                @foreach($categories as $category)
-                    <a href="/portfolio?category={{ $category->slug }}" 
-                       class="px-5 py-2.5 rounded-full text-xs font-bold transition {{ request('category') === $category->slug ? 'bg-[#111111] text-white shadow' : 'bg-[#F8F8F8] text-gray-600 hover:bg-gray-200' }}">
-                        {{ $category->name }}
-                    </a>
-                @endforeach
-            </div>
-
             <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($projects as $project)
                     <div class="bg-white border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-2xl rounded-3xl overflow-hidden group transition duration-300 flex flex-col" data-aos="fade-up">
                         <div class="aspect-video w-full overflow-hidden bg-gray-100 relative">
@@ -41,14 +27,14 @@
                                 {{ $project->category->name }}
                             </span>
                         </div>
-                        <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
-                            <div class="space-y-4">
-                                <h3 class="text-2xl font-bold text-gray-900 leading-tight">{{ $project->title }}</h3>
-                                <p class="text-xs text-gray-500 leading-relaxed font-semibold">Client: {{ $project->client }}</p>
+                        <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-5">
+                            <div class="space-y-3">
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-tight">{{ $project->title }}</h3>
+                                <p class="text-xs text-gray-400 leading-relaxed font-semibold">Client: {{ $project->client }}</p>
                                 
-                                <div class="bg-[#F8F8F8] p-4 rounded-2xl border border-gray-100 space-y-1">
-                                    <span class="text-[10px] uppercase font-bold text-zinc-600 tracking-wider">Key Result Achieved</span>
-                                    <p class="text-sm text-gray-700 font-semibold">{{ $project->results }}</p>
+                                <div class="bg-[#F8F8F8] p-3 sm:p-4 rounded-xl border border-gray-100 space-y-1">
+                                    <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Key Result Achieved</span>
+                                    <p class="text-xs sm:text-sm text-gray-700 font-semibold">{{ $project->results }}</p>
                                 </div>
                             </div>
                             
@@ -61,7 +47,7 @@
                 @empty
                     <div class="col-span-full py-16 text-center text-gray-500 dark:text-zinc-500">
                         <i data-lucide="folder" class="w-12 h-12 mx-auto text-gray-300 mb-3"></i>
-                        <p class="font-medium text-base">No projects found in this category.</p>
+                        <p class="font-medium text-base">No projects found.</p>
                     </div>
                 @endforelse
             </div>
