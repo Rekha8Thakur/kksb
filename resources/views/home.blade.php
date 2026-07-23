@@ -931,7 +931,7 @@
             $title3 = App\Models\Setting::get('showreel_title_3', 'Laxmanjees Sweets Kandaghat');
         @endphp
 
-        <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
+        <section id="showreel-section" x-data="{ showModal: false, embedUrl: '', videoTitle: '' }" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
             <style>
                 @keyframes float-gentle {
                     0%, 100% { transform: translateY(0px) rotate(var(--rot, -1deg)); }
@@ -949,8 +949,7 @@
                 }
             </style>
 
-            <div x-data="{ showModal: false, embedUrl: '', videoTitle: '' }" 
-                 class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
+            <div class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
                 <!-- Dotgrid Pattern -->
                 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
@@ -1026,48 +1025,57 @@
 
                     </div>
 
-                </div>
-
-                <!-- LIGHTBOX MODAL OVERLAY -->
-                <div x-show="showModal" 
-                     class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md px-4"
-                     x-transition:enter="transition ease-out duration-300"
-                     x-transition:enter-start="opacity-0"
-                     x-transition:enter-end="opacity-100"
-                     x-transition:leave="transition ease-in duration-200"
-                     x-transition:leave-start="opacity-100"
-                     x-transition:leave-end="opacity-0"
-                     style="display: none;"
-                     @keydown.escape.window="showModal = false; embedUrl = ''">
-                    
-                    <!-- Close Button -->
-                    <button @click="showModal = false; embedUrl = ''" 
-                            class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition duration-300 focus:outline-none">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-
-                    <!-- Modal Content Container -->
-                    <div class="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-950 shadow-2xl"
-                         @click.away="showModal = false; embedUrl = ''"
-                         x-transition:enter="transition ease-out duration-300 transform"
-                         x-transition:enter-start="opacity-0 scale-95"
-                         x-transition:enter-end="opacity-100 scale-100"
-                         x-transition:leave="transition ease-in duration-200 transform"
-                         x-transition:leave-start="opacity-100 scale-100"
-                         x-transition:leave-end="opacity-0 scale-95">
-                        
-                        <template x-if="showModal">
-                            <iframe class="w-full h-full" 
-                                    :src="embedUrl" 
-                                    :title="videoTitle" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen></iframe>
-                        </template>
+                    <!-- Restored Explore YouTube Channel Button -->
+                    <div class="pt-8">
+                        <a href="https://www.youtube.com/@KKSBVLOGS" 
+                           target="_blank"
+                           class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
+                            <span>Explore YouTube Channel</span>
+                            <span>&rarr;</span>
+                        </a>
                     </div>
-                </div>
 
+                </div>
+            </div>
+
+            <!-- LIGHTBOX MODAL OVERLAY -->
+            <div x-show="showModal" 
+                 class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md px-4"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 style="display: none;"
+                 @keydown.escape.window="showModal = false; embedUrl = ''">
+                
+                <!-- Close Button -->
+                <button @click="showModal = false; embedUrl = ''" 
+                        class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition duration-300 focus:outline-none">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Modal Content Container -->
+                <div class="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-950 shadow-2xl"
+                     @click.away="showModal = false; embedUrl = ''"
+                     x-transition:enter="transition ease-out duration-300 transform"
+                     x-transition:enter-start="opacity-0 scale-95"
+                     x-transition:enter-end="opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-200 transform"
+                     x-transition:leave-start="opacity-100 scale-100"
+                     x-transition:leave-end="opacity-0 scale-95">
+                    
+                    <template x-if="showModal">
+                        <iframe class="w-full h-full" 
+                                :src="embedUrl" 
+                                :title="videoTitle" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen></iframe>
+                    </template>
+                </div>
             </div>
         </section>
 
