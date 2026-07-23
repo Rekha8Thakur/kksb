@@ -70,9 +70,9 @@
                         </div>
 
                         <div class="pt-8">
-                            <a href="{{ route('join-influencer') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[14px] font-semibold h-[50px] px-6 rounded-[12px] transition duration-300 flex items-center justify-center space-x-2 group">
+                            <a href="{{ route('join-influencer') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[16px] font-bold h-[58px] px-6 rounded-[14px] transition duration-300 flex items-center justify-center space-x-2 group shadow-sm hover:shadow-md">
                                 <span>Apply as an Influencer</span>
-                                <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-200 text-lg">&rarr;</span>
                             </a>
                         </div>
                     </div>
@@ -153,9 +153,9 @@
                         </div>
 
                         <div class="pt-8">
-                            <a href="{{ route('join-career') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[14px] font-semibold h-[50px] px-6 rounded-[12px] transition duration-300 flex items-center justify-center space-x-2 group">
+                            <a href="{{ route('join-career') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[16px] font-bold h-[58px] px-6 rounded-[14px] transition duration-300 flex items-center justify-center space-x-2 group shadow-sm hover:shadow-md">
                                 <span>Apply Now</span>
-                                <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-200 text-lg">&rarr;</span>
                             </a>
                         </div>
                     </div>
