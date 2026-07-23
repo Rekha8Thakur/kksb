@@ -180,30 +180,7 @@
                     </a>
                     @endcan
 
-                    <!-- Testimonials Card -->
-                    @can('manage testimonials')
-                    <a href="{{ route('admin.testimonials.index') }}" class="group relative bg-white dark:bg-zinc-900 p-4.5 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-amber-500/50 dark:hover:border-amber-500/30 flex flex-col justify-between overflow-hidden">
-                        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-amber-500/5 dark:bg-amber-500/10 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
-                        <div class="space-y-3.5 relative z-10">
-                            <div class="flex items-center justify-between">
-                                <div class="p-2 bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 rounded-xl group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
-                                    <i data-lucide="message-square-quote" class="w-5 h-5"></i>
-                                </div>
-                                <span class="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded-full border border-gray-100 dark:border-zinc-800">
-                                    {{ $stats['testimonials_count'] }}
-                                </span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-200 text-sm">Testimonials</h3>
-                                <p class="text-[11px] text-gray-500 dark:text-zinc-400 mt-1 line-clamp-2 leading-relaxed">Review and curate client testimonials.</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-2.5 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-[11px] text-gray-400 dark:text-zinc-500 relative z-10">
-                            <span class="group-hover:text-gray-700 dark:group-hover:text-zinc-300 transition-colors font-medium">Open Panel</span>
-                            <i data-lucide="arrow-right" class="w-3 h-3 transform group-hover:translate-x-1 transition-transform"></i>
-                        </div>
-                    </a>
-                    @endcan
+
 
                     <!-- FAQs Card -->
                     @can('manage faqs')

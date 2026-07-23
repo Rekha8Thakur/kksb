@@ -129,12 +129,7 @@
                 </a>
                 @endcan
 
-                @can('manage testimonials')
-                <a href="{{ route('admin.testimonials.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.testimonials.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
-                    <i data-lucide="message-square-quote" class="w-4 h-4"></i>
-                    <span>Testimonials</span>
-                </a>
-                @endcan
+
 
                 @can('manage faqs')
                 <a href="{{ route('admin.faqs.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.faqs.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
