@@ -34,6 +34,14 @@ class AgencyCmsSeeder extends Seeder
             'business_hours' => 'Monday - Saturday: 10:00 AM - 7:00 PM',
             'google_map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.380068478426!2d77.10892047628886!3d30.903901976211756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390578ea0eb938df%3A0x6b7dbb8a4f9a0e6c!2sSolan%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
             
+            // Showreel Settings
+            'showreel_video_1' => 'https://www.youtube.com/watch?v=H7ch9Z3_qeM',
+            'showreel_title_1' => 'Mahasu Devta Documentary',
+            'showreel_video_2' => 'https://www.youtube.com/watch?v=eyvS1WsEsNY',
+            'showreel_title_2' => 'Shoolini Mata Documentary',
+            'showreel_video_3' => 'https://www.youtube.com/watch?v=jJmfDRKFFGI',
+            'showreel_title_3' => 'Laxmanjees Sweets Kandaghat',
+
             // Social Links
             'social_instagram' => 'https://instagram.com/kksbstudios',
             'social_youtube' => 'https://youtube.com/kksbstudios',

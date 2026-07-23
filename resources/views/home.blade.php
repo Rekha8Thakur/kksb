@@ -910,6 +910,27 @@
         </section>
 
         <!-- SHOWREEL SECTION -->
+        @php
+            if (!function_exists('extractYoutubeId')) {
+                function extractYoutubeId($url) {
+                    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+                    return $match[1] ?? null;
+                }
+            }
+
+            $video1Url = App\Models\Setting::get('showreel_video_1', 'https://www.youtube.com/watch?v=H7ch9Z3_qeM');
+            $video2Url = App\Models\Setting::get('showreel_video_2', 'https://www.youtube.com/watch?v=eyvS1WsEsNY');
+            $video3Url = App\Models\Setting::get('showreel_video_3', 'https://www.youtube.com/watch?v=jJmfDRKFFGI');
+
+            $video1Id = extractYoutubeId($video1Url) ?: 'H7ch9Z3_qeM';
+            $video2Id = extractYoutubeId($video2Url) ?: 'eyvS1WsEsNY';
+            $video3Id = extractYoutubeId($video3Url) ?: 'jJmfDRKFFGI';
+
+            $title1 = App\Models\Setting::get('showreel_title_1', 'Mahasu Devta Documentary');
+            $title2 = App\Models\Setting::get('showreel_title_2', 'Shoolini Mata Documentary');
+            $title3 = App\Models\Setting::get('showreel_title_3', 'Laxmanjees Sweets Kandaghat');
+        @endphp
+
         <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
             <style>
                 @keyframes float-gentle {
@@ -949,11 +970,11 @@
                     <!-- Video Grid of 3 Videos with Rotating Hover Effect & Floating Animations -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto pt-4">
                         
-                        <!-- Video 1: Mahasu Devta -->
+                        <!-- Video 1 -->
                         <div class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
                              style="--rot: -1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/H7ch9Z3_qeM?autoplay=1'; videoTitle = 'Mahasu Devta Documentary'; showModal = true">
-                            <img src="https://img.youtube.com/vi/H7ch9Z3_qeM/maxresdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Mahasu Devta Documentary Thumbnail">
+                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video1Id }}?autoplay=1'; videoTitle = '{{ addslashes($title1) }}'; showModal = true">
+                            <img src="https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title1 }}">
                             <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
                             <!-- Play Button -->
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -963,15 +984,15 @@
                             </div>
                             <!-- Title Overlay -->
                             <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                Mahasu Devta Documentary
+                                {{ $title1 }}
                             </div>
                         </div>
 
-                        <!-- Video 2: Shoolini Mata -->
+                        <!-- Video 2 -->
                         <div class="animate-float-2 hover:[animation-play-state:paused] transition-all duration-500 transform lg:rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
                              style="--rot: 1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/eyvS1WsEsNY?autoplay=1'; videoTitle = 'Shoolini Mata Documentary'; showModal = true">
-                            <img src="https://img.youtube.com/vi/eyvS1WsEsNY/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Shoolini Mata Documentary Thumbnail">
+                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1'; videoTitle = '{{ addslashes($title2) }}'; showModal = true">
+                            <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
                             <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
                             <!-- Play Button -->
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -981,15 +1002,15 @@
                             </div>
                             <!-- Title Overlay -->
                             <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                Shoolini Mata Documentary
+                                {{ $title2 }}
                             </div>
                         </div>
 
-                        <!-- Video 3: Laxmanjees Sweets -->
+                        <!-- Video 3 -->
                         <div class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
                              style="--rot: -1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/jJmfDRKFFGI?autoplay=1'; videoTitle = 'Laxmanjees Sweets Kandaghat'; showModal = true">
-                            <img src="https://img.youtube.com/vi/jJmfDRKFFGI/maxresdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Laxmanjees Sweets Thumbnail">
+                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1'; videoTitle = '{{ addslashes($title3) }}'; showModal = true">
+                            <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
                             <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
                             <!-- Play Button -->
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -999,19 +1020,12 @@
                             </div>
                             <!-- Title Overlay -->
                             <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                Laxmanjees Sweets Kandaghat
+                                {{ $title3 }}
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="pt-8">
-                        <a href="/portfolio" 
-                           class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
-                            <span>Explore Portfolio</span>
-                            <span>&rarr;</span>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- LIGHTBOX MODAL OVERLAY -->

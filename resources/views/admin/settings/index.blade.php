@@ -22,6 +22,9 @@
             <button @click="tab = 'socials'" :class="tab === 'socials' ? 'bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-bold shadow-sm' : 'text-gray-500 hover:text-gray-800 dark:text-zinc-400 dark:hover:text-zinc-200'" class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition">
                 Social Networks
             </button>
+            <button @click="tab = 'showreel'" :class="tab === 'showreel' ? 'bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-bold shadow-sm' : 'text-gray-500 hover:text-gray-800 dark:text-zinc-400 dark:hover:text-zinc-200'" class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition">
+                Homepage Showreel
+            </button>
         </div>
 
         <!-- Form Card -->
@@ -165,6 +168,57 @@
                         <div class="space-y-2">
                             <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Facebook Business page</label>
                             <input type="url" name="social_facebook" value="{{ App\Models\Setting::get('social_facebook') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Showreel Videos -->
+                <div x-show="tab === 'showreel'" class="space-y-6" style="display: none;">
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white">Homepage Showreel Settings</h3>
+                    <p class="text-xs text-gray-500 dark:text-zinc-400">Enter full YouTube URLs (e.g. https://www.youtube.com/watch?v=...) and custom titles. The system will automatically extract the video ID, generate the embed players, and load the cover thumbnails.</p>
+
+                    <!-- Video 1 -->
+                    <div class="border-b border-gray-100 dark:border-zinc-800 pb-6 space-y-4">
+                        <h4 class="text-sm font-bold text-gray-800 dark:text-zinc-200">Video #1 (Left Card)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">YouTube URL</label>
+                                <input type="url" name="showreel_video_1" value="{{ App\Models\Setting::get('showreel_video_1', 'https://www.youtube.com/watch?v=H7ch9Z3_qeM') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">Custom Title</label>
+                                <input type="text" name="showreel_title_1" value="{{ App\Models\Setting::get('showreel_title_1', 'Mahasu Devta Documentary') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="border-b border-gray-100 dark:border-zinc-800 pb-6 space-y-4">
+                        <h4 class="text-sm font-bold text-gray-800 dark:text-zinc-200">Video #2 (Center Card)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">YouTube URL</label>
+                                <input type="url" name="showreel_video_2" value="{{ App\Models\Setting::get('showreel_video_2', 'https://www.youtube.com/watch?v=eyvS1WsEsNY') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">Custom Title</label>
+                                <input type="text" name="showreel_title_2" value="{{ App\Models\Setting::get('showreel_title_2', 'Shoolini Mata Documentary') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="pb-4 space-y-4">
+                        <h4 class="text-sm font-bold text-gray-800 dark:text-zinc-200">Video #3 (Right Card)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">YouTube URL</label>
+                                <input type="url" name="showreel_video_3" value="{{ App\Models\Setting::get('showreel_video_3', 'https://www.youtube.com/watch?v=jJmfDRKFFGI') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-gray-600 dark:text-zinc-400">Custom Title</label>
+                                <input type="text" name="showreel_title_3" value="{{ App\Models\Setting::get('showreel_title_3', 'Laxmanjees Sweets Kandaghat') }}" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
                         </div>
                     </div>
                 </div>
