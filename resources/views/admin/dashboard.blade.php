@@ -16,17 +16,17 @@
 
         <!-- Quick Stats Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <!-- Card 1: Contact Enquiries -->
+            <!-- Card 1: Join Us Applications -->
             <div class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm flex items-center space-x-4">
                 <div class="p-3 bg-zinc-100 dark:bg-zinc-800 rounded-xl text-zinc-800 dark:text-white">
-                    <i data-lucide="mail" class="w-6 h-6"></i>
+                    <i data-lucide="user-plus" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <div class="text-2xl font-bold text-gray-900 dark:text-white">{{ $stats['enquiries_total'] }}</div>
-                    <div class="text-xs font-medium text-gray-500 dark:text-zinc-400">Total Enquiries</div>
-                    @if($stats['enquiries_unread'] > 0)
-                        <span class="inline-block mt-1 text-[10px] bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 font-semibold px-2 py-0.5 rounded-full border border-rose-100 dark:border-rose-900/30">
-                            {{ $stats['enquiries_unread'] }} Unread
+                    <div class="text-2xl font-bold text-gray-900 dark:text-white">{{ $stats['join_applications_total'] }}</div>
+                    <div class="text-xs font-medium text-gray-500 dark:text-zinc-400">Join Us Applications</div>
+                    @if($stats['join_applications_pending'] > 0)
+                        <span class="inline-block mt-1 text-[10px] bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 font-semibold px-2 py-0.5 rounded-full border border-amber-100 dark:border-amber-900/30">
+                            {{ $stats['join_applications_pending'] }} Pending
                         </span>
                     @endif
                 </div>
