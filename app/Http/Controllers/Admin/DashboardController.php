@@ -11,6 +11,13 @@ use App\Models\ContactEnquiry;
 use App\Models\Newsletter;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\Author;
+use App\Models\Testimonial;
+use App\Models\Faq;
+use App\Models\Client;
+use App\Models\Gallery;
+use App\Models\JoinApplication;
+use App\Models\User;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -30,6 +37,14 @@ class DashboardController extends Controller
             'projects_count' => Project::count(),
             'blogs_count' => Blog::count(),
             'subscribers_count' => Newsletter::where('status', 'active')->count(),
+            'authors_count' => Author::count(),
+            'testimonials_count' => Testimonial::count(),
+            'faqs_count' => Faq::count(),
+            'clients_count' => Client::count(),
+            'gallery_count' => Gallery::count(),
+            'join_applications_total' => JoinApplication::count(),
+            'join_applications_pending' => JoinApplication::where('status', 'pending')->count(),
+            'users_total' => User::count(),
         ];
 
         $recentEnquiries = ContactEnquiry::latest()->take(5)->get();
