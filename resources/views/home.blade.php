@@ -134,7 +134,7 @@
                         <span class="text-[#111111]">TRUST</span> <span class="text-gray-400">STATS</span>
                     </h2>
                 </div>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
                     <div x-data="{
                             count: 0,
@@ -166,17 +166,17 @@
                                 window.requestAnimationFrame(step);
                             }
                          }"
-                         class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                         class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
                             Over <span x-text="count">0</span>+
                         </span>
-                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
-                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
-                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
                     </div>
 
                     <!-- Stat 3 -->
@@ -210,17 +210,17 @@
                                 window.requestAnimationFrame(step);
                             }
                          }"
-                         class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <span class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                         class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
                             <span x-text="count">0</span>+
                         </span>
-                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
-                        <span class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
-                        <span class="text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                        <span class="text-2xl sm:text-3xl lg:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
                     </div>
                 </div>
             </div>
@@ -870,7 +870,7 @@
         </section>
 
         <!-- CINEMATIC PARALLAX BANNER (HIGH VISIBILITY TYPOGRAPHY) -->
-        <section class="relative py-32 lg:py-44 bg-fixed bg-cover bg-center overflow-hidden my-16 lg:my-24 shadow-2xl" 
+        <section class="relative py-32 lg:py-44 bg-scroll md:bg-fixed bg-cover bg-center overflow-hidden my-16 lg:my-24 shadow-2xl" 
                  style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');">
             <!-- Strong High-Contrast Dark Backdrop Mask -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90 backdrop-blur-[2px]"></div>
