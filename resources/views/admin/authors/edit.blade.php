@@ -1,17 +1,17 @@
 <x-admin-layout>
-    <x-slot name="title">Edit Author Profile</x-slot>
+    <x-slot name="title">Edit Team & Author Profile</x-slot>
 
     <div class="max-w-xl mx-auto space-y-6">
         <!-- Header -->
         <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-zinc-400">
-            <a href="{{ route('admin.authors.index') }}" class="hover:underline">Authors</a>
+            <a href="{{ route('admin.authors.index') }}" class="hover:underline">Team & Authors</a>
             <span>/</span>
             <span class="text-gray-900 dark:text-white font-semibold">Edit Profile</span>
         </div>
 
         <div>
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Edit Author: {{ $author->name }}</h1>
-            <p class="text-sm text-gray-500 dark:text-zinc-400">Modify author profile information and social link handles.</p>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Edit Profile: {{ $author->name }}</h1>
+            <p class="text-sm text-gray-500 dark:text-zinc-400">Modify profile biography, avatar, and social link handles.</p>
         </div>
 
         <!-- Form Card -->

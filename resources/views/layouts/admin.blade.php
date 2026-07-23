@@ -125,7 +125,7 @@
                 </a>
                 <a href="{{ route('admin.authors.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.authors.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
                     <i data-lucide="users" class="w-4 h-4"></i>
-                    <span>Authors</span>
+                    <span>Team & Authors</span>
                 </a>
                 @endcan
 

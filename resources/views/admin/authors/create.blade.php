@@ -1,17 +1,17 @@
 <x-admin-layout>
-    <x-slot name="title">Add Author Profile</x-slot>
+    <x-slot name="title">Add Team & Author Profile</x-slot>
 
     <div class="max-w-xl mx-auto space-y-6">
         <!-- Header -->
         <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-zinc-400">
-            <a href="{{ route('admin.authors.index') }}" class="hover:underline">Authors</a>
+            <a href="{{ route('admin.authors.index') }}" class="hover:underline">Team & Authors</a>
             <span>/</span>
             <span class="text-gray-900 dark:text-white font-semibold">New Profile</span>
         </div>
 
         <div>
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Create Author Profile</h1>
-            <p class="text-sm text-gray-500 dark:text-zinc-400">Add a writer biography block for agency blog articles.</p>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Create Profile</h1>
+            <p class="text-sm text-gray-500 dark:text-zinc-400">Add a profile description block for agency team members and blog writers.</p>
         </div>
 
         <!-- Form Card -->
