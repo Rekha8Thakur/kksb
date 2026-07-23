@@ -1,7 +1,7 @@
 <x-frontend-layout>
     
     <!-- Hero/About Row 1 Section -->
-    <section class="py-16 lg:py-24 bg-white border-b border-gray-100">
+    <section class="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Left Column: Content -->
             <div class="lg:col-span-6 space-y-6" data-aos="fade-right">
@@ -51,7 +51,7 @@
     </section>
 
     <!-- Company Story Section -->
-    <section class="py-20 lg:py-28 bg-[#FAFAFA] border-b border-gray-100">
+    <section class="py-12 lg:py-16 bg-[#FAFAFA] border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <!-- Left Column: Story text (40% width on large screens) -->
             <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
@@ -85,8 +85,8 @@
             <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-left">
                 <!-- Card 1: THEN -->
                 <div class="space-y-4">
-                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
-                        <img src="{{ asset('images/about/then.jpg') }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Then - A Creator with a Camera">
+                    <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
+                        <img src="{{ asset('images/about/then.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Then - A Creator with a Camera">
                         <!-- THEN Badge Overlay -->
                         <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             THEN
@@ -99,8 +99,8 @@
 
                 <!-- Card 2: NOW -->
                 <div class="space-y-4">
-                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
-                        <img src="{{ asset('images/about/now.jpg') }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Now - Creative Studio">
+                    <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
+                        <img src="{{ asset('images/about/now.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Now - Creative Studio">
                         <!-- NOW Badge Overlay -->
                         <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             NOW
@@ -115,12 +115,12 @@
     </section>
 
     <!-- Founders Quote/Details -->
-    <section class="py-20 lg:py-24 bg-white border-b border-gray-100">
+    <section class="py-12 lg:py-16 bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <!-- Left Column: Portrait -->
             <div class="lg:col-span-5" data-aos="fade-right">
-                <div class="aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl bg-zinc-950 border border-gray-100">
-                    <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-full object-cover" alt="Founder Portrait">
+                <div class="rounded-[24px] overflow-hidden shadow-xl bg-zinc-950 border border-gray-100">
+                    <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover" alt="Founder Portrait">
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
 
     <!-- Team Members Grid -->
     @if($team->isNotEmpty())
-    <section id="team-section" class="py-20 lg:py-24 bg-[#FAFAFA] border-b border-gray-100">
+    <section id="team-section" class="py-12 lg:py-16 bg-[#FAFAFA] border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Creative Minds</span>
@@ -179,7 +179,7 @@
 
     <!-- Behind the Scenes Gallery -->
     @if($gallery->isNotEmpty())
-    <section class="py-20 lg:py-24 bg-white">
+    <section class="py-12 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-16">
             <div class="text-center space-y-4 max-w-xl mx-auto">
                 <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Behind The Camera</span>
