@@ -931,7 +931,7 @@
             $title3 = App\Models\Setting::get('showreel_title_3', 'Laxmanjees Sweets Kandaghat');
         @endphp
 
-        <section id="showreel-section" x-data="{ showModal: false, embedUrl: '', videoTitle: '' }" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
+        <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
             <style>
                 @keyframes float-gentle {
                     0%, 100% { transform: translateY(0px) rotate(var(--rot, -1deg)); }
@@ -970,57 +970,102 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto pt-4">
                         
                         <!-- Video 1 -->
-                        <div class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: -1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video1Id }}?autoplay=1'; videoTitle = '{{ addslashes($title1) }}'; showModal = true">
-                            <img src="https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title1 }}">
-                            <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                            <!-- Play Button -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                    <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                        <div x-data="{ playing: false }" 
+                             class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
+                             style="--rot: -1deg;">
+                            
+                            <!-- Thumbnail Cover -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                <img src="https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title1 }}">
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    {{ $title1 }}
                                 </div>
                             </div>
-                            <!-- Title Overlay -->
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                {{ $title1 }}
-                            </div>
+
+                            <!-- Embedded Player (Autoplay on click) -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/{{ $video1Id }}?autoplay=1" 
+                                        title="{{ $title1 }}" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
                         </div>
 
                         <!-- Video 2 -->
-                        <div class="animate-float-2 hover:[animation-play-state:paused] transition-all duration-500 transform lg:rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: 1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1'; videoTitle = '{{ addslashes($title2) }}'; showModal = true">
-                            <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
-                            <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                            <!-- Play Button -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                    <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                        <div x-data="{ playing: false }" 
+                             class="animate-float-2 hover:[animation-play-state:paused] transition-all duration-500 transform lg:rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
+                             style="--rot: 1deg;">
+                            
+                            <!-- Thumbnail Cover -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    {{ $title2 }}
                                 </div>
                             </div>
-                            <!-- Title Overlay -->
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                {{ $title2 }}
-                            </div>
+
+                            <!-- Embedded Player (Autoplay on click) -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1" 
+                                        title="{{ $title2 }}" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
                         </div>
 
                         <!-- Video 3 -->
-                        <div class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: -1deg;"
-                             @click="embedUrl = 'https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1'; videoTitle = '{{ addslashes($title3) }}'; showModal = true">
-                            <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
-                            <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                            <!-- Play Button -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                    <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                        <div x-data="{ playing: false }" 
+                             class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
+                             style="--rot: -1deg;">
+                            
+                            <!-- Thumbnail Cover -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    {{ $title3 }}
                                 </div>
                             </div>
-                            <!-- Title Overlay -->
-                            <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                {{ $title3 }}
-                            </div>
+
+                            <!-- Embedded Player (Autoplay on click) -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1" 
+                                        title="{{ $title3 }}" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
                         </div>
 
                     </div>
@@ -1035,46 +1080,6 @@
                         </a>
                     </div>
 
-                </div>
-            </div>
-
-            <!-- LIGHTBOX MODAL OVERLAY -->
-            <div x-show="showModal" 
-                 class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md px-4"
-                 x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0"
-                 x-transition:enter-end="opacity-100"
-                 x-transition:leave="transition ease-in duration-200"
-                 x-transition:leave-start="opacity-100"
-                 x-transition:leave-end="opacity-0"
-                 style="display: none;"
-                 @keydown.escape.window="showModal = false; embedUrl = ''">
-                
-                <!-- Close Button -->
-                <button @click="showModal = false; embedUrl = ''" 
-                        class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition duration-300 focus:outline-none">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-
-                <!-- Modal Content Container -->
-                <div class="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-950 shadow-2xl"
-                     @click.away="showModal = false; embedUrl = ''"
-                     x-transition:enter="transition ease-out duration-300 transform"
-                     x-transition:enter-start="opacity-0 scale-95"
-                     x-transition:enter-end="opacity-100 scale-100"
-                     x-transition:leave="transition ease-in duration-200 transform"
-                     x-transition:leave-start="opacity-100 scale-100"
-                     x-transition:leave-end="opacity-0 scale-95">
-                    
-                    <template x-if="showModal">
-                        <iframe class="w-full h-full" 
-                                :src="embedUrl" 
-                                :title="videoTitle" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
-                    </template>
                 </div>
             </div>
         </section>
