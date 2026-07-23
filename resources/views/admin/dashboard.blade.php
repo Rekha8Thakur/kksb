@@ -4,29 +4,29 @@
     <div class="space-y-8">
         
         <!-- Greeting Hero Banner -->
-        <div class="relative bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 text-white rounded-3xl p-6 sm:p-8 overflow-hidden shadow-lg border border-zinc-850">
+        <div class="relative text-white rounded-3xl p-6 sm:p-8 overflow-hidden shadow-lg border border-zinc-800" style="background-color: #18181b;">
             <!-- Decorative abstract gradient circles -->
             <div class="absolute right-0 top-0 w-96 h-96 bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 rounded-full blur-xl -translate-y-16 translate-x-16"></div>
             <div class="absolute left-1/3 bottom-0 w-80 h-80 bg-violet-500/5 rounded-full blur-xl"></div>
 
             <div class="relative z-10 space-y-4">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full text-[11px] font-bold text-zinc-350 tracking-wide uppercase border border-white/5">
+                <div class="inline-flex items-center space-x-2 bg-white/10 px-3.5 py-1 rounded-full text-[11px] font-bold text-zinc-300 tracking-wide uppercase border border-white/5">
                     <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                     <span>System Active & Operational</span>
                 </div>
                 <div class="space-y-1">
-                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
-                        Hello, <span class="bg-gradient-to-r from-zinc-100 via-white to-zinc-300 bg-clip-text text-transparent">{{ auth()->user()->name }}</span>!
+                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+                        Hello, <span class="text-emerald-400 font-black">{{ auth()->user()->name }}</span>!
                     </h1>
                     <p class="text-sm text-zinc-400 font-medium max-w-xl leading-relaxed">Welcome back to your workspace. Here is a live performance snapshot for KKSB Studios.</p>
                 </div>
-                <div class="pt-2 flex flex-wrap gap-4 text-xs text-zinc-400">
+                <div class="pt-2 flex flex-wrap gap-4 text-xs text-zinc-300">
                     <div class="flex items-center space-x-1.5 bg-white/5 px-2.5 py-1 rounded-lg border border-white/5">
-                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-zinc-500"></i>
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-zinc-400"></i>
                         <span>{{ now()->format('l, M j, Y') }}</span>
                     </div>
                     <div class="flex items-center space-x-1.5 bg-white/5 px-2.5 py-1 rounded-lg border border-white/5">
-                        <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-500"></i>
+                        <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-400"></i>
                         <span>Local Time: {{ now()->format('h:i A') }}</span>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">{{ $stats['join_applications_total'] }}</div>
                     <div class="text-xs font-semibold text-gray-500 dark:text-zinc-400 uppercase tracking-wider">Join Us Applications</div>
                     @if($stats['join_applications_pending'] > 0)
-                        <span class="inline-flex items-center text-[10px] bg-amber-500 text-white font-extrabold px-2 py-0.5 rounded-full border border-amber-400 animate-pulse">
+                        <span class="inline-flex items-center text-[10px] bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 font-extrabold px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
                             {{ $stats['join_applications_pending'] }} Pending
                         </span>
                     @endif
@@ -60,7 +60,7 @@
                     <div class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">{{ $stats['applications_total'] }}</div>
                     <div class="text-xs font-semibold text-gray-500 dark:text-zinc-400 uppercase tracking-wider">Job Applications</div>
                     @if($stats['applications_pending'] > 0)
-                        <span class="inline-flex items-center text-[10px] bg-amber-500 text-white font-extrabold px-2 py-0.5 rounded-full border border-amber-400 animate-pulse">
+                        <span class="inline-flex items-center text-[10px] bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 font-extrabold px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
                             {{ $stats['applications_pending'] }} Pending
                         </span>
                     @endif
@@ -294,7 +294,7 @@
                                 </div>
                                 <div class="flex items-center space-x-1">
                                     @if($stats['applications_pending'] > 0)
-                                    <span class="text-[9px] font-extrabold bg-amber-500 text-white px-1.5 py-0.5 rounded-full animate-pulse">
+                                    <span class="text-[9px] font-extrabold bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
                                         {{ $stats['applications_pending'] }} Pending
                                     </span>
                                     @endif
@@ -358,7 +358,7 @@
                                 </div>
                                 <div class="flex items-center space-x-1">
                                     @if($stats['join_applications_pending'] > 0)
-                                    <span class="text-[9px] font-extrabold bg-amber-500 text-white px-1.5 py-0.5 rounded-full animate-pulse">
+                                    <span class="text-[9px] font-extrabold bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
                                         {{ $stats['join_applications_pending'] }} Pending
                                     </span>
                                     @endif
