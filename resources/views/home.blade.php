@@ -911,11 +911,11 @@
 
         <!-- SHOWREEL SECTION -->
         <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
-            <div class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden shadow-xl" data-aos="fade-up">
+            <div x-data="{ activeVideo: 'mahasu' }" class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden shadow-xl" data-aos="fade-up">
                 <!-- Dotgrid Pattern -->
                 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
-                <div class="relative z-10 max-w-4xl mx-auto space-y-8 text-center">
+                <div class="relative z-10 max-w-5xl mx-auto space-y-8 text-center">
                     <div class="space-y-3" data-parallax-speed="-0.03">
                         <span class="text-[13px] font-semibold text-gray-400 tracking-[0.2em] uppercase block">
                             SHOWREEL
@@ -928,22 +928,69 @@
                         </p>
                     </div>
 
-                    <!-- Video Embed Frame with Parallax Shift -->
+                    <!-- Video Switcher Navigation Tabs -->
+                    <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto pt-2">
+                        <button @click="activeVideo = 'mahasu'" 
+                                :class="activeVideo === 'mahasu' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
+                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                            <span>Mahasu Devta Legend</span>
+                        </button>
+                        <button @click="activeVideo = 'shoolini'" 
+                                :class="activeVideo === 'shoolini' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
+                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                            <span>Shoolini Mata Documentary</span>
+                        </button>
+                        <button @click="activeVideo = 'laxmanjee'" 
+                                :class="activeVideo === 'laxmanjee' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
+                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                            <span>Laxmanjees Sweets Kandaghat</span>
+                        </button>
+                    </div>
+
+                    <!-- Video Embed Frames with Parallax Shift -->
                     <div class="relative aspect-video max-w-4xl mx-auto rounded-[20px] overflow-hidden border border-white/20 shadow-2xl bg-zinc-950" data-parallax-speed="0.06">
-                        <iframe class="w-full h-full rounded-[20px]" 
-                                src="https://www.youtube.com/embed/QxdBSSKpsN8" 
-                                title="Is Raulane Really a ‘Fairy Festival’? Truth Revealed | Kinnaur" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
+                        <!-- Video 1 -->
+                        <div x-show="activeVideo === 'mahasu'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
+                            <iframe class="w-full h-full rounded-[20px]" 
+                                    src="https://www.youtube.com/embed/H7ch9Z3_qeM" 
+                                    title="आख़िर कौन हैं महासू देवता? अनसुनी कहानियाँ और रहस्य | Mahasu Devta Documentary" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Video 2 -->
+                        <div x-show="activeVideo === 'shoolini'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" style="display: none;">
+                            <iframe class="w-full h-full rounded-[20px]" 
+                                    src="https://www.youtube.com/embed/eyvS1WsEsNY" 
+                                    title="शूलिनी माता: आस्था, परंपरा, मन्दिर और मेले का अनसुना सच | Shoolini Mata Documentary | KKSB Vlogs" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Video 3 -->
+                        <div x-show="activeVideo === 'laxmanjee'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" style="display: none;">
+                            <iframe class="w-full h-full rounded-[20px]" 
+                                    src="https://www.youtube.com/embed/jJmfDRKFFGI" 
+                                    title="छोटी सी दुकान से हिमाचल की मशहूर बेसन बर्फी तक | Laxmanjees Sweets Kandaghat" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen></iframe>
+                        </div>
                     </div>
 
                     <div class="pt-4">
                         <a href="/portfolio" 
                            class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
                             <span>Explore Portfolio</span>
-                            <span>→</span>
+                            <span>&rarr;</span>
                         </a>
                     </div>
                 </div>
