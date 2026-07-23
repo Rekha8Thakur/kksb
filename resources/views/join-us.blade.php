@@ -153,7 +153,7 @@
                         </div>
 
                         <div class="pt-8">
-                            <a href="http://docs.google.com/forms/d/e/1FAIpQLSfgt5MzaFKj2P6JA2qR5dmJyql-6sSZKylzimTLTiI0DSMgog/viewform" target="_blank" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[14px] font-semibold h-[50px] px-6 rounded-[12px] transition duration-300 flex items-center justify-center space-x-2 group">
+                            <a href="{{ route('join-career') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[14px] font-semibold h-[50px] px-6 rounded-[12px] transition duration-300 flex items-center justify-center space-x-2 group">
                                 <span>Apply Now</span>
                                 <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                             </a>

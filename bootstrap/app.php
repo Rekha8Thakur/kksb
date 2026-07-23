@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'join-us/apply',
             'contact/submit',
             'join-influencer',
+            'join-career',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
