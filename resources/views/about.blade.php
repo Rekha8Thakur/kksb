@@ -50,101 +50,92 @@
         </div>
     </section>
 
-    <!-- Company Story & Founder Section (Combined Single Row Layout) -->
+    <!-- Company Story Section -->
     <section class="py-12 lg:py-16 bg-[#FAFAFA] border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            <!-- Left Column: Story & Founder Text (5 cols span) -->
-            <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
+        <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <!-- Left Column: Story text (40% width on large screens) -->
+            <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+                <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">OUR STORY</span>
                 
-                <!-- Our Story Block -->
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">OUR STORY</span>
-                    @php
-                        $storyTitle = App\Models\Setting::get('about_story_title', 'It Started With Stories. It Grew Into a Studio.');
-                        $titleParts = explode('.', $storyTitle, 2);
-                        $firstPart = trim($titleParts[0] ?? 'It Started With Stories');
-                        $secondPart = trim($titleParts[1] ?? 'It Grew Into a Studio');
-                        if (str_ends_with($firstPart, '.')) {
-                            $firstPart = rtrim($firstPart, '.');
-                        }
-                    @endphp
-                    <h2 class="text-3xl sm:text-4xl lg:text-[34px] font-black tracking-tight leading-snug text-[#111111]">
-                        {{ $firstPart }}.<br>
-                        <span class="text-gray-400">{{ $secondPart }}</span>
-                    </h2>
-                    
-                    <div class="text-[14px] sm:text-[15px] text-gray-500 leading-relaxed space-y-3 font-light">
-                        <p>
-                            {{ App\Models\Setting::get('about_story_text', 'What began as a passion for storytelling and creating content around Himachal\'s culture, people and places, slowly turned into a purpose. We understood the power of content to connect, influence and grow businesses.') }}
-                        </p>
-                        <p>
-                            From a creator to a team, from local stories to brand journeys, KKSB Studios is a full-service creative and marketing agency trusted by hundreds of brands. We bridge the gap between creative visual narratives and performance metrics.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Custom Divider -->
-                <div class="border-t border-gray-200"></div>
-
-                <!-- Founder Block -->
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">The Founder</span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111111] leading-tight">
-                        {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
-                    </h3>
-                    <div class="space-y-3 text-[14px] sm:text-[15px] text-gray-500 leading-relaxed font-light">
-                        <p class="font-bold text-[#111111]">
-                            {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }} — <span class="text-gray-400 font-medium">{{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}</span>
-                        </p>
-                        <p>
-                            {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
-                        </p>
-                    </div>
+                @php
+                    $storyTitle = App\Models\Setting::get('about_story_title', 'It Started With Stories. It Grew Into a Studio.');
+                    $titleParts = explode('.', $storyTitle, 2);
+                    $firstPart = trim($titleParts[0] ?? 'It Started With Stories');
+                    $secondPart = trim($titleParts[1] ?? 'It Grew Into a Studio');
+                    if (str_ends_with($firstPart, '.')) {
+                        $firstPart = rtrim($firstPart, '.');
+                    }
+                @endphp
+                <h2 class="text-3xl sm:text-4xl lg:text-[38px] font-black tracking-tight leading-snug text-[#111111]">
+                    {{ $firstPart }}.<br>
+                    <span class="text-gray-400">{{ $secondPart }}</span>
+                </h2>
+                
+                <div class="text-[14px] sm:text-[15px] text-gray-500 leading-relaxed space-y-4 font-light">
+                    <p>
+                        {{ App\Models\Setting::get('about_story_text', 'What began as a passion for storytelling and creating content around Himachal\'s culture, people and places, slowly turned into a purpose. We understood the power of content to connect, influence and grow businesses.') }}
+                    </p>
+                    <p>
+                        From a creator to a team, from local stories to brand journeys, KKSB Studios is a full-service creative and marketing agency trusted by hundreds of brands. We bridge the gap between creative visual narratives and performance metrics.
+                    </p>
                 </div>
             </div>
             
-            <!-- Right Column: Visual Journey Cards Grid (7 cols span) -->
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-left">
+            <!-- Right Column: THEN / NOW Grid (60% width on large screens) -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-left">
                 <!-- Card 1: THEN -->
-                <div class="space-y-3">
+                <div class="space-y-4">
                     <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
                         <img src="{{ asset('images/about/then.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Then - A Creator with a Camera">
                         <!-- THEN Badge Overlay -->
-                        <div class="absolute bottom-3 left-3 bg-[#111111] text-white text-[9px] font-black tracking-widest px-2.5 py-0.5 rounded">
+                        <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             THEN
                         </div>
                     </div>
-                    <p class="text-[12px] font-semibold text-gray-800 leading-snug">
+                    <p class="text-[13px] font-semibold text-gray-700 leading-snug">
                         A Creator with a Camera and a Story to Tell.
                     </p>
                 </div>
 
                 <!-- Card 2: NOW -->
-                <div class="space-y-3">
-                    <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
+                <div class="space-y-4">
+                    <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-150 bg-gray-50 group">
                         <img src="{{ asset('images/about/now.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Now - Creative Studio">
                         <!-- NOW Badge Overlay -->
-                        <div class="absolute bottom-3 left-3 bg-[#111111] text-white text-[9px] font-black tracking-widest px-2.5 py-0.5 rounded">
+                        <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             NOW
                         </div>
                     </div>
-                    <p class="text-[12px] font-semibold text-gray-800 leading-snug">
+                    <p class="text-[13px] font-semibold text-gray-700 leading-snug">
                         A Creative Studio Helping Brands Grow.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 3: FOUNDER -->
-                <div class="space-y-3">
-                    <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
-                        <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" alt="Founder Portrait">
-                        <!-- FOUNDER Badge Overlay -->
-                        <div class="absolute bottom-3 left-3 bg-[#FF6A00] text-white text-[9px] font-black tracking-widest px-2.5 py-0.5 rounded">
-                            FOUNDER
-                        </div>
-                    </div>
-                    <p class="text-[12px] font-semibold text-gray-800 leading-snug">
-                        Kuldeep Sharma — Founder & Creative Director
+    <!-- Founders Quote/Details -->
+    <section class="py-12 lg:py-16 bg-white border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <!-- Left Column: Portrait -->
+            <div class="lg:col-span-4 max-w-[260px] sm:max-w-[300px] lg:max-w-[280px] mx-auto lg:mx-0 w-full" data-aos="fade-right">
+                <div class="rounded-[20px] overflow-hidden shadow-lg bg-zinc-950 border border-gray-100">
+                    <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover" alt="Founder Portrait">
+                </div>
+            </div>
+
+            <!-- Right Column: Info -->
+            <div class="lg:col-span-8 space-y-6" data-aos="fade-left">
+                <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">The Founder</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111111] leading-tight">
+                    {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
+                </h2>
+                <div class="space-y-4 text-[15px] text-gray-500 leading-relaxed font-light">
+                    <p class="font-bold text-[#111111]">
+                        {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }} — <span class="text-gray-400 font-medium">{{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}</span>
+                    </p>
+                    <p>
+                        {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
                     </p>
                 </div>
             </div>
