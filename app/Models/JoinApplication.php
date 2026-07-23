@@ -20,6 +20,11 @@ class JoinApplication extends Model
         'resume_link',
         'position',
         'message',
+        'form_data',
         'status',
+    ];
+
+    protected $casts = [
+        'form_data' => 'array',
     ];
 }

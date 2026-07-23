@@ -20,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens(except: [
             'join-us/apply',
             'contact/submit',
+            'join-influencer',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

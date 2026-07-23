@@ -33,6 +33,8 @@ Route::post('/careers/apply', [FrontendCareerController::class, 'apply'])->name(
 
 Route::get('/join-us', [JoinController::class, 'index'])->name('join-us');
 Route::post('/join-us/apply', [JoinController::class, 'apply'])->name('join-us.apply');
+Route::get('/join-influencer', [JoinController::class, 'influencerForm'])->name('join-influencer');
+Route::post('/join-influencer', [JoinController::class, 'storeInfluencer'])->name('join-influencer.store');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');

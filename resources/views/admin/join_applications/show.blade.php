@@ -72,6 +72,125 @@
                 </div>
             @endif
 
+            <!-- Custom Form Data (KKSB Creative Faces Form Fields) -->
+            @if($application->form_data)
+                <div class="border-t border-gray-100 dark:border-zinc-850 pt-6 space-y-4">
+                    <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Additional Profile Fields</div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Age</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['age'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Gender</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['gender'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Current City</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['city'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Camera Comfort</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['comfortable_camera'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Past Acting/Modeling Experience</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['past_experience'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Comfortable Traveling Nearby</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['travel_comfort'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800 col-span-1 sm:col-span-2">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Main Goals / Seeking</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['seeking'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Okay with Unpaid Trials</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['trial_ok'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Shoot Availability</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['availability'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Role Type Comfort</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['role_comfort'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Expected Pay per Shoot</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['expected_amount'] ?? 'N/A' }}</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-850 p-3.5 rounded-xl border border-gray-100 dark:border-zinc-800 col-span-1 sm:col-span-2">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Usage Agreement</span>
+                            <p class="font-semibold text-gray-900 dark:text-white mt-0.5">{{ $application->form_data['usage_permission'] ?? 'N/A' }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Shoot Types Comfort List -->
+                    <div class="bg-gray-50 dark:bg-zinc-850 p-4 rounded-xl border border-gray-100 dark:border-zinc-800 text-sm space-y-1.5">
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Comfortable Shoot Types</span>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            @if(isset($application->form_data['shoot_comfort']) && is_array($application->form_data['shoot_comfort']))
+                                @foreach($application->form_data['shoot_comfort'] as $item)
+                                    <span class="bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-semibold px-2.5 py-1 rounded-md">{{ $item }}</span>
+                                @endforeach
+                            @else
+                                <p class="text-xs text-gray-500">None specified</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Spoken Languages -->
+                    <div class="bg-gray-50 dark:bg-zinc-850 p-4 rounded-xl border border-gray-100 dark:border-zinc-800 text-sm space-y-1.5">
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Spoken Languages</span>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            @if(isset($application->form_data['languages']) && is_array($application->form_data['languages']))
+                                @foreach($application->form_data['languages'] as $lang)
+                                    <span class="bg-gray-200 dark:bg-zinc-800 text-gray-800 dark:text-zinc-200 text-xs font-semibold px-2.5 py-1 rounded-md">{{ $lang }}</span>
+                                @endforeach
+                            @else
+                                <p class="text-xs text-gray-500">None specified</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Restrictions -->
+                    <div class="bg-gray-50 dark:bg-zinc-850 p-4 rounded-xl border border-gray-100 dark:border-zinc-800 text-sm space-y-1">
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Restrictions / Comfort Limits</span>
+                        <p class="text-gray-900 dark:text-white font-medium">{{ $application->form_data['restrictions'] ?? 'None specified' }}</p>
+                    </div>
+
+                    <!-- Photo Assets Gallery Grid -->
+                    @if(isset($application->form_data['photos']) && is_array($application->form_data['photos']))
+                        <div class="space-y-2 pt-2">
+                            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider block">Uploaded Photos ({{ count($application->form_data['photos']) }})</span>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                @foreach($application->form_data['photos'] as $photoUrl)
+                                    <a href="{{ asset($photoUrl) }}" target="_blank" class="block aspect-square rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition">
+                                        <img src="{{ asset($photoUrl) }}" class="w-full h-full object-cover" alt="Uploaded Portfolio Photo">
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
+                    <!-- Intro Video Asset Player -->
+                    @if(!empty($application->form_data['intro_video']))
+                        <div class="space-y-2 pt-2">
+                            <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider block">Introduction Video</span>
+                            <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-zinc-800 max-w-md bg-black">
+                                <video controls class="w-full h-auto">
+                                    <source src="{{ asset($application->form_data['intro_video']) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            @endif
+
             <!-- Action Status updating -->
             <div class="border-t border-gray-100 dark:border-zinc-850 pt-6 flex items-center justify-between">
                 <!-- Change status -->
