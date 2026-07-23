@@ -911,11 +911,11 @@
 
         <!-- SHOWREEL SECTION -->
         <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
-            <div x-data="{ activeVideo: 'mahasu' }" class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden shadow-xl" data-aos="fade-up">
+            <div class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
                 <!-- Dotgrid Pattern -->
                 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
-                <div class="relative z-10 max-w-5xl mx-auto space-y-8 text-center">
+                <div class="relative z-10 max-w-[1280px] mx-auto space-y-12 text-center">
                     <div class="space-y-3" data-parallax-speed="-0.03">
                         <span class="text-[13px] font-semibold text-gray-400 tracking-[0.2em] uppercase block">
                             SHOWREEL
@@ -928,65 +928,105 @@
                         </p>
                     </div>
 
-                    <!-- Video Switcher Navigation Tabs -->
-                    <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto pt-2">
-                        <button @click="activeVideo = 'mahasu'" 
-                                :class="activeVideo === 'mahasu' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
-                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
-                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                            <span>Mahasu Devta Legend</span>
-                        </button>
-                        <button @click="activeVideo = 'shoolini'" 
-                                :class="activeVideo === 'shoolini' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
-                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
-                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                            <span>Shoolini Mata Documentary</span>
-                        </button>
-                        <button @click="activeVideo = 'laxmanjee'" 
-                                :class="activeVideo === 'laxmanjee' ? 'bg-[#FF6A00] text-white border-[#FF6A00]' : 'bg-transparent text-gray-400 border-white/20 hover:text-white hover:border-white/40'"
-                                class="px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm flex items-center space-x-2">
-                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                            <span>Laxmanjees Sweets Kandaghat</span>
-                        </button>
+                    <!-- Video Grid of 3 Videos with Rotating Hover Effect -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto pt-4">
+                        
+                        <!-- Video 1: Mahasu Devta -->
+                        <div x-data="{ playing: false }" 
+                             class="relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.05] hover:shadow-2xl hover:border-white/30 group">
+                            <!-- Thumbnail -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 cursor-pointer select-none">
+                                <img src="https://img.youtube.com/vi/H7ch9Z3_qeM/maxresdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Mahasu Devta Documentary Thumbnail">
+                                <!-- Dark Overlay -->
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    Mahasu Devta Documentary
+                                </div>
+                            </div>
+                            <!-- Video Embed -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/H7ch9Z3_qeM?autoplay=1" 
+                                        title="Mahasu Devta Documentary" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
+                        </div>
+
+                        <!-- Video 2: Shoolini Mata -->
+                        <div x-data="{ playing: false }" 
+                             class="relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 transition-all duration-500 transform lg:rotate-1 lg:hover:rotate-0 hover:scale-[1.05] hover:shadow-2xl hover:border-white/30 group">
+                            <!-- Thumbnail -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 cursor-pointer select-none">
+                                <img src="https://img.youtube.com/vi/eyvS1WsEsNY/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Shoolini Mata Documentary Thumbnail">
+                                <!-- Dark Overlay -->
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    Shoolini Mata Documentary
+                                </div>
+                            </div>
+                            <!-- Video Embed -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/eyvS1WsEsNY?autoplay=1" 
+                                        title="Shoolini Mata Documentary" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
+                        </div>
+
+                        <!-- Video 3: Laxmanjees Sweets -->
+                        <div x-data="{ playing: false }" 
+                             class="relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.05] hover:shadow-2xl hover:border-white/30 group">
+                            <!-- Thumbnail -->
+                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 cursor-pointer select-none">
+                                <img src="https://img.youtube.com/vi/jJmfDRKFFGI/maxresdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Laxmanjees Sweets Thumbnail">
+                                <!-- Dark Overlay -->
+                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
+                                <!-- Play Button -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-14 h-14 bg-[#FF6A00] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                    </div>
+                                </div>
+                                <!-- Title Overlay -->
+                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
+                                    Laxmanjees Sweets Kandaghat
+                                </div>
+                            </div>
+                            <!-- Video Embed -->
+                            <template x-if="playing">
+                                <iframe class="w-full h-full rounded-[20px]" 
+                                        src="https://www.youtube.com/embed/jJmfDRKFFGI?autoplay=1" 
+                                        title="Laxmanjees Sweets Kandaghat" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen></iframe>
+                            </template>
+                        </div>
+
                     </div>
 
-                    <!-- Video Embed Frames with Parallax Shift -->
-                    <div class="relative aspect-video max-w-4xl mx-auto rounded-[20px] overflow-hidden border border-white/20 shadow-2xl bg-zinc-950" data-parallax-speed="0.06">
-                        <!-- Video 1 -->
-                        <div x-show="activeVideo === 'mahasu'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
-                            <iframe class="w-full h-full rounded-[20px]" 
-                                    src="https://www.youtube.com/embed/H7ch9Z3_qeM" 
-                                    title="आख़िर कौन हैं महासू देवता? अनसुनी कहानियाँ और रहस्य | Mahasu Devta Documentary" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen></iframe>
-                        </div>
-
-                        <!-- Video 2 -->
-                        <div x-show="activeVideo === 'shoolini'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" style="display: none;">
-                            <iframe class="w-full h-full rounded-[20px]" 
-                                    src="https://www.youtube.com/embed/eyvS1WsEsNY" 
-                                    title="शूलिनी माता: आस्था, परंपरा, मन्दिर और मेले का अनसुना सच | Shoolini Mata Documentary | KKSB Vlogs" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen></iframe>
-                        </div>
-
-                        <!-- Video 3 -->
-                        <div x-show="activeVideo === 'laxmanjee'" class="w-full h-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" style="display: none;">
-                            <iframe class="w-full h-full rounded-[20px]" 
-                                    src="https://www.youtube.com/embed/jJmfDRKFFGI" 
-                                    title="छोटी सी दुकान से हिमाचल की मशहूर बेसन बर्फी तक | Laxmanjees Sweets Kandaghat" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <div class="pt-4">
+                    <div class="pt-8">
                         <a href="/portfolio" 
                            class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
                             <span>Explore Portfolio</span>
