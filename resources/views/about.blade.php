@@ -116,16 +116,16 @@
 
     <!-- Founders Quote/Details -->
     <section class="py-12 lg:py-16 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="max-w-5xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <!-- Left Column: Portrait -->
-            <div class="lg:col-span-5 max-w-sm sm:max-w-md lg:max-w-none mx-auto lg:mx-0 w-full" data-aos="fade-right">
-                <div class="rounded-[24px] overflow-hidden shadow-xl bg-zinc-950 border border-gray-100">
+            <div class="lg:col-span-4 max-w-[260px] sm:max-w-[300px] lg:max-w-[280px] mx-auto lg:mx-0 w-full" data-aos="fade-right">
+                <div class="rounded-[20px] overflow-hidden shadow-lg bg-zinc-950 border border-gray-100">
                     <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover" alt="Founder Portrait">
                 </div>
             </div>
 
             <!-- Right Column: Info -->
-            <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+            <div class="lg:col-span-8 space-y-6" data-aos="fade-left">
                 <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">The Founder</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111111] leading-tight">
                     {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
