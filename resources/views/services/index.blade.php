@@ -150,7 +150,7 @@
         </section>
 
         <!-- SERVICES BIG & ATTRACTIVE CARDS GRID -->
-        <section class="py-16 lg:py-20 bg-[#FAFAFA] relative overflow-hidden">
+        <section class="pt-8 pb-16 lg:pt-12 lg:pb-20 bg-[#FAFAFA] relative overflow-hidden">
             <!-- Premium Subtle Parallax Background -->
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed opacity-[0.06] pointer-events-none" 
                  style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');"></div>
@@ -319,7 +319,7 @@
         <!-- WHY CHOOSE KKSB STUDIOS (PREMIUM BLACK CARD) -->
         <section class="py-20 lg:py-24 bg-white border-t border-[#ECECEC]">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="bg-[#111111] border border-zinc-800 rounded-[36px] p-8 lg:p-16 text-white space-y-8 shadow-2xl relative overflow-hidden">
+                <div class="bg-[#111111] border border-zinc-800 rounded-[24px] sm:rounded-[36px] p-6 sm:p-10 lg:p-16 text-white space-y-8 shadow-2xl relative overflow-hidden">
                     <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#FF6A00]/20 rounded-full blur-3xl pointer-events-none"></div>
                     
                     <div class="max-w-4xl space-y-4 relative z-10">
