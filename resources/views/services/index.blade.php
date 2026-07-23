@@ -120,7 +120,7 @@
     }">
 
         <!-- HERO SECTION -->
-        <section class="bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] py-20 lg:py-28 border-b border-[#ECECEC] relative overflow-hidden">
+        <section class="bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] pt-8 pb-16 lg:pt-12 lg:pb-24 border-b border-[#ECECEC] relative overflow-hidden">
             <!-- Background Ambient Glow -->
             <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#FF6A00]/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
             
@@ -152,7 +152,7 @@
         <!-- SERVICES BIG & ATTRACTIVE CARDS GRID -->
         <section class="py-16 lg:py-20 bg-[#FAFAFA] relative overflow-hidden">
             <!-- Premium Subtle Parallax Background -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed opacity-[0.12] pointer-events-none" 
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed opacity-[0.06] pointer-events-none" 
                  style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');"></div>
             
             <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-[90px] space-y-12">
@@ -161,8 +161,8 @@
                     <span class="text-xs font-black text-[#FF6A00] tracking-[0.25em] uppercase block">
                         OUR CORE CAPABILITIES
                     </span>
-                    <h2 class="text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight leading-tight">
-                        <span class="text-[#111111]">Complete Marketing & Creative</span> <span class="text-gray-400">Solutions</span>
+                    <h2 class="text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight leading-tight text-[#111111]">
+                        Complete Marketing & Creative <span class="text-gray-600">Solutions</span>
                     </h2>
                 </div>
 
