@@ -69,6 +69,32 @@ Route::get('/init-admin', function () {
     }
 });
 
+// Secure One-Click Deployment Helper Route (For pulling latest GitHub updates on Hostinger)
+Route::get('/deploy', function () {
+    try {
+        $gitOutput = [];
+        // Execute git pull on the Hostinger server
+        exec('git pull origin main 2>&1', $gitOutput);
+        
+        // Clear caches
+        \Artisan::call('view:clear');
+        \Artisan::call('cache:clear');
+        \Artisan::call('config:clear');
+        \Artisan::call('route:clear');
+        
+        return response()->json([
+            'status' => 'success',
+            'git_output' => $gitOutput,
+            'cache_clear' => 'Laravel View, Config, Cache, and Route Cleared Successfully!'
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
+
 // Auth Dashboard Redirect
 Route::get('/dashboard', function () {
     return redirect()->route('admin.dashboard');
