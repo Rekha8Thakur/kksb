@@ -30,9 +30,9 @@
         <div class="max-w-3xl mx-auto px-6 space-y-12">
             
             <!-- Banner Image -->
-            @if($blog->banner_image)
+            @if($blog->featured_image)
                 <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-sm bg-gray-100 mb-12">
-                    <img src="{{ asset($blog->banner_image) }}" class="w-full h-full object-cover" alt="{{ $blog->title }}">
+                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover" alt="{{ $blog->title }}">
                 </div>
             @endif
 
@@ -64,8 +64,8 @@
                         @foreach($relatedBlogs as $rel)
                             <div class="group space-y-3">
                                 <a href="/blog/{{ $rel->slug }}" class="block aspect-video bg-gray-100 rounded-2xl overflow-hidden">
-                                    @if($rel->banner_image)
-                                        <img src="{{ asset($rel->banner_image) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="">
+                                    @if($rel->featured_image)
+                                        <img src="{{ asset($rel->featured_image) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="">
                                     @endif
                                 </a>
                                 <div class="space-y-1.5">

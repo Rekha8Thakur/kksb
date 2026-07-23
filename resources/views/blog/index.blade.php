@@ -50,8 +50,8 @@
                     <div class="bg-white border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-2xl rounded-3xl overflow-hidden group transition duration-300 flex flex-col justify-between" data-aos="fade-up">
                         <div>
                             <div class="aspect-video w-full bg-gray-100 overflow-hidden relative">
-                                @if($blog->banner_image)
-                                    <img src="{{ asset($blog->banner_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+                                @if($blog->featured_image)
+                                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
                                 @endif
                                 <span class="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] font-extrabold text-gray-800 px-2.5 py-1 rounded-full uppercase tracking-wider">
                                     {{ $blog->category->name }}
