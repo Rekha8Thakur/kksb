@@ -530,174 +530,150 @@
                     </p>
                 </div>
 
-                <!-- 6 Process Steps Premium Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 6 Process Steps Premium Cards Grid (Single Row on Desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-5">
                     <!-- Step 1 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <!-- Giant Step Number watermark (modern editorial aesthetic) -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             01
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="search" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Discover
-                                </h3>
-                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
-                                    We understand your business, goals and target audience.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="search" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Discover
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            We understand your business, goals and target audience.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="200">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             02
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="file-text" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Research
-                                </h3>
-                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
-                                    In-depth research on your industry, audience and competitors.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="file-text" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Research
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            In-depth research on your industry, audience and competitors.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="300">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             03
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="target" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Strategize
-                                </h3>
-                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
-                                    We create a customized strategy aligned with your objectives.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="target" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Strategize
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            We create a customized strategy aligned with your objectives.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="400">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             04
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="edit-3" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Create
-                                </h3>
-                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
-                                    Our team produces high-quality content and creatives.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="edit-3" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Create
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            Our team produces high-quality content and creatives.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 5 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="500">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             05
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="send" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Publish
-                                </h3>
-                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
-                                    We launch across the right platforms at the right time.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="send" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Publish
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            We launch across the right platforms at the right time.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 6 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="600">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
                             06
                         </span>
                         
-                        <div class="flex items-start space-x-5 relative z-10">
-                            <!-- Circular Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                                <i data-lucide="trending-up" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
-                            </div>
-                            
-                            <!-- Text Content -->
-                            <div class="space-y-2 mt-1">
-                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
-                                    Optimize
-                                </h3>
-                                <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                                    We analyze, learn and optimize for maximum results.
-                                </p>
-                            </div>
+                        <!-- Circular Icon Container -->
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="trending-up" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
+                        <!-- Text Content -->
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                            Optimize
+                        </h3>
+                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                            We analyze, learn and optimize for maximum results.
+                        </p>
+                        
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
             </div>
