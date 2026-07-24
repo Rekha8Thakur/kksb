@@ -178,7 +178,7 @@
                                     <span>3</span>
                                 </template>
                             </div>
-                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Portfolio</span>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Availability</span>
                         </button>
 
                         <!-- Tab 4 -->
@@ -189,7 +189,7 @@
                                  :class="step === 4 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'">
                                 <span>4</span>
                             </div>
-                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Availability</span>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Portfolio</span>
                         </button>
                     </div>
 
@@ -218,8 +218,8 @@
 
                         <!-- Email -->
                         <div class="space-y-2">
-                            <label for="email" class="text-xs font-bold text-gray-700 uppercase tracking-wide">Email Address <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" required value="{{ old('email') }}" placeholder="you@example.com"
+                            <label for="email" class="text-xs font-bold text-gray-700 uppercase tracking-wide">Email Address</label>
+                            <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="you@example.com"
                                    class="w-full bg-[#FAFAFA] border border-gray-200 rounded-xl h-12 px-4 text-sm text-gray-900 focus:border-[#FF6A00] focus:bg-white outline-none transition">
                             @error('email') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                         </div>
@@ -390,47 +390,10 @@
                     </div>
                 </div>
 
-                <!-- Step 3: Photos & Videos Uploads -->
+                <!-- Step 3: Availability, Goals & Compensation -->
                 <div id="step-container-3" x-show="step === 3" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">3</span>
-                        Portfolio Assets Upload
-                    </h2>
-
-                    <!-- Upload Photos -->
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-gray-700 uppercase tracking-wide block">Upload Your Best Photos <span class="text-red-500">*</span></label>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">Provide 2 to 5 clear photos of yourself (Front portrait, full profile, casual looks). Max file size: 10MB per image.</p>
-                        <input type="file" name="photos[]" required multiple accept="image/*"
-                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#FF6A00]/10 file:text-[#FF6A00] hover:file:bg-[#FF6A00]/20 file:cursor-pointer cursor-pointer border border-dashed border-gray-300 rounded-xl p-4">
-                        @error('photos') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
-                        @error('photos.*') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
-                    </div>
-
-                    <!-- Upload Video -->
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-gray-700 uppercase tracking-wide block">Upload a Short Introduction Video</label>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed">A short 30-60 sec video introducing yourself, your city, and your camera comfort. (Optional, Max size: 50MB).</p>
-                        <input type="file" name="intro_video" accept="video/*"
-                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 file:cursor-pointer cursor-pointer border border-dashed border-gray-300 rounded-xl p-4">
-                        @error('intro_video') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="pt-4 flex justify-between items-center">
-                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-12 px-6 rounded-xl text-sm transition">
-                            &larr; Previous
-                        </button>
-                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
-                            Next Step &rarr;
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Step 4: Availability, Goals & Compensation -->
-                <div id="step-container-4" x-show="step === 4" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
-                    <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                        <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">4</span>
                         Availability, Goals & Compensation
                     </h2>
 
@@ -531,6 +494,43 @@
                         <textarea id="message" name="message" required rows="4" placeholder="Briefly describe your passion for acting, modeling, or content creation, and why you'd like to work with KKSB Studios..."
                                   class="w-full bg-[#FAFAFA] border border-gray-200 rounded-xl p-4 text-sm text-gray-900 focus:border-[#FF6A00] focus:bg-white outline-none transition resize-none">{{ old('message') }}</textarea>
                         @error('message') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-between items-center">
+                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-12 px-6 rounded-xl text-sm transition">
+                            &larr; Previous
+                        </button>
+                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
+                            Next Step &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Portfolio Assets Upload -->
+                <div id="step-container-4" x-show="step === 4" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
+                    <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">4</span>
+                        Portfolio Assets Upload
+                    </h2>
+
+                    <!-- Upload Photos -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-700 uppercase tracking-wide block">Upload Your Best Photos <span class="text-red-500">*</span></label>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">Provide 2 to 5 clear photos of yourself (Front portrait, full profile, casual looks). Max file size: 10MB per image.</p>
+                        <input type="file" name="photos[]" required multiple accept="image/*"
+                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#FF6A00]/10 file:text-[#FF6A00] hover:file:bg-[#FF6A00]/20 file:cursor-pointer cursor-pointer border border-dashed border-gray-300 rounded-xl p-4">
+                        @error('photos') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
+                        @error('photos.*') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
+                    </div>
+
+                    <!-- Upload Video -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-700 uppercase tracking-wide block">Upload a Short Introduction Video</label>
+                        <p class="text-xs text-gray-400 font-light leading-relaxed">A short 30-60 sec video introducing yourself, your city, and your camera comfort. (Optional, Max size: 50MB).</p>
+                        <input type="file" name="intro_video" accept="video/*"
+                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 file:cursor-pointer cursor-pointer border border-dashed border-gray-300 rounded-xl p-4">
+                        @error('intro_video') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                     </div>
 
                     <!-- Actions -->

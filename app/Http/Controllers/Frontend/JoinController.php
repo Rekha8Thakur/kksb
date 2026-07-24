@@ -69,7 +69,7 @@ class JoinController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'nullable|email|max:255',
             'phone' => 'required|string|max:255',
             'instagram' => 'required|string|max:255',
             'age' => 'required|integer|min:1|max:120',
