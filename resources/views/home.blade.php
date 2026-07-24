@@ -953,25 +953,26 @@
             $title3 = App\Models\Setting::get('showreel_title_3', 'Laxmanjees Sweets Kandaghat');
         @endphp
 
-        <section id="showreel-section" class="mx-6 lg:mx-[90px] mb-20 lg:mb-28">
-            <style>
-                @keyframes float-gentle {
-                    0%, 100% { transform: translateY(0px) rotate(var(--rot, -1deg)); }
-                    50% { transform: translateY(-8px) rotate(calc(var(--rot, -1deg) + 0.5deg)); }
-                }
-                @keyframes float-gentle-reverse {
-                    0%, 100% { transform: translateY(0px) rotate(var(--rot, 1deg)); }
-                    50% { transform: translateY(-8px) rotate(calc(var(--rot, 1deg) - 0.5deg)); }
-                }
-                .animate-float-1 {
-                    animation: float-gentle 6s ease-in-out infinite;
-                }
-                .animate-float-2 {
-                    animation: float-gentle-reverse 7s ease-in-out infinite;
-                }
-            </style>
+        <section id="showreel-section" class="py-10 bg-white overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+                <style>
+                    @keyframes float-gentle {
+                        0%, 100% { transform: translateY(0px) rotate(var(--rot, -1deg)); }
+                        50% { transform: translateY(-8px) rotate(calc(var(--rot, -1deg) + 0.5deg)); }
+                    }
+                    @keyframes float-gentle-reverse {
+                        0%, 100% { transform: translateY(0px) rotate(var(--rot, 1deg)); }
+                        50% { transform: translateY(-8px) rotate(calc(var(--rot, 1deg) - 0.5deg)); }
+                    }
+                    .animate-float-1 {
+                        animation: float-gentle 6s ease-in-out infinite;
+                    }
+                    .animate-float-2 {
+                        animation: float-gentle-reverse 7s ease-in-out infinite;
+                    }
+                </style>
 
-            <div class="relative bg-[#111111] text-white rounded-[24px] py-16 lg:py-24 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
+                <div class="relative bg-[#111111] text-white rounded-[32px] py-12 lg:py-16 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
                 <!-- Dotgrid Pattern -->
                 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
@@ -1104,7 +1105,8 @@
 
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
         <!-- INDUSTRIES WE UNDERSTAND -->
