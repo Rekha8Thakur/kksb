@@ -735,11 +735,6 @@
                                     <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
                                     <span class="text-[13px] font-extrabold text-emerald-700">+250% Bookings</span>
                                 </div>
-
-                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
-                                    <span>Read Case Study</span>
-                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -770,11 +765,6 @@
                                     <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
                                     <span class="text-[13px] font-extrabold text-emerald-700">3X Footfall</span>
                                 </div>
-
-                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
-                                    <span>Read Case Study</span>
-                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -805,11 +795,6 @@
                                     <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
                                     <span class="text-[13px] font-extrabold text-emerald-700">200% Inquiries</span>
                                 </div>
-
-                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
-                                    <span>Read Case Study</span>
-                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -840,11 +825,6 @@
                                     <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
                                     <span class="text-[13px] font-extrabold text-emerald-700">180% Store Visits</span>
                                 </div>
-
-                                <a href="/portfolio" class="inline-flex items-center space-x-1.5 text-[13px] font-bold text-[#111111] hover:underline group/link pt-1">
-                                    <span>Read Case Study</span>
-                                    <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
-                                </a>
                             </div>
                         </div>
                     </div>
