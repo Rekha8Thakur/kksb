@@ -17,12 +17,18 @@
             will-change: transform;
         }
         @media (min-width: 1024px) {
-            .hero-fullscreen {
+            .hero-outer-fullscreen {
                 height: calc(100vh - 80px) !important;
             }
+            .hero-fullscreen-frame {
+                height: calc(100vh - 128px) !important;
+            }
         }
-        .hero-fullscreen {
+        .hero-outer-fullscreen {
             min-height: calc(100vh - 80px);
+        }
+        .hero-fullscreen-frame {
+            min-height: calc(100vh - 128px);
         }
     </style>
 
@@ -37,88 +43,92 @@
     }">
 
         <!-- HERO SECTION -->
-        <section class="relative bg-white flex items-center overflow-hidden py-12 lg:py-0 hero-fullscreen">
-            <!-- Ambient Parallax Background Glow Effects -->
-            <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/12 via-[#FF6A00]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
-                 data-parallax-speed="0.25"></div>
-            <div class="absolute bottom-0 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#FF6A00]/8 to-transparent rounded-full blur-2xl pointer-events-none -z-10"
-                 data-parallax-speed="-0.2"></div>
-            
-            <!-- Floating Background Graphic Parallax Text -->
-            <div class="absolute top-8 left-1/2 -translate-x-1/2 text-[140px] md:text-[220px] font-black text-gray-900/[0.02] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap -z-10"
-                 data-parallax-speed="0.35">
-                KKSB STUDIOS
-            </div>
-
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
-                <!-- Left Content (50%) -->
-                <div class="lg:col-span-6 space-y-5 md:space-y-6" data-aos="fade-up" data-aos-duration="1000" data-parallax-speed="-0.04">
-                    <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold tracking-tight">
-                        <span class="text-[#111111]">We Build Brands</span> <span class="text-gray-400">That Grow & Inspire</span><span class="text-[#FF6A00]">.</span>
-                    </h1>
-                    <p class="text-[15px] sm:text-[16px] text-[#666666] leading-relaxed font-light max-w-xl">
-                        KKSB Studios helps ambitious businesses stand out with creative strategy, compelling content and performance-driven marketing.
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                        <a href="/services" 
-                           class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 shadow-md shadow-[#FF6A00]/25 hover:shadow-lg hover:shadow-[#FF6A00]/35 hover:-translate-y-0.5 group">
-                            <span>Our Services</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
-                        </a>
-                        <a href="/portfolio" 
-                           class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-[#ECECEC] text-[#111111] hover:border-[#111111] hover:bg-[#FAFAFA] font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 hover:-translate-y-0.5 shadow-sm group">
-                            <span>View Work</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
-                        </a>
+        <section class="relative bg-white flex items-center overflow-hidden py-4 lg:py-6 hero-outer-fullscreen">
+            <div class="max-w-[1440px] w-full mx-auto px-6 lg:px-[90px]">
+                <div class="relative w-full bg-[#FAFAFA] border border-[#ECECEC] rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.015)] p-6 sm:p-10 lg:p-16 flex items-center hero-fullscreen-frame">
+                    <!-- Ambient Parallax Background Glow Effects -->
+                    <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/8 via-[#FF6A00]/3 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
+                         data-parallax-speed="0.25"></div>
+                    <div class="absolute bottom-0 left-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#FF6A00]/5 to-transparent rounded-full blur-2xl pointer-events-none -z-10"
+                         data-parallax-speed="-0.2"></div>
+                    
+                    <!-- Floating Background Graphic Parallax Text -->
+                    <div class="absolute top-8 left-1/2 -translate-x-1/2 text-[140px] md:text-[220px] font-black text-gray-900/[0.01] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap -z-10"
+                         data-parallax-speed="0.35">
+                        KKSB STUDIOS
                     </div>
 
-                    <!-- Trust Indicators -->
-                    <div class="flex flex-wrap items-center gap-y-2.5 gap-x-5 pt-6 border-t border-[#ECECEC] mt-6 text-[13px] text-[#666666] font-medium">
-                        <span class="flex items-center space-x-2">
-                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
-                            <span>Strategy</span>
-                        </span>
-                        <span class="flex items-center space-x-2">
-                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
-                            <span>Production</span>
-                        </span>
-                        <span class="flex items-center space-x-2">
-                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
-                            <span>Marketing</span>
-                        </span>
-                        <span class="flex items-center space-x-2">
-                            <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
-                            <span>Growth</span>
-                        </span>
-                    </div>
-                </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full relative z-10">
+                        <!-- Left Content (50%) -->
+                        <div class="lg:col-span-6 space-y-5 md:space-y-6" data-aos="fade-up" data-aos-duration="1000" data-parallax-speed="-0.04">
+                            <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold tracking-tight">
+                                <span class="text-[#111111]">We Build Brands</span> <span class="text-gray-400">That Grow & Inspire</span><span class="text-[#FF6A00]">.</span>
+                            </h1>
+                            <p class="text-[15px] sm:text-[16px] text-[#666666] leading-relaxed font-light max-w-xl">
+                                KKSB Studios helps ambitious businesses stand out with creative strategy, compelling content and performance-driven marketing.
+                            </p>
 
-                <!-- Right Side Image with Parallax Depth -->
-                <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-parallax-speed="0.08">
-                    <div class="relative overflow-hidden rounded-[20px] shadow-xl aspect-[16/10] bg-gray-100 group border border-[#ECECEC]">
-                        <img src="{{ asset('images/landing-shoot.jpg') }}" 
-                             alt="KKSB Studios Video Production Shoot" 
-                             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                            <!-- CTAs -->
+                            <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                                <a href="/services" 
+                                   class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#FF6A00] hover:bg-[#E55F00] text-white font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 shadow-md shadow-[#FF6A00]/25 hover:shadow-lg hover:shadow-[#FF6A00]/35 hover:-translate-y-0.5 group">
+                                    <span>Our Services</span>
+                                    <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
+                                </a>
+                                <a href="/portfolio" 
+                                   class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-[#ECECEC] text-[#111111] hover:border-[#111111] hover:bg-white font-semibold h-[52px] px-[20px] rounded-[12px] text-[14px] transition-all duration-300 hover:-translate-y-0.5 shadow-sm group">
+                                    <span>View Work</span>
+                                    <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"></i>
+                                </a>
+                            </div>
 
-                        <!-- Floating Live Badge with Parallax -->
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md border border-white/40 rounded-full px-3.5 py-1.5 flex items-center space-x-2 shadow-md"
-                             data-parallax-speed="-0.12">
-                            <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping"></span>
-                            <span class="text-[11px] font-bold text-[#111111] tracking-wide">KKSB Production</span>
+                            <!-- Trust Indicators -->
+                            <div class="flex flex-wrap items-center gap-y-2.5 gap-x-5 pt-6 border-t border-[#ECECEC] mt-6 text-[13px] text-[#666666] font-medium">
+                                <span class="flex items-center space-x-2">
+                                    <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                                    <span>Strategy</span>
+                                </span>
+                                <span class="flex items-center space-x-2">
+                                    <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                                    <span>Production</span>
+                                </span>
+                                <span class="flex items-center space-x-2">
+                                    <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                                    <span>Marketing</span>
+                                </span>
+                                <span class="flex items-center space-x-2">
+                                    <span class="text-[#FF6A00]"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+                                    <span>Growth</span>
+                                </span>
+                            </div>
                         </div>
 
-                        <!-- Floating Glassmorphic Card Effect with Counter Parallax -->
-                        <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-3.5 text-white flex items-center space-x-3.5 shadow-xl max-w-xs"
-                             data-parallax-speed="0.12">
-                            <div class="w-9 h-9 rounded-lg bg-[#FF6A00] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#FF6A00]/30">
-                                <i data-lucide="video" class="w-4.5 h-4.5"></i>
-                            </div>
-                            <div>
-                                <p class="text-[12.5px] font-bold text-white leading-tight">High-Impact Production</p>
-                                <p class="text-[10.5px] text-gray-300 font-light mt-0.5">Creating content that connects & converts</p>
+                        <!-- Right Side Image with Parallax Depth -->
+                        <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-parallax-speed="0.08">
+                            <div class="relative overflow-hidden rounded-[20px] shadow-xl aspect-[16/10] bg-gray-100 group border border-[#ECECEC]">
+                                <img src="{{ asset('images/landing-shoot.jpg') }}" 
+                                     alt="KKSB Studios Video Production Shoot" 
+                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+
+                                <!-- Floating Live Badge with Parallax -->
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md border border-white/40 rounded-full px-3.5 py-1.5 flex items-center space-x-2 shadow-md"
+                                     data-parallax-speed="-0.12">
+                                    <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-ping"></span>
+                                    <span class="text-[11px] font-bold text-[#111111] tracking-wide">KKSB Production</span>
+                                </div>
+
+                                <!-- Floating Glassmorphic Card Effect with Counter Parallax -->
+                                <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-3.5 text-white flex items-center space-x-3.5 shadow-xl max-w-xs"
+                                     data-parallax-speed="0.12">
+                                    <div class="w-9 h-9 rounded-lg bg-[#FF6A00] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#FF6A00]/30">
+                                        <i data-lucide="video" class="w-4.5 h-4.5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[12.5px] font-bold text-white leading-tight">High-Impact Production</p>
+                                        <p class="text-[10.5px] text-gray-300 font-light mt-0.5">Creating content that connects & converts</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
