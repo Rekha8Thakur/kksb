@@ -892,7 +892,7 @@
         </section>
 
         <!-- CINEMATIC PARALLAX BANNER (HIGH VISIBILITY TYPOGRAPHY) -->
-        <section class="relative py-32 lg:py-44 bg-scroll md:bg-fixed bg-cover bg-center overflow-hidden my-16 lg:my-24 shadow-2xl" 
+        <section class="relative py-20 lg:py-28 bg-scroll md:bg-fixed bg-cover bg-center overflow-hidden my-10 lg:my-16 shadow-2xl" 
                  style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');">
             <!-- Strong High-Contrast Dark Backdrop Mask -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90 backdrop-blur-[2px]"></div>
