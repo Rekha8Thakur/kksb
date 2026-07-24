@@ -29,7 +29,7 @@
     }">
 
         <!-- HERO SECTION -->
-        <section class="relative bg-white pt-10 lg:pt-16 pb-12 lg:pb-20 overflow-hidden">
+        <section class="relative bg-white flex items-center overflow-hidden py-12 lg:py-0" style="min-h: calc(100vh - 80px);">
             <!-- Ambient Parallax Background Glow Effects -->
             <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/12 via-[#FF6A00]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
                  data-parallax-speed="0.25"></div>
@@ -42,7 +42,7 @@
                 KKSB STUDIOS
             </div>
 
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
                 <!-- Left Content (50%) -->
                 <div class="lg:col-span-6 space-y-5 md:space-y-6" data-aos="fade-up" data-aos-duration="1000" data-parallax-speed="-0.04">
                     <h1 class="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] lg:leading-[1.12] font-extrabold tracking-tight">
