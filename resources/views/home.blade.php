@@ -183,19 +183,20 @@
         </section>
 
         <!-- CLIENT LOGOS MARQUEE -->
-        <section class="py-10 bg-[#FAFAFA] border-t border-b border-[#ECECEC] overflow-hidden">
+        <section class="py-12 bg-white overflow-hidden">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
-                <div class="text-center mb-6" data-aos="fade-up">
-                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
-                        <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
-                    </span>
-                    <h2 class="text-xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
-                        <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
-                    </h2>
-                </div>
-                
-                <!-- Infinite Horizontal Scrolling Logo Marquee -->
-                <div class="relative w-full flex items-center overflow-x-hidden">
+                <div class="bg-[#FAFAFA] border border-[#ECECEC] rounded-[32px] py-12 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.02)] overflow-hidden relative">
+                    <div class="text-center mb-8" data-aos="fade-up">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
+                            <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
+                        </span>
+                        <h2 class="text-xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
+                            <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
+                        </h2>
+                    </div>
+                    
+                    <!-- Infinite Horizontal Scrolling Logo Marquee -->
+                    <div class="relative w-full flex items-center overflow-x-hidden">
                     <div class="animate-marquee flex items-center space-x-8 text-center select-none py-2">
                         <!-- List of 21 Real Brand Logos (Set 1) -->
                         <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
@@ -329,7 +330,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- SERVICES SECTION (SINGLE ROW LAYOUT) -->
         <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
