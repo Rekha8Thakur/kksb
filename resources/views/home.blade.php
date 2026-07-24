@@ -1109,42 +1109,7 @@
     </section>
 
 
-        <!-- INDUSTRIES WE UNDERSTAND -->
-        <section class="py-16 bg-[#FAFAFA] border-t border-b border-[#ECECEC]">
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <span class="text-[11px] font-bold text-[#666666] tracking-[0.2em] uppercase text-center block mb-8">
-                    INDUSTRIES WE UNDERSTAND
-                </span>
-                
-                <!-- Modern Chips Grid with Subtle Parallax Depth -->
-                <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
-                        Hospitality & Tourism
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
-                        Healthcare
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
-                        Education
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
-                        Retail
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
-                        Real Estate
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="-0.03">
-                        Food & Lifestyle
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm" data-parallax-speed="0.04">
-                        Local Businesses
-                    </div>
-                    <div class="bg-white border border-[#ECECEC] rounded-full px-6 py-3 text-[14px] font-semibold text-[#111111] hover:border-[#111111] transition duration-300 shadow-sm text-gray-400" data-parallax-speed="-0.03">
-                        & More
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
 
 
