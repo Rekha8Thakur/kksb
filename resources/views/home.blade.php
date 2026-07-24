@@ -522,74 +522,137 @@
                     <span class="text-[13px] font-bold text-[#FF5500] tracking-[0.2em] uppercase block">
                         // HOW WE WORK
                     </span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold italic tracking-tight">
-                        <span class="text-[#111111]">Our Simple</span> <span class="text-gray-400">Process</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold tracking-tight uppercase">
+                        <span class="text-[#111111]">Our</span> <span class="text-gray-400">Process</span>
                     </h2>
                     <p class="text-[15px] text-[#666666] font-light max-w-xl mx-auto">
                         A transparent and proven process that ensures great results every time.
                     </p>
                 </div>
 
-                <!-- 4 Process Step Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Step 01 -->
-                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <div class="space-y-6">
-                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
-                                01
-                            </span>
-                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
-                                We Review
-                            </h3>
-                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
-                                We review your enquiry details, business model, and existing marketing footprints.
-                            </p>
+                <!-- 6 Process Steps Flow -->
+                <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-2">
+                    <!-- Step 1 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="search" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Discover
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            We understand your business, goals and target audience.
+                        </p>
                     </div>
 
-                    <!-- Step 02 -->
-                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.08">
-                        <div class="space-y-6">
-                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
-                                02
-                            </span>
-                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
-                                We Understand
-                            </h3>
-                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
-                                We suggestion alignment call to understand your target audience, goals, and content vision.
-                            </p>
-                        </div>
+                    <!-- Mobile/Tablet Arrow -->
+                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </div>
+                    <!-- Desktop Arrow -->
+                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </div>
 
-                    <!-- Step 03 -->
-                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <div class="space-y-6">
-                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
-                                03
-                            </span>
-                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
-                                We Recommend
-                            </h3>
-                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
-                                We present a tailormade strategy outline: shoot lists, posting calendars, or funnel structures.
-                            </p>
+                    <!-- Step 2 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="file-text" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Research
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            In-depth research on your industry, audience and competitors.
+                        </p>
                     </div>
 
-                    <!-- Step 04 -->
-                    <div class="bg-white border border-[#ECECEC] rounded-[24px] p-8 shadow-sm hover:shadow-xl hover:border-[#111111] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.08">
-                        <div class="space-y-6">
-                            <span class="w-12 h-12 rounded-full bg-[#F4F4F5] text-[15px] font-extrabold text-[#111111] flex items-center justify-center border border-[#E4E4E7]">
-                                04
-                            </span>
-                            <h3 class="text-[22px] font-extrabold text-[#111111] tracking-tight">
-                                We Connect
-                            </h3>
-                            <p class="text-[14px] text-[#666666] leading-relaxed font-light">
-                                We schedule the shoots and launch marketing execution with weekly optimization cycles.
-                            </p>
+                    <!-- Mobile/Tablet Arrow -->
+                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </div>
+                    <!-- Desktop Arrow -->
+                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="target" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Strategize
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            We create a customized strategy aligned with your objectives.
+                        </p>
+                    </div>
+
+                    <!-- Mobile/Tablet Arrow -->
+                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </div>
+                    <!-- Desktop Arrow -->
+                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="edit-3" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                        </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Create
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            Our team produces high-quality content and creatives.
+                        </p>
+                    </div>
+
+                    <!-- Mobile/Tablet Arrow -->
+                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </div>
+                    <!-- Desktop Arrow -->
+                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="send" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                        </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Publish
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            We launch across the right platforms at the right time.
+                        </p>
+                    </div>
+
+                    <!-- Mobile/Tablet Arrow -->
+                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </div>
+                    <!-- Desktop Arrow -->
+                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
+                            <i data-lucide="trending-up" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                        </div>
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
+                            Optimize
+                        </h3>
+                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                            We analyze, learn and optimize for maximum results.
+                        </p>
                     </div>
                 </div>
             </div>
