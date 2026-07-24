@@ -137,15 +137,7 @@
                     Strategy, content creation, and digital execution combined under one roof. Explore our specialized services designed to make your brand stand out and scale.
                 </p>
 
-                <!-- Quick Navigation Tags -->
-                <div class="flex flex-wrap justify-center gap-3 pt-4">
-                    <a href="#smm" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">📱 Social Media Management</a>
-                    <a href="#video" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">🎬 Video Production</a>
-                    <a href="#strategy" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">🎯 Brand Strategy</a>
-                    <a href="#campaigns" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">📈 Digital Campaigns</a>
-                    <a href="#influencer" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">🤝 Influencer Marketing</a>
-                    <a href="#website" class="px-5 py-2.5 bg-white border border-[#ECECEC] hover:border-[#FF6A00] hover:text-[#FF6A00] rounded-full text-xs font-bold text-gray-800 transition shadow-sm hover:shadow-md hover:-translate-y-0.5">🌐 Websites & Digital Presence</a>
-                </div>
+
             </div>
         </section>
 

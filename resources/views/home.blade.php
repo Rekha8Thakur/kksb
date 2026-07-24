@@ -857,7 +857,7 @@
         </section>
 
         <!-- WHY KKSB STUDIOS -->
-        <section class="py-20 lg:py-28 bg-white relative overflow-hidden">
+        <section class="pt-8 pb-20 lg:pt-12 lg:pb-28 bg-white relative overflow-hidden">
             <!-- Background Parallax Accent -->
             <div class="absolute bottom-10 left-10 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
                  data-parallax-speed="-0.2">
