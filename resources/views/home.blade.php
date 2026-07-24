@@ -119,24 +119,27 @@
         </section>
 
         <!-- TRUST STATS -->
-        <section class="py-10 bg-[#0B0B0C] border-t border-[#1F1F21] relative overflow-hidden">
+        <section class="py-10 relative overflow-hidden" style="background-color: #0b0b0c; border-top: 1px solid #1f1f21;">
             <!-- Background Parallax Text -->
-            <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black text-white/[0.01] pointer-events-none select-none uppercase -z-10"
-                 data-parallax-speed="-0.2">
+            <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black pointer-events-none select-none uppercase"
+                 data-parallax-speed="-0.2"
+                 style="color: rgba(255, 255, 255, 0.015); z-index: 1;">
                 STATS
             </div>
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px] relative z-10">
                 <div class="text-center mb-8" data-aos="fade-up">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Impact & Performance
                     </span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase">
-                        <span class="text-white">TRUST</span> <span class="text-zinc-650 text-gray-500">STATS</span>
+                        <span class="text-white">TRUST</span> <span class="text-gray-500">STATS</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04"
+                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="handshake" class="w-6 h-6"></i>
                         </div>
@@ -148,7 +151,9 @@
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09"
+                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
@@ -158,7 +163,9 @@
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04"
+                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
@@ -170,7 +177,9 @@
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09"
+                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
@@ -183,9 +192,10 @@
         </section>
 
         <!-- CLIENT LOGOS MARQUEE -->
-        <section class="py-6 bg-[#0B0B0C] overflow-hidden">
+        <section class="py-6 overflow-hidden" style="background-color: #0b0b0c;">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="bg-white/[0.02] border border-white/[0.08] rounded-[32px] py-8 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.12)] overflow-hidden relative">
+                <div class="rounded-[32px] py-8 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.12)] overflow-hidden relative"
+                     style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);">
                     <div class="text-center mb-6" data-aos="fade-up">
                         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
                             <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
