@@ -45,7 +45,7 @@
         <!-- HERO SECTION -->
         <section class="relative bg-white flex items-center overflow-hidden py-4 lg:py-6 hero-outer-fullscreen">
             <div class="max-w-[1440px] w-full mx-auto px-6 lg:px-[90px]">
-                <div class="relative w-full bg-[#FAFAFA] border border-[#ECECEC] rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.015)] p-6 sm:p-10 lg:p-16 flex items-center hero-fullscreen-frame">
+                <div class="relative w-full bg-white border border-[#ECECEC] rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.015)] p-6 sm:p-10 lg:p-16 flex items-center hero-fullscreen-frame">
                     <!-- Ambient Parallax Background Glow Effects -->
                     <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/8 via-[#FF6A00]/3 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
                          data-parallax-speed="0.25"></div>
@@ -119,14 +119,14 @@
                                 </div>
 
                                 <!-- Floating Glassmorphic Card Effect with Counter Parallax -->
-                                <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-3.5 text-white flex items-center space-x-3.5 shadow-xl max-w-xs"
+                                <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/90 backdrop-blur-md border border-white/40 rounded-xl p-3.5 text-[#111111] flex items-center space-x-3.5 shadow-xl max-w-xs"
                                      data-parallax-speed="0.12">
                                     <div class="w-9 h-9 rounded-lg bg-[#FF6A00] flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-[#FF6A00]/30">
                                         <i data-lucide="video" class="w-4.5 h-4.5"></i>
                                     </div>
                                     <div>
-                                        <p class="text-[12.5px] font-bold text-white leading-tight">High-Impact Production</p>
-                                        <p class="text-[10.5px] text-gray-300 font-light mt-0.5">Creating content that connects & converts</p>
+                                        <p class="text-[12.5px] font-bold text-[#111111] leading-tight">High-Impact Production</p>
+                                        <p class="text-[10.5px] text-[#666666] font-light mt-0.5">Creating content that connects & converts</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,11 +137,11 @@
         </section>
 
         <!-- TRUST STATS -->
-        <section class="py-10 relative overflow-hidden" style="background-color: #0b0b0c; border-top: 1px solid #1f1f21;">
+        <section class="relative py-12 bg-white overflow-hidden border-t border-[#ECECEC]">
             <!-- Background Parallax Text -->
             <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black pointer-events-none select-none uppercase"
                  data-parallax-speed="-0.2"
-                 style="color: rgba(255, 255, 255, 0.015); z-index: 1;">
+                 style="color: rgba(0, 0, 0, 0.015); z-index: 1;">
                 STATS
             </div>
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px] relative z-10">
@@ -150,59 +150,55 @@
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Impact & Performance
                     </span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase">
-                        <span class="text-white">TRUST</span> <span class="text-gray-500">STATS</span>
+                        <span class="text-[#111111]">TRUST</span> <span class="text-gray-400">STATS</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
-                         data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04"
-                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="handshake" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             Over 300+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
-                         data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09"
-                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
-                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
-                         data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04"
-                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             7+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="group relative rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" 
-                         data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09"
-                         style="background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                         data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
-                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
+                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
@@ -210,16 +206,16 @@
         </section>
 
         <!-- CLIENT LOGOS MARQUEE -->
-        <section class="py-6 overflow-hidden" style="background-color: #0b0b0c;">
+        <section class="py-12 bg-white overflow-hidden">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="rounded-[32px] py-8 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.12)] overflow-hidden relative"
-                     style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div class="rounded-[32px] py-12 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.02)] overflow-hidden relative"
+                     style="background-color: #ffffff; border: 1px solid #ECECEC;">
                     <div class="text-center mb-6" data-aos="fade-up">
                         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
                             <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
                         </span>
                         <h2 class="text-xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
-                            <span class="text-white">TRUSTED BY BRANDS</span> <span class="text-gray-500">THAT CHOOSE TO GROW</span>
+                            <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
                         </h2>
                     </div>
                     
@@ -1015,156 +1011,161 @@
 
         <section id="showreel-section" class="py-10 bg-white overflow-hidden">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <style>
-                    @keyframes float-gentle {
-                        0%, 100% { transform: translateY(0px) rotate(var(--rot, -1deg)); }
-                        50% { transform: translateY(-8px) rotate(calc(var(--rot, -1deg) + 0.5deg)); }
-                    }
-                    @keyframes float-gentle-reverse {
-                        0%, 100% { transform: translateY(0px) rotate(var(--rot, 1deg)); }
-                        50% { transform: translateY(-8px) rotate(calc(var(--rot, 1deg) - 0.5deg)); }
-                    }
-                    .animate-float-1 {
-                        animation: float-gentle 6s ease-in-out infinite;
-                    }
-                    .animate-float-2 {
-                        animation: float-gentle-reverse 7s ease-in-out infinite;
-                    }
-                </style>
-
                 <div class="relative bg-[#111111] text-white rounded-[32px] py-12 lg:py-16 px-6 lg:px-12 overflow-hidden shadow-xl" data-aos="fade-up">
-                <!-- Dotgrid Pattern -->
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                    <!-- Dotgrid Pattern -->
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
-                <div class="relative z-10 max-w-[1280px] mx-auto space-y-12 text-center">
-                    <div class="space-y-3" data-parallax-speed="-0.03">
-                        <span class="text-[13px] font-semibold text-gray-400 tracking-[0.2em] uppercase block">
-                            SHOWREEL
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight">
-                            <span class="text-white">See What</span> <span class="text-gray-400">We Create.</span>
-                        </h2>
-                        <p class="text-[15px] sm:text-[16px] text-gray-400 font-light max-w-xl mx-auto leading-relaxed">
-                            A glimpse of our work, our process and the results we create for brands.
-                        </p>
-                    </div>
+                    <div class="relative z-10 max-w-[1280px] mx-auto space-y-10">
+                        <!-- Header area with button on the right on desktop -->
+                        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" data-parallax-speed="-0.03">
+                            <div class="space-y-3">
+                                <span class="text-[13px] font-semibold text-gray-400 tracking-[0.2em] uppercase block">
+                                    SHOWREEL
+                                </span>
+                                <h2 class="text-3xl sm:text-4xl lg:text-[48px] font-bold tracking-tight">
+                                    <span class="text-white font-heading">See What</span> <span class="text-gray-400 font-heading">We Create.</span>
+                                </h2>
+                                <p class="text-[15px] sm:text-[16px] text-gray-450 font-light max-w-xl leading-relaxed">
+                                    A glimpse of our work, our process and the results we create for brands.
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="https://www.youtube.com/@KKSBVLOGS" 
+                                   target="_blank"
+                                   class="inline-flex items-center space-x-2 bg-white hover:bg-gray-100 text-[#111111] font-semibold px-7 py-3.5 rounded-[12px] text-[14px] transition duration-300 shadow-md group">
+                                    <span>Explore YouTube Channel</span>
+                                    <span class="group-hover:translate-x-1.5 transition-transform duration-200">&rarr;</span>
+                                </a>
+                            </div>
+                        </div>
 
-                    <!-- Video Grid of 3 Videos with Rotating Hover Effect & Floating Animations -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto pt-4">
-                        
-                        <!-- Video 1 -->
-                        <div x-data="{ playing: false }" 
-                             class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: -1deg;">
+                        <!-- Asymmetrical Video Showcase Grid -->
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-4">
                             
-                            <!-- Thumbnail Cover -->
-                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
-                                <img src="https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title1 }}">
-                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                                <!-- Play Button -->
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                            <!-- Main Featured Video (8 Cols on Desktop) -->
+                            <div class="lg:col-span-8 flex">
+                                <div x-data="{ playing: false }" 
+                                     class="w-full flex flex-col justify-between hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-[16/10] rounded-[24px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                    
+                                    <!-- Thumbnail Cover -->
+                                    <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                        <img src="https://img.youtube.com/vi/{{ $video1Id }}/maxresdefault.jpg" 
+                                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                             alt="{{ $title1 }}"
+                                             onerror="this.src='https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg'">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                                        
+                                        <!-- Featured Badge -->
+                                        <span class="absolute top-4 left-4 bg-[#FF6A00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                                            Featured Work
+                                        </span>
+
+                                        <!-- Play Button -->
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="w-16 h-16 bg-[#FF6A00] text-white rounded-full flex items-center justify-center shadow-lg relative group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.6)] transition-all duration-300">
+                                                <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                                <span class="absolute inset-0 rounded-full border-2 border-[#FF6A00] animate-ping opacity-45"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Title Overlay -->
+                                        <div class="absolute bottom-6 left-6 right-6 text-left space-y-2">
+                                            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight">
+                                                {{ $title1 }}
+                                            </h3>
+                                            <p class="text-sm text-gray-300 font-light line-clamp-1">
+                                                Click to watch our featured cinematic brand shoot.
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Title Overlay -->
-                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                    {{ $title1 }}
+
+                                    <!-- Embedded Player -->
+                                    <template x-if="playing">
+                                        <iframe class="w-full h-full rounded-[24px]" 
+                                                src="https://www.youtube.com/embed/{{ $video1Id }}?autoplay=1" 
+                                                title="{{ $title1 }}" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                referrerpolicy="strict-origin-when-cross-origin" 
+                                                allowfullscreen></iframe>
+                                    </template>
                                 </div>
                             </div>
 
-                            <!-- Embedded Player (Autoplay on click) -->
-                            <template x-if="playing">
-                                <iframe class="w-full h-full rounded-[20px]" 
-                                        src="https://www.youtube.com/embed/{{ $video1Id }}?autoplay=1" 
-                                        title="{{ $title1 }}" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen></iframe>
-                            </template>
-                        </div>
-
-                        <!-- Video 2 -->
-                        <div x-data="{ playing: false }" 
-                             class="animate-float-2 hover:[animation-play-state:paused] transition-all duration-500 transform lg:rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: 1deg;">
-                            
-                            <!-- Thumbnail Cover -->
-                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
-                                <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
-                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                                <!-- Play Button -->
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                            <!-- Sidebar Supplementary Videos (4 Cols on Desktop, Stacked Vertically) -->
+                            <div class="lg:col-span-4 flex flex-col justify-between gap-6">
+                                
+                                <!-- Video 2 -->
+                                <div x-data="{ playing: false }" 
+                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                    
+                                    <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                        <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                        <!-- Play Button -->
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                                <i data-lucide="play" class="w-5 h-5 fill-current translate-x-0.5"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Title Overlay -->
+                                        <div class="absolute bottom-4 left-4 right-4 text-left">
+                                            <h4 class="text-sm font-bold text-white tracking-tight line-clamp-1">
+                                                {{ $title2 }}
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Title Overlay -->
-                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                    {{ $title2 }}
-                                </div>
-                            </div>
 
-                            <!-- Embedded Player (Autoplay on click) -->
-                            <template x-if="playing">
-                                <iframe class="w-full h-full rounded-[20px]" 
-                                        src="https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1" 
-                                        title="{{ $title2 }}" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen></iframe>
-                            </template>
-                        </div>
+                                    <template x-if="playing">
+                                        <iframe class="w-full h-full rounded-[20px]" 
+                                                src="https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1" 
+                                                title="{{ $title2 }}" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                referrerpolicy="strict-origin-when-cross-origin" 
+                                                allowfullscreen></iframe>
+                                    </template>
+                                </div>
 
-                        <!-- Video 3 -->
-                        <div x-data="{ playing: false }" 
-                             class="animate-float-1 hover:[animation-play-state:paused] transition-all duration-500 transform lg:-rotate-1 lg:hover:rotate-0 hover:scale-[1.06] hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer"
-                             style="--rot: -1deg;">
-                            
-                            <!-- Thumbnail Cover -->
-                            <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
-                                <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
-                                <div class="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300"></div>
-                                <!-- Play Button -->
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-14 h-14 bg-[#FF6A00] hover:bg-[#FF8533] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all duration-300">
-                                        <i data-lucide="play" class="w-6 h-6 fill-white translate-x-0.5"></i>
+                                <!-- Video 3 -->
+                                <div x-data="{ playing: false }" 
+                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                    
+                                    <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
+                                        <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                        <!-- Play Button -->
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                                <i data-lucide="play" class="w-5 h-5 fill-current translate-x-0.5"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Title Overlay -->
+                                        <div class="absolute bottom-4 left-4 right-4 text-left">
+                                            <h4 class="text-sm font-bold text-white tracking-tight line-clamp-1">
+                                                {{ $title3 }}
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Title Overlay -->
-                                <div class="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md px-3 py-2 rounded-lg text-left text-[11px] font-semibold border border-white/10 line-clamp-2">
-                                    {{ $title3 }}
-                                </div>
-                            </div>
 
-                            <!-- Embedded Player (Autoplay on click) -->
-                            <template x-if="playing">
-                                <iframe class="w-full h-full rounded-[20px]" 
-                                        src="https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1" 
-                                        title="{{ $title3 }}" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen></iframe>
-                            </template>
+                                    <template x-if="playing">
+                                        <iframe class="w-full h-full rounded-[20px]" 
+                                                src="https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1" 
+                                                title="{{ $title3 }}" 
+                                                frameborder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                referrerpolicy="strict-origin-when-cross-origin" 
+                                                allowfullscreen></iframe>
+                                    </template>
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
-
-                    <!-- Restored Explore YouTube Channel Button -->
-                    <div class="pt-8">
-                        <a href="https://www.youtube.com/@KKSBVLOGS" 
-                           target="_blank"
-                           class="inline-flex items-center space-x-2 bg-white text-[#111111] hover:bg-gray-100 font-semibold px-8 py-4 rounded-[12px] text-[14px] transition duration-300 shadow-md">
-                            <span>Explore YouTube Channel</span>
-                            <span>&rarr;</span>
-                        </a>
-                    </div>
-
                 </div>
             </div>
+        </section>         </div>
         </div>
     </section>
 
