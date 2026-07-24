@@ -869,9 +869,9 @@
             </div>
 
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="text-center space-y-3" data-parallax-speed="-0.03">
-                    <span class="text-[13px] font-semibold text-[#666666] tracking-[0.2em] uppercase block">
-                        WHY KKSB STUDIOS
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
+                        <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> WHY KKSB STUDIOS
                     </span>
                     <h2 class="text-3xl lg:text-[48px] font-bold tracking-tight">
                         <span class="text-[#111111]">Not Just Content.</span> <span class="text-gray-400">A System Built for Growth.</span>
@@ -879,41 +879,73 @@
                 </div>
 
                 <!-- Feature Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Feature 1 -->
-                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
-                        <span class="text-[#111111] block">
-                            <i data-lucide="search" class="w-8 h-8"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
+                        <!-- Giant watermark number -->
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            01
                         </span>
-                        <h3 class="text-[18px] font-semibold text-[#111111]">Research Before Execution</h3>
-                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
+                        <div class="space-y-4 relative z-10">
+                            <!-- Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="search" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Research Before Execution</h3>
+                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
-                        <span class="text-[#111111] block">
-                            <i data-lucide="home" class="w-8 h-8"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                        <!-- Giant watermark number -->
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            02
                         </span>
-                        <h3 class="text-[18px] font-semibold text-[#111111]">Strategy + Production In-house</h3>
-                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
+                        <div class="space-y-4 relative z-10">
+                            <!-- Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="clapperboard" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Strategy + Production In-house</h3>
+                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
-                        <span class="text-[#111111] block">
-                            <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
+                        <!-- Giant watermark number -->
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            03
                         </span>
-                        <h3 class="text-[18px] font-semibold text-[#111111]">Regional Market Insights</h3>
-                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
+                        <div class="space-y-4 relative z-10">
+                            <!-- Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="map-pin" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Regional Market Insights</h3>
+                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="border border-[#ECECEC] rounded-[16px] p-6 space-y-4 hover:border-[#111111] transition duration-300 bg-white" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
-                        <span class="text-[#111111] block">
-                            <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
+                        <!-- Giant watermark number -->
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            04
                         </span>
-                        <h3 class="text-[18px] font-semibold text-[#111111]">Creator Thinking + Agency Execution</h3>
-                        <p class="text-[14px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
+                        <div class="space-y-4 relative z-10">
+                            <!-- Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="trending-up" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Creator Thinking + Agency Execution</h3>
+                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
                 </div>
             </div>
