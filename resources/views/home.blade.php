@@ -136,30 +136,30 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">
                             Over 300+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
-                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">
                             7+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
-                        <span class="text-2xl sm:text-3xl lg:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
                     </div>
                 </div>
