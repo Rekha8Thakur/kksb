@@ -16,6 +16,14 @@
         [data-parallax-speed] {
             will-change: transform;
         }
+        @media (min-width: 1024px) {
+            .hero-fullscreen {
+                height: calc(100vh - 80px) !important;
+            }
+        }
+        .hero-fullscreen {
+            min-height: calc(100vh - 80px);
+        }
     </style>
 
     <!-- Page Container -->
@@ -29,7 +37,7 @@
     }">
 
         <!-- HERO SECTION -->
-        <section class="relative bg-white flex items-center overflow-hidden py-12 lg:py-0" style="min-height: calc(100vh - 80px);">
+        <section class="relative bg-white flex items-center overflow-hidden py-12 lg:py-0 hero-fullscreen">
             <!-- Ambient Parallax Background Glow Effects -->
             <div class="absolute top-0 right-1/4 w-[550px] h-[550px] bg-gradient-to-br from-[#FF6A00]/12 via-[#FF6A00]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"
                  data-parallax-speed="0.25"></div>
