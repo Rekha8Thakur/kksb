@@ -533,10 +533,16 @@
                 <!-- 6 Process Steps Flow -->
                 <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-2">
                     <!-- Step 1 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
                             <i data-lucide="search" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        
+                        <!-- Desktop Connection Arrow (Right of Icon) -->
+                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+
                         <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
                             Discover
                         </h3>
@@ -549,16 +555,18 @@
                     <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
                     </div>
-                    <!-- Desktop Arrow -->
-                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </div>
 
                     <!-- Step 2 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
                             <i data-lucide="file-text" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        
+                        <!-- Desktop Connection Arrow (Right of Icon) -->
+                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+
                         <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
                             Research
                         </h3>
@@ -571,16 +579,18 @@
                     <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
                     </div>
-                    <!-- Desktop Arrow -->
-                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </div>
 
                     <!-- Step 3 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
                             <i data-lucide="target" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        
+                        <!-- Desktop Connection Arrow (Right of Icon) -->
+                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+
                         <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
                             Strategize
                         </h3>
@@ -593,16 +603,18 @@
                     <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
                     </div>
-                    <!-- Desktop Arrow -->
-                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </div>
 
                     <!-- Step 4 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="400">
                         <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
                             <i data-lucide="edit-3" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        
+                        <!-- Desktop Connection Arrow (Right of Icon) -->
+                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+
                         <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
                             Create
                         </h3>
@@ -615,16 +627,18 @@
                     <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
                     </div>
-                    <!-- Desktop Arrow -->
-                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </div>
 
                     <!-- Step 5 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="500">
                         <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
                             <i data-lucide="send" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
+                        
+                        <!-- Desktop Connection Arrow (Right of Icon) -->
+                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+
                         <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
                             Publish
                         </h3>
@@ -636,10 +650,6 @@
                     <!-- Mobile/Tablet Arrow -->
                     <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
-                    </div>
-                    <!-- Desktop Arrow -->
-                    <div class="hidden lg:flex items-center justify-center pt-7 text-gray-300">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </div>
 
                     <!-- Step 6 -->
