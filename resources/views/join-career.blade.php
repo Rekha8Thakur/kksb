@@ -24,7 +24,100 @@
             </div>
 
             <!-- Form -->
-            <form method="POST" action="{{ route('join-career.store') }}" enctype="multipart/form-data" class="space-y-8">
+            <!-- Form -->
+            <form method="POST" action="{{ route('join-career.store') }}" enctype="multipart/form-data" class="space-y-8"
+                  x-data="{
+                      step: 1,
+                      maxStep: 5,
+                      validateStep(stepNum) {
+                          const container = document.getElementById('step-container-' + stepNum);
+                          if (!container) return true;
+                          
+                          // Validate applying_for[]
+                          const applyingCheckboxes = container.querySelectorAll('input[name=\'applying_for[]\']');
+                          if (applyingCheckboxes.length > 0) {
+                              const checked = Array.from(applyingCheckboxes).some(cb => cb.checked);
+                              if (!checked) {
+                                  applyingCheckboxes[0].setCustomValidity('Please select at least one role.');
+                                  applyingCheckboxes[0].reportValidity();
+                                  return false;
+                              } else {
+                                  applyingCheckboxes[0].setCustomValidity('');
+                              }
+                          }
+                          
+                          // Validate experience_level[]
+                          const expCheckboxes = container.querySelectorAll('input[name=\'experience_level[]\']');
+                          if (expCheckboxes.length > 0) {
+                              const checked = Array.from(expCheckboxes).some(cb => cb.checked);
+                              if (!checked) {
+                                  expCheckboxes[0].setCustomValidity('Please select at least one experience level.');
+                                  expCheckboxes[0].reportValidity();
+                                  return false;
+                              } else {
+                                  expCheckboxes[0].setCustomValidity('');
+                              }
+                          }
+                          
+                          // Validate general inputs
+                          const inputs = container.querySelectorAll('input, select, textarea');
+                          for (let i = 0; i < inputs.length; i++) {
+                              const input = inputs[i];
+                              if (input.name === 'applying_for[]' || input.name === 'experience_level[]') continue;
+                              if (!input.checkValidity()) {
+                                  input.reportValidity();
+                                  return false;
+                              }
+                          }
+                          return true;
+                      },
+                      nextStep() {
+                          if (this.validateStep(this.step)) {
+                              if (this.step < this.maxStep) {
+                                  this.step++;
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }
+                          }
+                      },
+                      prevStep() {
+                          if (this.step > 1) {
+                              this.step--;
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                      },
+                      goToStep(targetStep) {
+                          if (targetStep < this.step) {
+                              this.step = targetStep;
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                          } else if (targetStep > this.step) {
+                              // Validate all steps between current step and targetStep - 1
+                              for (let s = this.step; s < targetStep; s++) {
+                                  if (!this.validateStep(s)) {
+                                      return; // Stop at first invalid step
+                                  }
+                              }
+                              this.step = targetStep;
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                      },
+                      clearValidity(name) {
+                          const el = this.$el.querySelector(`input[name='${name}']`);
+                          if (el) el.setCustomValidity('');
+                      },
+                      submitForm() {
+                          for (let s = 1; s <= this.maxStep; s++) {
+                              if (!this.validateStep(s)) {
+                                  this.step = s;
+                                  this.$nextTick(() => {
+                                      this.validateStep(s);
+                                  });
+                                  return;
+                              }
+                          }
+                          this.$el.submit();
+                      }
+                  }"
+                  @submit.prevent="submitForm">
                 @csrf
                 
                 <!-- Honeypot Bot Protection -->
@@ -32,8 +125,102 @@
                     <input type="text" name="honeypot" value="">
                 </div>
 
+                <!-- Step Navigation Tabs -->
+                <div class="bg-white border border-gray-150 rounded-3xl p-6 shadow-sm mb-8">
+                    <div class="grid grid-cols-5 gap-2 md:gap-4">
+                        <!-- Tab 1 -->
+                        <button type="button" @click="goToStep(1)" 
+                                class="flex flex-col items-center text-center p-3 rounded-2xl transition duration-300 relative group"
+                                :class="step === 1 ? 'bg-[#FF6A00]/5 text-[#FF6A00]' : (step > 1 ? 'text-emerald-600 hover:bg-emerald-50/50' : 'text-gray-400 hover:bg-gray-50/50')">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-2 transition"
+                                 :class="step === 1 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : (step > 1 ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200')">
+                                <template x-if="step > 1">
+                                    <svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </template>
+                                <template x-if="step <= 1">
+                                    <span>1</span>
+                                </template>
+                            </div>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Details</span>
+                        </button>
+
+                        <!-- Tab 2 -->
+                        <button type="button" @click="goToStep(2)" 
+                                class="flex flex-col items-center text-center p-3 rounded-2xl transition duration-300 relative group"
+                                :class="step === 2 ? 'bg-[#FF6A00]/5 text-[#FF6A00]' : (step > 2 ? 'text-emerald-600 hover:bg-emerald-50/50' : 'text-gray-400 hover:bg-gray-50/50')">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-2 transition"
+                                 :class="step === 2 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : (step > 2 ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200')">
+                                <template x-if="step > 2">
+                                    <svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </template>
+                                <template x-if="step <= 2">
+                                    <span>2</span>
+                                </template>
+                            </div>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Roles</span>
+                        </button>
+
+                        <!-- Tab 3 -->
+                        <button type="button" @click="goToStep(3)" 
+                                class="flex flex-col items-center text-center p-3 rounded-2xl transition duration-300 relative group"
+                                :class="step === 3 ? 'bg-[#FF6A00]/5 text-[#FF6A00]' : (step > 3 ? 'text-emerald-600 hover:bg-emerald-50/50' : 'text-gray-400 hover:bg-gray-50/50')">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-2 transition"
+                                 :class="step === 3 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : (step > 3 ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200')">
+                                <template x-if="step > 3">
+                                    <svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </template>
+                                <template x-if="step <= 3">
+                                    <span>3</span>
+                                </template>
+                            </div>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Logistics</span>
+                        </button>
+
+                        <!-- Tab 4 -->
+                        <button type="button" @click="goToStep(4)" 
+                                class="flex flex-col items-center text-center p-3 rounded-2xl transition duration-300 relative group"
+                                :class="step === 4 ? 'bg-[#FF6A00]/5 text-[#FF6A00]' : (step > 4 ? 'text-emerald-600 hover:bg-emerald-50/50' : 'text-gray-400 hover:bg-gray-50/50')">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-2 transition"
+                                 :class="step === 4 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : (step > 4 ? 'bg-emerald-500 text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200')">
+                                <template x-if="step > 4">
+                                    <svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </template>
+                                <template x-if="step <= 4">
+                                    <span>4</span>
+                                </template>
+                            </div>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Portfolio</span>
+                        </button>
+
+                        <!-- Tab 5 -->
+                        <button type="button" @click="goToStep(5)" 
+                                class="flex flex-col items-center text-center p-3 rounded-2xl transition duration-300 relative group"
+                                :class="step === 5 ? 'bg-[#FF6A00]/5 text-[#FF6A00]' : 'text-gray-400'">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold mb-2 transition"
+                                 :class="step === 5 ? 'bg-[#FF6A00] text-white shadow-md shadow-[#FF6A00]/25' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'">
+                                <span>5</span>
+                            </div>
+                            <span class="text-[10px] md:text-xs font-bold tracking-wide uppercase">Compensation</span>
+                        </button>
+                    </div>
+
+                    <!-- Progress Bar indicator -->
+                    <div class="w-full bg-gray-100 h-1.5 rounded-full mt-4 overflow-hidden">
+                        <div class="bg-[#FF6A00] h-full transition-all duration-500 rounded-full" 
+                             :style="'width: ' + ((step - 1) / (maxStep - 1) * 100) + '%'"></div>
+                    </div>
+                </div>
+
                 <!-- Step 1: Contact Details -->
-                <div class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6">
+                <div id="step-container-1" x-show="step === 1" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: block;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">1</span>
                         Contact Details
@@ -72,10 +259,17 @@
                             @error('city') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                         </div>
                     </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-end">
+                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
+                            Next Step &rarr;
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Step 2: Role Details -->
-                <div class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6">
+                <div id="step-container-2" x-show="step === 2" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">2</span>
                         Role & Skills Selection
@@ -92,7 +286,7 @@
                             @endphp
                             @foreach($roles as $role)
                                 <label class="flex items-center space-x-3 bg-[#FAFAFA] hover:bg-gray-50 border border-gray-200 rounded-xl p-4 cursor-pointer">
-                                    <input type="checkbox" name="applying_for[]" value="{{ $role }}" {{ in_array($role, $oldRoles) ? 'checked' : '' }} class="rounded text-[#FF6A00] focus:ring-[#FF6A00]">
+                                    <input type="checkbox" name="applying_for[]" value="{{ $role }}" {{ in_array($role, $oldRoles) ? 'checked' : '' }} @change="clearValidity('applying_for[]')" class="rounded text-[#FF6A00] focus:ring-[#FF6A00]">
                                     <span class="text-sm font-medium text-gray-800">{{ $role }}</span>
                                 </label>
                             @endforeach
@@ -119,17 +313,27 @@
                             @endphp
                             @foreach($exps as $exp)
                                 <label class="flex items-center space-x-3 bg-[#FAFAFA] hover:bg-gray-50 border border-gray-200 rounded-xl p-4 cursor-pointer">
-                                    <input type="checkbox" name="experience_level[]" value="{{ $exp }}" {{ in_array($exp, $oldExps) ? 'checked' : '' }} class="rounded text-[#FF6A00] focus:ring-[#FF6A00]">
+                                    <input type="checkbox" name="experience_level[]" value="{{ $exp }}" {{ in_array($exp, $oldExps) ? 'checked' : '' }} @change="clearValidity('experience_level[]')" class="rounded text-[#FF6A00] focus:ring-[#FF6A00]">
                                     <span class="text-sm font-medium text-gray-800">{{ $exp }}</span>
                                 </label>
                             @endforeach
                         </div>
                         @error('experience_level') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                     </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-between items-center">
+                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-12 px-6 rounded-xl text-sm transition">
+                            &larr; Previous
+                        </button>
+                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
+                            Next Step &rarr;
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Step 3: Equipment & Logistics -->
-                <div class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6">
+                <div id="step-container-3" x-show="step === 3" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">3</span>
                         Equipment & Location Logistics
@@ -204,10 +408,20 @@
                             </label>
                         </div>
                     </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-between items-center">
+                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-12 px-6 rounded-xl text-sm transition">
+                            &larr; Previous
+                        </button>
+                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
+                            Next Step &rarr;
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Step 4: Portfolio & Links -->
-                <div class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6">
+                <div id="step-container-4" x-show="step === 4" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">4</span>
                         Portfolio & Work Showcase
@@ -238,10 +452,20 @@
                             @error('previous_work') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                         </div>
                     </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-between items-center">
+                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-12 px-6 rounded-xl text-sm transition">
+                            &larr; Previous
+                        </button>
+                        <button type="button" @click="nextStep()" class="bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-12 px-8 rounded-xl text-sm transition duration-300 shadow-md shadow-[#FF6A00]/20">
+                            Next Step &rarr;
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Step 5: Details & Resumes -->
-                <div class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6">
+                <!-- Step 5: Compensation, Deadlines & Upload -->
+                <div id="step-container-5" x-show="step === 5" x-transition.opacity.duration.300ms class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm space-y-6" style="display: none;">
                     <h2 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
                         <span class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center text-xs">5</span>
                         Compensation, Deadlines & Upload
@@ -298,13 +522,17 @@
                         @error('resumes') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                         @error('resumes.*') <p class="text-xs text-red-500 font-semibold">{{ $message }}</p> @enderror
                     </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex justify-between items-center gap-4">
+                        <button type="button" @click="prevStep()" class="border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold h-14 px-6 rounded-2xl text-sm transition">
+                            &larr; Previous
+                        </button>
+                        <button type="submit" class="flex-1 bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-14 rounded-2xl text-sm transition duration-300 shadow-lg shadow-[#FF6A00]/25">
+                            Submit Application
+                        </button>
+                    </div>
                 </div>
-
-                <!-- Submit -->
-                <button type="submit" class="w-full bg-[#FF6A00] hover:bg-[#E55F00] text-white font-bold h-14 rounded-2xl text-sm transition duration-300 shadow-lg shadow-[#FF6A00]/25">
-                    Submit Application
-                </button>
-
             </form>
         </div>
     </div>
