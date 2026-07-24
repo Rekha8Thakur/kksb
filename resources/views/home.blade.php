@@ -136,39 +136,9 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div x-data="{
-                            count: 0,
-                            target: 300,
-                            duration: 2500,
-                            init() {
-                                let observer = new IntersectionObserver((entries) => {
-                                    entries.forEach(entry => {
-                                        if (entry.isIntersecting) {
-                                            this.animate();
-                                            observer.disconnect();
-                                        }
-                                    });
-                                }, { threshold: 0.1 });
-                                observer.observe(this.$el);
-                            },
-                            animate() {
-                                let startTime = null;
-                                const step = (timestamp) => {
-                                    if (!startTime) startTime = timestamp;
-                                    const progress = Math.min((timestamp - startTime) / this.duration, 1);
-                                    this.count = Math.floor(progress * this.target);
-                                    if (progress < 1) {
-                                        window.requestAnimationFrame(step);
-                                    } else {
-                                        this.count = this.target;
-                                    }
-                                };
-                                window.requestAnimationFrame(step);
-                            }
-                         }"
-                         class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
                         <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
-                            Over <span x-text="count">0</span>+
+                            Over 300+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
                     </div>
@@ -180,39 +150,9 @@
                     </div>
 
                     <!-- Stat 3 -->
-                    <div x-data="{
-                            count: 0,
-                            target: 7,
-                            duration: 2500,
-                            init() {
-                                let observer = new IntersectionObserver((entries) => {
-                                    entries.forEach(entry => {
-                                        if (entry.isIntersecting) {
-                                            this.animate();
-                                            observer.disconnect();
-                                        }
-                                    });
-                                }, { threshold: 0.1 });
-                                observer.observe(this.$el);
-                            },
-                            animate() {
-                                let startTime = null;
-                                const step = (timestamp) => {
-                                    if (!startTime) startTime = timestamp;
-                                    const progress = Math.min((timestamp - startTime) / this.duration, 1);
-                                    this.count = Math.floor(progress * this.target);
-                                    if (progress < 1) {
-                                        window.requestAnimationFrame(step);
-                                    } else {
-                                        this.count = this.target;
-                                    }
-                                };
-                                window.requestAnimationFrame(step);
-                            }
-                         }"
-                         class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
                         <span class="text-3xl sm:text-4xl lg:text-[56px] font-extrabold text-[#111111] tracking-tight block">
-                            <span x-text="count">0</span>+
+                            7+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
                     </div>
