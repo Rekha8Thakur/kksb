@@ -530,139 +530,174 @@
                     </p>
                 </div>
 
-                <!-- 6 Process Steps Flow -->
-                <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-2">
+                <!-- 6 Process Steps Premium Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Step 1 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="search" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Giant Step Number watermark (modern editorial aesthetic) -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            01
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="search" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Discover
+                                </h3>
+                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
+                                    We understand your business, goals and target audience.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- Desktop Connection Arrow (Right of Icon) -->
-                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </div>
-
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Discover
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            We understand your business, goals and target audience.
-                        </p>
-                    </div>
-
-                    <!-- Mobile/Tablet Arrow -->
-                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="file-text" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            02
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="file-text" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Research
+                                </h3>
+                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
+                                    In-depth research on your industry, audience and competitors.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- Desktop Connection Arrow (Right of Icon) -->
-                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </div>
-
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Research
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            In-depth research on your industry, audience and competitors.
-                        </p>
-                    </div>
-
-                    <!-- Mobile/Tablet Arrow -->
-                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="target" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            03
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="target" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Strategize
+                                </h3>
+                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
+                                    We create a customized strategy aligned with your objectives.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- Desktop Connection Arrow (Right of Icon) -->
-                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </div>
-
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Strategize
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            We create a customized strategy aligned with your objectives.
-                        </p>
-                    </div>
-
-                    <!-- Mobile/Tablet Arrow -->
-                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="edit-3" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            04
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="edit-3" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Create
+                                </h3>
+                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
+                                    Our team produces high-quality content and creatives.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- Desktop Connection Arrow (Right of Icon) -->
-                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </div>
-
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Create
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            Our team produces high-quality content and creatives.
-                        </p>
-                    </div>
-
-                    <!-- Mobile/Tablet Arrow -->
-                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Step 5 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px] relative" data-aos="fade-up" data-aos-delay="500">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="send" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            05
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="send" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Publish
+                                </h3>
+                                <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">
+                                    We launch across the right platforms at the right time.
+                                </p>
+                            </div>
                         </div>
                         
-                        <!-- Desktop Connection Arrow (Right of Icon) -->
-                        <div class="absolute top-10 -translate-y-1/2 left-[calc(50%+48px)] right-[calc(-50%+48px)] hidden lg:flex items-center justify-center text-gray-300 pointer-events-none">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </div>
-
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Publish
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            We launch across the right platforms at the right time.
-                        </p>
-                    </div>
-
-                    <!-- Mobile/Tablet Arrow -->
-                    <div class="flex lg:hidden items-center justify-center text-[#FF6A00] my-1 animate-bounce">
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Step 6 -->
-                    <div class="flex-1 flex flex-col items-center text-center group max-w-[220px]" data-aos="fade-up" data-aos-delay="600">
-                        <div class="w-20 h-20 bg-[#111111] border-4 border-white shadow-md text-white rounded-full flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:shadow-[#FF6A00]/20">
-                            <i data-lucide="trending-up" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                        <!-- Giant Step Number watermark -->
+                        <span class="absolute top-2 right-6 text-[64px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                            06
+                        </span>
+                        
+                        <div class="flex items-start space-x-5 relative z-10">
+                            <!-- Circular Icon Container -->
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="trending-up" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="space-y-2 mt-1">
+                                <h3 class="text-[20px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                                    Optimize
+                                </h3>
+                                <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
+                                    We analyze, learn and optimize for maximum results.
+                                </p>
+                            </div>
                         </div>
-                        <h3 class="text-[18px] sm:text-[20px] font-bold text-[#111111] tracking-tight mb-2 uppercase">
-                            Optimize
-                        </h3>
-                        <p class="text-[12.5px] sm:text-[13px] text-[#666666] leading-relaxed font-light">
-                            We analyze, learn and optimize for maximum results.
-                        </p>
+                        
+                        <!-- Underline decorative border highlight -->
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
                 </div>
             </div>
