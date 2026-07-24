@@ -355,14 +355,14 @@
                         <!-- 6 Steps Grid -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 pt-2">
                             <!-- Step 1 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     01
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="search" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Discover
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
@@ -371,14 +371,14 @@
                             </div>
                             
                             <!-- Step 2 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     02
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="file-text" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Research
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
@@ -387,14 +387,14 @@
                             </div>
 
                             <!-- Step 3 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     03
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="target" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Strategize
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
@@ -403,14 +403,14 @@
                             </div>
 
                             <!-- Step 4 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     04
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="edit-3" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Create
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
@@ -419,14 +419,14 @@
                             </div>
 
                             <!-- Step 5 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     05
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="send" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Publish
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
@@ -435,14 +435,14 @@
                             </div>
 
                             <!-- Step 6 -->
-                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-[#FF6A00]/50 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-[#FF6A00]/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-white/5 border border-white/10 rounded-[20px] p-5 hover:bg-white/10 hover:border-white/40 hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-3xl font-black text-white/5 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     06
                                 </span>
-                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                                <div class="w-10 h-10 mb-4 rounded-xl bg-[#FF6A00]/20 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
                                     <i data-lucide="trending-up" class="w-5 h-5"></i>
                                 </div>
-                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
+                                <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-white transition-colors">
                                     Optimize
                                 </h4>
                                 <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">

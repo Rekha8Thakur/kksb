@@ -155,51 +155,51 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                             <i data-lucide="handshake" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
                             Over 300+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Millions+</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                             <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
                             7+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
+                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Himachal Based</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
             </div>
@@ -559,19 +559,19 @@
                 <!-- 6 Process Steps Premium Cards Grid (Single Row on Desktop) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-5">
                     <!-- Step 1 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="100">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             01
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="search" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Discover
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -579,23 +579,23 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="200">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             02
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="file-text" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Research
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -603,23 +603,23 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="300">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             03
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="target" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Strategize
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -627,23 +627,23 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="400">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             04
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="edit-3" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Create
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -651,23 +651,23 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 5 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="500">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             05
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="send" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Publish
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -675,23 +675,23 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Step 6 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_30px_rgba(255,106,0,0.08)] transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="600">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             06
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
                             <i data-lucide="trending-up" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#FF6A00] transition-colors duration-300 uppercase">
+                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Optimize
                         </h3>
                         <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
@@ -699,7 +699,7 @@
                         </p>
                         
                         <!-- Underline decorative border highlight -->
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
             </div>
@@ -877,71 +877,71 @@
                 <!-- Feature Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Feature 1 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             01
                         </span>
                         <div class="space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="search" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Research Before Execution</h3>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Research Before Execution</h3>
                             <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             02
                         </span>
                         <div class="space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="clapperboard" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Strategy + Production In-house</h3>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Strategy + Production In-house</h3>
                             <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             03
                         </span>
                         <div class="space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="map-pin" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Regional Market Insights</h3>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Regional Market Insights</h3>
                             <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#FF6A00] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(255,106,0,0.06)] transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#FF6A00]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             04
                         </span>
                         <div class="space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="trending-up" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#FF6A00] transition-colors duration-300">Creator Thinking + Agency Execution</h3>
+                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Creator Thinking + Agency Execution</h3>
                             <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
                 </div>
             </div>
@@ -1045,7 +1045,7 @@
                             <!-- Main Featured Video (8 Cols on Desktop) -->
                             <div class="lg:col-span-8 flex">
                                 <div x-data="{ playing: false }" 
-                                     class="w-full flex flex-col justify-between hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-[16/10] rounded-[24px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                     class="w-full flex flex-col justify-between hover:shadow-[0_20px_40px_rgba(255,255,255,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-[16/10] rounded-[24px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
                                     
                                     <!-- Thumbnail Cover -->
                                     <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
@@ -1059,7 +1059,7 @@
                                         <span class="absolute top-4 left-4 bg-[#FF6A00] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                                             Featured Work
                                         </span>
-
+ 
                                         <!-- Play Button -->
                                         <div class="absolute inset-0 flex items-center justify-center">
                                             <div class="w-16 h-16 bg-[#FF6A00] text-white rounded-full flex items-center justify-center shadow-lg relative group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.6)] transition-all duration-300">
@@ -1067,7 +1067,7 @@
                                                 <span class="absolute inset-0 rounded-full border-2 border-[#FF6A00] animate-ping opacity-45"></span>
                                             </div>
                                         </div>
-
+ 
                                         <!-- Title Overlay -->
                                         <div class="absolute bottom-6 left-6 right-6 text-left space-y-2">
                                             <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight">
@@ -1078,7 +1078,7 @@
                                             </p>
                                         </div>
                                     </div>
-
+ 
                                     <!-- Embedded Player -->
                                     <template x-if="playing">
                                         <iframe class="w-full h-full rounded-[24px]" 
@@ -1091,13 +1091,13 @@
                                     </template>
                                 </div>
                             </div>
-
+ 
                             <!-- Sidebar Supplementary Videos (4 Cols on Desktop, Stacked Vertically) -->
                             <div class="lg:col-span-4 flex flex-col justify-between gap-6">
                                 
                                 <!-- Video 2 -->
                                 <div x-data="{ playing: false }" 
-                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
                                     
                                     <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
                                         <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
@@ -1115,7 +1115,7 @@
                                             </h4>
                                         </div>
                                     </div>
-
+ 
                                     <template x-if="playing">
                                         <iframe class="w-full h-full rounded-[20px]" 
                                                 src="https://www.youtube.com/embed/{{ $video2Id }}?autoplay=1" 
@@ -1126,10 +1126,10 @@
                                                 allowfullscreen></iframe>
                                     </template>
                                 </div>
-
+ 
                                 <!-- Video 3 -->
                                 <div x-data="{ playing: false }" 
-                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,106,0,0.15)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
+                                     class="flex-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
                                     
                                     <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
                                         <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
@@ -1147,7 +1147,7 @@
                                             </h4>
                                         </div>
                                     </div>
-
+ 
                                     <template x-if="playing">
                                         <iframe class="w-full h-full rounded-[20px]" 
                                                 src="https://www.youtube.com/embed/{{ $video3Id }}?autoplay=1" 
@@ -1158,7 +1158,7 @@
                                                 allowfullscreen></iframe>
                                     </template>
                                 </div>
-
+ 
                             </div>
                         </div>
 
