@@ -183,13 +183,13 @@
         </section>
 
         <!-- CLIENT LOGOS MARQUEE -->
-        <section class="py-16 bg-[#FAFAFA] border-t border-b border-[#ECECEC] overflow-hidden">
-            <div class="max-w-[1440px] mx-auto">
-                <div class="text-center mb-10 px-4" data-aos="fade-up">
-                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
+        <section class="py-10 bg-[#FAFAFA] border-t border-b border-[#ECECEC] overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
+                <div class="text-center mb-6" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
                     </span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
+                    <h2 class="text-xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
                         <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
                     </h2>
                 </div>
