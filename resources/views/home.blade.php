@@ -510,7 +510,7 @@
         </section>
 
         <!-- HOW WE WORK SECTION -->
-        <section class="py-20 bg-[#FAFAFA] border-t border-[#ECECEC] relative overflow-hidden">
+        <section class="pt-10 pb-20 bg-[#FAFAFA] border-t border-[#ECECEC] relative overflow-hidden">
             <!-- Background Parallax Accent -->
             <div class="absolute top-10 left-1/2 -translate-x-1/2 text-[160px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
                  data-parallax-speed="-0.18">
