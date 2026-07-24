@@ -365,7 +365,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Discover
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     We understand your business, goals and target audience.
                                 </p>
                             </div>
@@ -381,7 +381,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Research
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     In-depth research on your industry, audience and competitors.
                                 </p>
                             </div>
@@ -397,7 +397,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Strategize
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     We create a customized strategy aligned with your objectives.
                                 </p>
                             </div>
@@ -413,7 +413,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Create
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     Our team produces high-quality content and creatives.
                                 </p>
                             </div>
@@ -429,7 +429,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Publish
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     We launch across the right platforms at the right time.
                                 </p>
                             </div>
@@ -445,7 +445,7 @@
                                 <h4 class="text-sm font-extrabold text-white tracking-tight uppercase group-hover:text-[#FF6A00] transition-colors">
                                     Optimize
                                 </h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed font-light mt-2">
+                                <p class="text-[11px] text-gray-300 leading-relaxed font-light mt-2">
                                     We analyze, learn and optimize for maximum results.
                                 </p>
                             </div>
