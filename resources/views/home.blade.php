@@ -136,31 +136,47 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="handshake" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             Over 300+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">Millions+</span>
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block">
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             7+
                         </span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="border border-[#ECECEC] rounded-[20px] p-5 sm:p-8 lg:p-4 xl:p-8 text-center bg-white hover:border-[#FF6A00] hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
-                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block">Himachal Based</span>
+                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
                         <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
             </div>
