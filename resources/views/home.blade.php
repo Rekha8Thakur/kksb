@@ -119,63 +119,63 @@
         </section>
 
         <!-- TRUST STATS -->
-        <section class="py-16 bg-white border-t border-[#ECECEC] relative overflow-hidden">
+        <section class="py-10 bg-[#0B0B0C] border-t border-[#1F1F21] relative overflow-hidden">
             <!-- Background Parallax Text -->
-            <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
+            <div class="absolute top-1/2 left-10 -translate-y-1/2 text-[180px] font-black text-white/[0.01] pointer-events-none select-none uppercase -z-10"
                  data-parallax-speed="-0.2">
                 STATS
             </div>
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="text-center mb-10" data-aos="fade-up">
+                <div class="text-center mb-8" data-aos="fade-up">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-3 border border-[#FF6A00]/20">
                         <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Impact & Performance
                     </span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight uppercase">
-                        <span class="text-[#111111]">TRUST</span> <span class="text-gray-400">STATS</span>
+                        <span class="text-white">TRUST</span> <span class="text-zinc-650 text-gray-500">STATS</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
+                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="handshake" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             Over 300+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
+                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Millions+</span>
+                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
+                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
+                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">
                             7+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-gradient-to-b from-white to-[#FAFAFA] hover:to-white hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.08)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
+                    <div class="group relative border border-white/[0.08] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#FF6A00] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
                         <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-white tracking-tight block transition-colors duration-300 group-hover:text-[#FF6A00]">Himachal Based</span>
+                        <span class="text-[11px] sm:text-[13px] text-gray-400 uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#FF6A00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
@@ -183,15 +183,15 @@
         </section>
 
         <!-- CLIENT LOGOS MARQUEE -->
-        <section class="py-12 bg-white overflow-hidden">
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-[60px]">
-                <div class="bg-[#FAFAFA] border border-[#ECECEC] rounded-[32px] py-12 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.02)] overflow-hidden relative">
-                    <div class="text-center mb-8" data-aos="fade-up">
+        <section class="py-6 bg-[#0B0B0C] overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
+                <div class="bg-white/[0.02] border border-white/[0.08] rounded-[32px] py-8 px-4 sm:px-8 shadow-[0_15px_30px_rgba(0,0,0,0.12)] overflow-hidden relative">
+                    <div class="text-center mb-6" data-aos="fade-up">
                         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-bold tracking-[0.2em] uppercase mb-2 border border-[#FF6A00]/20">
                             <span class="w-2 h-2 rounded-full bg-[#FF6A00] animate-pulse"></span> Our Portfolio & Partners
                         </span>
                         <h2 class="text-xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight uppercase max-w-4xl mx-auto leading-tight">
-                            <span class="text-[#111111]">TRUSTED BY BRANDS</span> <span class="text-gray-400">THAT CHOOSE TO GROW</span>
+                            <span class="text-white">TRUSTED BY BRANDS</span> <span class="text-gray-500">THAT CHOOSE TO GROW</span>
                         </h2>
                     </div>
                     
