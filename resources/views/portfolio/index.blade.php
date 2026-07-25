@@ -58,7 +58,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="https://www.youtube.com/@KKSB" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl border border-[#FF6A00] text-[#FF6A00] font-bold text-xs uppercase tracking-wider text-center transition duration-300 hover:bg-[#FF6A00] hover:text-white flex items-center justify-center space-x-2">
+                        <a href="{{ route('original-productions.index') }}" class="w-full py-4 rounded-xl border border-[#FF6A00] text-[#FF6A00] font-bold text-xs uppercase tracking-wider text-center transition duration-300 hover:bg-[#FF6A00] hover:text-white flex items-center justify-center space-x-2">
                             <span>Explore Originals</span>
                             <span>&rarr;</span>
                         </a>
@@ -106,7 +106,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="https://www.instagram.com/official_kksb/?hl=en" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider text-center transition duration-300 flex items-center justify-center space-x-2">
+                        <a href="{{ route('brand-projects.index') }}" class="w-full py-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider text-center transition duration-300 flex items-center justify-center space-x-2">
                             <span>View Brand Projects</span>
                             <span class="text-[#FF6A00]">&rarr;</span>
                         </a>

@@ -112,6 +112,20 @@
                 @endcan
 
                 @can('manage portfolio')
+                <a href="{{ route('admin.brand-videos.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.brand-videos.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="video" class="w-4 h-4"></i>
+                    <span>Brand Videos</span>
+                </a>
+                @endcan
+
+                @can('manage portfolio')
+                <a href="{{ route('admin.original-videos.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.original-videos.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
+                    <i data-lucide="clapperboard" class="w-4 h-4"></i>
+                    <span>Original Videos</span>
+                </a>
+                @endcan
+
+                @can('manage portfolio')
                 <a href="{{ route('admin.projects.index') }}" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors {{ request()->routeIs('admin.projects.*') ? 'bg-zinc-800 text-white' : 'hover:bg-zinc-800/50 hover:text-zinc-100' }}">
                     <i data-lucide="folder-kanban" class="w-4 h-4"></i>
                     <span>Portfolio (Projects)</span>

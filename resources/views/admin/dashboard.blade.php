@@ -273,6 +273,56 @@
                         </div>
                     </a>
                     @endcan
+
+                    <!-- Brand Videos Card -->
+                    @can('manage portfolio')
+                    <a href="{{ route('admin.brand-videos.index') }}" class="group relative bg-gray-50/40 dark:bg-zinc-955/20 hover:bg-white dark:hover:bg-zinc-900 p-5 rounded-2xl border border-gray-250/60 dark:border-zinc-800/60 hover:border-rose-500/30 dark:hover:border-rose-500/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between overflow-hidden">
+                        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-rose-500/5 dark:bg-rose-500/10 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
+                        <div class="space-y-4 relative z-10">
+                            <div class="flex items-center justify-between">
+                                <div class="p-2.5 bg-rose-50 dark:bg-rose-955/40 text-rose-600 dark:text-rose-400 rounded-xl group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                                    <i data-lucide="video" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded-full border border-gray-100 dark:border-zinc-850">
+                                    {{ $stats['brand_videos_count'] }}
+                                </span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-extrabold text-gray-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-200 text-sm">Brand Videos</h3>
+                                <p class="text-[11px] text-gray-500 dark:text-zinc-400 leading-relaxed">Manage video links for Brand Campaigns showcase.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-[11px] text-gray-400 dark:text-zinc-555 relative z-10">
+                            <span class="group-hover:text-gray-700 dark:group-hover:text-zinc-300 transition-colors font-medium">Open Panel</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    @endcan
+
+                    <!-- Original Videos Card -->
+                    @can('manage portfolio')
+                    <a href="{{ route('admin.original-videos.index') }}" class="group relative bg-gray-50/40 dark:bg-zinc-955/20 hover:bg-white dark:hover:bg-zinc-900 p-5 rounded-2xl border border-gray-250/60 dark:border-zinc-800/60 hover:border-violet-500/30 dark:hover:border-violet-500/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between overflow-hidden">
+                        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
+                        <div class="space-y-4 relative z-10">
+                            <div class="flex items-center justify-between">
+                                <div class="p-2.5 bg-violet-50 dark:bg-violet-955/40 text-violet-600 dark:text-violet-400 rounded-xl group-hover:bg-violet-600 group-hover:text-white transition-colors duration-300">
+                                    <i data-lucide="clapperboard" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded-full border border-gray-100 dark:border-zinc-850">
+                                    {{ $stats['original_videos_count'] }}
+                                </span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-extrabold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors duration-200 text-sm">Original Videos</h3>
+                                <p class="text-[11px] text-gray-500 dark:text-zinc-400 leading-relaxed">Manage video links for Original Productions.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-[11px] text-gray-400 dark:text-zinc-555 relative z-10">
+                            <span class="group-hover:text-gray-700 dark:group-hover:text-zinc-300 transition-colors font-medium">Open Panel</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    @endcan
                 </div>
             </div>
 

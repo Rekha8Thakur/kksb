@@ -20,6 +20,8 @@ Route::get('/services/{slug}', [FrontendServiceController::class, 'show'])->name
 
 Route::get('/portfolio', [FrontendPortfolioController::class, 'index'])->name('portfolio.index');
 Route::get('/portfolio/{slug}', [FrontendPortfolioController::class, 'show'])->name('portfolio.show');
+Route::get('/brand-projects', [\App\Http\Controllers\Frontend\BrandProjectController::class, 'index'])->name('brand-projects.index');
+Route::get('/original-productions', [\App\Http\Controllers\Frontend\OriginalProjectController::class, 'index'])->name('original-productions.index');
 
 Route::get('/blog', [FrontendBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [FrontendBlogController::class, 'show'])->name('blog.show');
@@ -52,6 +54,8 @@ Route::get('/init-admin', function () {
         \Artisan::call('migrate', ['--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'RolesAndPermissionsSeeder', '--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'AgencyCmsSeeder', '--force' => true]);
+        \Artisan::call('db:seed', ['--class' => 'BrandVideoSeeder', '--force' => true]);
+        \Artisan::call('db:seed', ['--class' => 'OriginalVideoSeeder', '--force' => true]);
         \Artisan::call('view:clear');
         \Artisan::call('cache:clear');
         \Artisan::call('config:clear');
@@ -126,6 +130,8 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\JoinApplicationController;
+use App\Http\Controllers\Admin\BrandVideoController;
+use App\Http\Controllers\Admin\OriginalVideoController;
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -157,6 +163,14 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // CMS Gallery CRUD
     Route::post('gallery/reorder', [GalleryController::class, 'reorder'])->name('gallery.reorder');
     Route::resource('gallery', GalleryController::class)->except(['show']);
+
+    // CMS Brand Videos CRUD
+    Route::post('brand-videos/reorder', [BrandVideoController::class, 'reorder'])->name('brand-videos.reorder');
+    Route::resource('brand-videos', BrandVideoController::class)->except(['show'])->parameters(['brand-videos' => 'brandVideo']);
+
+    // CMS Original Videos CRUD
+    Route::post('original-videos/reorder', [OriginalVideoController::class, 'reorder'])->name('original-videos.reorder');
+    Route::resource('original-videos', OriginalVideoController::class)->except(['show'])->parameters(['original-videos' => 'originalVideo']);
 
     // CMS Careers & Job Applications
     Route::get('careers/applications/{job?}', [CareerController::class, 'applications'])->name('careers.applications');

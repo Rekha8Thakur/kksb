@@ -42,6 +42,8 @@ class DashboardController extends Controller
             'faqs_count' => Faq::count(),
             'clients_count' => Client::count(),
             'gallery_count' => Gallery::count(),
+            'brand_videos_count' => \App\Models\BrandVideo::count(),
+            'original_videos_count' => \App\Models\OriginalVideo::count(),
             'join_applications_total' => JoinApplication::count(),
             'join_applications_pending' => JoinApplication::where('status', 'pending')->count(),
             'users_total' => User::count(),
