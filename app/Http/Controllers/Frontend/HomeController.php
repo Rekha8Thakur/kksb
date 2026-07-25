@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\BrandVideo;
 use App\Models\Client;
 use App\Models\Faq;
 use App\Models\Project;
@@ -20,11 +21,12 @@ class HomeController extends Controller
     {
         $services = Service::where('is_active', true)->orderBy('order')->get();
         $projects = Project::with('category')->where('is_featured', true)->orderBy('order')->get();
+        $brandVideos = BrandVideo::orderBy('order')->take(5)->get();
         $testimonials = Testimonial::orderBy('order')->get();
         $faqs = Faq::where('category', 'home')->orderBy('order')->get();
         $clients = Client::orderBy('order')->get();
         $latestBlogs = Blog::with(['category', 'author'])->published()->latest()->take(3)->get();
 
-        return view('home', compact('services', 'projects', 'testimonials', 'faqs', 'clients', 'latestBlogs'));
+        return view('home', compact('services', 'projects', 'brandVideos', 'testimonials', 'faqs', 'clients', 'latestBlogs'));
     }
 }

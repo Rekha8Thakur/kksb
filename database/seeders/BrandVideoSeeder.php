@@ -61,6 +61,22 @@ class BrandVideoSeeder extends Seeder
                 'category' => 'products',
                 'order' => 5,
             ],
+            [
+                'title' => 'NOBLE SOLAR BRAND FILM',
+                'description' => 'A cinematic brand campaign showcasing clean energy transitions.',
+                'video_url' => 'https://youtu.be/H7ch9Z3_qeM?si=bb7uN17S1LtwPr8Q',
+                'platform' => 'youtube',
+                'category' => 'retail',
+                'order' => 6,
+            ],
+            [
+                'title' => 'MAYUR RESORT TOUR',
+                'description' => 'Experience luxury hospitality nestled in the Solan hills.',
+                'video_url' => 'https://youtu.be/eyvS1WsEsNY?si=9dgq6AjIoCPH2xFF',
+                'platform' => 'youtube',
+                'category' => 'hospitality',
+                'order' => 7,
+            ],
         ];
 
         BrandVideo::truncate();

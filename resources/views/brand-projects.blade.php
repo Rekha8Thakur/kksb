@@ -62,6 +62,9 @@
                 'border' => 'border-purple-500/20'
             ],
         ];
+
+        $horizontalVideos = $videos->filter(fn($v) => $v->platform === 'youtube');
+        $verticalVideos = $videos->filter(fn($v) => $v->platform === 'instagram');
     @endphp
 
     <div x-data="{ activeEmbed: null, activePlatform: null }" class="bg-[#FAF9F6] min-h-screen">
@@ -91,141 +94,210 @@
 
         <!-- Filter & Grid Section -->
         <section class="py-16">
-            <div class="max-w-7xl mx-auto px-6 space-y-12">
-                
-                <!-- Grid layout of mobile mockups -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    @forelse($videos as $video)
-                        @php
-                            $embed = $video->platform === 'youtube' ? getYoutubeEmbedUrl($video->video_url) : getInstagramEmbedUrl($video->video_url);
-                            
-                            // Determine thumbnail
-                            $thumbnail = null;
-                            if ($video->thumbnail_path) {
-                                $thumbnail = asset($video->thumbnail_path);
-                            } elseif ($video->platform === 'youtube') {
-                                $thumbnail = getYoutubeThumbnail($video->video_url);
-                            }
-                            
-                            $catInfo = $categories[$video->category] ?? [
-                                'label' => ucfirst(str_replace('_', ' ', $video->category ?? 'Campaign')),
-                                'text' => 'text-[#FF6A00]',
-                                'bg' => 'bg-[#FF6A00]/10',
-                                'border' => 'border-[#FF6A00]/20'
-                            ];
-                        @endphp
-                        
-                        <!-- Mobile Phone Container -->
-                        <div class="flex flex-col items-center space-y-4 group">
-                            
-                            <!-- iPhone Frame Mockup Container -->
-                            <div class="w-full max-w-[250px] aspect-[9/18.2] bg-zinc-950 rounded-[44px] p-[6px] border-[6px] border-zinc-850 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden relative hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2">
+            <div class="max-w-7xl mx-auto px-6 space-y-16">
+
+                <!-- Brand Video Campaigns Section (Cinematic Horizontal Cards) -->
+                @if($horizontalVideos->isNotEmpty())
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-gray-200/60 pb-4">
+                            <h2 class="text-xl sm:text-2xl font-black text-zinc-900 uppercase tracking-wide">Brand Video Campaigns</h2>
+                            <span class="text-xs text-gray-500 font-light uppercase tracking-wider">Cinematic Advertisements</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            @foreach($horizontalVideos as $video)
+                                @php
+                                    $embed = getYoutubeEmbedUrl($video->video_url);
+                                    $thumbnail = $video->thumbnail_path ? asset($video->thumbnail_path) : getYoutubeThumbnail($video->video_url);
+                                    $catInfo = $categories[$video->category] ?? [
+                                        'label' => ucfirst(str_replace('_', ' ', $video->category ?? 'Campaign')),
+                                        'text' => 'text-[#FF6A00]',
+                                        'bg' => 'bg-[#FF6A00]/10',
+                                        'border' => 'border-[#FF6A00]/20'
+                                    ];
+                                @endphp
                                 
-                                <!-- Transparent Click Trigger Overlay spanning the whole card (prevents iframe click interception) -->
-                                <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'"
-                                     class="absolute inset-0 z-30 cursor-pointer"></div>
-                                
-                                <!-- Dynamic Island / Notch -->
-                                <div class="absolute top-2.5 left-1/2 -translate-x-1/2 h-4 bg-zinc-950 rounded-full w-24 z-30 flex items-center justify-center border border-zinc-900">
-                                    <div class="w-2 h-2 rounded-full bg-zinc-900 mr-2"></div>
-                                    <div class="w-8 h-1 bg-zinc-900 rounded-full"></div>
+                                <!-- Video Card Item -->
+                                <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group transition duration-300 hover:shadow-lg">
+                                    <div class="space-y-4">
+                                        <!-- Image & Play trigger container -->
+                                        <div @click="activeEmbed = '{{ $embed }}'; activePlatform = 'youtube'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
+                                            <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}">
+                                            <!-- Dynamic Play Overlay matching mockup -->
+                                            <div class="absolute bottom-4 left-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#FF6A00] transition duration-300 group-hover:scale-110">
+                                                <svg class="w-3.5 h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                                                    <path d="M8 5v14l11-7z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="px-6 space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase {{ $catInfo['bg'] }} {{ $catInfo['text'] }} border {{ $catInfo['border'] }}">
+                                                    {{ $catInfo['label'] }}
+                                                </span>
+                                            </div>
+                                            <h3 class="text-base font-extrabold text-zinc-900 uppercase tracking-wide leading-snug">
+                                                {{ $video->title ?? 'Untitled Project' }}
+                                            </h3>
+                                            <p class="text-xs text-[#666666] leading-relaxed font-light">
+                                                {{ $video->description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- Card CTA footer -->
+                                    <div class="p-6 pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                        <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">
+                                            YouTube Film
+                                        </span>
+                                        <button @click="activeEmbed = '{{ $embed }}'; activePlatform = 'youtube'" class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FF6A00] hover:text-[#E55F00] transition uppercase tracking-wider">
+                                            <span>Watch Project</span>
+                                            <span>&rarr;</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                
-                                <!-- Inner Screen Wrapper -->
-                                <div class="w-full h-full rounded-[38px] overflow-hidden bg-zinc-950 relative">
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+
+                <!-- Social Campaigns & Reels Section (Vertical Mockups) -->
+                @if($verticalVideos->isNotEmpty())
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-gray-200/60 pb-4">
+                            <h2 class="text-xl sm:text-2xl font-black text-zinc-900 uppercase tracking-wide">Social Campaigns & Reels</h2>
+                            <span class="text-xs text-gray-500 font-light uppercase tracking-wider">Vertical Content</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                            @foreach($verticalVideos as $video)
+                                @php
+                                    $embed = getInstagramEmbedUrl($video->video_url);
                                     
-                                    <!-- Image Display -->
-                                    <div class="w-full h-full relative overflow-hidden bg-zinc-900">
-                                        @if($thumbnail)
-                                            <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="{{ $video->title }}">
-                                        @elseif($video->platform === 'youtube' && $embed)
-                                            <img src="{{ getYoutubeThumbnail($video->video_url) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="{{ $video->title }}">
-                                        @elseif($video->platform === 'instagram' && $embed)
-                                            <!-- Double layer: show a background loader while loading the iframe -->
-                                            <div class="absolute inset-0 bg-zinc-950 flex items-center justify-center">
-                                                <div class="w-6 h-6 border-2 border-zinc-700 border-t-[#FF6A00] rounded-full animate-spin"></div>
-                                            </div>
-                                            <!-- Clean crop zoom hack to show ONLY the video/thumbnail inside the mockup frame -->
-                                            <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 rounded-[32px]">
-                                                <iframe class="absolute w-[125%] h-[145%] -left-[12.5%] -top-[18%] border-0 opacity-80 group-hover:opacity-100 transition duration-500" 
-                                                        src="{{ $embed }}" 
-                                                        frameborder="0" 
-                                                        scrolling="no" 
-                                                        allowtransparency="true"></iframe>
-                                            </div>
-                                        @else
-                                            <!-- Custom Dark Premium Placeholder Gradient -->
-                                            <div class="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 flex flex-col justify-between p-6 relative overflow-hidden group-hover:scale-105 transition duration-700 ease-out">
-                                                <!-- Ambient light blur background -->
-                                                <div class="absolute -top-16 -left-16 w-32 h-32 bg-[#FF6A00]/10 rounded-full blur-2xl"></div>
-                                                <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-[#FF6A00]/5 rounded-full blur-2xl"></div>
-                                                
-                                                <!-- Top Header -->
-                                                <div class="flex items-center justify-between relative z-10">
-                                                    <span class="text-[8px] font-bold text-zinc-500 uppercase tracking-widest">KKSB STUDIOS</span>
-                                                    <i data-lucide="video" class="w-4 h-4 text-zinc-500"></i>
-                                                </div>
-                                                
-                                                <!-- Center Icon placeholder -->
-                                                <div class="flex flex-col items-center justify-center space-y-2 relative z-10 py-12">
-                                                    <div class="w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#FF6A00] transition duration-300">
-                                                        <i data-lucide="video" class="w-5 h-5"></i>
+                                    // Determine thumbnail
+                                    $thumbnail = null;
+                                    if ($video->thumbnail_path) {
+                                        $thumbnail = asset($video->thumbnail_path);
+                                    }
+                                    
+                                    $catInfo = $categories[$video->category] ?? [
+                                        'label' => ucfirst(str_replace('_', ' ', $video->category ?? 'Campaign')),
+                                        'text' => 'text-[#FF6A00]',
+                                        'bg' => 'bg-[#FF6A00]/10',
+                                        'border' => 'border-[#FF6A00]/20'
+                                    ];
+                                @endphp
+                                
+                                <!-- Mobile Phone Container -->
+                                <div class="flex flex-col items-center space-y-4 group">
+                                    
+                                    <!-- iPhone Frame Mockup Container -->
+                                    <div class="w-full max-w-[250px] aspect-[9/18.2] bg-zinc-950 rounded-[44px] p-[6px] border-[6px] border-zinc-850 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden relative hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2">
+                                        
+                                        <!-- Transparent Click Trigger Overlay spanning the whole card (prevents iframe click interception) -->
+                                        <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'"
+                                             class="absolute inset-0 z-30 cursor-pointer"></div>
+                                        
+                                        <!-- Dynamic Island / Notch -->
+                                        <div class="absolute top-2.5 left-1/2 -translate-x-1/2 h-4 bg-zinc-950 rounded-full w-24 z-30 flex items-center justify-center border border-zinc-900">
+                                            <div class="w-2 h-2 rounded-full bg-zinc-900 mr-2"></div>
+                                            <div class="w-8 h-1 bg-zinc-900 rounded-full"></div>
+                                        </div>
+                                        
+                                        <!-- Inner Screen Wrapper -->
+                                        <div class="w-full h-full rounded-[38px] overflow-hidden bg-zinc-950 relative">
+                                            
+                                            <!-- Image Display -->
+                                            <div class="w-full h-full relative overflow-hidden bg-zinc-900">
+                                                @if($thumbnail)
+                                                    <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="{{ $video->title }}">
+                                                @elseif($embed)
+                                                    <!-- Double layer: show a background loader while loading the iframe -->
+                                                    <div class="absolute inset-0 bg-zinc-950 flex items-center justify-center">
+                                                        <div class="w-6 h-6 border-2 border-zinc-700 border-t-[#FF6A00] rounded-full animate-spin"></div>
                                                     </div>
-                                                    <span class="text-[9px] text-zinc-500 uppercase tracking-wider">Social Campaign</span>
+                                                    <!-- Clean crop zoom hack to show ONLY the video/thumbnail inside the mockup frame -->
+                                                    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 rounded-[32px]">
+                                                        <iframe class="absolute w-[125%] h-[145%] -left-[12.5%] -top-[18%] border-0 opacity-80 group-hover:opacity-100 transition duration-500" 
+                                                                src="{{ $embed }}" 
+                                                                frameborder="0" 
+                                                                scrolling="no" 
+                                                                allowtransparency="true"></iframe>
+                                                    </div>
+                                                @else
+                                                    <!-- Custom Dark Premium Placeholder Gradient -->
+                                                    <div class="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 flex flex-col justify-between p-6 relative overflow-hidden group-hover:scale-105 transition duration-700 ease-out">
+                                                        <!-- Ambient light blur background -->
+                                                        <div class="absolute -top-16 -left-16 w-32 h-32 bg-[#FF6A00]/10 rounded-full blur-2xl"></div>
+                                                        <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-[#FF6A00]/5 rounded-full blur-2xl"></div>
+                                                        
+                                                        <!-- Top Header -->
+                                                        <div class="flex items-center justify-between relative z-10">
+                                                            <span class="text-[8px] font-bold text-zinc-500 uppercase tracking-widest">KKSB STUDIOS</span>
+                                                            <i data-lucide="video" class="w-4 h-4 text-zinc-500"></i>
+                                                        </div>
+                                                        
+                                                        <!-- Center Icon placeholder -->
+                                                        <div class="flex flex-col items-center justify-center space-y-2 relative z-10 py-12">
+                                                            <div class="w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#FF6A00] transition duration-300">
+                                                                <i data-lucide="video" class="w-5 h-5"></i>
+                                                            </div>
+                                                            <span class="text-[9px] text-zinc-500 uppercase tracking-wider">Social Campaign</span>
+                                                        </div>
+                                                        
+                                                        <!-- Bottom Info -->
+                                                        <div class="space-y-1 text-left relative z-10">
+                                                            <span class="inline-block text-[9px] font-bold px-2 py-0.5 rounded {{ $catInfo['bg'] }} {{ $catInfo['text'] }} border {{ $catInfo['border'] }}">
+                                                                {{ $catInfo['label'] }}
+                                                            </span>
+                                                            <h3 class="text-xs font-bold text-zinc-300 truncate tracking-wide mt-1">{{ $video->title }}</h3>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            
+                                            <!-- Sleek sweep reflection sheen effect -->
+                                            <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-white/0 via-white/5 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                                            
+                                            <!-- Glassmorphic Info Panel & Play Overlay (always present over image) -->
+                                            <!-- Play Hover overlay -->
+                                            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/35 z-10 transition duration-500 flex items-center justify-center">
+                                                <div class="w-14 h-14 rounded-full bg-zinc-950/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-white scale-90 group-hover:scale-105 group-hover:bg-[#FF6A00] group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(255,106,0,0.4)] transition-all duration-500">
+                                                    <i data-lucide="play" class="w-5 h-5 fill-current text-white group-hover:text-white translate-x-0.5"></i>
                                                 </div>
-                                                
-                                                <!-- Bottom Info -->
-                                                <div class="space-y-1 text-left relative z-10">
-                                                    <span class="inline-block text-[9px] font-bold px-2 py-0.5 rounded {{ $catInfo['bg'] }} {{ $catInfo['text'] }} border {{ $catInfo['border'] }}">
+                                            </div>
+                                            
+                                            <!-- Content Overlay at the bottom -->
+                                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-transparent p-5 pt-14 z-20">
+                                                <div class="space-y-2 text-left">
+                                                    <!-- Category Pill -->
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase {{ $catInfo['bg'] }} {{ $catInfo['text'] }} border {{ $catInfo['border'] }}">
                                                         {{ $catInfo['label'] }}
                                                     </span>
-                                                    <h3 class="text-xs font-bold text-zinc-300 truncate tracking-wide mt-1">{{ $video->title }}</h3>
+                                                    
+                                                    <!-- Title & Subtitle -->
+                                                    <div class="space-y-0.5">
+                                                        <h3 class="text-sm font-extrabold text-white tracking-wide uppercase line-clamp-1">
+                                                            {{ $video->title ?? 'Untitled Campaign' }}
+                                                        </h3>
+                                                        <p class="text-[10px] text-zinc-400 font-light leading-snug line-clamp-2">
+                                                            {{ $video->description }}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        @endif
-                                    </div>
-                                    
-                                    <!-- Sleek sweep reflection sheen effect -->
-                                    <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-white/0 via-white/5 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                                    
-                                    <!-- Glassmorphic Info Panel & Play Overlay (always present over image) -->
-                                    <!-- Play Hover overlay -->
-                                    <div class="absolute inset-0 bg-black/15 group-hover:bg-black/35 z-10 transition duration-500 flex items-center justify-center">
-                                        <div class="w-14 h-14 rounded-full bg-zinc-950/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-white scale-90 group-hover:scale-105 group-hover:bg-[#FF6A00] group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(255,106,0,0.4)] transition-all duration-500">
-                                            <i data-lucide="play" class="w-5 h-5 fill-current text-white group-hover:text-white translate-x-0.5"></i>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Content Overlay at the bottom -->
-                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-transparent p-5 pt-14 z-20">
-                                        <div class="space-y-2 text-left">
-                                            <!-- Category Pill -->
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase {{ $catInfo['bg'] }} {{ $catInfo['text'] }} border {{ $catInfo['border'] }}">
-                                                {{ $catInfo['label'] }}
-                                            </span>
                                             
-                                            <!-- Title & Subtitle -->
-                                            <div class="space-y-0.5">
-                                                <h3 class="text-sm font-extrabold text-white tracking-wide uppercase line-clamp-1">
-                                                    {{ $video->title ?? 'Untitled Campaign' }}
-                                                </h3>
-                                                <p class="text-[10px] text-zinc-400 font-light leading-snug line-clamp-2">
-                                                    {{ $video->description }}
-                                                </p>
-                                            </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                    @empty
-                        <div class="col-span-full py-16 text-center text-gray-500">
-                            <i data-lucide="video-off" class="w-12 h-12 mx-auto text-gray-300 mb-3"></i>
-                            <p class="font-medium text-base">No brand campaign videos added yet.</p>
-                        </div>
-                    @endforelse
-                </div>
+                    </div>
+                @endif
+
+                @if($horizontalVideos->isEmpty() && $verticalVideos->isEmpty())
+                    <div class="py-16 text-center text-gray-500">
+                        <i data-lucide="video-off" class="w-12 h-12 mx-auto text-gray-300 mb-3"></i>
+                        <p class="font-medium text-base">No brand campaign videos added yet.</p>
+                    </div>
+                @endif
 
                 <!-- Footer CTA Block under Grid -->
                 <div class="pt-12 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-between gap-6">

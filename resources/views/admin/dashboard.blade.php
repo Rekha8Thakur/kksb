@@ -34,7 +34,7 @@
         </div>
 
         <!-- Quick Stats Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Card 1: Join Us Applications -->
             <div class="bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border-l-4 border-l-indigo-500 flex items-center space-x-4">
                 <div class="p-3 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 rounded-2xl">
@@ -51,24 +51,8 @@
                 </div>
             </div>
 
-            <!-- Card 2: Career Applications -->
-            <div class="bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border-l-4 border-l-rose-500 flex items-center space-x-4">
-                <div class="p-3 bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-2xl">
-                    <i data-lucide="contact" class="w-6 h-6"></i>
-                </div>
-                <div class="space-y-1">
-                    <div class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">{{ $stats['applications_total'] }}</div>
-                    <div class="text-xs font-semibold text-gray-500 dark:text-zinc-400 uppercase tracking-wider">Job Applications</div>
-                    @if($stats['applications_pending'] > 0)
-                        <span class="inline-flex items-center text-[10px] bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 font-extrabold px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
-                            {{ $stats['applications_pending'] }} Pending
-                        </span>
-                    @endif
-                </div>
-            </div>
-
-            <!-- Card 3: Blogs & Content -->
-            <div class="bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border-l-4 border-l-violet-500 flex items-center space-x-4 sm:col-span-2 lg:col-span-1">
+            <!-- Card 2: Blogs & Content -->
+            <div class="bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border-l-4 border-l-violet-500 flex items-center space-x-4">
                 <div class="p-3 bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 rounded-2xl">
                     <i data-lucide="file-text" class="w-6 h-6"></i>
                 </div>
@@ -333,37 +317,6 @@
                     <span>Inbox & Leads Management</span>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
-                    <!-- Careers & Jobs Card -->
-                    @can('manage career jobs')
-                    <a href="{{ route('admin.careers.index') }}" class="group relative bg-gray-50/40 dark:bg-zinc-950/20 hover:bg-white dark:hover:bg-zinc-900 p-5 rounded-2xl border border-gray-250/60 dark:border-zinc-800/60 hover:border-rose-500/30 dark:hover:border-rose-500/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between overflow-hidden">
-                        <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-rose-500/5 dark:bg-rose-500/10 rounded-full blur-xl group-hover:scale-150 transition-all duration-500"></div>
-                        <div class="space-y-4 relative z-10">
-                            <div class="flex items-center justify-between">
-                                <div class="p-2.5 bg-rose-50 dark:bg-rose-955/40 text-rose-600 dark:text-rose-400 rounded-xl group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
-                                    <i data-lucide="contact" class="w-5 h-5"></i>
-                                </div>
-                                <div class="flex items-center space-x-1">
-                                    @if($stats['applications_pending'] > 0)
-                                    <span class="text-[9px] font-extrabold bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded-full border border-amber-200 dark:border-amber-900/30 animate-pulse">
-                                        {{ $stats['applications_pending'] }} Pending
-                                    </span>
-                                    @endif
-                                    <span class="text-[10px] font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded-full border border-gray-100 dark:border-zinc-850">
-                                        {{ $stats['applications_total'] }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-gray-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors duration-200 text-sm">Careers & Jobs</h3>
-                                <p class="text-[11px] text-gray-500 dark:text-zinc-400 leading-relaxed">Manage career openings & applicants.</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-100 dark:border-zinc-800/60 flex items-center justify-between text-[11px] text-gray-400 dark:text-zinc-550 relative z-10">
-                            <span class="group-hover:text-gray-700 dark:group-hover:text-zinc-300 transition-colors font-medium">Open Panel</span>
-                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"></i>
-                        </div>
-                    </a>
-                    @endcan
 
                     <!-- Contact Enquiries Card -->
                     @can('manage contact enquiries')
@@ -489,7 +442,7 @@
         </div>
 
         <!-- Main Dashboard Details Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 gap-8">
             
             <!-- Recent Enquiries -->
             <div class="bg-white dark:bg-zinc-900 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm overflow-hidden flex flex-col justify-between">
@@ -524,48 +477,6 @@
                             <div class="py-12 text-center text-gray-500 dark:text-zinc-500">
                                 <i data-lucide="mail-check" class="w-10 h-10 mx-auto text-gray-300 mb-2"></i>
                                 <p class="text-xs font-semibold">All caught up! No recent inquiries.</p>
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Job Applications -->
-            <div class="bg-white dark:bg-zinc-900 rounded-3xl border border-gray-200/80 dark:border-zinc-800/80 shadow-sm overflow-hidden flex flex-col justify-between">
-                <div>
-                    <div class="p-6 border-b border-gray-150 dark:border-zinc-800/60 flex items-center justify-between bg-zinc-50/50 dark:bg-zinc-950/20">
-                        <h2 class="text-sm font-extrabold text-gray-900 dark:text-white flex items-center space-x-2">
-                            <i data-lucide="contact" class="w-4 h-4 text-gray-400"></i>
-                            <span>Recent Job Applications</span>
-                        </h2>
-                        <a href="{{ route('admin.careers.index') }}" class="text-xs text-emerald-600 dark:text-emerald-400 font-bold hover:underline bg-white dark:bg-zinc-900 border border-gray-150 dark:border-zinc-850 px-3 py-1 rounded-full shadow-sm hover:shadow transition">View All</a>
-                    </div>
-                    <div class="p-6 space-y-4 divide-y-0">
-                        @forelse($recentApplications as $application)
-                            <div class="p-4 bg-gray-50/30 dark:bg-zinc-950/20 hover:bg-gray-50/80 dark:hover:bg-zinc-900/50 border border-gray-150 dark:border-zinc-850 rounded-2xl transition duration-200 flex items-start justify-between space-x-4">
-                                <div class="space-y-2 w-full">
-                                    <div class="flex flex-wrap items-center gap-2">
-                                        <span class="font-bold text-sm text-gray-900 dark:text-white">{{ $application->name }}</span>
-                                        <span class="text-[10px] bg-zinc-100 dark:bg-zinc-800 border border-gray-200/60 dark:border-zinc-800 px-2 py-0.5 rounded text-gray-650 dark:text-zinc-400 font-bold">
-                                            {{ $application->job->title }}
-                                        </span>
-                                    </div>
-                                    <p class="text-[11px] text-gray-550 dark:text-zinc-450 font-medium">
-                                        {{ $application->email }} • {{ $application->phone ?? 'No Phone' }}
-                                    </p>
-                                    <div class="pt-2 border-t border-gray-100 dark:border-zinc-850/50 flex items-center justify-between">
-                                        <a href="{{ asset($application->resume_path) }}" target="_blank" class="text-xs text-indigo-650 dark:text-indigo-400 font-bold flex items-center space-x-1 hover:underline">
-                                            <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                                            <span>View Resume</span>
-                                        </a>
-                                        <span class="text-[10px] text-gray-400 dark:text-zinc-550 font-bold bg-white dark:bg-zinc-900 px-2 py-0.5 rounded border border-gray-100 dark:border-zinc-800">{{ $application->created_at->diffForHumans() }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="py-12 text-center text-gray-500 dark:text-zinc-500">
-                                <i data-lucide="file-check-2" class="w-10 h-10 mx-auto text-gray-300 mb-2"></i>
-                                <p class="text-xs font-semibold">No recent job applications found.</p>
                             </div>
                         @endforelse
                     </div>

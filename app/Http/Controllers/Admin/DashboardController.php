@@ -30,9 +30,6 @@ class DashboardController extends Controller
         $stats = [
             'enquiries_total' => ContactEnquiry::count(),
             'enquiries_unread' => ContactEnquiry::where('status', 'unread')->count(),
-            'applications_total' => CareerApplication::count(),
-            'applications_pending' => CareerApplication::where('status', 'pending')->count(),
-            'active_jobs' => CareerJob::where('is_active', true)->count(),
             'services_count' => Service::count(),
             'projects_count' => Project::count(),
             'blogs_count' => Blog::count(),
@@ -50,9 +47,8 @@ class DashboardController extends Controller
         ];
 
         $recentEnquiries = ContactEnquiry::latest()->take(5)->get();
-        $recentApplications = CareerApplication::with('job')->latest()->take(5)->get();
         $recentLogs = ActivityLog::with('user')->latest()->take(5)->get();
 
-        return view('admin.dashboard', compact('stats', 'recentEnquiries', 'recentApplications', 'recentLogs'));
+        return view('admin.dashboard', compact('stats', 'recentEnquiries', 'recentLogs'));
     }
 }
