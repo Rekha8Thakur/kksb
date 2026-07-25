@@ -135,6 +135,21 @@
                                     <div class="w-full h-full relative overflow-hidden bg-zinc-900">
                                         @if($thumbnail)
                                             <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="{{ $video->title }}">
+                                        @elseif($video->platform === 'youtube' && $embed)
+                                            <img src="{{ getYoutubeThumbnail($video->video_url) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="{{ $video->title }}">
+                                        @elseif($video->platform === 'instagram' && $embed)
+                                            <!-- Double layer: show a background loader while loading the iframe -->
+                                            <div class="absolute inset-0 bg-zinc-950 flex items-center justify-center">
+                                                <div class="w-6 h-6 border-2 border-zinc-700 border-t-[#FF6A00] rounded-full animate-spin"></div>
+                                            </div>
+                                            <!-- Clean crop zoom hack to show ONLY the video/thumbnail inside the mockup frame -->
+                                            <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 rounded-[32px]">
+                                                <iframe class="absolute w-[125%] h-[145%] -left-[12.5%] -top-[18%] border-0 opacity-80 group-hover:opacity-100 transition duration-500" 
+                                                        src="{{ $embed }}" 
+                                                        frameborder="0" 
+                                                        scrolling="no" 
+                                                        allowtransparency="true"></iframe>
+                                            </div>
                                         @else
                                             <!-- Custom Dark Premium Placeholder Gradient -->
                                             <div class="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 flex flex-col justify-between p-6 relative overflow-hidden group-hover:scale-105 transition duration-700 ease-out">
@@ -145,7 +160,7 @@
                                                 <!-- Top Header -->
                                                 <div class="flex items-center justify-between relative z-10">
                                                     <span class="text-[8px] font-bold text-zinc-500 uppercase tracking-widest">KKSB STUDIOS</span>
-                                                    <i data-lucide="{{ $video->platform === 'youtube' ? 'youtube' : 'instagram' }}" class="w-4 h-4 text-zinc-500"></i>
+                                                    <i data-lucide="video" class="w-4 h-4 text-zinc-500"></i>
                                                 </div>
                                                 
                                                 <!-- Center Icon placeholder -->
