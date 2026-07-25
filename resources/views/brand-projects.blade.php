@@ -68,20 +68,6 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <!-- Phone Info Below Mockup -->
-                            <div class="text-center space-y-1 max-w-[270px]">
-                                <h4 class="text-sm font-extrabold text-zinc-900 uppercase tracking-wider leading-snug">
-                                    {{ $video->title ?? 'NOBLE SOLAR' }}
-                                </h4>
-                                <p class="text-[11px] text-[#666666] font-light leading-relaxed">
-                                    {{ $video->description ?? 'Solar & Renewable Energy' }}
-                                </p>
-                                <button @click="activeEmbed = '{{ $embed }}'" class="pt-2 inline-flex items-center space-x-1.5 text-[10px] font-bold text-[#FF6A00] hover:text-[#E55F00] uppercase tracking-wider transition">
-                                    <span>View Campaign</span>
-                                    <span>&rarr;</span>
-                                </button>
-                            </div>
                         </div>
                     @empty
                         <div class="col-span-full py-16 text-center text-gray-500">
