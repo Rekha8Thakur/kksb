@@ -9,7 +9,7 @@
         }
     @endphp
 
-    <div x-data="{ activeCategory: 'all', activeEmbed: null }" class="bg-[#FAF9F6] min-h-screen">
+    <div x-data="{ activeEmbed: null }" class="bg-[#FAF9F6] min-h-screen">
         
         <!-- Hero Header -->
         <header class="relative bg-white border-b border-gray-100 overflow-hidden">
@@ -38,56 +38,13 @@
         <section class="py-12">
             <div class="max-w-6xl mx-auto px-6 space-y-12">
                 
-                <!-- Category Filter Tabs -->
-                <div class="flex items-center space-x-3 overflow-x-auto pb-4 scrollbar-hide">
-                    <button @click="activeCategory = 'all'" 
-                            :class="activeCategory === 'all' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        All Campaigns
-                    </button>
-                    <button @click="activeCategory = 'retail'" 
-                            :class="activeCategory === 'retail' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Retail
-                    </button>
-                    <button @click="activeCategory = 'food_beverage'" 
-                            :class="activeCategory === 'food_beverage' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Food & Beverage
-                    </button>
-                    <button @click="activeCategory = 'hospitality'" 
-                            :class="activeCategory === 'hospitality' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Hospitality
-                    </button>
-                    <button @click="activeCategory = 'healthcare'" 
-                            :class="activeCategory === 'healthcare' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Healthcare
-                    </button>
-                    <button @click="activeCategory = 'real_estate'" 
-                            :class="activeCategory === 'real_estate' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Real Estate
-                    </button>
-                    <button @click="activeCategory = 'products'" 
-                            :class="activeCategory === 'products' ? 'bg-zinc-900 text-white border-zinc-900' : 'bg-white hover:bg-gray-50 text-zinc-700 border-gray-200'"
-                            class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-200 shrink-0">
-                        Products
-                    </button>
-                </div>
-
                 <!-- Grid layout of mobile mockups -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                     @forelse($videos as $video)
                         @php $embed = getInstagramEmbedUrl($video->video_url); @endphp
                         
                         <!-- Mobile Phone Container -->
-                        <div x-show="activeCategory === 'all' || activeCategory === '{{ $video->category }}'" 
-                             x-transition:enter="transition ease-out duration-300"
-                             x-transition:enter-start="opacity-0 scale-95"
-                             x-transition:enter-end="opacity-100 scale-100"
-                             class="flex flex-col items-center space-y-5 group">
+                        <div class="flex flex-col items-center space-y-5 group">
                             
                             <!-- iPhone Frame Mockup -->
                             <div class="w-full max-w-[270px] aspect-[9/18.5] bg-zinc-950 rounded-[42px] p-2.5 border-[10px] border-zinc-900 shadow-xl overflow-hidden relative group-hover:shadow-2xl transition duration-300">
