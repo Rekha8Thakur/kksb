@@ -23,6 +23,20 @@ class AgencyCmsSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::statement('PRAGMA foreign_keys = OFF');
+        Category::query()->delete();
+        Author::query()->delete();
+        Blog::query()->delete();
+        CareerJob::query()->delete();
+        Client::query()->delete();
+        Faq::query()->delete();
+        Gallery::query()->delete();
+        Project::query()->delete();
+        Service::query()->delete();
+        Testimonial::query()->delete();
+        Setting::query()->delete();
+        \DB::statement('PRAGMA foreign_keys = ON');
+
         // 1. Settings (Global Site CMS)
         $settings = [
             'site_name' => 'KKSB Studios',
