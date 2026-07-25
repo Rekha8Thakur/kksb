@@ -18,7 +18,7 @@
 
         if (!function_exists('getInstagramEmbedUrl')) {
             function getInstagramEmbedUrl($url) {
-                preg_match('/(?:instagram\.com\/(?:p|reel|tv)\/)([^/?#&]+)/i', $url, $match);
+                preg_match('%(?:instagram\.com/(?:p|reel|tv)/)([^/?#&]+)%i', $url, $match);
                 $shortcode = $match[1] ?? null;
                 return $shortcode ? "https://www.instagram.com/reel/{$shortcode}/embed" : null;
             }
