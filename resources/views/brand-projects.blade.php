@@ -56,7 +56,14 @@
                                 <!-- Screen Screen Embed -->
                                 <div class="w-full h-full rounded-[32px] overflow-hidden bg-black relative">
                                     @if($embed)
-                                        <iframe class="w-full h-full" src="{{ $embed }}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                                        <!-- Clean screen background crop hack to hide Instagram follow headers and action footers -->
+                                        <div class="absolute inset-0 overflow-hidden rounded-[32px]">
+                                            <iframe class="absolute w-full h-[125%] -top-[12%] left-0 border-0" 
+                                                    src="{{ $embed }}" 
+                                                    frameborder="0" 
+                                                    scrolling="no" 
+                                                    allowtransparency="true"></iframe>
+                                        </div>
                                         <!-- Play overlay mask for lightbox popup -->
                                         <div @click="activeEmbed = '{{ $embed }}'" class="absolute inset-0 bg-transparent cursor-pointer z-10 flex items-center justify-center group/play">
                                             <div class="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white scale-90 group-hover/play:scale-100 opacity-0 group-hover:opacity-100 transition duration-300">
