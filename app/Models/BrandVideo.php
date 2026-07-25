@@ -18,6 +18,7 @@ class BrandVideo extends Model
         'platform',
         'category',
         'order',
+        'thumbnail_path',
     ];
 
     protected $casts = [

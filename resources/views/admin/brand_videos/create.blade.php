@@ -16,7 +16,7 @@
 
         <!-- Form Card -->
         <div class="bg-white dark:bg-zinc-900 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm p-6 lg:p-8">
-            <form method="POST" action="{{ route('admin.brand-videos.store') }}" class="space-y-6">
+            <form method="POST" action="{{ route('admin.brand-videos.store') }}" enctype="multipart/form-data" class="space-y-6">
                 @csrf
 
                 <!-- Platform -->
@@ -63,6 +63,14 @@
                     <input type="url" name="video_url" id="video_url" value="{{ old('video_url') }}" placeholder="e.g. https://www.instagram.com/reel/... or https://youtu.be/..." required
                            class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                     <p class="text-[11px] text-gray-400 dark:text-zinc-500">Provide the direct public URL of the Instagram Reel or YouTube video.</p>
+                </div>
+
+                <!-- Custom Thumbnail image -->
+                <div class="space-y-2">
+                    <label for="thumbnail" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Video Thumbnail / Cover Image</label>
+                    <input type="file" name="thumbnail" id="thumbnail" accept="image/*"
+                           class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2 text-sm focus:ring-emerald-500 focus:border-emerald-500 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
+                    <p class="text-[11px] text-gray-400 dark:text-zinc-500">Optional. Upload a custom vertical image (ideal ratio 9:16). If empty, YouTube thumbnails will load dynamically, and Instagram videos will show a stylized placeholder.</p>
                 </div>
 
                 <!-- Form Buttons -->

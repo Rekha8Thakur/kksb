@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ActivityLog;
 use App\Models\BrandVideo;
+use App\Services\ImageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -35,7 +36,13 @@ class BrandVideoController extends Controller
             'video_url' => 'required|url',
             'platform' => 'required|in:youtube,instagram',
             'category' => 'nullable|string|max:100',
+            'thumbnail' => 'nullable|image|max:5120',
         ]);
+
+        $thumbnailPath = null;
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = ImageService::uploadAndOptimize($request->file('thumbnail'), 'brand_videos');
+        }
 
         $video = BrandVideo::create([
             'title' => $request->title,
@@ -43,6 +50,7 @@ class BrandVideoController extends Controller
             'video_url' => $request->video_url,
             'platform' => $request->platform,
             'category' => $request->category,
+            'thumbnail_path' => $thumbnailPath,
             'order' => BrandVideo::count(),
         ]);
 
@@ -64,7 +72,13 @@ class BrandVideoController extends Controller
             'video_url' => 'required|url',
             'platform' => 'required|in:youtube,instagram',
             'category' => 'nullable|string|max:100',
+            'thumbnail' => 'nullable|image|max:5120',
         ]);
+
+        $thumbnailPath = $brandVideo->thumbnail_path;
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = ImageService::uploadAndOptimize($request->file('thumbnail'), 'brand_videos');
+        }
 
         $brandVideo->update([
             'title' => $request->title,
@@ -72,6 +86,7 @@ class BrandVideoController extends Controller
             'video_url' => $request->video_url,
             'platform' => $request->platform,
             'category' => $request->category,
+            'thumbnail_path' => $thumbnailPath,
         ]);
 
         ActivityLog::log('Updated Brand Video', 'Updated Brand Video: ' . ($brandVideo->title ?? $brandVideo->video_url));
