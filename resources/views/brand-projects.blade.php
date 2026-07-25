@@ -36,10 +36,10 @@
 
         <!-- Filter & Grid Section -->
         <section class="py-12">
-            <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="max-w-7xl mx-auto px-6 space-y-12">
                 
                 <!-- Grid layout of mobile mockups -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     @forelse($videos as $video)
                         @php $embed = getInstagramEmbedUrl($video->video_url); @endphp
                         
