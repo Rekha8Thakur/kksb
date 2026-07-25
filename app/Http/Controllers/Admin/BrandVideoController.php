@@ -30,15 +30,19 @@ class BrandVideoController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'title' => 'nullable|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string|max:255',
             'video_url' => 'required|url',
             'platform' => 'required|in:youtube,instagram',
+            'category' => 'nullable|string|max:100',
         ]);
 
         $video = BrandVideo::create([
             'title' => $request->title,
+            'description' => $request->description,
             'video_url' => $request->video_url,
             'platform' => $request->platform,
+            'category' => $request->category,
             'order' => BrandVideo::count(),
         ]);
 
@@ -55,15 +59,19 @@ class BrandVideoController extends Controller
     public function update(Request $request, BrandVideo $brandVideo): RedirectResponse
     {
         $request->validate([
-            'title' => 'nullable|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string|max:255',
             'video_url' => 'required|url',
             'platform' => 'required|in:youtube,instagram',
+            'category' => 'nullable|string|max:100',
         ]);
 
         $brandVideo->update([
             'title' => $request->title,
+            'description' => $request->description,
             'video_url' => $request->video_url,
             'platform' => $request->platform,
+            'category' => $request->category,
         ]);
 
         ActivityLog::log('Updated Brand Video', 'Updated Brand Video: ' . ($brandVideo->title ?? $brandVideo->video_url));

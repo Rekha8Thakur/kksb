@@ -13,8 +13,10 @@ class BrandVideo extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'video_url',
         'platform',
+        'category',
         'order',
     ];
 

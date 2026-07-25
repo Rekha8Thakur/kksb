@@ -14,36 +14,59 @@ class BrandVideoSeeder extends Seeder
     {
         $videos = [
             [
-                'title' => 'Brand Showcase 1',
-                'video_url' => 'https://youtu.be/H7ch9Z3_qeM?si=bb7uN17S1LtwPr8Q',
-                'platform' => 'youtube',
+                'title' => 'NOBLE SOLAR',
+                'description' => 'Solar & Renewable Energy',
+                'video_url' => 'https://www.instagram.com/reel/DWOy1DSCeF7/?igsh=YjQyc3FidHJxNXJr',
+                'platform' => 'instagram',
+                'category' => 'retail',
                 'order' => 0,
             ],
             [
-                'title' => 'Brand Showcase 2',
-                'video_url' => 'https://youtu.be/eyvS1WsEsNY?si=9dgq6AjIoCPH2xFF',
-                'platform' => 'youtube',
+                'title' => 'MAYUR HOTEL SOLAN',
+                'description' => 'Hotel & Hospitality',
+                'video_url' => 'https://www.instagram.com/reel/DXhIHQECZXx/?igsh=MWQwbDNudGVqa2xwbw==',
+                'platform' => 'instagram',
+                'category' => 'hospitality',
                 'order' => 1,
             ],
             [
-                'title' => 'Brand Showcase 3',
-                'video_url' => 'https://youtu.be/QxdBSSKpsN8?si=3_Q02Ltq2TEw3Sn4',
-                'platform' => 'youtube',
+                'title' => 'LIQO MONSOON SALE',
+                'description' => 'Retail & Electronics',
+                'video_url' => 'https://www.instagram.com/reel/DVged6VEpyv/?igsh=dTNnZDYyaTk3enVx',
+                'platform' => 'instagram',
+                'category' => 'products',
                 'order' => 2,
             ],
             [
-                'title' => 'Brand Showcase 4',
-                'video_url' => 'https://youtu.be/oCA3uEI0nFY?si=dHHxoUY_ZcxjuMOy',
-                'platform' => 'youtube',
+                'title' => 'MAINI ELECTRONICS',
+                'description' => 'Electronics Retail',
+                'video_url' => 'https://www.instagram.com/reel/DU3Jo95EqgI/?igsh=MWFxa3VmdWtkMHVocg==',
+                'platform' => 'instagram',
+                'category' => 'retail',
                 'order' => 3,
+            ],
+            [
+                'title' => 'PUPSTYLE & CARE',
+                'description' => 'Pet Care Services',
+                'video_url' => 'https://www.instagram.com/reel/DSK_75DEoX2/?igsh=bGU0NTh3eno3NGU2',
+                'platform' => 'instagram',
+                'category' => 'products',
+                'order' => 4,
+            ],
+            [
+                'title' => 'SHIV SHAKTI TIMBER',
+                'description' => 'Interior & Building Solutions',
+                'video_url' => 'https://www.instagram.com/reel/DWOy1DSCeF7/?igsh=YjQyc3FidHJxNXJr',
+                'platform' => 'instagram',
+                'category' => 'products',
+                'order' => 5,
             ],
         ];
 
+        BrandVideo::truncate();
+
         foreach ($videos as $video) {
-            BrandVideo::updateOrCreate(
-                ['video_url' => $video['video_url']],
-                $video
-            );
+            BrandVideo::create($video);
         }
     }
 }

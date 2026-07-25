@@ -24,15 +24,36 @@
                     <label for="platform" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Video Platform</label>
                     <select name="platform" id="platform" required
                             class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
-                        <option value="youtube" {{ old('platform') === 'youtube' ? 'selected' : '' }}>YouTube</option>
                         <option value="instagram" {{ old('platform') === 'instagram' ? 'selected' : '' }}>Instagram (Reel/Post)</option>
+                        <option value="youtube" {{ old('platform') === 'youtube' ? 'selected' : '' }}>YouTube</option>
+                    </select>
+                </div>
+
+                <!-- Category/Tag -->
+                <div class="space-y-2">
+                    <label for="category" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Category Tag</label>
+                    <select name="category" id="category" required
+                            class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                        <option value="retail" {{ old('category') === 'retail' ? 'selected' : '' }}>Retail</option>
+                        <option value="food_beverage" {{ old('category') === 'food_beverage' ? 'selected' : '' }}>Food & Beverage</option>
+                        <option value="hospitality" {{ old('category') === 'hospitality' ? 'selected' : '' }}>Hospitality</option>
+                        <option value="healthcare" {{ old('category') === 'healthcare' ? 'selected' : '' }}>Healthcare</option>
+                        <option value="real_estate" {{ old('category') === 'real_estate' ? 'selected' : '' }}>Real Estate</option>
+                        <option value="products" {{ old('category') === 'products' ? 'selected' : '' }}>Products</option>
                     </select>
                 </div>
 
                 <!-- Title -->
                 <div class="space-y-2">
-                    <label for="title" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Video Title (Internal/Display)</label>
-                    <input type="text" name="title" id="title" value="{{ old('title') }}" placeholder="e.g. Brand Campaign Reel"
+                    <label for="title" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Video Title</label>
+                    <input type="text" name="title" id="title" value="{{ old('title') }}" placeholder="e.g. NOBLE SOLAR" required
+                           class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                </div>
+
+                <!-- Description -->
+                <div class="space-y-2">
+                    <label for="description" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Short Subdescription (Subtitle)</label>
+                    <input type="text" name="description" id="description" value="{{ old('description') }}" placeholder="e.g. Solar & Renewable Energy" required
                            class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                 </div>
 
@@ -41,7 +62,7 @@
                     <label for="video_url" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Video URL</label>
                     <input type="url" name="video_url" id="video_url" value="{{ old('video_url') }}" placeholder="e.g. https://www.instagram.com/reel/... or https://youtu.be/..." required
                            class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
-                    <p class="text-[11px] text-gray-400 dark:text-zinc-500">Provide the direct public URL of the YouTube video or Instagram Reel.</p>
+                    <p class="text-[11px] text-gray-400 dark:text-zinc-500">Provide the direct public URL of the Instagram Reel or YouTube video.</p>
                 </div>
 
                 <!-- Form Buttons -->
