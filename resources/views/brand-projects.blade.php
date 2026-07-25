@@ -47,7 +47,7 @@
                         <div class="flex flex-col items-center space-y-5 group">
                             
                             <!-- iPhone Frame Mockup -->
-                            <div class="w-full max-w-[270px] aspect-[9/18.5] bg-zinc-950 rounded-[42px] p-1.5 border-[8px] border-zinc-900 shadow-xl overflow-hidden relative group-hover:shadow-2xl transition duration-300">
+                            <div class="w-full max-w-[270px] aspect-[9/18.5] bg-zinc-950 rounded-[42px] p-1 border-[8px] border-zinc-900 shadow-xl overflow-hidden relative group-hover:shadow-2xl transition duration-300">
                                 <!-- Speaker Notch -->
                                 <div class="absolute top-0 inset-x-0 h-4 bg-zinc-900 rounded-b-xl w-32 mx-auto z-20 flex items-center justify-center">
                                     <div class="w-12 h-1 bg-zinc-800 rounded-full"></div>
@@ -57,8 +57,8 @@
                                 <div class="w-full h-full rounded-[32px] overflow-hidden bg-black relative">
                                     @if($embed)
                                         <!-- Clean screen background crop hack to hide Instagram follow headers and action footers -->
-                                        <div class="absolute inset-0 overflow-hidden rounded-[32px]">
-                                            <iframe class="absolute w-full h-[145%] -top-[20%] left-0 border-0" 
+                                        <div class="absolute inset-x-0 -top-[15%] -bottom-[35%] overflow-hidden rounded-[32px]">
+                                            <iframe class="w-full h-full border-0" 
                                                     src="{{ $embed }}" 
                                                     frameborder="0" 
                                                     scrolling="no" 
