@@ -119,8 +119,11 @@
                         <div class="flex flex-col items-center space-y-4 group">
                             
                             <!-- iPhone Frame Mockup Container -->
-                            <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'"
-                                 class="w-full max-w-[250px] aspect-[9/18.2] bg-zinc-950 rounded-[44px] p-[6px] border-[6px] border-zinc-850 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden relative cursor-pointer hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2">
+                            <div class="w-full max-w-[250px] aspect-[9/18.2] bg-zinc-950 rounded-[44px] p-[6px] border-[6px] border-zinc-850 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden relative hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2">
+                                
+                                <!-- Transparent Click Trigger Overlay spanning the whole card (prevents iframe click interception) -->
+                                <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'"
+                                     class="absolute inset-0 z-30 cursor-pointer"></div>
                                 
                                 <!-- Dynamic Island / Notch -->
                                 <div class="absolute top-2.5 left-1/2 -translate-x-1/2 h-4 bg-zinc-950 rounded-full w-24 z-30 flex items-center justify-center border border-zinc-900">
