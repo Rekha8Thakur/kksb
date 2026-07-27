@@ -31,11 +31,10 @@ class BrandVideoController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:255',
-            'video_url' => 'required|url',
-            'platform' => 'required|in:youtube,instagram',
-            'category' => 'nullable|string|max:100',
+            'video_url' => 'nullable|url',
+            'platform' => 'nullable|in:youtube,instagram',
             'thumbnail' => 'nullable|image|max:5120',
         ]);
 
@@ -49,7 +48,6 @@ class BrandVideoController extends Controller
             'description' => $request->description,
             'video_url' => $request->video_url,
             'platform' => $request->platform,
-            'category' => $request->category,
             'thumbnail_path' => $thumbnailPath,
             'order' => BrandVideo::count(),
         ]);
@@ -67,11 +65,10 @@ class BrandVideoController extends Controller
     public function update(Request $request, BrandVideo $brandVideo): RedirectResponse
     {
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:255',
-            'video_url' => 'required|url',
-            'platform' => 'required|in:youtube,instagram',
-            'category' => 'nullable|string|max:100',
+            'video_url' => 'nullable|url',
+            'platform' => 'nullable|in:youtube,instagram',
             'thumbnail' => 'nullable|image|max:5120',
         ]);
 
@@ -85,7 +82,6 @@ class BrandVideoController extends Controller
             'description' => $request->description,
             'video_url' => $request->video_url,
             'platform' => $request->platform,
-            'category' => $request->category,
             'thumbnail_path' => $thumbnailPath,
         ]);
 

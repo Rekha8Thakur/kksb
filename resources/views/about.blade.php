@@ -115,26 +115,58 @@
     </section>
 
     <!-- Founders Quote/Details -->
-    <section class="py-12 lg:py-16 bg-white border-b border-gray-100">
-        <div class="max-w-5xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section class="py-20 lg:py-28 bg-white border-y border-gray-100 relative overflow-hidden">
+        <!-- Ambient radial glow in background (very soft orange/amber) -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF6A00]/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-10 w-96 h-96 bg-amber-500/4 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
             <!-- Left Column: Portrait -->
-            <div class="lg:col-span-4 max-w-[260px] sm:max-w-[300px] lg:max-w-[280px] mx-auto lg:mx-0 w-full" data-aos="fade-right">
-                <div class="rounded-[20px] overflow-hidden shadow-lg bg-zinc-950 border border-gray-100">
-                    <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-auto object-cover" alt="Founder Portrait">
+            <div class="lg:col-span-5 max-w-[340px] lg:max-w-none mx-auto w-full relative group" data-aos="fade-right">
+                <!-- Outer Ambient Glow (Soft Orange) -->
+                <div class="absolute -inset-1.5 bg-gradient-to-tr from-[#FF6A00] to-amber-500 rounded-[32px] blur-lg opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+                
+                <!-- Main Container -->
+                <div class="relative bg-white border border-gray-150 rounded-[28px] p-2.5 shadow-xl overflow-hidden">
+                    <div class="rounded-[20px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
+                        <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out" alt="Founder Portrait">
+                        
+                        <!-- Floating Camera Badge -->
+                        <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse"></span>
+                            <span>BEHIND THE LENS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Right Column: Info -->
-            <div class="lg:col-span-8 space-y-6" data-aos="fade-left">
-                <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">The Founder</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111111] leading-tight">
-                    {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
-                </h2>
-                <div class="space-y-4 text-[15px] text-gray-500 leading-relaxed font-light">
-                    <p class="font-bold text-[#111111]">
-                        {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }} — <span class="text-gray-400 font-medium">{{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}</span>
-                    </p>
-                    <p>
+            <div class="lg:col-span-7 space-y-6 relative" data-aos="fade-left">
+                <!-- Large quote watermark behind text (subtle orange watermark) -->
+                <div class="absolute -top-16 -left-8 text-[140px] font-black text-[#FF6A00]/[0.06] select-none pointer-events-none font-heading">“</div>
+
+                <div class="space-y-3">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-[11px] font-black uppercase tracking-wider border border-[#FF6A00]/25">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i> The Founder
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#111111] leading-[1.1] uppercase font-heading">
+                        {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Title block -->
+                    <div class="pb-4 border-b border-gray-100">
+                        <h4 class="text-lg font-bold text-[#111111] tracking-wide">
+                            {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
+                        </h4>
+                        <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
+                            {{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}
+                        </p>
+                    </div>
+
+                    <!-- Bio -->
+                    <p class="text-[14.5px] sm:text-base text-gray-500 leading-relaxed font-light">
                         {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
                     </p>
                 </div>

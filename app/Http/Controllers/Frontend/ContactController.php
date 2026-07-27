@@ -18,6 +18,9 @@ class ContactController extends Controller
     public function index(): View
     {
         $faqs = Faq::where('category', 'contact')->orderBy('order')->get();
+        if ($faqs->isEmpty()) {
+            $faqs = Faq::where('category', 'home')->orderBy('order')->get();
+        }
         return view('contact', compact('faqs'));
     }
 

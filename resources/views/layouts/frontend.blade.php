@@ -82,11 +82,10 @@
         }
         h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #111111;
         }
     </style>
 </head>
-<body class="bg-white antialiased selection:bg-[#FF6A00] selection:text-white" x-data="{ mobileMenuOpen: false }">
+<body class="bg-white antialiased selection:bg-[#111111] selection:text-white" x-data="{ mobileMenuOpen: false }">
 
     <!-- Success / Error Toast notifications -->
     <div x-data="{ 
@@ -205,7 +204,7 @@
 
         <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px] grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 relative z-10">
             <!-- Col 1: About Brand -->
-            <div class="md:col-span-5 space-y-6">
+            <div class="md:col-span-6 space-y-6">
                 <a href="/" class="inline-block group">
                     <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-12 md:h-16 lg:h-20 w-auto object-contain -ml-2 transition-transform duration-300 group-hover:scale-105 filter invert brightness-200" alt="KKSB Studios Logo">
                 </a>
@@ -214,14 +213,14 @@
                 </p>
                 <div class="flex space-x-4 pt-2 text-gray-400">
                     <a href="{{ App\Models\Setting::get('social_instagram', 'https://instagram.com/kksbstudios') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_youtube', '#') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_facebook', '#') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="{{ App\Models\Setting::get('social_linkedin', '#') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_youtube', 'https://youtube.com/kksbstudios') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_facebook', 'https://facebook.com/kksbstudios') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="{{ App\Models\Setting::get('social_linkedin', 'https://linkedin.com/company/kksbstudios') }}" target="_blank" class="hover:text-[#FF6A00] transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                 </div>
             </div>
 
             <!-- Col 2: Quick Links -->
-            <div class="md:col-span-2 space-y-4">
+            <div class="md:col-span-3 space-y-4">
                 <h4 class="font-semibold text-[#FF6A00] uppercase tracking-wider text-[11px]">Quick Links</h4>
                 <nav class="flex flex-col space-y-2 text-[14px] text-gray-400">
                     <a href="/about" class="hover:text-white transition">About</a>
@@ -233,33 +232,21 @@
                 </nav>
             </div>
 
-            <!-- Col 3: Services -->
-            <div class="md:col-span-2 space-y-4">
-                <h4 class="font-semibold text-[#FF6A00] uppercase tracking-wider text-[11px]">Services</h4>
-                <nav class="flex flex-col space-y-2 text-[14px] text-gray-400">
-                    <a href="/services/brand-strategy" class="hover:text-white transition">Brand Strategy</a>
-                    <a href="/services/reels-and-short-form-content" class="hover:text-white transition">Content Creation</a>
-                    <a href="/services/digital-campaigns" class="hover:text-white transition">Performance Marketing</a>
-                    <a href="/services/social-media-management" class="hover:text-white transition">Social Media</a>
-                    <a href="/services/web-design-development" class="hover:text-white transition">Web Design</a>
-                </nav>
-            </div>
-
-            <!-- Col 4: Contact Info -->
+            <!-- Col 3: Contact Info -->
             <div class="md:col-span-3 space-y-4">
                 <h4 class="font-semibold text-[#FF6A00] uppercase tracking-wider text-[11px]">Let's Connect</h4>
                 <div class="flex flex-col space-y-3 text-[14px] text-gray-400">
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="mail" class="w-4 h-4"></i></span>
-                        <a href="mailto:hello@kksbstudios.com" class="hover:text-white transition">hello@kksbstudios.com</a>
+                        <a href="mailto:{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}</a>
                     </p>
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="phone" class="w-4 h-4"></i></span>
-                        <a href="tel:+917876148313" class="hover:text-white transition">+91 78761 48313</a>
+                        <a href="tel:{{ str_replace(' ', '', App\Models\Setting::get('contact_phone', '+917876146013')) }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_phone', '+91 78761 46013') }}</a>
                     </p>
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="map-pin" class="w-4 h-4"></i></span>
-                        <span>Solan, Himachal Pradesh</span>
+                        <span>{{ App\Models\Setting::get('contact_address', 'Solan, Himachal Pradesh 173212') }}</span>
                     </p>
                 </div>
             </div>

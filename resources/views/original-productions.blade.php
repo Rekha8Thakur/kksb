@@ -25,27 +25,27 @@
         }
     @endphp
 
-    <div x-data="{ activeEmbed: null }" class="bg-[#FAF9F6] min-h-screen">
+    <div x-data="{ activeEmbed: null, activePlatform: null }" class="bg-[#FAF9F6] min-h-screen">
         
-        <!-- Premium Split Hero Banner -->
-        <header class="relative bg-white border-b border-gray-100 overflow-hidden">
-            <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-stretch">
-                <!-- Text Content Side -->
-                <div class="flex-1 px-6 py-16 sm:px-12 lg:px-20 flex flex-col justify-center space-y-6 relative z-10">
-                    <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-[0.2em] block">Original Productions</span>
-                    <h1 class="text-4xl lg:text-6xl font-black tracking-tight text-zinc-900 leading-[1.05] uppercase font-heading">
+        <!-- Premium Full-Width Landscape Hero Banner -->
+        <header class="relative bg-zinc-950 overflow-hidden h-[260px] sm:h-[300px] lg:h-[340px] flex items-center">
+            <!-- Full Landscape Background Image -->
+            <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-85" style="object-position: center 35%;" alt="Original Productions Cover">
+            
+            <!-- Dark Gradient Overlay for perfect readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10"></div>
+            
+            <!-- Content Container -->
+            <div class="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20 w-full relative z-20 text-white">
+                <div class="max-w-xl space-y-4">
+                    <span class="text-xs font-bold text-white uppercase tracking-[0.2em] block">Original Productions</span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.05] uppercase font-heading">
                         Original<br>Productions
                     </h1>
                     <div class="w-16 h-1 bg-[#FF6A00] rounded-full"></div>
-                    <p class="text-sm sm:text-base text-[#666666] leading-relaxed max-w-md font-light">
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-md font-light">
                         Documentaries, travel films and stories created by KKSB Studios.
                     </p>
-                </div>
-                <!-- Image Cover Side -->
-                <div class="flex-1 min-h-[300px] md:min-h-auto relative bg-zinc-900 overflow-hidden">
-                    <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-90 object-center" alt="Original Productions Cover">
-                    <!-- Split fade effect -->
-                    <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent hidden md:block"></div>
                 </div>
             </div>
         </header>
@@ -64,7 +64,7 @@
                         <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group transition duration-300 hover:shadow-lg">
                             <div class="space-y-4">
                                 <!-- Image & Play trigger container -->
-                                <div @click="activeEmbed = '{{ $embed }}'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
+                                <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
                                     <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}">
                                     <!-- Dynamic Play Overlay matching mockup -->
                                     <div class="absolute bottom-4 left-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#FF6A00] transition duration-300 group-hover:scale-110">
@@ -87,7 +87,7 @@
                                 <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">
                                     {{ $video->platform === 'youtube' ? 'YouTube Film' : 'Insta Reel' }}
                                 </span>
-                                <button @click="activeEmbed = '{{ $embed }}'" class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FF6A00] hover:text-[#E55F00] transition uppercase tracking-wider">
+                                <button @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FF6A00] hover:text-[#E55F00] transition uppercase tracking-wider">
                                     <span>Watch Project</span>
                                     <span>&rarr;</span>
                                 </button>
@@ -119,18 +119,30 @@
              x-transition:leave="transition ease-in duration-200"
              x-transition:leave-start="opacity-100"
              x-transition:leave-end="opacity-0"
-             class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
-             style="display: none;">
+             class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+             style="display: none;"
+             @keydown.escape.window="activeEmbed = null; activePlatform = null">
             
-            <div @click.away="activeEmbed = null" class="relative max-w-4xl w-full aspect-video bg-zinc-950 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <!-- Close Button -->
-                <button @click="activeEmbed = null" class="absolute top-4 right-4 z-10 text-white bg-black/40 hover:bg-black/60 p-2.5 rounded-full transition border border-white/10">
-                    <i data-lucide="x" class="w-4.5 h-4.5"></i>
-                </button>
-
+            <!-- Floating Close Button on Viewport Corner (prevents overlapping video header/controls) -->
+            <button @click="activeEmbed = null; activePlatform = null" class="fixed top-6 right-6 z-50 text-white bg-black/50 hover:bg-black/80 p-3 rounded-full transition border border-white/10 shadow-lg">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div @click.away="activeEmbed = null; activePlatform = null" 
+                 :class="activePlatform === 'youtube' ? 'rounded-2xl' : 'rounded-3xl'"
+                 :style="activePlatform === 'youtube' ? 'max-width: min(896px, 90vw); max-height: 82vh; aspect-ratio: 16/9;' : 'width: min(450px, 90vw, calc(82vh * 9 / 16)); max-height: 82vh; aspect-ratio: 9/16;'"
+                 class="relative w-full bg-zinc-950 overflow-hidden shadow-2xl border border-white/10 p-1 transition-all duration-300">
+                 
                 <!-- Iframe player -->
                 <template x-if="activeEmbed">
-                    <iframe class="w-full h-full" :src="activeEmbed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" 
+                            :class="activePlatform === 'youtube' ? 'rounded-xl' : 'rounded-2xl'"
+                            :src="activeEmbed" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen 
+                            allowtransparency="true" 
+                            scrolling="no"></iframe>
                 </template>
             </div>
         </div>

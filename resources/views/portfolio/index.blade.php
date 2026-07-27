@@ -1,7 +1,7 @@
 <x-frontend-layout>
     
     <!-- Hero / Showcase Header -->
-    <section class="bg-[#FAFAFA] pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-gray-100">
+    <section class="bg-[#FAFAFA] pt-2 pb-16 lg:pt-4 lg:pb-20 border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-[0.2em] block mb-2">Our Work</span>
             <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] text-zinc-900 uppercase">
@@ -20,8 +20,8 @@
                 <!-- Card 1: Original Productions -->
                 <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
-                        <!-- Grayscale image -->
-                        <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Original Productions">
+                        <!-- Colorful image -->
+                        <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Original Productions">
                     </div>
                     <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
@@ -58,9 +58,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('original-productions.index') }}" class="w-full py-4 rounded-xl border border-[#FF6A00] text-[#FF6A00] font-bold text-xs uppercase tracking-wider text-center transition duration-300 hover:bg-[#FF6A00] hover:text-white flex items-center justify-center space-x-2">
+                        <a href="{{ route('original-productions.index') }}" class="w-full py-4 rounded-xl border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
                             <span>Explore Originals</span>
-                            <span>&rarr;</span>
+                            <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                         </a>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                 <!-- Card 2: Brand Campaigns -->
                 <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
-                        <!-- Grayscale image -->
-                        <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Brand Campaigns">
+                        <!-- Colorful image -->
+                        <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Brand Campaigns">
                     </div>
                     <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
@@ -106,9 +106,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('brand-projects.index') }}" class="w-full py-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider text-center transition duration-300 flex items-center justify-center space-x-2">
+                        <a href="{{ route('brand-projects.index') }}" class="w-full py-4 rounded-xl bg-[#111111] hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
                             <span>View Brand Projects</span>
-                            <span class="text-[#FF6A00]">&rarr;</span>
+                            <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                         </a>
                     </div>
                 </div>

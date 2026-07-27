@@ -16,7 +16,6 @@ class BrandVideo extends Model
         'description',
         'video_url',
         'platform',
-        'category',
         'order',
         'thumbnail_path',
     ];
