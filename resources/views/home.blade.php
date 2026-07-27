@@ -88,6 +88,16 @@
                 height: calc(100vh - 128px) !important;
             }
         }
+        @media (max-width: 1023px) {
+            .hero-outer-fullscreen {
+                min-height: auto !important;
+                height: auto !important;
+            }
+            .hero-fullscreen-frame {
+                min-height: auto !important;
+                height: auto !important;
+            }
+        }
         .hero-outer-fullscreen {
             min-height: calc(100vh - 80px);
         }
@@ -219,52 +229,52 @@
                         <span class="text-[#111111]">TRUST</span> <span class="text-gray-400">STATS</span>
                     </h2>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     <!-- Stat 1 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                            <i data-lucide="handshake" class="w-6 h-6"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="handshake" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
+                        <span class="text-xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
                             Over 300+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Brands Worked With</span>
+                        <span class="text-[9px] sm:text-[13px] text-[#666666] uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold mt-2 sm:mt-3 block">Brands Worked With</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.09">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Millions+</span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Organic Views Generated</span>
+                        <span class="text-xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Millions+</span>
+                        <span class="text-[9px] sm:text-[13px] text-[#666666] uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold mt-2 sm:mt-3 block">Organic Views Generated</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                            <i data-lucide="award" class="w-6 h-6"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="award" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
-                        <span class="text-3xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
+                        <span class="text-xl sm:text-4xl lg:text-[28px] xl:text-[40px] 2xl:text-[56px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">
                             7+
                         </span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Years of Experience</span>
+                        <span class="text-[9px] sm:text-[13px] text-[#666666] uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold mt-2 sm:mt-3 block">Years of Experience</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="group relative border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
+                    <div class="group relative border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 lg:p-5 xl:p-8 text-center bg-white hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden" 
                          data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.09">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Himachal Based</span>
-                        <span class="text-[11px] sm:text-[13px] text-[#666666] uppercase tracking-[0.15em] font-semibold mt-3 block">Growing Beyond</span>
+                        <span class="text-xl sm:text-3xl lg:text-[22px] xl:text-[30px] 2xl:text-[46px] font-extrabold text-[#111111] tracking-tight block transition-colors duration-300 group-hover:text-[#111111]">Himachal Based</span>
+                        <span class="text-[9px] sm:text-[13px] text-[#666666] uppercase tracking-[0.12em] sm:tracking-[0.15em] font-semibold mt-2 sm:mt-3 block">Growing Beyond</span>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
                     </div>
                 </div>
@@ -447,7 +457,7 @@
                 </div>
 
                 <!-- Services Single Row Layout (6 Cards Side-by-Side) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-5">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5">
                     <!-- Service 1: Social Media Management -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
@@ -623,24 +633,24 @@
                 </div>
 
                 <!-- 6 Process Steps Premium Cards Grid (Single Row on Desktop) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-5">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 xl:gap-5">
                     <!-- Step 1 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="100">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             01
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="search" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Discover
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             We understand your business, goals and target audience.
                         </p>
                         
@@ -649,22 +659,22 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="200">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             02
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="file-text" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="file-text" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Research
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             In-depth research on your industry, audience and competitors.
                         </p>
                         
@@ -673,22 +683,22 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="300">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             03
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="target" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="target" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Strategize
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             We create a customized strategy aligned with your objectives.
                         </p>
                         
@@ -697,22 +707,22 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="400">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             04
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="edit-3" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="edit-3" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Create
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             Our team produces high-quality content and creatives.
                         </p>
                         
@@ -721,22 +731,22 @@
                     </div>
 
                     <!-- Step 5 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="500">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             05
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="send" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="send" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Publish
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             We launch across the right platforms at the right time.
                         </p>
                         
@@ -745,22 +755,22 @@
                     </div>
 
                     <!-- Step 6 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[20px] p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-5 hover:border-[#111111] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group overflow-hidden text-center" data-aos="fade-up" data-aos-delay="600">
                         <!-- Giant Step Number watermark -->
-                        <span class="absolute top-2 right-4 text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-xl sm:text-[40px] font-black text-gray-100/70 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             06
                         </span>
                         
                         <!-- Circular Icon Container -->
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="trending-up" class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"></i>
+                        <div class="w-10 h-10 mx-auto mb-3 sm:mb-4 rounded-xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300 flex-shrink-0">
+                            <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:rotate-12"></i>
                         </div>
                         
                         <!-- Text Content -->
-                        <h3 class="text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
+                        <h3 class="text-xs sm:text-[16px] xl:text-[17px] font-extrabold text-[#111111] tracking-tight group-hover:text-[#111111] transition-colors duration-300 uppercase">
                             Optimize
                         </h3>
-                        <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 max-w-[160px] mx-auto">
+                        <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-1.5 sm:mt-2 max-w-[160px] mx-auto">
                             We analyze, learn and optimize for maximum results.
                         </p>
                         
@@ -798,32 +808,32 @@
                 </div>
 
                 <!-- Portfolio Single Row Layout (4 Cards Side-by-Side) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     <!-- Project 1: The Himalayan Resort -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80" 
                                  alt="The Himalayan Resort" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Hospitality & Tourism
+                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Hospitality
                             </span>
                         </div>
                         
-                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-2">
-                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE HIMALAYAN RESORT</span>
-                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Himalayan Resort</h3>
-                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-1 sm:space-y-2">
+                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE HIMALAYAN RESORT</span>
+                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Himalayan Resort</h3>
+                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
                                     Cinematic brand shoot and targeted social ad campaign showcasing luxury mountain stays.
                                 </p>
                             </div>
                             
-                            <div class="space-y-3 pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
-                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[13px] font-extrabold text-emerald-700">+250% Bookings</span>
+                            <div class="space-y-2 pt-1 sm:pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">+250% Bookings</span>
                                 </div>
                             </div>
                         </div>
@@ -834,26 +844,26 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" 
                                  alt="The Café Project" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Food & Beverage
+                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                Food & Bev
                             </span>
                         </div>
                         
-                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-2">
-                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE CAFÉ PROJECT</span>
-                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Café Project</h3>
-                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-1 sm:space-y-2">
+                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE CAFÉ PROJECT</span>
+                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Café Project</h3>
+                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
                                     Micro-influencer food campaign and viral Instagram reels series driving weekend footfall.
                                 </p>
                             </div>
                             
-                            <div class="space-y-3 pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
-                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[13px] font-extrabold text-emerald-700">3X Footfall</span>
+                            <div class="space-y-2 pt-1 sm:pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">3X Footfall</span>
                                 </div>
                             </div>
                         </div>
@@ -864,26 +874,26 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" 
                                  alt="Bhalla Dental Clinic" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
                                 Healthcare
                             </span>
                         </div>
                         
-                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-2">
-                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">BHALLA DENTAL CLINIC</span>
-                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Bhalla Dental Clinic</h3>
-                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-1 sm:space-y-2">
+                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">BHALLA DENTAL CLINIC</span>
+                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Bhalla Dental Clinic</h3>
+                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
                                     Patient testimonial videos and localized lead generation campaigns establishing authority.
                                 </p>
                             </div>
                             
-                            <div class="space-y-3 pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
-                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[13px] font-extrabold text-emerald-700">200% Inquiries</span>
+                            <div class="space-y-2 pt-1 sm:pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">200% Inquiries</span>
                                 </div>
                             </div>
                         </div>
@@ -894,26 +904,26 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" 
                                  alt="Peter England Solan" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md text-[10px] font-extrabold text-[#111111] px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
                                 Retail
                             </span>
                         </div>
                         
-                        <div class="p-6 space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-2">
-                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-widest block">PETER ENGLAND SOLAN</span>
-                                <h3 class="text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Peter England Solan</h3>
-                                <p class="text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                            <div class="space-y-1 sm:space-y-2">
+                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">PETER ENGLAND SOLAN</span>
+                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Peter England Solan</h3>
+                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
                                     Seasonal apparel launch commercial shoots and hyper-targeted regional customer ad drives.
                                 </p>
                             </div>
                             
-                            <div class="space-y-3 pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-[12px] flex items-center justify-between">
-                                    <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[13px] font-extrabold text-emerald-700">180% Store Visits</span>
+                            <div class="space-y-2 pt-1 sm:pt-2">
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">180% Visits</span>
                                 </div>
                             </div>
                         </div>
@@ -942,71 +952,71 @@
                 </div>
 
                 <!-- Feature Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     <!-- Feature 1 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.03">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-2xl sm:text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             01
                         </span>
-                        <div class="space-y-4 relative z-10">
+                        <div class="space-y-2 sm:space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                                <i data-lucide="search" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            <div class="w-10 h-10 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="search" class="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Research Before Execution</h3>
-                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
+                            <h3 class="text-xs sm:text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Research Before Execution</h3>
+                            <p class="text-[11px] sm:text-[13.5px] text-[#666666] leading-relaxed font-light">We understand your business, demographic and industry values before we sketch a layout.</p>
                         </div>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-2xl sm:text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             02
                         </span>
-                        <div class="space-y-4 relative z-10">
+                        <div class="space-y-2 sm:space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                                <i data-lucide="clapperboard" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            <div class="w-10 h-10 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="clapperboard" class="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Strategy + Production In-house</h3>
-                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
+                            <h3 class="text-xs sm:text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Strategy + Production</h3>
+                            <p class="text-[11px] sm:text-[13.5px] text-[#666666] leading-relaxed font-light">From scriptboarding to high-end camera shoots and sound design — everything is executed under our roof.</p>
                         </div>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.03">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-2xl sm:text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             03
                         </span>
-                        <div class="space-y-4 relative z-10">
+                        <div class="space-y-2 sm:space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                                <i data-lucide="map-pin" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            <div class="w-10 h-10 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="map-pin" class="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Regional Market Insights</h3>
-                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
+                            <h3 class="text-xs sm:text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Regional Market Insights</h3>
+                            <p class="text-[11px] sm:text-[13.5px] text-[#666666] leading-relaxed font-light">We know Himachal Pradesh, its culture, and the purchase hooks that appeal to local regional audiences.</p>
                         </div>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="relative bg-white border border-[#ECECEC] rounded-[24px] p-6 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
+                    <div class="relative bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-4 sm:p-8 hover:border-[#111111] hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.07">
                         <!-- Giant watermark number -->
-                        <span class="absolute top-2 right-6 text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
+                        <span class="absolute top-2 right-4 text-2xl sm:text-[56px] font-black text-gray-100/50 select-none pointer-events-none group-hover:text-[#111111]/5 transition-colors duration-300 font-heading">
                             04
                         </span>
-                        <div class="space-y-4 relative z-10">
+                        <div class="space-y-2 sm:space-y-4 relative z-10">
                             <!-- Icon Container -->
-                            <div class="w-14 h-14 rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
-                                <i data-lucide="trending-up" class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12"></i>
+                            <div class="w-10 h-10 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-[#FF6A00]/10 flex items-center justify-center text-[#FF6A00] group-hover:scale-110 group-hover:bg-[#111111] group-hover:text-white transition-all duration-300">
+                                <i data-lucide="trending-up" class="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-300 group-hover:rotate-12"></i>
                             </div>
-                            <h3 class="text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Creator Thinking + Agency Execution</h3>
-                            <p class="text-[13.5px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
+                            <h3 class="text-xs sm:text-[18px] font-extrabold text-[#111111] group-hover:text-[#111111] transition-colors duration-300">Creator + Agency Strategy</h3>
+                            <p class="text-[11px] sm:text-[13.5px] text-[#666666] leading-relaxed font-light">Merging modern micro-influencer attention hooks with highly structured digital marketing frameworks.</p>
                         </div>
                         <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#111111] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </div>

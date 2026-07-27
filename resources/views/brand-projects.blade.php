@@ -66,7 +66,7 @@
                             <h2 class="text-xl sm:text-2xl font-black text-zinc-900 uppercase tracking-wide">Brand Video Campaigns</h2>
                             <span class="text-xs text-gray-500 font-light uppercase tracking-wider">Instagram Reels</span>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-8">
                             @foreach($verticalVideos as $video)
                                 @php
                                     $embed = getInstagramEmbedUrl($video->video_url);
@@ -98,7 +98,7 @@
                                 <div class="flex flex-col items-center space-y-4 group">
                                     
                                     <!-- iPhone Frame Mockup Container -->
-                                    <div class="w-full max-w-[250px] bg-zinc-950 rounded-[44px] p-[6px] border-[6px] border-zinc-850 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden relative hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2"
+                                    <div class="w-full max-w-[250px] bg-zinc-950 rounded-[24px] sm:rounded-[44px] p-[3px] sm:p-[6px] border-[3px] sm:border-[6px] border-zinc-850 shadow-[0_10px_25px_rgba(0,0,0,0.18)] overflow-hidden relative hover:shadow-[0_25px_50px_rgba(255,106,0,0.12)] hover:border-zinc-800 transition duration-500 ease-out transform hover:-translate-y-2"
                                          style="aspect-ratio: 9/16;">
                                         
                                         <!-- Transparent Click Trigger Overlay spanning the whole card (prevents iframe click interception) -->
@@ -106,23 +106,23 @@
                                              class="absolute inset-0 z-30 cursor-pointer"></div>
                                         
                                         <!-- Dynamic Island / Notch -->
-                                        <div class="absolute top-2.5 left-1/2 -translate-x-1/2 h-4 bg-zinc-950 rounded-full w-24 z-30 flex items-center justify-center border border-zinc-900">
-                                            <div class="w-2 h-2 rounded-full bg-zinc-900 mr-2"></div>
-                                            <div class="w-8 h-1 bg-zinc-900 rounded-full"></div>
+                                        <div class="absolute top-1.5 sm:top-2.5 left-1/2 -translate-x-1/2 h-2 sm:h-4 bg-zinc-950 rounded-full w-12 sm:w-24 z-30 flex items-center justify-center border border-zinc-900">
+                                            <div class="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-zinc-900 mr-1 sm:mr-2"></div>
+                                            <div class="w-4 h-0.5 sm:w-8 sm:h-1 bg-zinc-900 rounded-full"></div>
                                         </div>
                                         
                                         <!-- Inner Screen Wrapper -->
-                                        <div class="w-full h-full rounded-[38px] overflow-hidden bg-zinc-950 relative">
+                                        <div class="w-full h-full rounded-[20px] sm:rounded-[38px] overflow-hidden bg-zinc-950 relative">
                                             
-                                            <!-- Image Display -->
+                                             <!-- Image Display -->
                                             <div class="w-full h-full relative overflow-hidden bg-zinc-900">
                                                 @if($embed)
                                                     <!-- Double layer: show a background loader while loading the iframe -->
                                                     <div class="absolute inset-0 bg-zinc-950 flex items-center justify-center">
-                                                        <div class="w-6 h-6 border-2 border-zinc-700 border-t-[#FF6A00] rounded-full animate-spin"></div>
+                                                        <div class="w-4 h-4 sm:w-6 sm:h-6 border-2 border-zinc-700 border-t-[#FF6A00] rounded-full animate-spin"></div>
                                                     </div>
                                                     <!-- Show the actual Instagram embed first screen directly inside the mockup frame -->
-                                                    <div class="absolute inset-0 z-0 rounded-[32px] overflow-hidden">
+                                                    <div class="absolute inset-0 z-0 rounded-[16px] sm:rounded-[32px] overflow-hidden">
                                                         <iframe class="absolute inset-x-0 w-full border-0 opacity-90 group-hover:opacity-100 transition duration-500" 
                                                                 style="top: -54px; height: calc(100% + 54px);"
                                                                 src="{{ $embed }}" 
@@ -132,29 +132,28 @@
                                                     </div>
                                                 @elseif($thumbnail)
                                                     <!-- Custom Dark Premium Placeholder Gradient -->
-                                                    <div class="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 flex flex-col justify-between p-6 relative overflow-hidden group-hover:scale-105 transition duration-700 ease-out">
+                                                    <div class="w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 flex flex-col justify-between p-3 sm:p-6 relative overflow-hidden group-hover:scale-105 transition duration-700 ease-out">
                                                         <!-- Ambient light blur background -->
                                                         <div class="absolute -top-16 -left-16 w-32 h-32 bg-[#FF6A00]/10 rounded-full blur-2xl"></div>
                                                         <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-[#FF6A00]/5 rounded-full blur-2xl"></div>
                                                         
                                                         <!-- Top Header -->
                                                         <div class="flex items-center justify-between relative z-10">
-                                                            <span class="text-[8px] font-bold text-zinc-500 uppercase tracking-widest">KKSB STUDIOS</span>
-                                                            <i data-lucide="video" class="w-4 h-4 text-zinc-500"></i>
+                                                            <span class="text-[6px] sm:text-[8px] font-bold text-zinc-500 uppercase tracking-widest">KKSB STUDIOS</span>
+                                                            <i data-lucide="video" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-500"></i>
                                                         </div>
                                                         
                                                         <!-- Center Icon placeholder -->
-                                                        <div class="flex flex-col items-center justify-center space-y-2 relative z-10 py-12">
-                                                            <div class="w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#FF6A00] transition duration-300">
-                                                                <i data-lucide="video" class="w-5 h-5"></i>
+                                                        <div class="flex flex-col items-center justify-center space-y-1 sm:space-y-2 relative z-10 py-6 sm:py-12">
+                                                            <div class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#FF6A00] transition duration-300">
+                                                                <i data-lucide="video" class="w-3.5 h-3.5 sm:w-5 sm:h-5"></i>
                                                             </div>
-                                                            <span class="text-[9px] text-zinc-500 uppercase tracking-wider">Social Campaign</span>
+                                                            <span class="text-[7px] sm:text-[9px] text-zinc-500 uppercase tracking-wider">Social Campaign</span>
                                                         </div>
                                                         
                                                         <!-- Bottom Info -->
                                                         <div class="space-y-1 text-left relative z-10">
-
-                                                            <h3 class="text-xs font-bold text-zinc-300 truncate tracking-wide mt-1">{{ $video->title }}</h3>
+                                                            <h3 class="text-[10px] sm:text-xs font-bold text-zinc-300 truncate tracking-wide mt-1">{{ $video->title }}</h3>
                                                         </div>
                                                     </div>
                                                 @endif
@@ -167,15 +166,14 @@
                                             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/25 z-10 transition duration-500"></div>
                                             
                                             <!-- Content Overlay at the bottom -->
-                                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-transparent p-5 pt-14 z-20">
-                                                <div class="space-y-2 text-left">
-
+                                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-transparent p-3 pt-8 sm:p-5 sm:pt-14 z-20">
+                                                <div class="space-y-1 sm:space-y-2 text-left">
                                                     <!-- Title & Subtitle -->
                                                     <div class="space-y-0.5">
-                                                        <h3 class="text-sm font-extrabold text-white tracking-wide uppercase line-clamp-1">
+                                                        <h3 class="text-[10px] sm:text-sm font-extrabold text-white tracking-wide uppercase line-clamp-1 leading-tight">
                                                             {{ $video->title ?? 'Untitled Campaign' }}
                                                         </h3>
-                                                        <p class="text-[10px] text-zinc-400 font-light leading-snug line-clamp-2">
+                                                        <p class="text-[8px] sm:text-[10px] text-zinc-400 font-light leading-snug line-clamp-2">
                                                             {{ $video->description }}
                                                         </p>
                                                     </div>

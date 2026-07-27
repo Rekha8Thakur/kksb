@@ -18,12 +18,12 @@
             <!-- Grid columns matching template -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12 text-left">
                 <!-- Card 1: Original Productions -->
-                <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
+                <div class="bg-white border border-gray-150 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
                         <!-- Colorful image -->
                         <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Original Productions">
                     </div>
-                    <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
+                    <div class="p-5 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
                             <!-- Title block -->
                             <div class="flex items-center space-x-3 text-[#FF6A00]">
@@ -32,27 +32,27 @@
                             </div>
                             <!-- List -->
                             <ul class="divide-y divide-gray-100 text-sm font-semibold text-zinc-800">
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="film" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Documentaries</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="map-pin" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Travel Films</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="landmark" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Heritage & Culture</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="clapperboard" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Short Films</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="mic" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Podcasts</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="users" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Social Awareness Projects</span>
                                 </li>
@@ -66,12 +66,12 @@
                 </div>
 
                 <!-- Card 2: Brand Campaigns -->
-                <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
+                <div class="bg-white border border-gray-150 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
                         <!-- Colorful image -->
                         <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Brand Campaigns">
                     </div>
-                    <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
+                    <div class="p-5 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
                             <!-- Title block -->
                             <div class="flex items-center space-x-3 text-[#FF6A00]">
@@ -80,27 +80,27 @@
                             </div>
                             <!-- List -->
                             <ul class="divide-y divide-gray-100 text-sm font-semibold text-zinc-800">
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="play" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Advertisement Reels</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="shopping-bag" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Product Promotions</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="briefcase" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Business Storytelling</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="building-2" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Hotel Promotions</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="heart" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Influencer Campaigns</span>
                                 </li>
-                                <li class="py-3 flex items-center space-x-3">
+                                <li class="py-2.5 sm:py-3 flex items-center space-x-3">
                                     <i data-lucide="calendar" class="w-4 h-4 text-zinc-400"></i>
                                     <span>Event Coverage</span>
                                 </li>

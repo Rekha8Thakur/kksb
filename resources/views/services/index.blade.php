@@ -158,99 +158,99 @@
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-8 items-stretch">
                     
                     <!-- Card 1: Social Media Management -->
-                    <a href="/services/social-media-management" id="smm" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up">
-                        <div class="space-y-5">
+                    <a href="/services/social-media-management" @click.prevent="activeModal = 'smm'" id="smm" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Social Media Management</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Build a Brand That People Remember</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Social Media Management</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Build a Brand That People Remember</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Build meaningful connections with your audience and grow organically with consistent, platform-specific content and management.
                             </p>
                         </div>
                     </a>
 
                     <!-- Card 2: Video Production -->
-                    <a href="/services/video-production" id="video" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
-                        <div class="space-y-5">
+                    <a href="/services/video-production" @click.prevent="activeModal = 'video'" id="video" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Video Production</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Bringing Stories to Life Through Visual Excellence</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Video Production</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Bringing Stories to Life Through Visual Excellence</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Bring your brand's story to life through high-quality video creation, professional cinematography, and expert post-production.
                             </p>
                         </div>
                     </a>
 
                     <!-- Card 3: Brand Strategy -->
-                    <a href="/services/brand-strategy" id="strategy" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
-                        <div class="space-y-5">
+                    <a href="/services/brand-strategy" @click.prevent="activeModal = 'strategy'" id="strategy" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Brand Strategy</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Building Brands With Purpose</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Brand Strategy</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Building Brands With Purpose</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Define your identity, reach the right audience, and establish a clear roadmap for long-term growth.
                             </p>
                         </div>
                     </a>
 
                     <!-- Card 4: Digital Campaigns -->
-                    <a href="/services/reels-and-short-form-content" id="campaigns" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up">
-                        <div class="space-y-5">
+                    <a href="/services/reels-and-short-form-content" @click.prevent="activeModal = 'campaigns'" id="campaigns" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Digital Campaigns</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Performance Marketing That Delivers Results</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Digital Campaigns</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Performance Marketing That Delivers Results</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Maximize your ROI with data-driven advertising campaigns, precise targeting, and continuous optimization.
                             </p>
                         </div>
                     </a>
 
                     <!-- Card 5: Influencer Marketing -->
-                    <a href="/services/influencer-marketing" id="influencer" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
-                        <div class="space-y-5">
+                    <a href="/services/influencer-marketing" @click.prevent="activeModal = 'influencer'" id="influencer" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Influencer Marketing</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Connecting Brands With Trusted Voices</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Influencer Marketing</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Connecting Brands With Trusted Voices</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Connect your brand with trusted creators and influencers to run authentic, high-impact collaboration campaigns.
                             </p>
                         </div>
                     </a>
 
                     <!-- Card 6: Websites & Digital Presence -->
-                    <a href="/services/web-design-development" id="website" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-6 lg:p-8 rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
-                        <div class="space-y-5">
+                    <a href="/services/web-design-development" @click.prevent="activeModal = 'website'" id="website" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
+                        <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#111111]">Websites & Digital Presence</h3>
-                                <p class="text-xs font-bold text-[#FF6A00] tracking-wide">Your Digital Identity Starts Here</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Websites & Digital Presence</h3>
+                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Your Digital Identity Starts Here</p>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-light">
+                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
                                 Establish your digital footprint with custom, high-speed, and responsive websites optimized for conversions.
                             </p>
                         </div>
@@ -261,13 +261,13 @@
         </section>
 
         <!-- WHY CHOOSE KKSB STUDIOS (PREMIUM WHITE CARD) WITH PROCESS -->
-        <section class="pt-0 pb-20 lg:pt-0 lg:pb-24 bg-[#FAFAFA] border-t border-[#ECECEC]">
+        <section class="pt-0 pb-10 lg:pt-0 lg:pb-24 bg-[#FAFAFA] border-t border-[#ECECEC]">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="bg-white border border-[#ECECEC] rounded-[32px] sm:rounded-[40px] pt-4 px-8 pb-8 sm:pt-6 sm:px-12 sm:pb-12 lg:pt-8 lg:px-16 lg:pb-16 space-y-16 shadow-sm relative overflow-hidden">
+                <div class="bg-white border border-[#ECECEC] rounded-[20px] sm:rounded-[40px] pt-4 px-4 pb-6 sm:pt-6 sm:px-12 sm:pb-12 lg:pt-8 lg:px-16 lg:pb-16 space-y-6 sm:space-y-16 shadow-sm relative overflow-hidden">
                     <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-3xl pointer-events-none"></div>
                     
                     <!-- Process Grid / HOW WE WORK -->
-                    <div class="space-y-10 relative z-10">
+                    <div class="space-y-6 sm:space-y-10 relative z-10">
                         <div class="text-left space-y-2">
                             <span class="text-[12.5px] font-bold text-[#FF6A00] tracking-[0.2em] uppercase block">
                                 // HOW WE WORK
@@ -281,99 +281,99 @@
                         </div>
  
                         <!-- 6 Steps Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 pt-2">
+                        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 pt-2">
                             <!-- Step 1 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     01
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Discover
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     We understand your business, goals and target audience.
                                 </p>
                             </div>
                             
                             <!-- Step 2 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     02
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="file-text" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Research
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     In-depth research on your industry, audience and competitors.
                                 </p>
                             </div>
  
                             <!-- Step 3 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     03
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="target" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="target" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Strategize
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     We create a customized strategy aligned with your objectives.
                                 </p>
                             </div>
  
                             <!-- Step 4 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     04
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="edit-3" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="edit-3" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Create
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     Our team produces high-quality content and creatives.
                                 </p>
                             </div>
  
                             <!-- Step 5 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     05
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Publish
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     We launch across the right platforms at the right time.
                                 </p>
                             </div>
  
                             <!-- Step 6 -->
-                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[24px] p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                            <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
                                     06
                                 </span>
-                                <div class="w-12 h-12 mb-5 rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
-                                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
+                                    <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                                 </div>
-                                <h4 class="text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
+                                <h4 class="text-xs sm:text-base font-extrabold text-[#111111] tracking-tight uppercase group-hover:text-white transition-colors">
                                     Optimize
                                 </h4>
-                                <p class="text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
+                                <p class="text-[10px] sm:text-[12px] text-[#666666] leading-relaxed font-light mt-2 group-hover:text-zinc-300">
                                     We analyze, learn and optimize for maximum results.
                                 </p>
                             </div>

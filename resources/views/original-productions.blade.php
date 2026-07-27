@@ -53,46 +53,46 @@
         <!-- Grid Section -->
         <section class="py-16">
             <div class="max-w-6xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
                     @forelse($videos as $video)
-                        @php
-                            $embed = $video->platform === 'youtube' ? getYoutubeEmbedUrl($video->video_url) : getInstagramEmbedUrl($video->video_url);
-                            $thumbnail = $video->thumbnail_path ? asset($video->thumbnail_path) : ($video->platform === 'youtube' ? getYoutubeThumbnail($video->video_url) : asset('images/portfolio/original_productions.jpg'));
-                        @endphp
-                        
-                        <!-- Video Card Item -->
-                        <div class="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group transition duration-300 hover:shadow-lg">
-                            <div class="space-y-4">
-                                <!-- Image & Play trigger container -->
-                                <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
-                                    <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}">
-                                    <!-- Dynamic Play Overlay matching mockup -->
-                                    <div class="absolute bottom-4 left-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#FF6A00] transition duration-300 group-hover:scale-110">
-                                        <svg class="w-3.5 h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="px-6 space-y-2">
-                                    <h3 class="text-base font-extrabold text-zinc-900 uppercase tracking-wide leading-snug">
-                                        {{ $video->title ?? 'Untitled Project' }}
-                                    </h3>
-                                    <p class="text-xs text-[#666666] leading-relaxed font-light">
-                                        {{ $video->description }}
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card CTA footer -->
-                            <div class="p-6 pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
-                                <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">
-                                    {{ $video->platform === 'youtube' ? 'YouTube Film' : 'Insta Reel' }}
-                                </span>
-                                <button @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="inline-flex items-center space-x-1.5 text-xs font-bold text-[#FF6A00] hover:text-[#E55F00] transition uppercase tracking-wider">
-                                    <span>Watch Project</span>
-                                    <span>&rarr;</span>
-                                </button>
-                            </div>
-                        </div>
+                         @php
+                             $embed = $video->platform === 'youtube' ? getYoutubeEmbedUrl($video->video_url) : getInstagramEmbedUrl($video->video_url);
+                             $thumbnail = $video->thumbnail_path ? asset($video->thumbnail_path) : ($video->platform === 'youtube' ? getYoutubeThumbnail($video->video_url) : asset('images/portfolio/original_productions.jpg'));
+                         @endphp
+                         
+                         <!-- Video Card Item -->
+                         <div class="bg-white border border-gray-150 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group transition duration-300 hover:shadow-lg">
+                             <div class="space-y-2.5 sm:space-y-4">
+                                 <!-- Image & Play trigger container -->
+                                 <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
+                                     <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}">
+                                     <!-- Dynamic Play Overlay matching mockup -->
+                                     <div class="absolute bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#FF6A00] transition duration-300 group-hover:scale-110">
+                                         <svg class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                                             <path d="M8 5v14l11-7z"/>
+                                         </svg>
+                                     </div>
+                                 </div>
+                                 <div class="px-3 sm:px-6 space-y-1.5 sm:space-y-2">
+                                     <h3 class="text-xs sm:text-base font-extrabold text-zinc-900 uppercase tracking-wide leading-snug">
+                                         {{ $video->title ?? 'Untitled Project' }}
+                                     </h3>
+                                     <p class="text-[10px] sm:text-xs text-[#666666] leading-relaxed font-light line-clamp-2 sm:line-clamp-none">
+                                         {{ $video->description }}
+                                     </p>
+                                 </div>
+                             </div>
+                             <!-- Card CTA footer -->
+                             <div class="p-3 sm:p-6 pt-3 sm:pt-4 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:items-center sm:justify-between border-t border-gray-100 mt-3 sm:mt-4">
+                                 <span class="text-[8px] sm:text-[9px] font-bold text-zinc-400 uppercase tracking-widest">
+                                     {{ $video->platform === 'youtube' ? 'YouTube Film' : 'Insta Reel' }}
+                                 </span>
+                                 <button @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="inline-flex items-center justify-center space-x-1 text-[9px] sm:text-xs font-bold text-[#FF6A00] hover:text-[#E55F00] transition uppercase tracking-wider text-left">
+                                     <span>Watch Project</span>
+                                     <span>&rarr;</span>
+                                 </button>
+                             </div>
+                         </div>
                     @empty
                         <div class="col-span-full py-16 text-center text-gray-500">
                             <i data-lucide="video-off" class="w-12 h-12 mx-auto text-gray-300 mb-3"></i>

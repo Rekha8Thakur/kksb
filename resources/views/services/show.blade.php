@@ -1,12 +1,12 @@
 <x-frontend-layout>
     
     <!-- Hero Section -->
-    <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
+    <section class="bg-[#F8F8F8] py-10 sm:py-16 lg:py-20 border-b border-gray-150">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
             <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-zinc-800 shadow-sm mx-auto">
                 <i data-lucide="{{ $service->icon ?? 'briefcase' }}" class="w-8 h-8"></i>
             </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#111111] leading-tight">
                 {{ $service->title }}
             </h1>
             <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
@@ -16,8 +16,8 @@
     </section>
 
     <!-- Detail Content Grid -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+    <section class="py-12 sm:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             <!-- Left Panel: Content -->
             <div class="lg:col-span-8 space-y-12">
                 @if($service->image_path)

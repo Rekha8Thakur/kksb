@@ -175,14 +175,13 @@
         <!-- Mobile Nav Menu -->
         <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white border-t border-[#ECECEC]" style="display: none;">
             <nav class="flex flex-col p-5 space-y-4 text-base font-semibold">
-                <a href="/" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Home</a>
-                <a href="/about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">About</a>
-                <a href="/services" @click="mobileMenuOpen = false" class="{{ request()->is('services*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }}">Services</a>
-                <a href="/portfolio" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Work</a>
-                <a href="/join-us" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Join Us</a>
-                <a href="/blog" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Blog</a>
-                <a href="/contact" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-[#FF6A00]">Contact</a>
-                <a href="/join-us" @click="mobileMenuOpen = false" style="background: linear-gradient(135deg, #FF6A00, #FF8533); color: #ffffff;" class="inline-flex items-center justify-center text-sm font-bold h-[52px] rounded-[12px] px-5 transition w-full shadow-md shadow-[#FF6A00]/20">
+                <a href="/" @click="mobileMenuOpen = false" class="{{ request()->is('/') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">Home</a>
+                <a href="/about" @click="mobileMenuOpen = false" class="{{ request()->is('about') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">About</a>
+                <a href="/services" @click="mobileMenuOpen = false" class="{{ request()->is('services*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">Services</a>
+                <a href="/portfolio" @click="mobileMenuOpen = false" class="{{ request()->is('portfolio*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">Work</a>
+                <a href="/blog" @click="mobileMenuOpen = false" class="{{ request()->is('blog*') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">Blog</a>
+                <a href="/contact" @click="mobileMenuOpen = false" class="{{ request()->is('contact') ? 'text-[#FF6A00]' : 'text-gray-800 hover:text-[#FF6A00]' }} transition">Contact</a>
+                <a href="/join-us" @click="mobileMenuOpen = false" style="background: linear-gradient(135deg, #FF6A00, #FF8533); color: #ffffff;" class="inline-flex items-center justify-center text-sm font-bold h-[48px] rounded-[10px] px-5 transition w-full shadow-md shadow-[#FF6A00]/20">
                     <span>Join Us</span>
                     <i data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></i>
                 </a>

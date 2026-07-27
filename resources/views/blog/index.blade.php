@@ -45,45 +45,45 @@
             </div>
 
             <!-- Articles Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
                 @forelse($blogs as $blog)
-                    <div class="bg-white border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-2xl rounded-3xl overflow-hidden group transition duration-300 flex flex-col justify-between" data-aos="fade-up">
+                    <div class="bg-white border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-2xl rounded-2xl sm:rounded-3xl overflow-hidden group transition duration-300 flex flex-col justify-between" data-aos="fade-up">
                         <div>
                             <div class="aspect-video w-full bg-gray-100 overflow-hidden relative">
                                 @if($blog->featured_image)
                                     <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
                                 @endif
-                                <span class="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] font-extrabold text-gray-800 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                <span class="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white/95 backdrop-blur text-[8px] sm:text-[9px] font-extrabold text-gray-800 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full uppercase tracking-wider">
                                     {{ $blog->category->name }}
                                 </span>
                             </div>
-                            <div class="p-6 space-y-3">
-                                <span class="text-[10px] text-gray-400 font-semibold">{{ $blog->published_at ? $blog->published_at->format('M d, Y') : $blog->created_at->format('M d, Y') }}</span>
-                                <h3 class="text-xl font-bold tracking-tight text-gray-900 group-hover:text-black transition line-clamp-2 leading-tight">
+                            <div class="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
+                                <span class="text-[8px] sm:text-[10px] text-gray-400 font-semibold">{{ $blog->published_at ? $blog->published_at->format('M d, Y') : $blog->created_at->format('M d, Y') }}</span>
+                                <h3 class="text-xs sm:text-lg md:text-xl font-bold tracking-tight text-gray-900 group-hover:text-black transition line-clamp-2 leading-tight">
                                     <a href="/blog/{{ $blog->slug }}">{{ $blog->title }}</a>
                                 </h3>
-                                <p class="text-xs text-gray-500 leading-relaxed line-clamp-3">
+                                <p class="text-[10px] sm:text-xs text-gray-500 leading-relaxed line-clamp-2 sm:line-clamp-3">
                                     {{ $blog->summary }}
                                 </p>
                             </div>
                         </div>
 
-                        <div class="p-6 pt-0 border-t border-gray-50 mt-4 flex items-center justify-between">
+                        <div class="p-3 pt-0 sm:p-6 sm:pt-0 border-t border-gray-50 mt-2 sm:mt-4 flex items-center justify-between">
                             <!-- Writer -->
-                            <div class="flex items-center space-x-2">
+                            <div class="flex items-center space-x-1.5 sm:space-x-2">
                                 @if($blog->author->avatar)
-                                    <img src="{{ asset($blog->author->avatar) }}" class="w-6 h-6 rounded-full object-cover border" alt="">
+                                    <img src="{{ asset($blog->author->avatar) }}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover border" alt="">
                                 @else
-                                    <div class="w-6 h-6 rounded-full bg-zinc-100 flex items-center justify-center text-[10px] font-bold text-gray-400">
+                                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-zinc-100 flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-gray-400">
                                         {{ substr($blog->author->name, 0, 1) }}
                                     </div>
                                 @endif
-                                <span class="text-[10px] font-bold text-gray-700">{{ $blog->author->name }}</span>
+                                <span class="text-[8px] sm:text-[10px] font-bold text-gray-700 truncate max-w-[60px] sm:max-w-none">{{ $blog->author->name }}</span>
                             </div>
                             
-                            <a href="/blog/{{ $blog->slug }}" class="inline-flex items-center space-x-1 text-xs font-bold text-[#111111] hover:text-black transition">
+                            <a href="/blog/{{ $blog->slug }}" class="inline-flex items-center space-x-1 text-[10px] sm:text-xs font-bold text-[#111111] hover:text-black transition">
                                 <span>Read Post</span>
-                                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                <i data-lucide="arrow-right" class="w-2.5 h-2.5 sm:w-3 sm:h-3"></i>
                             </a>
                         </div>
                     </div>
