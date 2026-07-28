@@ -97,10 +97,20 @@ Route::get('/deploy', function () {
             ];
         }
         
+        $storageLinkOutput = 'Storage symlink already exists.';
         try {
+            $storageLinkPath = public_path('storage');
+            if (is_link($storageLinkPath) || file_exists($storageLinkPath)) {
+                if (is_link($storageLinkPath)) {
+                    unlink($storageLinkPath);
+                } elseif (is_dir($storageLinkPath)) {
+                    rmdir($storageLinkPath);
+                }
+            }
             \Artisan::call('storage:link');
+            $storageLinkOutput = 'Storage symlink successfully recreated!';
         } catch (\Throwable $linkException) {
-            // Ignore if link fails (e.g. exec() disabled in Laravel filesystems)
+            $storageLinkOutput = 'Storage link setup failed: ' . $linkException->getMessage();
         }
 
         // Run database migrations if any are pending
@@ -135,6 +145,7 @@ Route::get('/deploy', function () {
         return response()->json([
             'status' => 'success',
             'git_output' => $gitOutput,
+            'storage_link' => $storageLinkOutput,
             'migration_output' => $migrationOutput,
             'seeder_output' => $seederOutput,
             'cache_clear' => 'Laravel View, Config, Cache, and Route Cleared Successfully!'
