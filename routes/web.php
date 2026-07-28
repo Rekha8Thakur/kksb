@@ -56,6 +56,11 @@ Route::get('/init-admin', function () {
         \Artisan::call('db:seed', ['--class' => 'AgencyCmsSeeder', '--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'BrandVideoSeeder', '--force' => true]);
         \Artisan::call('db:seed', ['--class' => 'OriginalVideoSeeder', '--force' => true]);
+        try {
+            \Artisan::call('storage:link');
+        } catch (\Exception $linkException) {
+            // Ignore if link already exists
+        }
         \Artisan::call('view:clear');
         \Artisan::call('cache:clear');
         \Artisan::call('config:clear');
@@ -65,7 +70,7 @@ Route::get('/init-admin', function () {
             'message' => 'Hostinger Database Migrated, Seeded, and Application Cache Cleared Successfully!',
             'admin_login_url' => url('/login'),
             'credentials' => [
-                'email' => 'admin@kksb.com',
+                'email' => 'superadmin@kksb.com',
                 'password' => 'password'
             ]
         ]);
@@ -84,6 +89,12 @@ Route::get('/deploy', function () {
         // Execute git pull on the Hostinger server
         exec('git pull origin main 2>&1', $gitOutput);
         
+        try {
+            \Artisan::call('storage:link');
+        } catch (\Exception $linkException) {
+            // Ignore if link already exists
+        }
+
         // Clear caches
         \Artisan::call('view:clear');
         \Artisan::call('cache:clear');
