@@ -851,7 +851,7 @@
                         <!-- Slider Track -->
                         <div x-ref="slider" class="flex overflow-x-auto gap-3 sm:gap-6 no-scrollbar snap-x snap-mandatory scroll-smooth pb-4">
                             @foreach($projects as $index => $project)
-                                <div class="snap-start shrink-0 w-[85%] sm:w-[45%] lg:w-[23.5%] flex flex-col">
+                                <div class="snap-start shrink-0 w-[calc((100%-12px)/2)] sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] flex flex-col">
                                     <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full">
                                         
                                         <!-- Image aspect ratio 4/3 -->
