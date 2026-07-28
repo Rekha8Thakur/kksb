@@ -27,12 +27,28 @@
                                class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                     </div>
 
+                    <!-- Tagline -->
+                    <div class="space-y-2">
+                        <label for="tagline" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Tagline / Hook Line</label>
+                        <input type="text" name="tagline" id="tagline" value="{{ old('tagline') }}" placeholder="e.g., Build a Brand That People Remember" required
+                               class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Icon -->
                     <div class="space-y-2">
                         <label for="icon" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Lucide Icon Identifier</label>
                         <input type="text" name="icon" id="icon" value="{{ old('icon') }}" placeholder="e.g., Video, Instagram, Zap, Globe" required
                                class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                         <p class="text-[10px] text-gray-400">Case-sensitive Lucide icon class (e.g. <i>Instagram</i>, <i>Video</i>, <i>Zap</i>, <i>Globe</i>, <i>Compass</i>, <i>Users</i>).</p>
+                    </div>
+
+                    <!-- Offerings Title -->
+                    <div class="space-y-2">
+                        <label for="offerings_title" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Offerings Checklist Title</label>
+                        <input type="text" name="offerings_title" id="offerings_title" value="{{ old('offerings_title', 'What We Offer') }}" placeholder="e.g., What We Offer" required
+                               class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                     </div>
                 </div>
 
