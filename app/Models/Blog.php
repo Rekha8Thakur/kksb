@@ -41,7 +41,7 @@ class Blog extends Model
 
     public function scopePublished($query)
     {
-        return $query->where('status', 'published')
+        return $query->whereIn('status', ['published', 'scheduled'])
             ->where(function ($q) {
                 $q->whereNull('published_at')
                   ->orWhere('published_at', '<=', now());
