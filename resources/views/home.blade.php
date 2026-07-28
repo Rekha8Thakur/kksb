@@ -807,128 +807,168 @@
                     </div>
                 </div>
 
-                <!-- Portfolio Single Row Layout (4 Cards Side-by-Side) -->
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-                    <!-- Project 1: The Himalayan Resort -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.04">
-                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80" 
-                                 alt="The Himalayan Resort" 
-                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Hospitality
-                            </span>
-                        </div>
+                <!-- Portfolio Row/Carousel Layout -->
+                @if(count($projects) >= 5)
+                    <!-- Carousel Layout for 5+ Projects -->
+                    <div x-data="{ 
+                        active: 0, 
+                        total: {{ count($projects) }}, 
+                        interval: null,
+                        startTimer() {
+                            this.interval = setInterval(() => {
+                                this.next();
+                            }, 4000);
+                        },
+                        stopTimer() {
+                            if (this.interval) {
+                                clearInterval(this.interval);
+                            }
+                        },
+                        next() {
+                            this.active = (this.active + 1) % this.total;
+                            this.scrollToActive();
+                        },
+                        prev() {
+                            this.active = (this.active - 1 + this.total) % this.total;
+                            this.scrollToActive();
+                        },
+                        scrollToActive() {
+                            const el = this.$refs.slider;
+                            const card = el.children[this.active];
+                            if (card) {
+                                el.scrollTo({
+                                    left: card.offsetLeft - el.offsetLeft,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }" 
+                    x-init="startTimer()"
+                    @mouseenter="stopTimer()" 
+                    @mouseleave="startTimer()"
+                    class="relative group/carousel">
                         
-                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-1 sm:space-y-2">
-                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE HIMALAYAN RESORT</span>
-                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Himalayan Resort</h3>
-                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
-                                    Cinematic brand shoot and targeted social ad campaign showcasing luxury mountain stays.
-                                </p>
-                            </div>
-                            
-                            <div class="space-y-2 pt-1 sm:pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">+250% Bookings</span>
+                        <!-- Slider Track -->
+                        <div x-ref="slider" class="flex overflow-x-auto gap-3 sm:gap-6 no-scrollbar snap-x snap-mandatory scroll-smooth pb-4">
+                            @foreach($projects as $index => $project)
+                                <div class="snap-start shrink-0 w-[85%] sm:w-[45%] lg:w-[23.5%] flex flex-col">
+                                    <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full">
+                                        
+                                        <!-- Image aspect ratio 4/3 -->
+                                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                                            @if($project->main_image)
+                                                <img src="{{ asset($project->main_image) }}" 
+                                                     alt="{{ $project->title }}" 
+                                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                            @else
+                                                <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
+                                            @endif
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                                            
+                                            @if($project->category)
+                                                <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                                    {{ $project->category->name }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                        
+                                        <!-- Content -->
+                                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                                            <div class="space-y-1 sm:space-y-2">
+                                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
+                                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
+                                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                                    {{ $project->description }}
+                                                </p>
+                                            </div>
+                                            
+                                            @if($project->results)
+                                                <div class="space-y-2 pt-1 sm:pt-2">
+                                                    <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                                        <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                                        <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                    </div>
 
-                    <!-- Project 2: The Café Project -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.08">
-                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" 
-                                 alt="The Café Project" 
-                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Food & Bev
-                            </span>
+                        <!-- Left & Right Arrow Buttons -->
+                        <div class="absolute top-1/2 -left-4 -translate-y-1/2 z-10 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hidden lg:block">
+                            <button @click="prev()" class="w-12 h-12 rounded-full bg-white hover:bg-zinc-50 border border-[#ECECEC] flex items-center justify-center text-zinc-700 hover:text-black shadow-lg hover:scale-105 transition-all">
+                                <span>←</span>
+                            </button>
                         </div>
-                        
-                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-1 sm:space-y-2">
-                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">THE CAFÉ PROJECT</span>
-                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">The Café Project</h3>
-                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
-                                    Micro-influencer food campaign and viral Instagram reels series driving weekend footfall.
-                                </p>
-                            </div>
-                            
-                            <div class="space-y-2 pt-1 sm:pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">3X Footfall</span>
-                                </div>
-                            </div>
+                        <div class="absolute top-1/2 -right-4 -translate-y-1/2 z-10 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hidden lg:block">
+                            <button @click="next()" class="w-12 h-12 rounded-full bg-white hover:bg-zinc-50 border border-[#ECECEC] flex items-center justify-center text-zinc-700 hover:text-black shadow-lg hover:scale-105 transition-all">
+                                <span>→</span>
+                            </button>
                         </div>
-                    </div>
 
-                    <!-- Project 3: Bhalla Dental Clinic -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.04">
-                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" 
-                                 alt="Bhalla Dental Clinic" 
-                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Healthcare
+                        <!-- Small controls for mobile/tablet -->
+                        <div class="flex items-center justify-center space-x-3 mt-6 lg:hidden">
+                            <button @click="prev()" class="w-9 h-9 rounded-full bg-white border border-[#ECECEC] flex items-center justify-center text-zinc-700">
+                                <span>←</span>
+                            </button>
+                            <span class="text-xs font-semibold text-zinc-500">
+                                <span x-text="active + 1"></span> / <span x-text="total"></span>
                             </span>
-                        </div>
-                        
-                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-1 sm:space-y-2">
-                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">BHALLA DENTAL CLINIC</span>
-                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Bhalla Dental Clinic</h3>
-                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
-                                    Patient testimonial videos and localized lead generation campaigns establishing authority.
-                                </p>
-                            </div>
-                            
-                            <div class="space-y-2 pt-1 sm:pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">200% Inquiries</span>
-                                </div>
-                            </div>
+                            <button @click="next()" class="w-9 h-9 rounded-full bg-white border border-[#ECECEC] flex items-center justify-center text-zinc-700">
+                                <span>→</span>
+                            </button>
                         </div>
                     </div>
-
-                    <!-- Project 4: Peter England Solan -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400" data-parallax-speed="0.08">
-                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" 
-                                 alt="Peter England Solan" 
-                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                Retail
-                            </span>
-                        </div>
-                        
-                        <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
-                            <div class="space-y-1 sm:space-y-2">
-                                <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">PETER ENGLAND SOLAN</span>
-                                <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Peter England Solan</h3>
-                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
-                                    Seasonal apparel launch commercial shoots and hyper-targeted regional customer ad drives.
-                                </p>
+                @else
+                    <!-- Grid Layout for 1 to 4 Projects -->
+                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                        @foreach($projects as $index => $project)
+                            <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                                <a href="/portfolio/{{ $project->slug }}" class="flex flex-col justify-between h-full">
+                                    <!-- Image aspect ratio 4/3 -->
+                                    <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                                        @if($project->main_image)
+                                            <img src="{{ asset($project->main_image) }}" 
+                                                 alt="{{ $project->title }}" 
+                                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                        @else
+                                            <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
+                                        @endif
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                                        
+                                        @if($project->category)
+                                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                                {{ $project->category->name }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                    
+                                    <!-- Content -->
+                                    <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                                        <div class="space-y-1 sm:space-y-2">
+                                            <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
+                                            <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
+                                            <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                                {{ $project->description }}
+                                            </p>
+                                        </div>
+                                        
+                                        @if($project->results)
+                                            <div class="space-y-2 pt-1 sm:pt-2">
+                                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </a>
                             </div>
-                            
-                            <div class="space-y-2 pt-1 sm:pt-2">
-                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">180% Visits</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                </div>
+                @endif
             </div>
         </section>
 
