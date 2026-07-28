@@ -21,7 +21,7 @@ class ImageService
     {
         // Generate a unique filename with .webp extension
         $filename = Str::random(20) . '.webp';
-        $fullDirectoryPath = storage_path('app/public/' . $directory);
+        $fullDirectoryPath = public_path('uploads/' . $directory);
 
         // Ensure directory exists
         if (!file_exists($fullDirectoryPath)) {
@@ -70,7 +70,7 @@ class ImageService
 
                     imagedestroy($image);
 
-                    return 'storage/' . $directory . '/' . $filename;
+                    return 'uploads/' . $directory . '/' . $filename;
                 }
             } catch (\Exception $e) {
                 // If anything fails in GD processing, fall back to direct saving below
@@ -80,8 +80,8 @@ class ImageService
         // Fallback: Save original file without processing if GD is missing or fails
         $originalExt = $file->getClientOriginalExtension();
         $fallbackFilename = Str::random(20) . '.' . $originalExt;
-        $path = $file->storeAs('public/' . $directory, $fallbackFilename);
+        $file->move($fullDirectoryPath, $fallbackFilename);
         
-        return Storage::url($path);
+        return 'uploads/' . $directory . '/' . $fallbackFilename;
     }
 }
