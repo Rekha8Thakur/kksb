@@ -103,6 +103,29 @@ Route::get('/deploy', function () {
             // Ignore if link fails (e.g. exec() disabled in Laravel filesystems)
         }
 
+        // Run database migrations if any are pending
+        $migrationOutput = 'No migrations run.';
+        try {
+            \Artisan::call('migrate', ['--force' => true]);
+            $migrationOutput = 'Database migrated successfully!';
+        } catch (\Throwable $migrationException) {
+            $migrationOutput = 'Migration failed or skipped: ' . $migrationException->getMessage();
+        }
+
+        // Optional: Run ServiceSeeder if requested
+        $seederOutput = null;
+        if (request()->query('seed') === 'services') {
+            try {
+                \Artisan::call('db:seed', [
+                    '--class' => 'ServiceSeeder',
+                    '--force' => true
+                ]);
+                $seederOutput = 'ServiceSeeder completed successfully!';
+            } catch (\Throwable $seederException) {
+                $seederOutput = 'Seeding failed: ' . $seederException->getMessage();
+            }
+        }
+
         // Clear caches
         \Artisan::call('view:clear');
         \Artisan::call('cache:clear');
@@ -112,6 +135,8 @@ Route::get('/deploy', function () {
         return response()->json([
             'status' => 'success',
             'git_output' => $gitOutput,
+            'migration_output' => $migrationOutput,
+            'seeder_output' => $seederOutput,
             'cache_clear' => 'Laravel View, Config, Cache, and Route Cleared Successfully!'
         ]);
     } catch (\Exception $e) {
