@@ -925,47 +925,45 @@
                     <!-- Grid Layout for 1 to 4 Projects -->
                     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                         @foreach($projects as $index => $project)
-                            <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
-                                <a href="/portfolio/{{ $project->slug }}" class="flex flex-col justify-between h-full">
-                                    <!-- Image aspect ratio 4/3 -->
-                                    <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                                        @if($project->main_image)
-                                            <img src="{{ asset($project->main_image) }}" 
-                                                 alt="{{ $project->title }}" 
-                                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
-                                        @else
-                                            <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
-                                        @endif
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                                        
-                                        @if($project->category)
-                                            <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                                {{ $project->category->name }}
-                                            </span>
-                                        @endif
+                            <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                                <!-- Image aspect ratio 4/3 -->
+                                <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                                    @if($project->main_image)
+                                        <img src="{{ asset($project->main_image) }}" 
+                                             alt="{{ $project->title }}" 
+                                             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                    @else
+                                        <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
+                                    @endif
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
+                                    
+                                    @if($project->category)
+                                        <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
+                                            {{ $project->category->name }}
+                                        </span>
+                                    @endif
+                                </div>
+                                
+                                <!-- Content -->
+                                <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
+                                    <div class="space-y-1 sm:space-y-2">
+                                        <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
+                                        <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
+                                        <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                            {{ $project->description }}
+                                        </p>
                                     </div>
                                     
-                                    <!-- Content -->
-                                    <div class="p-3 sm:p-6 space-y-2.5 sm:space-y-3.5 flex-1 flex flex-col justify-between">
-                                        <div class="space-y-1 sm:space-y-2">
-                                            <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
-                                            <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
-                                            <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
-                                                {{ $project->description }}
-                                            </p>
-                                        </div>
-                                        
-                                        @if($project->results)
-                                            <div class="space-y-2 pt-1 sm:pt-2">
-                                                <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                                    <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                                    <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
-                                                </div>
+                                    @if($project->results)
+                                        <div class="space-y-2 pt-1 sm:pt-2">
+                                            <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                                <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
+                                                <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
                                             </div>
-                                        @endif
-                                    </div>
-                                </a>
-                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+                            </a>
                         @endforeach
                     </div>
                 @endif
