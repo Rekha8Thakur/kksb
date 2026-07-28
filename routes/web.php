@@ -274,3 +274,39 @@ Route::get('storage/{path}', function ($path) {
         'Cache-Control' => 'public, max-age=31536000',
     ]);
 })->where('path', '.*');
+
+// Temporary Diagnostic Route to test native PHP symlink function on Hostinger
+Route::get('/test-symlink', function () {
+    try {
+        $target = storage_path('app/public');
+        $link = public_path('storage');
+        
+        $output = [];
+        $output[] = "Target path: " . $target . " (exists: " . (file_exists($target) ? 'yes' : 'no') . ")";
+        $output[] = "Link path: " . $link . " (exists: " . (file_exists($link) ? 'yes' : 'no') . ", is_link: " . (is_link($link) ? 'yes' : 'no') . ")";
+        
+        if (is_link($link) || file_exists($link)) {
+            if (is_link($link)) {
+                unlink($link);
+                $output[] = "Deleted existing symlink.";
+            } elseif (is_dir($link)) {
+                rmdir($link);
+                $output[] = "Deleted existing directory.";
+            }
+        }
+        
+        if (!function_exists('symlink')) {
+            $output[] = "Error: PHP function symlink() is disabled/not available on this server.";
+        } else {
+            if (symlink($target, $link)) {
+                $output[] = "Success: symlink() created link successfully!";
+            } else {
+                $output[] = "Error: symlink() returned false.";
+            }
+        }
+        
+        return response()->json($output);
+    } catch (\Throwable $e) {
+        return response()->json(['error' => $e->getMessage()]);
+    }
+});
