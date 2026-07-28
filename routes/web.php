@@ -58,8 +58,8 @@ Route::get('/init-admin', function () {
         \Artisan::call('db:seed', ['--class' => 'OriginalVideoSeeder', '--force' => true]);
         try {
             \Artisan::call('storage:link');
-        } catch (\Exception $linkException) {
-            // Ignore if link already exists
+        } catch (\Throwable $linkException) {
+            // Ignore if link fails (e.g. exec() disabled in Laravel filesystems)
         }
         \Artisan::call('view:clear');
         \Artisan::call('cache:clear');
@@ -99,8 +99,8 @@ Route::get('/deploy', function () {
         
         try {
             \Artisan::call('storage:link');
-        } catch (\Exception $linkException) {
-            // Ignore if link already exists
+        } catch (\Throwable $linkException) {
+            // Ignore if link fails (e.g. exec() disabled in Laravel filesystems)
         }
 
         // Clear caches
