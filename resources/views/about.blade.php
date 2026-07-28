@@ -112,63 +112,57 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Founders Quote/Details -->
-    <section class="py-20 lg:py-28 bg-white border-y border-gray-100 relative overflow-hidden">
-        <!-- Ambient radial glow in background (very soft orange/amber) -->
-        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF6A00]/4 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-10 w-96 h-96 bg-amber-500/4 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-6xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
-            <!-- Left Column: Portrait -->
-            <div class="lg:col-span-5 max-w-[340px] lg:max-w-none mx-auto w-full relative group" data-aos="fade-right">
-                <!-- Outer Ambient Glow (Soft Orange) -->
-                <div class="absolute -inset-1.5 bg-gradient-to-tr from-[#FF6A00] to-amber-500 rounded-[32px] blur-lg opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+    </section>    <!-- Founders Quote/Details -->
+    <section class="py-12 lg:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-[90px]">
+            <div class="relative bg-zinc-950 text-white rounded-[36px] overflow-hidden shadow-2xl p-8 sm:p-12 lg:p-16 border border-zinc-800" data-aos="fade-up">
+                <!-- Decorative Backdrop Glow -->
+                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-[#FF6A00]/20 via-[#FF6A00]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-amber-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
                 
-                <!-- Main Container -->
-                <div class="relative bg-white border border-gray-150 rounded-[28px] p-2.5 shadow-xl overflow-hidden">
-                    <div class="rounded-[20px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
-                        <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out" alt="Founder Portrait">
-                        
-                        <!-- Floating Camera Badge -->
-                        <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse"></span>
-                            <span>BEHIND THE LENS</span>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative z-10">
+                    <!-- Left Portrait (5 cols) -->
+                    <div class="lg:col-span-5 max-w-[320px] lg:max-w-none mx-auto w-full group">
+                        <div class="relative bg-zinc-900 border border-zinc-800 rounded-[24px] p-2 shadow-2xl">
+                            <div class="rounded-[18px] overflow-hidden aspect-[4/5] bg-zinc-950 relative">
+                                <img src="{{ asset('images/about/founder.jpg') }}" 
+                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                                     alt="Founder Portrait">
+                                <!-- Floating Lens Badge -->
+                                <div class="absolute top-4 left-4 bg-zinc-950/90 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse"></span>
+                                    <span>FOUNDER & DIRECTOR</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Info -->
-            <div class="lg:col-span-7 space-y-6 relative" data-aos="fade-left">
-                <!-- Large quote watermark behind text (subtle orange watermark) -->
-                <div class="absolute -top-16 -left-8 text-[140px] font-black text-[#FF6A00]/[0.06] select-none pointer-events-none font-heading">“</div>
-
-                <div class="space-y-3">
-                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-[11px] font-black uppercase tracking-wider border border-[#FF6A00]/25">
-                        <i data-lucide="award" class="w-3.5 h-3.5"></i> The Founder
-                    </span>
-                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#111111] leading-[1.1] uppercase font-heading">
-                        {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
-                    </h2>
-                </div>
-
-                <div class="space-y-4">
-                    <!-- Title block -->
-                    <div class="pb-4 border-b border-gray-100">
-                        <h4 class="text-lg font-bold text-[#111111] tracking-wide">
-                            {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
-                        </h4>
-                        <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
-                            {{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}
-                        </p>
+                    
+                    <!-- Right Content (7 cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="space-y-3">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/20 text-[#FF6A00] text-[10px] font-black uppercase tracking-wider border border-[#FF6A00]/30 w-max">
+                                <i data-lucide="award" class="w-3.5 h-3.5"></i> MEET THE FOUNDER
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-tight uppercase font-heading text-white">
+                                {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
+                            </h2>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="pb-4 border-b border-zinc-800">
+                                <h4 class="text-xl font-bold text-white tracking-wide">
+                                    {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
+                                </h4>
+                                <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
+                                    FOUNDER & CREATIVE DIRECTOR
+                                </p>
+                            </div>
+                            
+                            <p class="text-[14.5px] sm:text-[15.5px] text-zinc-400 leading-relaxed font-light">
+                                {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
+                            </p>
+                        </div>
                     </div>
-
-                    <!-- Bio -->
-                    <p class="text-[14.5px] sm:text-base text-gray-500 leading-relaxed font-light">
-                        {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
-                    </p>
                 </div>
             </div>
         </div>
@@ -186,7 +180,7 @@
                 <p class="text-sm text-gray-500">A collective of local designers, editors, copywriters and shoot directors.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-center">
                 @foreach($team as $member)
                     <div class="bg-white p-6 rounded-3xl border border-gray-150 shadow-sm text-center space-y-4 hover:border-[#FF6A00] transition duration-300" data-aos="fade-up">
                         <div class="w-24 h-24 mx-auto rounded-full overflow-hidden bg-gray-100 border border-gray-200">
@@ -211,22 +205,40 @@
 
     <!-- Behind the Scenes Gallery -->
     @if($gallery->isNotEmpty())
-    <section class="py-12 lg:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-16">
-            <div class="text-center space-y-4 max-w-xl mx-auto">
-                <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Behind The Camera</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                    <span class="text-[#111111]">Behind the</span> <span class="text-gray-400">Scenes</span>
-                </h2>
-                <p class="text-sm text-gray-500">Snapshots of our dynamic outdoor shoots, editing table sessions, and team brainstorm sessions.</p>
+    <section class="py-12 lg:py-16 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-[90px] space-y-10" x-data="{
+            scrollLeft() { this.$refs.slider.scrollBy({ left: -320, behavior: 'smooth' }) },
+            scrollRight() { this.$refs.slider.scrollBy({ left: 320, behavior: 'smooth' }) }
+        }">
+            <!-- Header with navigation arrows -->
+            <div class="flex items-end justify-between">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold text-[#FF6A00] uppercase tracking-widest block">Behind The Camera</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        <span class="text-[#111111]">Behind the</span> <span class="text-gray-400">Scenes</span>
+                    </h2>
+                </div>
+                
+                <!-- Arrow controls -->
+                <div class="flex items-center space-x-2.5">
+                    <button @click="scrollLeft()" 
+                            class="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-zinc-950 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button @click="scrollRight()" 
+                            class="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-zinc-950 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Horizontal sliding container -->
+            <div x-ref="slider" class="flex overflow-x-auto space-x-6 pb-6 scrollbar-none snap-x snap-mandatory">
                 @foreach($gallery as $photo)
-                    <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition group relative" data-aos="fade-up">
-                        <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
+                    <div class="flex-shrink-0 w-[280px] sm:w-[320px] aspect-[4/5] bg-gray-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group relative snap-start border border-gray-100">
+                        <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" alt="{{ $photo->title }}">
                         @if($photo->title)
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                 <h4 class="font-bold text-sm truncate">{{ $photo->title }}</h4>
                             </div>
                         @endif
