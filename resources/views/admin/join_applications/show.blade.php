@@ -331,6 +331,10 @@
                 </form>
 
                 <div class="flex space-x-2">
+                    <a href="{{ route('admin.join-applications.print', $application) }}" target="_blank" class="inline-flex items-center space-x-1 bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 text-xs font-semibold px-4 py-2 rounded-lg transition shadow-sm dark:bg-zinc-800 dark:text-white dark:border-zinc-700 dark:hover:bg-zinc-700">
+                        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                        <span>Download PDF</span>
+                    </a>
                     <a href="mailto:{{ $application->email }}?subject=Reply to your application to KKSB Studios" class="inline-flex items-center space-x-1 bg-[#111111] hover:bg-[#222222] text-white text-xs font-semibold px-4 py-2 rounded-lg transition shadow-sm">
                         <i data-lucide="mail" class="w-3.5 h-3.5"></i>
                         <span>Contact via Email</span>

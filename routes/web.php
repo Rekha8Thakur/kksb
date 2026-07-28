@@ -203,6 +203,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('enquiries', ContactEnquiryController::class)->only(['index', 'show', 'destroy']);
 
     // Join Us Applications CRUD
+    Route::get('join-applications/{application}/print', [JoinApplicationController::class, 'print'])->name('join-applications.print');
     Route::post('join-applications/{application}/status', [JoinApplicationController::class, 'updateStatus'])->name('join-applications.status');
     Route::resource('join-applications', JoinApplicationController::class)->only(['index', 'show', 'destroy'])->parameters(['join-applications' => 'application']);
 

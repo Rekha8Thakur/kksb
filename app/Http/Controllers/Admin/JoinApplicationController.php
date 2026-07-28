@@ -50,4 +50,9 @@ class JoinApplicationController extends Controller
 
         return redirect()->route('admin.join-applications.index')->with('success', 'Application deleted successfully.');
     }
+
+    public function print(JoinApplication $application): View
+    {
+        return view('admin.join_applications.print', compact('application'));
+    }
 }
