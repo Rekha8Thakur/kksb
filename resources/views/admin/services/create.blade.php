@@ -83,21 +83,10 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    <!-- Image -->
-                    <div class="space-y-2">
-                        <label for="image" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Featured Image Banner</label>
-                        <input type="file" name="image" id="image" accept="image/*"
-                               class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2 text-sm text-gray-500 dark:text-zinc-400 file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-zinc-900 file:text-white dark:file:bg-zinc-700">
-                        <p class="text-[10px] text-gray-400">Recommended size: 1200x800px. Uploaded images are compressed and WebP optimized automatically.</p>
-                    </div>
-
-                    <!-- Active Switch -->
-                    <div class="flex items-center space-x-3 pt-6">
-                        <input type="checkbox" name="is_active" id="is_active" value="1" checked
-                               class="w-4 h-4 text-emerald-600 bg-gray-100 border-gray-300 rounded focus:ring-emerald-500 focus:ring-offset-2">
-                        <label for="is_active" class="text-sm font-medium text-gray-700 dark:text-zinc-300">Active (Visible on public pages)</label>
-                    </div>
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" name="is_active" id="is_active" value="1" checked
+                           class="w-4 h-4 text-emerald-600 bg-gray-100 border-gray-300 rounded focus:ring-emerald-500 focus:ring-offset-2">
+                    <label for="is_active" class="text-sm font-medium text-gray-700 dark:text-zinc-300">Active (Visible on public pages)</label>
                 </div>
 
                 <!-- Form Buttons -->
