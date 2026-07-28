@@ -86,8 +86,16 @@ Route::get('/init-admin', function () {
 Route::get('/deploy', function () {
     try {
         $gitOutput = [];
-        // Execute git pull on the Hostinger server
-        exec('git pull origin main 2>&1', $gitOutput);
+        // Execute git pull on the Hostinger server only if exec is allowed
+        if (function_exists('exec')) {
+            exec('git pull origin main 2>&1', $gitOutput);
+        } else {
+            $gitOutput = [
+                'Warning: exec() is disabled on this server by PHP configuration (disable_functions).',
+                'Git pull could not be executed programmatically.',
+                'Please pull updates using the Hostinger panel Git manager or SSH, then refresh.'
+            ];
+        }
         
         try {
             \Artisan::call('storage:link');
