@@ -115,54 +115,77 @@
     </section>
 
     <!-- Founders Quote/Details -->
-    <section class="py-20 lg:py-28 bg-white border-y border-gray-100 relative overflow-hidden">
+    <section class="py-20 lg:py-28 bg-[#FCFCFC] border-y border-gray-100 relative overflow-hidden">
         <!-- Ambient radial glow in background (very soft orange/amber) -->
-        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF6A00]/4 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-10 w-96 h-96 bg-amber-500/4 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF6A00]/3 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-10 w-96 h-96 bg-amber-500/3 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
             <!-- Left Column: Portrait -->
             <div class="lg:col-span-5 max-w-[340px] lg:max-w-none mx-auto w-full relative group" data-aos="fade-right">
-                <!-- Outer Ambient Glow (Soft Orange) -->
-                <div class="absolute -inset-1.5 bg-gradient-to-tr from-[#FF6A00] to-amber-500 rounded-[32px] blur-lg opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+                <!-- Background ambient decorative blur -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-[#FF6A00]/10 to-amber-500/10 rounded-[40px] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                 
-                <!-- Main Container -->
-                <div class="relative bg-white border border-gray-150 rounded-[28px] p-2.5 shadow-xl overflow-hidden">
-                    <div class="rounded-[20px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
-                        <img src="{{ asset('images/about/founder.jpg') }}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out" alt="Founder Portrait">
+                <!-- Portrait Card Frame -->
+                <div class="relative bg-white border border-[#ECECEC] rounded-[32px] p-3 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 ease-out overflow-hidden group">
+                    <div class="rounded-[22px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
+                        <img src="{{ asset('images/about/founder.jpg') }}" 
+                             class="w-full h-full object-cover filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
+                             alt="Founder Portrait">
                         
-                        <!-- Floating Camera Badge -->
+                        <!-- Floating Cameraman Badge -->
                         <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse"></span>
-                            <span>BEHIND THE LENS</span>
+                            <span>FOUNDER & DIRECTOR</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Floating Glassmorphic Stat Overlay -->
+                <div class="absolute -bottom-5 -right-5 bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl p-4 shadow-xl max-w-[160px] translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out pointer-events-none select-none">
+                    <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-wider mb-1">Director Portfolio</div>
+                    <div class="text-[20px] font-black text-zinc-900 leading-none">10+ Years</div>
+                    <div class="text-[10px] text-gray-500 mt-1 font-light leading-snug">Visual Storytelling & Brand Strategy</div>
                 </div>
             </div>
 
             <!-- Right Column: Info -->
             <div class="lg:col-span-7 space-y-6 relative" data-aos="fade-left">
                 <!-- Large quote watermark behind text (subtle orange watermark) -->
-                <div class="absolute -top-16 -left-8 text-[140px] font-black text-[#FF6A00]/[0.06] select-none pointer-events-none font-heading">“</div>
+                <div class="absolute -top-16 -left-8 text-[140px] font-black text-[#FF6A00]/[0.05] select-none pointer-events-none font-heading leading-none">“</div>
 
                 <div class="space-y-3">
-                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-[11px] font-black uppercase tracking-wider border border-[#FF6A00]/25">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/8 text-[#FF6A00] text-[10px] font-bold uppercase tracking-wider border border-[#FF6A00]/15 w-max">
                         <i data-lucide="award" class="w-3.5 h-3.5"></i> The Founder
                     </span>
-                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#111111] leading-[1.1] uppercase font-heading">
+                    <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-black tracking-tight text-[#111111] leading-[1.1] uppercase font-heading">
                         {{ App\Models\Setting::get('about_founder_quote', 'Creator Experience. Agency Thinking.') }}
                     </h2>
                 </div>
 
                 <div class="space-y-4">
                     <!-- Title block -->
-                    <div class="pb-4 border-b border-gray-100">
-                        <h4 class="text-lg font-bold text-[#111111] tracking-wide">
-                            {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
-                        </h4>
-                        <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
-                            {{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}
-                        </p>
+                    <div class="pb-4 border-b border-gray-100 flex items-center justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold text-[#111111] tracking-wide">
+                                {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
+                            </h4>
+                            <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
+                                {{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}
+                            </p>
+                        </div>
+                        
+                        <!-- Socials -->
+                        <div class="flex items-center space-x-2">
+                            <a href="{{ App\Models\Setting::get('instagram_url', '#') }}" target="_blank" 
+                               class="w-9 h-9 rounded-full border border-gray-200 hover:border-zinc-900 flex items-center justify-center text-gray-500 hover:text-[#FF6A00] hover:bg-[#FF6A00]/5 transition-all duration-300">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </a>
+                            <a href="{{ App\Models\Setting::get('linkedin_url', '#') }}" target="_blank" 
+                               class="w-9 h-9 rounded-full border border-gray-200 hover:border-zinc-900 flex items-center justify-center text-gray-500 hover:text-[#FF6A00] hover:bg-[#FF6A00]/5 transition-all duration-300">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Bio -->
