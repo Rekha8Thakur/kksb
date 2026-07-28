@@ -15,7 +15,7 @@ class AboutController extends Controller
      */
     public function index(): View
     {
-        $team = Author::where('name', '!=', 'Kuldeep Sharma')->get(); // Exclude founder to prevent duplicate display
+        $team = Author::all(); // Authors map directly to team members
         $gallery = Gallery::where('type', 'behind_the_scenes')->orderBy('order')->get();
         
         // Retrieve timeline from settings JSON
