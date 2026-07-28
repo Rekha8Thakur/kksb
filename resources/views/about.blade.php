@@ -235,10 +235,10 @@
             <!-- Horizontal sliding container -->
             <div x-ref="slider" class="flex overflow-x-auto space-x-6 pb-6 scrollbar-none snap-x snap-mandatory">
                 @foreach($gallery as $photo)
-                    <div class="flex-shrink-0 w-[280px] sm:w-[320px] aspect-[4/5] bg-gray-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group relative snap-start border border-gray-100">
-                        <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" alt="{{ $photo->title }}">
+                    <div class="flex-shrink-0 w-[280px] sm:w-[320px] aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition group relative snap-start" data-aos="fade-up">
+                        <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
                         @if($photo->title)
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                 <h4 class="font-bold text-sm truncate">{{ $photo->title }}</h4>
                             </div>
                         @endif
