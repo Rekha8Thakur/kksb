@@ -4,120 +4,18 @@
     <div x-data="{ 
         activeModal: null,
         services: {
-            smm: {
-                id: 'smm',
-                icon: 'smartphone',
-                title: 'Social Media Management',
-                tagline: 'Build a Brand That People Remember',
-                desc: 'At KKSB STUDIOS, we believe social media is more than just posting photos—it’s about creating meaningful connections with your audience and building a brand people trust. We develop platform-specific strategies that help businesses grow organically while maintaining a consistent and professional online presence. From planning monthly content calendars to designing creatives, editing engaging reels, writing compelling captions, and monitoring performance, we manage every aspect of your social media so you can focus on running your business. Whether you\'re a startup, local business, hotel, educational institute, restaurant, healthcare brand, or established company, we tailor every strategy to match your goals.',
+            @foreach($services as $service)
+            '{{ $service->slug }}': {
+                id: {{ json_encode($service->slug) }},
+                title: {{ json_encode($service->title) }},
+                tagline: {{ json_encode($service->short_description) }},
+                desc: {{ json_encode($service->long_description) }},
                 offeringsTitle: 'What We Offer',
-                offerings: [
-                    'Social Media Strategy',
-                    'Content Planning',
-                    'Content Calendar',
-                    'Reels & Short Videos',
-                    'Graphic Design',
-                    'Caption Writing',
-                    'Profile Optimization',
-                    'Community Management',
-                    'Analytics & Reporting'
-                ]
+                offerings: {!! json_encode($service->benefits ?: []) !!}
             },
-            video: {
-                id: 'video',
-                icon: 'video',
-                title: 'Video Production',
-                tagline: 'Bringing Stories to Life Through Visual Excellence',
-                desc: 'Every business has a story worth telling. At KKSB STUDIOS, we create high-quality videos that don\'t just look beautiful—they communicate your message, build trust, and leave a lasting impression. From concept development and scripting to filming, drone cinematography, editing, motion graphics, and final delivery, our team handles the complete production process. Whether it\'s a commercial advertisement, promotional reel, corporate film, documentary, hospitality showcase, or social media content, every frame is crafted with creativity and purpose.',
-                offeringsTitle: 'What We Produce',
-                offerings: [
-                    'Commercial Advertisements',
-                    'Brand Films',
-                    'Promotional Reels',
-                    'Corporate Videos',
-                    'Product Videos',
-                    'Tourism & Hospitality Films',
-                    'Documentary Production',
-                    'Interviews & Podcasts',
-                    'Drone Cinematography',
-                    'Professional Editing'
-                ]
-            },
-            strategy: {
-                id: 'strategy',
-                icon: 'target',
-                title: 'Brand Strategy',
-                tagline: 'Building Brands With Purpose',
-                desc: 'A successful brand is built on clarity, consistency, and a strong identity. We help businesses define who they are, what they stand for, and how they should communicate with their audience. Our strategic approach combines market research, audience understanding, content direction, and brand positioning to create a roadmap for long-term growth. Every design, campaign, and piece of content becomes part of one unified brand experience.',
-                offeringsTitle: 'Our Strategy Covers',
-                offerings: [
-                    'Brand Positioning',
-                    'Audience Research',
-                    'Competitor Analysis',
-                    'Brand Messaging',
-                    'Content Direction',
-                    'Marketing Roadmap',
-                    'Visual Identity Guidance',
-                    'Brand Growth Consultation'
-                ]
-            },
-            campaigns: {
-                id: 'campaigns',
-                icon: 'trending-up',
-                title: 'Digital Campaigns',
-                tagline: 'Performance Marketing That Delivers Results',
-                desc: 'Successful advertising is driven by strategy, not guesswork. KKSB STUDIOS creates data-driven digital campaigns that help businesses increase visibility, generate quality leads, and achieve measurable growth. We plan, launch, monitor, and optimize campaigns across Meta platforms using audience insights, creative storytelling, and continuous performance analysis to maximize every advertising budget.',
-                offeringsTitle: 'Campaign Services',
-                offerings: [
-                    'Meta Ads Management',
-                    'Facebook & Instagram Campaigns',
-                    'Lead Generation',
-                    'Brand Awareness Campaigns',
-                    'Audience Targeting',
-                    'Retargeting Campaigns',
-                    'Conversion Tracking',
-                    'Campaign Optimization',
-                    'Performance Reporting'
-                ]
-            },
-            influencer: {
-                id: 'influencer',
-                icon: 'users',
-                title: 'Influencer Marketing',
-                tagline: 'Connecting Brands With Trusted Voices',
-                desc: 'Influencer marketing works best when it feels authentic. At KKSB STUDIOS, we connect businesses with carefully selected creators whose audience genuinely aligns with your brand. From identifying the right influencers and managing collaborations to coordinating content and tracking campaign performance, we ensure every partnership creates meaningful impact and real engagement.',
-                offeringsTitle: 'Our Services Include',
-                offerings: [
-                    'Influencer Discovery',
-                    'Campaign Planning',
-                    'Creator Coordination',
-                    'Content Approval',
-                    'Campaign Execution',
-                    'Regional Influencer Marketing',
-                    'Brand Collaborations',
-                    'Performance Reporting'
-                ]
-            },
-            website: {
-                id: 'website',
-                icon: 'globe',
-                title: 'Websites & Digital Presence',
-                tagline: 'Your Digital Identity Starts Here',
-                desc: 'Your website is often the first interaction customers have with your business. We design modern, responsive, and user-friendly websites that reflect your brand, build credibility, and turn visitors into customers. Every website is developed with clean design, fast loading speeds, mobile responsiveness, and SEO-ready architecture to ensure a seamless experience across all devices.',
-                offeringsTitle: 'Website Solutions',
-                offerings: [
-                    'Business Websites',
-                    'Landing Pages',
-                    'Portfolio Websites',
-                    'Responsive Design',
-                    'UI/UX Design',
-                    'SEO-Friendly Development',
-                    'Performance Optimization',
-                    'Website Maintenance & Support'
-                ]
-            }
+            @endforeach
         }
-    }">
+    }">>
 
         <!-- HERO SECTION -->
         <section class="bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] pt-8 pb-16 lg:pt-12 lg:pb-24 border-b border-[#ECECEC] relative overflow-hidden">
@@ -160,101 +58,31 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-8 items-stretch">
                     
-                    <!-- Card 1: Social Media Management -->
-                    <a href="/services/social-media-management" @click.prevent="activeModal = 'smm'" id="smm" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up">
+                    @foreach($services as $index => $service)
+                    <a href="/services/{{ $service->slug }}" 
+                       @click.prevent="activeModal = '{{ $service->slug }}'" 
+                       id="{{ $service->slug }}" 
+                       class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" 
+                       data-aos="fade-up" 
+                       data-aos-delay="{{ ($index % 3) * 100 }}">
                         <div class="space-y-3 sm:space-y-5">
                             <!-- Big Title & Tagline -->
                             <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Social Media Management</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Build a Brand That People Remember</p>
+                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">{{ $service->title }}</h3>
+                                @if(count($service->benefits) > 0)
+                                    <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">{{ $service->benefits[0] }}</p>
+                                @else
+                                    <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Complete Solutions</p>
+                                @endif
                             </div>
 
                             <!-- Description -->
                             <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Build meaningful connections with your audience and grow organically with consistent, platform-specific content and management.
+                                {{ $service->short_description }}
                             </p>
                         </div>
                     </a>
-
-                    <!-- Card 2: Video Production -->
-                    <a href="/services/video-production" @click.prevent="activeModal = 'video'" id="video" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
-                        <div class="space-y-3 sm:space-y-5">
-                            <!-- Big Title & Tagline -->
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Video Production</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Bringing Stories to Life Through Visual Excellence</p>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Bring your brand's story to life through high-quality video creation, professional cinematography, and expert post-production.
-                            </p>
-                        </div>
-                    </a>
-
-                    <!-- Card 3: Brand Strategy -->
-                    <a href="/services/brand-strategy" @click.prevent="activeModal = 'strategy'" id="strategy" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
-                        <div class="space-y-3 sm:space-y-5">
-                            <!-- Big Title & Tagline -->
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Brand Strategy</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Building Brands With Purpose</p>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Define your identity, reach the right audience, and establish a clear roadmap for long-term growth.
-                            </p>
-                        </div>
-                    </a>
-
-                    <!-- Card 4: Digital Campaigns -->
-                    <a href="/services/reels-and-short-form-content" @click.prevent="activeModal = 'campaigns'" id="campaigns" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up">
-                        <div class="space-y-3 sm:space-y-5">
-                            <!-- Big Title & Tagline -->
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Digital Campaigns</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Performance Marketing That Delivers Results</p>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Maximize your ROI with data-driven advertising campaigns, precise targeting, and continuous optimization.
-                            </p>
-                        </div>
-                    </a>
-
-                    <!-- Card 5: Influencer Marketing -->
-                    <a href="/services/influencer-marketing" @click.prevent="activeModal = 'influencer'" id="influencer" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="100">
-                        <div class="space-y-3 sm:space-y-5">
-                            <!-- Big Title & Tagline -->
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Influencer Marketing</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Connecting Brands With Trusted Voices</p>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Connect your brand with trusted creators and influencers to run authentic, high-impact collaboration campaigns.
-                            </p>
-                        </div>
-                    </a>
-
-                    <!-- Card 6: Websites & Digital Presence -->
-                    <a href="/services/web-design-development" @click.prevent="activeModal = 'website'" id="website" class="bg-white border-2 border-[#EAEAEA] hover:border-[#111111] p-4 sm:p-6 lg:p-8 rounded-[16px] sm:rounded-[24px] transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-2xl hover:-translate-y-1.5 space-y-4 sm:space-y-6 scroll-mt-28" data-aos="fade-up" data-aos-delay="200">
-                        <div class="space-y-3 sm:space-y-5">
-                            <!-- Big Title & Tagline -->
-                            <div class="space-y-1">
-                                <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-black tracking-tight text-[#111111] leading-snug sm:leading-tight pr-1 sm:pr-0">Websites & Digital Presence</h3>
-                                <p class="text-[9px] sm:text-xs font-bold text-[#FF6A00] tracking-wide">Your Digital Identity Starts Here</p>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-[11px] sm:text-xs md:text-sm text-gray-500 leading-relaxed font-light">
-                                Establish your digital footprint with custom, high-speed, and responsive websites optimized for conversions.
-                            </p>
-                        </div>
-                    </a>
+                    @endforeach
 
                 </div>
             </div>
