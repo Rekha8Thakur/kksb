@@ -210,3 +210,22 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 
 require __DIR__.'/auth.php';
+
+// Fail-safe fallback route to serve storage assets if symlink is missing or blocked on Hostinger
+Route::get('storage/{path}', function ($path) {
+    $fullPath = storage_path('app/public/' . $path);
+    if (!file_exists($fullPath) || is_dir($fullPath)) {
+        abort(404);
+    }
+    
+    try {
+        $mimeType = mime_content_type($fullPath);
+    } catch (\Exception $e) {
+        $mimeType = 'application/octet-stream';
+    }
+
+    return response()->file($fullPath, [
+        'Content-Type' => $mimeType,
+        'Cache-Control' => 'public, max-age=31536000',
+    ]);
+})->where('path', '.*');
