@@ -1,4 +1,31 @@
 <x-frontend-layout>
+    <!-- CSS Animations for Hero Parallax & Responsive Fullscreen Heights to match Landing Page -->
+    <style>
+        @media (min-width: 1024px) {
+            .hero-outer-fullscreen {
+                height: calc(100vh - 80px) !important;
+            }
+            .hero-fullscreen-frame {
+                height: calc(100vh - 128px) !important;
+            }
+        }
+        @media (max-width: 1023px) {
+            .hero-outer-fullscreen {
+                min-height: auto !important;
+                height: auto !important;
+            }
+            .hero-fullscreen-frame {
+                min-height: auto !important;
+                height: auto !important;
+            }
+        }
+        .hero-outer-fullscreen {
+            min-height: calc(100vh - 80px);
+        }
+        .hero-fullscreen-frame {
+            min-height: calc(100vh - 128px);
+        }
+    </style>
     
     <!-- Alpine JS State for Service Modals & In-Page Navigation -->
     <div x-data="{ 
@@ -17,25 +44,27 @@
         }
     }">
 
-        <!-- HERO SECTION -->
-        <section class="bg-gradient-to-b from-[#F8F9FA] via-white to-[#F8F9FA] pt-8 pb-16 lg:pt-12 lg:pb-24 border-b border-[#ECECEC] relative overflow-hidden">
-            <!-- Background Ambient Glow -->
-            <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#FF6A00]/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
-            
-            <div class="max-w-5xl mx-auto px-6 text-center space-y-8">
-                <span class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-black tracking-[0.25em] uppercase border border-[#FF6A00]/25 shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-ping"></span> High-Performance Creative Agency
-                </span>
-                
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
-                    <span class="text-[#111111]">Creative Services</span> <span class="text-gray-400">Built to Grow Your Brand</span>
-                </h1>
-                
-                <p class="text-base sm:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto font-light">
-                    Strategy, content creation, and digital execution combined under one roof. Explore our specialized services designed to make your brand stand out and scale.
-                </p>
-
-
+        <!-- HERO SECTION (Stretched to match Landing Page layout) -->
+        <section class="relative bg-white flex items-center overflow-hidden py-4 lg:py-6 hero-outer-fullscreen">
+            <div class="max-w-[1440px] w-full mx-auto px-6 lg:px-[90px]">
+                <div class="relative w-full bg-white border border-[#ECECEC] rounded-[32px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.015)] p-6 sm:p-10 lg:p-16 flex items-center justify-center hero-fullscreen-frame">
+                    <!-- Background Ambient Glow -->
+                    <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#FF6A00]/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+                    
+                    <div class="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
+                        <span class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#FF6A00]/10 text-[#FF6A00] text-xs font-black tracking-[0.25em] uppercase border border-[#FF6A00]/25 shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#FF6A00] animate-ping"></span> High-Performance Creative Agency
+                        </span>
+                        
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+                            <span class="text-[#111111]">Creative Services</span> <span class="text-gray-400">Built to Grow Your Brand</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto font-light">
+                            Strategy, content creation, and digital execution combined under one roof. Explore our specialized services designed to make your brand stand out and scale.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -93,8 +122,21 @@
         <!-- WHY CHOOSE KKSB STUDIOS (PREMIUM WHITE CARD) WITH PROCESS -->
         <section class="pt-0 pb-10 lg:pt-0 lg:pb-24 bg-[#FAFAFA] border-t border-[#ECECEC]">
             <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px]">
-                <div class="bg-white border border-[#ECECEC] rounded-[20px] sm:rounded-[40px] pt-4 px-4 pb-6 sm:pt-6 sm:px-12 sm:pb-12 lg:pt-8 lg:px-16 lg:pb-16 space-y-6 sm:space-y-16 shadow-sm relative overflow-hidden">
-                    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div x-data="{ mx: 0, my: 0, isHovered: false }"
+                     @mousemove="mx = $event.clientX - $el.getBoundingClientRect().left; my = $event.clientY - $el.getBoundingClientRect().top; isHovered = true"
+                     @mouseleave="isHovered = false"
+                     class="bg-white border border-[#ECECEC] rounded-[20px] sm:rounded-[40px] pt-4 px-4 pb-6 sm:pt-6 sm:px-12 sm:pb-12 lg:pt-8 lg:px-16 lg:pb-16 space-y-6 sm:space-y-16 shadow-sm relative overflow-hidden transition-all duration-300"
+                     :style="isHovered ? `background: radial-gradient(1000px circle at ${mx}px ${my}px, rgba(255, 106, 0, 0.08), transparent 70%), white` : 'background: white;'">
+                    
+                    <!-- Interactive Dot Grid Background -->
+                    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" 
+                         style="background-image: radial-gradient(circle, #FF6A00 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+                    
+                    <!-- Ambient Parallax Glows -->
+                    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-3xl pointer-events-none transition-transform duration-500 ease-out"
+                         :style="isHovered ? `transform: translate(${mx * -0.02}px, ${my * -0.02}px)` : ''"></div>
+                    <div class="absolute -left-20 -top-20 w-96 h-96 bg-[#FF6A00]/3 rounded-full blur-3xl pointer-events-none transition-transform duration-500 ease-out"
+                         :style="isHovered ? `transform: translate(${mx * 0.015}px, ${my * 0.015}px)` : ''"></div>
                     
                     <!-- Process Grid / HOW WE WORK -->
                     <div class="space-y-6 sm:space-y-10 relative z-10">
@@ -114,7 +156,7 @@
                         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4 pt-2">
                             <!-- Step 1 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     01
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
@@ -130,7 +172,7 @@
                             
                             <!-- Step 2 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     02
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
@@ -146,7 +188,7 @@
  
                             <!-- Step 3 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     03
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
@@ -162,7 +204,7 @@
  
                             <!-- Step 4 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     04
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
@@ -178,7 +220,7 @@
  
                             <!-- Step 5 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     05
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
@@ -194,7 +236,7 @@
  
                             <!-- Step 6 -->
                             <div class="relative bg-[#FAFAFA] border border-[#ECECEC] rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 hover:bg-[#111111] hover:border-[#111111] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden">
-                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-100 select-none pointer-events-none group-hover:text-white/10 transition-colors duration-300 font-heading">
+                                <span class="absolute top-2 right-4 text-xl sm:text-3xl font-black text-gray-300 select-none pointer-events-none group-hover:text-white/15 transition-colors duration-300 font-heading">
                                     06
                                 </span>
                                 <div class="w-10 h-10 mb-3 sm:w-12 sm:h-12 sm:mb-5 rounded-xl sm:rounded-2xl bg-zinc-100 flex items-center justify-center text-zinc-800 group-hover:scale-110 group-hover:bg-white group-hover:text-[#111111] transition-all duration-300">
