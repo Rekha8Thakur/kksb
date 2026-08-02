@@ -146,8 +146,7 @@
 
             <!-- Right Column: Info -->
             <div class="lg:col-span-7 space-y-6 relative" data-aos="fade-left">
-                <!-- Large quote watermark behind text (subtle orange watermark) -->
-                <div class="absolute -top-16 -left-8 text-[140px] font-black text-[#FF6A00]/[0.05] select-none pointer-events-none font-heading leading-none">“</div>
+
 
                 <div class="space-y-3">
                     <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/8 text-[#FF6A00] text-[10px] font-bold uppercase tracking-wider border border-[#FF6A00]/15 w-max">
