@@ -141,12 +141,7 @@
                     </div>
                 </div>
 
-                <!-- Floating Glassmorphic Stat Overlay -->
-                <div class="absolute -bottom-5 -right-5 bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl p-4 shadow-xl max-w-[160px] translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out pointer-events-none select-none">
-                    <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-wider mb-1">Director Portfolio</div>
-                    <div class="text-[20px] font-black text-zinc-900 leading-none">10+ Years</div>
-                    <div class="text-[10px] text-gray-500 mt-1 font-light leading-snug">Visual Storytelling & Brand Strategy</div>
-                </div>
+
             </div>
 
             <!-- Right Column: Info -->
