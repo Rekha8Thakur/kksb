@@ -259,10 +259,10 @@
                                 💡 Strategic Advantage
                             </span>
                             <h2 class="text-3xl lg:text-5xl font-black tracking-tight text-[#111111] font-heading uppercase">
-                                Why Choose KKSB STUDIOS?
+                                HOW KKSB STUDIOS HELPS
                             </h2>
                             <p class="text-base lg:text-lg text-[#666666] leading-relaxed font-light">
-                                We combine creativity, strategy, and storytelling to deliver marketing solutions that don't just look good—they drive real business growth. From branding and content creation to digital marketing and website development, our team works as your long-term creative partner, helping your business stand out in an increasingly competitive digital world.
+                                We manage your social media as a complete brand-building system—not just a posting service. From monthly content planning and professional shoots to reels, graphics, captions, page optimization, and performance tracking, our team handles every stage. With a strong understanding of regional audiences and local markets, we create content that keeps your brand consistent, visible, and relevant while helping turn attention into genuine enquiries.
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 self-start lg:self-center">
@@ -335,9 +335,19 @@
 
                         <!-- MANDATORY POPUP END SECTION: Why Choose KKSB STUDIOS? (BLACK CARD) -->
                         <div class="bg-[#111111] border border-zinc-800 text-white p-5 sm:p-8 rounded-2xl space-y-3 shadow-xl relative overflow-hidden">
-                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-zinc-400 block">💡 Why Choose KKSB STUDIOS?</span>
-                            <p class="text-xs sm:text-sm leading-relaxed text-gray-200 font-light">
-                                We combine creativity, strategy, and storytelling to deliver marketing solutions that don't just look good—they drive real business growth. From branding and content creation to digital marketing and website development, our team works as your long-term creative partner, helping your business stand out in an increasingly competitive digital world.
+                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-zinc-400 block">💡 HOW KKSB STUDIOS HELPS</span>
+                            <p class="text-xs sm:text-sm leading-relaxed text-gray-200 font-light" 
+                               x-text="activeModal === 'video-production' 
+                               ? 'KKSB STUDIOS handles the complete video production process—from concept development and scripting to professional filming, voice-over, editing, and final delivery. Our experience in advertisements, promotional reels, documentaries, tourism films, and brand storytelling allows us to create videos that are visually strong and strategically useful. Every production is designed around your message, target audience, platform, and business objective.' 
+                               : (activeModal === 'brand-strategy' 
+                                 ? 'We help businesses define what their brand should communicate, who it should speak to, and how it should appear across every platform. Through audience research, competitor analysis, brand positioning, messaging, visual direction, and content planning, we create a clear roadmap for long-term growth. This ensures that your campaigns, social media content, website, and customer experience communicate one consistent brand identity.' 
+                                 : (activeModal === 'digital-campaigns' 
+                                   ? 'We build digital campaigns around clear business goals such as generating leads, increasing visibility, promoting an offer, or driving enquiries. Our team combines campaign strategy, creative content, audience targeting, Meta Ads support, retargeting, and performance monitoring to improve results throughout the campaign. Instead of simply running advertisements, we continuously analyse performance and refine the campaign to use your marketing budget more effectively.' 
+                                   : (activeModal === 'influencer-marketing' 
+                                     ? 'With our experience as content creators and our understanding of the regional influencer ecosystem, we help brands collaborate with creators who genuinely match their audience and campaign goals. We manage influencer selection, communication, content planning, approvals, campaign execution, and reporting. Our focus is not only on follower count, but on audience relevance, content quality, regional influence, credibility, and measurable campaign impact.' 
+                                     : (activeModal === 'web-design-development' 
+                                       ? 'We create websites that present your business professionally and guide visitors towards taking action. From content structure and user experience to responsive design, landing pages, performance optimization, and basic SEO foundations, every element is planned around your brand and customer journey. Because our team also understands branding, content, and digital campaigns, your website works as part of your complete marketing system—not as an isolated online brochure.' 
+                                       : 'We manage your social media as a complete brand-building system—not just a posting service. From monthly content planning and professional shoots to reels, graphics, captions, page optimization, and performance tracking, our team handles every stage. With a strong understanding of regional audiences and local markets, we create content that keeps your brand consistent, visible, and relevant while helping turn attention into genuine enquiries.'))))">
                             </p>
                         </div>
 

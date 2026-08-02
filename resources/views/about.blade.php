@@ -190,7 +190,7 @@
 
                     <!-- Bio -->
                     <p class="text-[14.5px] sm:text-base text-gray-500 leading-relaxed font-light">
-                        {{ App\Models\Setting::get('about_founder_bio', 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.') }}
+                        {{ App\Models\Setting::get('about_founder_bio', 'Content creator, travel and culture filmmaker, social media marketer, and founder of KKSB Studios. His creator-led journey across Himachal Pradesh shaped an agency built on storytelling, strategy, video production, and brand growth. Today, he helps businesses turn local insights and audience understanding into campaigns that build visibility, trust, and meaningful impact') }}
                     </p>
                 </div>
             </div>
@@ -244,17 +244,48 @@
                 <p class="text-sm text-gray-500">Snapshots of our dynamic outdoor shoots, editing table sessions, and team brainstorm sessions.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                @foreach($gallery as $photo)
-                    <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition group relative" data-aos="fade-up">
-                        <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
-                        @if($photo->title)
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
-                                <h4 class="font-bold text-sm truncate">{{ $photo->title }}</h4>
+            <style>
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .animate-marquee-track {
+                    animation: marquee 35s linear infinite;
+                }
+                .animate-marquee-track:hover {
+                    animation-play-state: paused;
+                }
+            </style>
+
+            <div class="relative w-full overflow-hidden">
+                <div class="flex w-max animate-marquee-track gap-6">
+                    <!-- Original set -->
+                    <div class="flex gap-6">
+                        @foreach($gallery as $photo)
+                            <div class="w-[280px] sm:w-[380px] aspect-[3/2] bg-gray-100 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0" data-aos="fade-up">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
+                                @if($photo->title)
+                                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
+                                        <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
+                                    </div>
+                                @endif
                             </div>
-                        @endif
+                        @endforeach
                     </div>
-                @endforeach
+                    <!-- Duplicated set for infinite rotation loop -->
+                    <div class="flex gap-6" aria-hidden="true">
+                        @foreach($gallery as $photo)
+                            <div class="w-[280px] sm:w-[380px] aspect-[3/2] bg-gray-100 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
+                                @if($photo->title)
+                                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
+                                        <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </section>

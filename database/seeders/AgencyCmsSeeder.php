@@ -83,7 +83,7 @@ class AgencyCmsSeeder extends Seeder
             'about_founder_name' => 'Kuldeep Sharma',
             'about_founder_title' => 'Founder & Creative Director',
             'about_founder_quote' => 'Creator Experience. Agency Thinking.',
-            'about_founder_bio' => 'Content creator, filmmaker and marketing professional with years of experience working with brands, businesses and government agencies across Himachal and beyond. KKSB Studios is the result of that journey, learnings and the belief that good content can truly build brands.',
+            'about_founder_bio' => 'Content creator, travel and culture filmmaker, social media marketer, and founder of KKSB Studios. His creator-led journey across Himachal Pradesh shaped an agency built on storytelling, strategy, video production, and brand growth. Today, he helps businesses turn local insights and audience understanding into campaigns that build visibility, trust, and meaningful impact',
             'about_founder_image' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
             'about_mission' => 'To elevate regional brands onto the national stage through world-class storytelling and metrics-driven digital strategy.',
             'about_vision' => 'To build one of the most trusted creative and marketing companies in India, powered by local talent and global vision.',

@@ -58,7 +58,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('original-productions.index') }}" class="w-full py-4 rounded-xl border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
+                        <a href="{{ route('original-productions.index') }}" class="w-full py-4 rounded-xl bg-[#FF6A00] border border-[#FF6A00] text-white hover:bg-[#111111] hover:border-[#111111] hover:text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
                             <span>Explore Originals</span>
                             <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                         </a>
@@ -106,7 +106,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="{{ route('brand-projects.index') }}" class="w-full py-4 rounded-xl bg-[#111111] hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
+                        <a href="{{ route('brand-projects.index') }}" class="w-full py-4 rounded-xl bg-[#FF6A00] border border-[#FF6A00] text-white hover:bg-[#111111] hover:border-[#111111] hover:text-white font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md flex items-center justify-center space-x-2 group">
                             <span>View Brand Projects</span>
                             <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                         </a>
