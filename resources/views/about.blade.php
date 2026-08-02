@@ -262,7 +262,7 @@
                     <!-- Original set -->
                     <div class="flex gap-6">
                         @foreach($gallery as $photo)
-                            <div class="w-[280px] sm:w-[380px] aspect-[3/2] bg-gray-100 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0" data-aos="fade-up">
+                            <div class="w-[180px] sm:w-[280px] aspect-[3/2] bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0" data-aos="fade-up">
                                 <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
@@ -275,7 +275,7 @@
                     <!-- Duplicated set for infinite rotation loop -->
                     <div class="flex gap-6" aria-hidden="true">
                         @foreach($gallery as $photo)
-                            <div class="w-[280px] sm:w-[380px] aspect-[3/2] bg-gray-100 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0">
+                            <div class="w-[180px] sm:w-[280px] aspect-[3/2] bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0">
                                 <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
