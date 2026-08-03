@@ -29,12 +29,12 @@
                                 <th class="px-6 py-4 text-right">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-100 dark:divide-zinc-800">
+                        <tbody id="sortable-tbody" class="divide-y divide-gray-100 dark:divide-zinc-800">
                             @forelse($clients as $client)
-                                <tr class="hover:bg-gray-50/50 dark:hover:bg-zinc-850/30">
+                                <tr draggable="true" class="hover:bg-gray-50/50 dark:hover:bg-zinc-850/30 transition-colors duration-150 cursor-grab active:cursor-grabbing">
                                     <td class="px-6 py-4 text-center">
                                         <input type="hidden" name="orders[]" value="{{ $client->id }}">
-                                        <div class="text-gray-400 cursor-row-resize hover:text-gray-600 dark:hover:text-zinc-300">
+                                        <div class="text-gray-400 hover:text-gray-600 dark:hover:text-zinc-300">
                                             <i data-lucide="grip-vertical" class="w-4 h-4 mx-auto"></i>
                                         </div>
                                     </td>
@@ -71,7 +71,7 @@
                 </div>
                 @if($clients->isNotEmpty())
                     <div class="px-6 py-4 bg-gray-50 dark:bg-zinc-800/20 border-t border-gray-100 dark:border-zinc-850 flex items-center justify-between">
-                        <p class="text-xs text-gray-500 dark:text-zinc-400">Order changes are saved instantly upon submitting.</p>
+                        <p class="text-xs text-gray-500 dark:text-zinc-400">Drag/arrange rows to reorder client logos, then click Save Sort Order.</p>
                         <button type="submit" class="bg-zinc-900 hover:bg-zinc-850 text-white dark:bg-white dark:hover:bg-zinc-100 dark:text-zinc-900 text-xs font-semibold px-4 py-2 rounded-lg transition shadow-sm">
                             Save Sort Order
                         </button>
@@ -86,4 +86,38 @@
         @csrf
         @method('DELETE')
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tbody = document.querySelector('#sortable-tbody');
+            if (!tbody) return;
+
+            let dragEl = null;
+
+            tbody.querySelectorAll('tr').forEach(row => {
+                row.addEventListener('dragstart', (e) => {
+                    dragEl = row;
+                    row.classList.add('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20');
+                    e.dataTransfer.effectAllowed = 'move';
+                    // Required by Firefox/Safari/Chrome to initialize a drag payload
+                    e.dataTransfer.setData('text/plain', '');
+                });
+
+                row.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    const target = e.target.closest('tr');
+                    if (target && target !== dragEl && target.parentNode === tbody) {
+                        const rect = target.getBoundingClientRect();
+                        const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+                        tbody.insertBefore(dragEl, next ? target.nextSibling : target);
+                    }
+                });
+
+                row.addEventListener('dragend', () => {
+                    row.classList.remove('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20');
+                    dragEl = null;
+                });
+            });
+        });
+    </script>
 </x-admin-layout>
