@@ -128,9 +128,7 @@
                      class="bg-white border border-[#ECECEC] rounded-[20px] sm:rounded-[40px] pt-4 px-4 pb-6 sm:pt-6 sm:px-12 sm:pb-12 lg:pt-8 lg:px-16 lg:pb-16 space-y-6 sm:space-y-16 shadow-sm relative overflow-hidden transition-all duration-300"
                      :style="isHovered ? `background: radial-gradient(1000px circle at ${mx}px ${my}px, rgba(255, 106, 0, 0.08), transparent 70%), white` : 'background: white;'">
                     
-                    <!-- Interactive Dot Grid Background -->
-                    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" 
-                         style="background-image: radial-gradient(circle, #FF6A00 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+
                     
                     <!-- Ambient Parallax Glows -->
                     <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#FF6A00]/5 rounded-full blur-3xl pointer-events-none transition-transform duration-500 ease-out"
