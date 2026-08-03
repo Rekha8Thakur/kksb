@@ -109,7 +109,7 @@
     </style>
 
     <!-- Hero Header -->
-    <section class="bg-[#F8F8F8] py-20 border-b border-gray-150">
+    <section class="bg-[#F8F8F8] pt-8 pb-14 border-b border-gray-150">
         <div class="max-w-3xl mx-auto px-6 text-center space-y-6">
             <div class="flex items-center justify-center space-x-3 text-xs font-bold text-[#111111] uppercase tracking-wider">
                 <span class="px-3.5 py-1.5 rounded-full bg-[#FF6A00]/8 text-[#FF6A00] text-[10px] font-extrabold uppercase tracking-widest border border-[#FF6A00]/15">
@@ -136,7 +136,7 @@
     </section>
 
     <!-- Main Content -->
-    <section class="py-24 bg-white">
+    <section class="pt-12 pb-24 bg-white">
         <div class="max-w-3xl mx-auto px-6 space-y-12">
             
             <!-- Banner Image -->
