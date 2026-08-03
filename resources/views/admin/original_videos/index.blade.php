@@ -73,13 +73,9 @@
                                             <a href="{{ route('admin.original-videos.edit', $video) }}" class="p-1 text-gray-500 hover:text-emerald-600 dark:text-zinc-400 dark:hover:text-emerald-400 transition">
                                                 <i data-lucide="edit-3" class="w-4 h-4"></i>
                                             </a>
-                                            <form method="POST" action="{{ route('admin.original-videos.destroy', $video) }}" onsubmit="return confirm('Are you sure you want to delete this video?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="p-1 text-gray-500 hover:text-rose-600 transition">
-                                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                                </button>
-                                            </form>
+                                            <button type="button" onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this original video?')) { const f = document.getElementById('global-delete-form'); f.action = '{{ route('admin.original-videos.destroy', $video) }}'; f.submit(); }" class="p-1 text-gray-500 hover:text-rose-600 transition">
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -105,4 +101,10 @@
             </form>
         </div>
     </div>
+
+    <!-- Hidden global form for delete actions to prevent nested forms -->
+    <form id="global-delete-form" method="POST" class="hidden">
+        @csrf
+        @method('DELETE')
+    </form>
 </x-admin-layout>
