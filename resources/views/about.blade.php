@@ -244,7 +244,7 @@
                     100% { transform: translateX(-50%); }
                 }
                 .animate-marquee-track {
-                    animation: marquee 35s linear infinite;
+                    animation: marquee 22s linear infinite;
                 }
                 .animate-marquee-track:hover {
                     animation-play-state: paused;
@@ -253,6 +253,12 @@
                     width: 180px !important;
                     aspect-ratio: 3 / 2 !important;
                     flex-shrink: 0 !important;
+                    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                }
+                .gallery-card:hover {
+                    transform: translateY(-8px) !important;
+                    box-shadow: 0 20px 25px -5px rgba(255, 106, 0, 0.15), 0 10px 10px -5px rgba(255, 106, 0, 0.04) !important;
+                    border-color: rgba(255, 106, 0, 0.3) !important;
                 }
                 @media (min-width: 640px) {
                     .gallery-card {
@@ -266,8 +272,8 @@
                     <!-- Original set -->
                     <div class="flex gap-6">
                         @foreach($gallery as $photo)
-                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0" data-aos="fade-up">
-                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}" loading="lazy">
+                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] border border-gray-100 overflow-hidden shadow-sm group relative flex-shrink-0" data-aos="fade-up">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 ease-out" alt="{{ $photo->title }}" loading="lazy">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                         <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
@@ -279,8 +285,8 @@
                     <!-- Duplicated set for infinite rotation loop -->
                     <div class="flex gap-6" aria-hidden="true">
                         @foreach($gallery as $photo)
-                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0">
-                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}" loading="lazy">
+                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] border border-gray-100 overflow-hidden shadow-sm group relative flex-shrink-0">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 ease-out" alt="{{ $photo->title }}" loading="lazy">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                         <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
