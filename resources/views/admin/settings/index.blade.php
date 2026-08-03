@@ -50,7 +50,7 @@
 
                     <div class="border-t border-gray-100 dark:border-zinc-800/60 pt-6 mt-6">
                         <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-4">SEO Defaults (Search Engine Optimization)</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="space-y-2">
                                 <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">SEO Default Title</label>
                                 <input type="text" name="seo_title" value="{{ App\Models\Setting::get('seo_title') }}" placeholder="KKSB Studios | Creative & Digital Solutions for Growing Brands" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
@@ -58,6 +58,10 @@
                             <div class="space-y-2">
                                 <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">SEO Default Keywords</label>
                                 <input type="text" name="seo_keywords" value="{{ App\Models\Setting::get('seo_keywords') }}" placeholder="creative agency, video production, social media management, himachal, solan, web design" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Google Site Verification Code</label>
+                                <input type="text" name="google_site_verification" value="{{ App\Models\Setting::get('google_site_verification') }}" placeholder="google-site-verification=xxxxxxxxxxxx" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
                             </div>
                         </div>
                         <div class="space-y-2 mt-4">

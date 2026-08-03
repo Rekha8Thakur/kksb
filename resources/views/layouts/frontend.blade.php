@@ -8,6 +8,9 @@
     <title>{{ $seo_title ?? (App\Models\Setting::get('seo_title') ?: (App\Models\Setting::get('site_name', 'KKSB Studios') . ' | ' . App\Models\Setting::get('site_tagline', 'Creative Digital Agency'))) }}</title>
     <meta name="description" content="{{ $seo_description ?? App\Models\Setting::get('seo_description', 'KKSB Studios is a premium creative agency based in Himachal Pradesh specializing in video production, social media management, brand strategy, and web design.') }}">
     <meta name="keywords" content="{{ $seo_keywords ?? App\Models\Setting::get('seo_keywords', 'creative agency, video production, social media management, himachal, solan, web design') }}">
+    @if(App\Models\Setting::get('google_site_verification'))
+        <meta name="google-site-verification" content="{{ App\Models\Setting::get('google_site_verification') }}">
+    @endif
     <link rel="canonical" href="{{ request()->url() }}">
 
     <!-- Open Graph / Facebook -->
