@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- SEO Optimization -->
-    <title>{{ $seo_title ?? App\Models\Setting::get('site_name', 'KKSB Studios') }} | {{ App\Models\Setting::get('site_tagline', 'Creative Digital Agency') }}</title>
-    <meta name="description" content="{{ $seo_description ?? 'KKSB Studios is a premium creative agency based in Himachal Pradesh specializing in video production, social media management, brand strategy, and web design.' }}">
-    <meta name="keywords" content="{{ $seo_keywords ?? 'creative agency, video production, social media management, himachal, solan, web design' }}">
+    <title>{{ $seo_title ?? (App\Models\Setting::get('seo_title') ?: (App\Models\Setting::get('site_name', 'KKSB Studios') . ' | ' . App\Models\Setting::get('site_tagline', 'Creative Digital Agency'))) }}</title>
+    <meta name="description" content="{{ $seo_description ?? App\Models\Setting::get('seo_description', 'KKSB Studios is a premium creative agency based in Himachal Pradesh specializing in video production, social media management, brand strategy, and web design.') }}">
+    <meta name="keywords" content="{{ $seo_keywords ?? App\Models\Setting::get('seo_keywords', 'creative agency, video production, social media management, himachal, solan, web design') }}">
     <link rel="canonical" href="{{ request()->url() }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request()->url() }}">
-    <meta property="og:title" content="{{ $seo_title ?? App\Models\Setting::get('site_name', 'KKSB Studios') }}">
-    <meta property="og:description" content="{{ $seo_description ?? 'KKSB Studios is a premium creative agency based in Himachal Pradesh.' }}">
+    <meta property="og:title" content="{{ $seo_title ?? (App\Models\Setting::get('seo_title') ?: App\Models\Setting::get('site_name', 'KKSB Studios')) }}">
+    <meta property="og:description" content="{{ $seo_description ?? App\Models\Setting::get('seo_description', 'KKSB Studios is a premium creative agency based in Himachal Pradesh.') }}">
     <meta property="og:image" content="{{ asset($seo_image ?? 'images/hero-bg.webp') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ request()->url() }}">
-    <meta property="twitter:title" content="{{ $seo_title ?? App\Models\Setting::get('site_name', 'KKSB Studios') }}">
-    <meta property="twitter:description" content="{{ $seo_description ?? 'KKSB Studios is a premium creative agency based in Himachal Pradesh.' }}">
+    <meta property="twitter:title" content="{{ $seo_title ?? (App\Models\Setting::get('seo_title') ?: App\Models\Setting::get('site_name', 'KKSB Studios')) }}">
+    <meta property="twitter:description" content="{{ $seo_description ?? App\Models\Setting::get('seo_description', 'KKSB Studios is a premium creative agency based in Himachal Pradesh.') }}">
     <meta property="twitter:image" content="{{ asset($seo_image ?? 'images/hero-bg.webp') }}">
 
     <!-- JSON-LD Schema Markup -->
