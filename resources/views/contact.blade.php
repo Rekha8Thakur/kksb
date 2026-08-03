@@ -70,7 +70,7 @@
                 <!-- Right Image Column -->
                 <div class="lg:col-span-6">
                     <div class="relative w-full aspect-[4/3] sm:aspect-[1.5] rounded-[16px] sm:rounded-[24px] overflow-hidden shadow-md group">
-                        <img src="{{ asset('images/contact_hero.png') }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="KKSB Studios Office">
+                        <img src="{{ asset('images/contact_hero.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" alt="KKSB Studios Office">
                         <!-- Soft vignette gradient overlay to match image-like look -->
                         <div class="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-transparent pointer-events-none"></div>
                     </div>
