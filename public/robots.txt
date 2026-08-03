@@ -1,2 +1,12 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /deploy
+Disallow: /init-admin
+Disallow: /deploy.php
+
+Allow: /
+
+Sitemap: https://test.kksbstudios.com/sitemap.xml

@@ -31,6 +31,13 @@ class SitemapController extends Controller
     public function robots(): Response
     {
         $robotsText = "User-agent: *\n";
+        $robotsText .= "Disallow: /admin/\n";
+        $robotsText .= "Disallow: /admin\n";
+        $robotsText .= "Disallow: /login\n";
+        $robotsText .= "Disallow: /register\n";
+        $robotsText .= "Disallow: /deploy\n";
+        $robotsText .= "Disallow: /init-admin\n";
+        $robotsText .= "Disallow: /deploy.php\n\n";
         $robotsText .= "Allow: /\n\n";
         $robotsText .= "Sitemap: " . url('/sitemap.xml') . "\n";
 
