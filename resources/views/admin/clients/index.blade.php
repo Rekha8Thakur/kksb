@@ -94,7 +94,17 @@
 
             let dragEl = null;
 
+            // Helper to handle swap
+            function handleMove(clientY, target) {
+                if (target && target !== dragEl && target.parentNode === tbody) {
+                    const rect = target.getBoundingClientRect();
+                    const next = (clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+                    tbody.insertBefore(dragEl, next ? target.nextSibling : target);
+                }
+            }
+
             tbody.querySelectorAll('tr').forEach(row => {
+                // Desktop dragstart
                 row.addEventListener('dragstart', (e) => {
                     dragEl = row;
                     row.classList.add('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20');
@@ -103,19 +113,43 @@
                     e.dataTransfer.setData('text/plain', '');
                 });
 
+                // Desktop dragover
                 row.addEventListener('dragover', (e) => {
                     e.preventDefault();
                     const target = e.target.closest('tr');
-                    if (target && target !== dragEl && target.parentNode === tbody) {
-                        const rect = target.getBoundingClientRect();
-                        const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
-                        tbody.insertBefore(dragEl, next ? target.nextSibling : target);
-                    }
+                    handleMove(e.clientY, target);
                 });
 
+                // Desktop dragend
                 row.addEventListener('dragend', () => {
                     row.classList.remove('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20');
                     dragEl = null;
+                });
+
+                // Touch/Mobile Events
+                row.addEventListener('touchstart', (e) => {
+                    dragEl = row;
+                    row.classList.add('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'pointer-events-none');
+                }, { passive: true });
+
+                row.addEventListener('touchmove', (e) => {
+                    if (!dragEl) return;
+                    const touch = e.touches[0];
+                    // Prevent page scrolling while dragging row
+                    if (e.cancelable) e.preventDefault();
+                    
+                    const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                    if (targetElement) {
+                        const targetRow = targetElement.closest('tr');
+                        handleMove(touch.clientY, targetRow);
+                    }
+                }, { passive: false });
+
+                row.addEventListener('touchend', () => {
+                    if (dragEl) {
+                        dragEl.classList.remove('opacity-50', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'pointer-events-none');
+                        dragEl = null;
+                    }
                 });
             });
         });
