@@ -487,7 +487,7 @@
                     <!-- Service 1: Social Media Management -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/social-media-management.webp') }}" 
                                  alt="Social Media Management" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
@@ -512,7 +512,7 @@
                     <!-- Service 2: Video Production -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.07">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/video-production.webp') }}" 
                                  alt="Video Production" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
@@ -537,7 +537,7 @@
                     <!-- Service 3: Brand Strategy -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/brand-strategy.webp') }}" 
                                  alt="Brand Strategy" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
@@ -562,7 +562,7 @@
                     <!-- Service 4: Digital Campaigns -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/digital-campaigns.webp') }}" 
                                  alt="Digital Campaigns" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
@@ -587,7 +587,7 @@
                     <!-- Service 5: Influencer Marketing -->
                     <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="250" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/influencer-marketing.webp') }}" 
                                  alt="Influencer Marketing" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>

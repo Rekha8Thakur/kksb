@@ -145,7 +145,7 @@ class AgencyCmsSeeder extends Seeder
                     'Analytics & Reporting'
                 ],
                 'features' => ['Content Calendar & Scheduling', 'Custom Reel & Post Graphic Design', 'Hashtag & Keyword Research', 'Monthly Analytics Reporting'],
-                'image_path' => 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800',
+                'image_path' => 'images/services/social-media-management.webp',
                 'order' => 1
             ],
             [
@@ -169,7 +169,7 @@ class AgencyCmsSeeder extends Seeder
                     'Professional Editing'
                 ],
                 'features' => ['Script & Storyboard Development', 'Full Frame 4K Shooting', 'Advanced Color Grading', 'Audio Engineering & Sound Design'],
-                'image_path' => 'https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=800',
+                'image_path' => 'images/services/video-production.webp',
                 'order' => 2
             ],
             [
@@ -191,7 +191,7 @@ class AgencyCmsSeeder extends Seeder
                     'Brand Growth Consultation'
                 ],
                 'features' => ['Competitor Analysis & Audits', 'Brand Messaging Guides', 'Logo & Identity Design', 'Marketing Launch Blueprints'],
-                'image_path' => 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=800',
+                'image_path' => 'images/services/brand-strategy.webp',
                 'order' => 3
             ],
             [
@@ -214,7 +214,7 @@ class AgencyCmsSeeder extends Seeder
                     'Performance Reporting'
                 ],
                 'features' => ['Lead Generation funnels', 'Retargeting setups', 'Meta Pixel Audits', 'ROAS Analysis'],
-                'image_path' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+                'image_path' => 'images/services/digital-campaigns.webp',
                 'order' => 4
             ],
             [
@@ -236,7 +236,7 @@ class AgencyCmsSeeder extends Seeder
                     'Performance Reporting'
                 ],
                 'features' => ['Influencer Match & Vetting', 'Contract Negotiations', 'Creative Briefing & Direction', 'Tracking & ROI Analysis'],
-                'image_path' => 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800',
+                'image_path' => 'images/services/influencer-marketing.webp',
                 'order' => 5
             ],
             [
