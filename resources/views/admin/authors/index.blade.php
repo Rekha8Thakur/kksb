@@ -21,7 +21,7 @@
                     <div>
                         <div class="flex items-center space-x-4 mb-4">
                             @if($author->avatar)
-                                <img src="{{ asset($author->avatar) }}" class="w-14 h-14 rounded-full object-cover border border-gray-200 dark:border-zinc-700" alt="">
+                                <img src="{{ asset($author->avatar) }}" class="w-14 h-14 rounded-full object-cover border border-gray-200 dark:border-zinc-700" alt="" loading="lazy">
                             @else
                                 <div class="w-14 h-14 rounded-full bg-zinc-150 dark:bg-zinc-800 flex items-center justify-center font-bold text-zinc-500 text-lg uppercase">
                                     {{ substr($author->name, 0, 1) }}

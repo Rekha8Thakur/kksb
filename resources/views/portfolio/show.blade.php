@@ -27,7 +27,7 @@
                 </div>
             @elseif($project->main_image)
                 <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-md bg-gray-150">
-                    <img src="{{ asset($project->main_image) }}" class="w-full h-full object-cover" alt="{{ $project->title }}">
+                    <img src="{{ asset($project->main_image) }}" class="w-full h-full object-cover" alt="{{ $project->title }}" loading="lazy">
                 </div>
             @endif
 
@@ -74,7 +74,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($project->gallery_images as $galImage)
                             <div class="aspect-video bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
-                                <img src="{{ asset($galImage) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="">
+                                <img src="{{ asset($galImage) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="" loading="lazy">
                             </div>
                         @endforeach
                     </div>

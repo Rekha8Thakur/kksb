@@ -125,7 +125,7 @@
 
             <div class="flex items-center justify-center space-x-3 pt-2">
                 @if($blog->author->avatar)
-                    <img src="{{ asset($blog->author->avatar) }}" class="w-8 h-8 rounded-full object-cover border border-gray-250 shadow-sm" alt="">
+                    <img src="{{ asset($blog->author->avatar) }}" class="w-8 h-8 rounded-full object-cover border border-gray-250 shadow-sm" alt="" loading="lazy">
                 @endif
                 <div class="text-left text-xs font-semibold">
                     <div class="text-[#111111]">{{ $blog->author->name }}</div>
@@ -142,7 +142,7 @@
             <!-- Banner Image -->
             @if($blog->featured_image)
                 <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-md bg-gray-100 mb-12 border border-gray-100">
-                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover" alt="{{ $blog->title }}">
+                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover" alt="{{ $blog->title }}" loading="lazy">
                 </div>
             @endif
 
@@ -154,7 +154,7 @@
             <!-- Author Bio Block -->
             <div class="border-t border-b border-gray-150 py-8 my-16 flex items-start space-x-4">
                 @if($blog->author->avatar)
-                    <img src="{{ asset($blog->author->avatar) }}" class="w-14 h-14 rounded-full object-cover border" alt="">
+                    <img src="{{ asset($blog->author->avatar) }}" class="w-14 h-14 rounded-full object-cover border" alt="" loading="lazy">
                 @else
                     <div class="w-14 h-14 rounded-full bg-zinc-100 flex items-center justify-center font-bold text-gray-400 text-lg">
                         {{ substr($blog->author->name, 0, 1) }}
@@ -175,7 +175,7 @@
                             <div class="group space-y-3">
                                 <a href="/blog/{{ $rel->slug }}" class="block aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
                                     @if($rel->featured_image)
-                                        <img src="{{ asset($rel->featured_image) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="">
+                                        <img src="{{ asset($rel->featured_image) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="" loading="lazy">
                                     @endif
                                 </a>
                                 <div class="space-y-1.5">

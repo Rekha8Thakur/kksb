@@ -22,7 +22,7 @@
             <div class="lg:col-span-8 space-y-12">
                 @if($service->image_path)
                     <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-sm bg-gray-100">
-                        <img src="{{ asset($service->image_path) }}" class="w-full h-full object-cover" alt="{{ $service->title }}">
+                        <img src="{{ asset($service->image_path) }}" class="w-full h-full object-cover" alt="{{ $service->title }}" loading="lazy">
                     </div>
                 @endif
 

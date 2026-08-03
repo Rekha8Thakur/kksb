@@ -21,7 +21,7 @@
                 <div class="bg-white border border-gray-150 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
                         <!-- Colorful image -->
-                        <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Original Productions">
+                        <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Original Productions" loading="lazy">
                     </div>
                     <div class="p-5 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
@@ -69,7 +69,7 @@
                 <div class="bg-white border border-gray-150 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm flex flex-col group transition duration-300">
                     <div class="aspect-video w-full overflow-hidden bg-zinc-900 relative">
                         <!-- Colorful image -->
-                        <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Brand Campaigns">
+                        <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="w-full h-full object-cover transition duration-500" alt="Brand Campaigns" loading="lazy">
                     </div>
                     <div class="p-5 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
                         <div class="space-y-4">

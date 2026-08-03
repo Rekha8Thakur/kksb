@@ -92,7 +92,7 @@
                     <label for="featured_image" class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Featured Article Banner</label>
                     @if($blog->featured_image)
                         <div class="flex items-center space-x-3 mb-2">
-                            <img src="{{ asset($blog->featured_image) }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="">
+                            <img src="{{ asset($blog->featured_image) }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
                             <span class="text-xs text-gray-500">Current Image</span>
                         </div>
                     @endif

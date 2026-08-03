@@ -57,7 +57,7 @@
                     @if($originalVideo->thumbnail_path)
                         <div class="mb-3">
                             <span class="block text-xs font-semibold text-gray-500 mb-1">Current Thumbnail:</span>
-                            <img src="{{ asset($originalVideo->thumbnail_path) }}" class="w-32 h-20 object-cover rounded-lg border border-gray-200 dark:border-zinc-800 shadow-sm" alt="Current Thumbnail">
+                            <img src="{{ asset($originalVideo->thumbnail_path) }}" class="w-32 h-20 object-cover rounded-lg border border-gray-200 dark:border-zinc-800 shadow-sm" alt="Current Thumbnail" loading="lazy">
                         </div>
                     @endif
                     <input type="file" name="thumbnail" id="thumbnail" accept="image/*"

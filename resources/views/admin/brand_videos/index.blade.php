@@ -41,7 +41,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center space-x-3">
                                             @if($video->thumbnail_path)
-                                                <img src="{{ asset($video->thumbnail_path) }}" class="w-10 h-14 object-cover rounded-lg shadow-sm border border-gray-200/30" alt="{{ $video->title }}">
+                                                <img src="{{ asset($video->thumbnail_path) }}" class="w-10 h-14 object-cover rounded-lg shadow-sm border border-gray-200/30" alt="{{ $video->title }}" loading="lazy">
                                             @else
                                                 <div class="w-10 h-14 bg-gray-100 dark:bg-zinc-805 rounded-lg flex items-center justify-center border border-gray-200/30">
                                                     <i data-lucide="image" class="w-4 h-4 text-gray-400"></i>

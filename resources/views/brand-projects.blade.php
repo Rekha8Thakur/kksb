@@ -35,7 +35,7 @@
         <!-- Premium Full-Width Landscape Hero Banner -->
         <header class="relative bg-zinc-950 overflow-hidden h-[260px] sm:h-[300px] lg:h-[340px] flex items-center">
             <!-- Full Landscape Background Image -->
-            <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="absolute inset-0 w-full h-full object-cover object-center opacity-95" alt="Brand Campaigns Cover">
+            <img src="{{ asset('images/portfolio/brand_campaigns.jpg') }}" class="absolute inset-0 w-full h-full object-cover object-center opacity-95" alt="Brand Campaigns Cover" loading="lazy">
             
             <!-- Dark Gradient Overlay for perfect readability -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10"></div>

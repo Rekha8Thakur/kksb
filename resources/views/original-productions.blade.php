@@ -30,7 +30,7 @@
         <!-- Premium Full-Width Landscape Hero Banner -->
         <header class="relative bg-zinc-950 overflow-hidden h-[260px] sm:h-[300px] lg:h-[340px] flex items-center">
             <!-- Full Landscape Background Image -->
-            <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-85" style="object-position: center 35%;" alt="Original Productions Cover">
+            <img src="{{ asset('images/portfolio/original_productions.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-85" style="object-position: center 35%;" alt="Original Productions Cover" loading="lazy">
             
             <!-- Dark Gradient Overlay for perfect readability -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10"></div>
@@ -65,7 +65,7 @@
                              <div class="space-y-2.5 sm:space-y-4">
                                  <!-- Image & Play trigger container -->
                                  <div @click="activeEmbed = '{{ $embed }}'; activePlatform = '{{ $video->platform }}'" class="aspect-video w-full overflow-hidden bg-zinc-950 relative cursor-pointer">
-                                     <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}">
+                                     <img src="{{ $thumbnail }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $video->title }}" loading="lazy">
                                      <!-- Dynamic Play Overlay matching mockup -->
                                      <div class="absolute bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#FF6A00] transition duration-300 group-hover:scale-110">
                                          <svg class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">

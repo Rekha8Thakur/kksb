@@ -51,7 +51,7 @@
                         <div>
                             <div class="aspect-video w-full bg-gray-100 overflow-hidden relative">
                                 @if($blog->featured_image)
-                                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+                                    <img src="{{ asset($blog->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="" loading="lazy">
                                 @endif
                                 <span class="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white/95 backdrop-blur text-[8px] sm:text-[9px] font-extrabold text-gray-800 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full uppercase tracking-wider">
                                     {{ $blog->category->name }}
@@ -72,7 +72,7 @@
                             <!-- Writer -->
                             <div class="flex items-center space-x-1.5 sm:space-x-2">
                                 @if($blog->author->avatar)
-                                    <img src="{{ asset($blog->author->avatar) }}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover border" alt="">
+                                    <img src="{{ asset($blog->author->avatar) }}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover border" alt="" loading="lazy">
                                 @else
                                     <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-zinc-100 flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-gray-400">
                                         {{ substr($blog->author->name, 0, 1) }}

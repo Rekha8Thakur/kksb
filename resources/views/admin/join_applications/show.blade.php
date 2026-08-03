@@ -170,7 +170,7 @@
                                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                     @foreach($application->form_data['photos'] as $photoUrl)
                                         <a href="{{ asset($photoUrl) }}" target="_blank" class="block aspect-square rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition">
-                                            <img src="{{ asset($photoUrl) }}" class="w-full h-full object-cover" alt="Uploaded Portfolio Photo">
+                                            <img src="{{ asset($photoUrl) }}" class="w-full h-full object-cover" alt="Uploaded Portfolio Photo" loading="lazy">
                                         </a>
                                     @endforeach
                                 </div>

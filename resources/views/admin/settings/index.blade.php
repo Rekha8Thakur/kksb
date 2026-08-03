@@ -101,7 +101,7 @@
                         <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Hero Background Image</label>
                         @if($path = App\Models\Setting::get('home_hero_bg'))
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="{{ asset($path) }}" class="w-20 h-10 object-cover rounded border border-gray-300" alt="">
+                                <img src="{{ asset($path) }}" class="w-20 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
                                 <span class="text-xs text-gray-500">Current Hero Image</span>
                             </div>
                         @endif

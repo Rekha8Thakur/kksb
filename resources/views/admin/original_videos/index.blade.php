@@ -41,7 +41,7 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         @if($video->thumbnail_path)
-                                            <img src="{{ asset($video->thumbnail_path) }}" class="w-16 h-10 object-cover rounded-lg border border-gray-200 dark:border-zinc-800 shadow-sm" alt="Thumbnail">
+                                            <img src="{{ asset($video->thumbnail_path) }}" class="w-16 h-10 object-cover rounded-lg border border-gray-200 dark:border-zinc-800 shadow-sm" alt="Thumbnail" loading="lazy">
                                         @else
                                             <div class="w-16 h-10 bg-gray-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 text-[10px] font-semibold border border-gray-200 dark:border-zinc-800 shadow-sm">
                                                 Auto

@@ -19,7 +19,7 @@
             @forelse($images as $image)
                 <div class="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between">
                     <div class="aspect-video w-full bg-gray-100 dark:bg-zinc-850 relative group">
-                        <img src="{{ asset($image->image_path) }}" class="w-full h-full object-cover" alt="">
+                        <img src="{{ asset($image->image_path) }}" class="w-full h-full object-cover" alt="" loading="lazy">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center space-x-3">
                             <a href="{{ route('admin.gallery.edit', $image) }}" class="p-2 bg-white rounded-full text-zinc-950 hover:bg-zinc-100 transition shadow">
                                 <i data-lucide="edit-3" class="w-4 h-4"></i>

@@ -184,7 +184,7 @@
                             <div class="relative overflow-hidden rounded-[20px] shadow-xl aspect-[16/10] bg-gray-100 group border border-[#ECECEC]">
                                 <img src="{{ asset('images/landing-shoot.jpg') }}" 
                                      alt="KKSB Studios Video Production Shoot" 
-                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
 
                                 <!-- Floating Live Badge with Parallax -->
@@ -325,132 +325,132 @@
                         @else
                             <!-- List of 21 Real Brand Logos (Set 1) -->
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
                                 <img src="{{ asset('images/clients/hero.png') }}" alt="Hero MotoCorp" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
 
                             <!-- List of 21 Real Brand Logos (Set 2 Duplicated for Seamless Infinite Loop) -->
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/bare-bakers.png') }}" alt="Bare Bakers" class="h-12 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/blackberrys.png') }}" alt="Blackberrys" class="h-11 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/devbhumi.jpg') }}" alt="Devbhumi" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/mcdonalds.png') }}" alt="McDonald's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/belgian-waffle.jpg') }}" alt="The Belgian Waffle Co." class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/gigo-bytes.jpg') }}" alt="Gigo Bytes" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
                                 <img src="{{ asset('images/clients/hero.png') }}" alt="Hero MotoCorp" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/hungry-point.png') }}" alt="Hungry Point" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/swiggy.png') }}" alt="Swiggy" class="h-10 md:h-14 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/laxmanjee.jpg') }}" alt="Laxmanjee" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/lenovo.png') }}" alt="Lenovo" class="h-10 md:h-13 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/lg.jpg') }}" alt="LG" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/liqo.jpg') }}" alt="Liqo" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/maini.jpg') }}" alt="Maini Tour N Travels" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/mehrus.jpg') }}" alt="Mehru's" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/nexa.png') }}" alt="Nexa" class="h-13 md:h-16 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/nfci.jpg') }}" alt="NFCI Solan" class="h-14 md:h-18 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/paris-parker.png') }}" alt="Paris Parker Aveda" class="h-10 md:h-13 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/peter-england.png') }}" alt="Peter England" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/zomato.png') }}" alt="Zomato" class="h-10 md:h-14 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                             <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
-                                <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]">
+                                <img src="{{ asset('images/clients/zorko.png') }}" alt="Zorko Brand of Food Lovers" class="h-12 md:h-15 w-auto object-contain max-w-[170px]" loading="lazy">
                             </div>
                         @endif
                     </div>
@@ -489,7 +489,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" 
                                  alt="Social Media Management" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="share-2" class="w-4 h-4"></i>
@@ -514,7 +514,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" 
                                  alt="Video Production" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="video" class="w-4 h-4"></i>
@@ -539,7 +539,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" 
                                  alt="Brand Strategy" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="compass" class="w-4 h-4"></i>
@@ -564,7 +564,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
                                  alt="Digital Campaigns" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="trending-up" class="w-4 h-4"></i>
@@ -589,7 +589,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
                                  alt="Influencer Marketing" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="users" class="w-4 h-4"></i>
@@ -614,7 +614,7 @@
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
                                  alt="Websites & Digital Presence" 
-                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
                             <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
                                 <i data-lucide="globe" class="w-4 h-4"></i>
@@ -885,7 +885,7 @@
                                             @if($project->main_image)
                                                 <img src="{{ asset($project->main_image) }}" 
                                                      alt="{{ $project->title }}" 
-                                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                                     class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                                             @else
                                                 <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
                                             @endif
@@ -957,7 +957,7 @@
                                     @if($project->main_image)
                                         <img src="{{ asset($project->main_image) }}" 
                                              alt="{{ $project->title }}" 
-                                             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                                     @else
                                         <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
                                     @endif
@@ -1192,7 +1192,7 @@
                                         <img src="https://img.youtube.com/vi/{{ $video1Id }}/maxresdefault.jpg" 
                                              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                                              alt="{{ $title1 }}"
-                                             onerror="this.src='https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg'">
+                                             onerror="this.src='https://img.youtube.com/vi/{{ $video1Id }}/hqdefault.jpg'" loading="lazy">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
                                         
                                         <!-- Featured Badge -->
@@ -1240,7 +1240,7 @@
                                      class="flex-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
                                     
                                     <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
-                                        <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}">
+                                        <img src="https://img.youtube.com/vi/{{ $video2Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title2 }}" loading="lazy">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                                         <!-- Play Button -->
                                         <div class="absolute inset-0 flex items-center justify-center">
@@ -1272,7 +1272,7 @@
                                      class="flex-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.08)] transition-all duration-500 hover:-translate-y-1 hover:border-white/30 group relative aspect-video rounded-[20px] overflow-hidden border border-white/15 bg-zinc-950 cursor-pointer">
                                     
                                     <div x-show="!playing" @click="playing = true" class="absolute inset-0 select-none">
-                                        <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}">
+                                        <img src="https://img.youtube.com/vi/{{ $video3Id }}/hqdefault.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ $title3 }}" loading="lazy">
                                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                                         <!-- Play Button -->
                                         <div class="absolute inset-0 flex items-center justify-center">

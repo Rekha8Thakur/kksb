@@ -59,7 +59,7 @@
                     
                     @if($brandVideo->thumbnail_path)
                         <div class="flex items-center space-x-4 p-3 bg-gray-50 dark:bg-zinc-800/50 rounded-xl border border-gray-200 dark:border-zinc-800 max-w-sm">
-                            <img src="{{ asset($brandVideo->thumbnail_path) }}" class="w-16 h-20 object-cover rounded-lg shadow-sm" alt="Thumbnail Preview">
+                            <img src="{{ asset($brandVideo->thumbnail_path) }}" class="w-16 h-20 object-cover rounded-lg shadow-sm" alt="Thumbnail Preview" loading="lazy">
                             <div>
                                 <span class="block text-xs font-semibold text-gray-700 dark:text-zinc-300">Current Thumbnail</span>
                                 <span class="block text-[10px] text-gray-400 dark:text-zinc-555">Will be replaced if a new file is uploaded</span>

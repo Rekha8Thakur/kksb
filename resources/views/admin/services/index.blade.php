@@ -42,7 +42,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center space-x-3">
                                             @if($service->image_path)
-                                                <img src="{{ asset($service->image_path) }}" class="w-8 h-8 rounded-md object-cover" alt="">
+                                                <img src="{{ asset($service->image_path) }}" class="w-8 h-8 rounded-md object-cover" alt="" loading="lazy">
                                             @else
                                                 <div class="w-8 h-8 rounded-md bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-400">
                                                     <i data-lucide="image" class="w-4 h-4"></i>

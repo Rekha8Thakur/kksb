@@ -106,7 +106,7 @@
                         <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300 block">Featured Showcase Image</label>
                         @if($project->main_image)
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="{{ asset($project->main_image) }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="">
+                                <img src="{{ asset($project->main_image) }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
                                 <span class="text-xs text-gray-500">Current Image</span>
                             </div>
                         @endif
@@ -129,7 +129,7 @@
                         @if($project->gallery_images && count($project->gallery_images) > 0)
                             <div class="flex flex-wrap gap-2 mb-2">
                                 @foreach($project->gallery_images as $image)
-                                    <img src="{{ asset($image) }}" class="w-10 h-10 object-cover rounded border border-gray-300" alt="">
+                                    <img src="{{ asset($image) }}" class="w-10 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
                                 @endforeach
                             </div>
                         @endif

@@ -43,7 +43,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center space-x-3">
                                             @if($project->main_image)
-                                                <img src="{{ asset($project->main_image) }}" class="w-10 h-7 rounded object-cover" alt="">
+                                                <img src="{{ asset($project->main_image) }}" class="w-10 h-7 rounded object-cover" alt="" loading="lazy">
                                             @else
                                                 <div class="w-10 h-7 rounded bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-400">
                                                     <i data-lucide="image" class="w-3.5 h-3.5"></i>

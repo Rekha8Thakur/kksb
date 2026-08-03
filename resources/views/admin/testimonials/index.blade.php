@@ -42,7 +42,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center space-x-3">
                                             @if($testimonial->client_avatar)
-                                                <img src="{{ asset($testimonial->client_avatar) }}" class="w-8 h-8 rounded-full object-cover border border-gray-200" alt="">
+                                                <img src="{{ asset($testimonial->client_avatar) }}" class="w-8 h-8 rounded-full object-cover border border-gray-200" alt="" loading="lazy">
                                             @else
                                                 <div class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-850 flex items-center justify-center font-bold text-xs uppercase text-zinc-400">
                                                     {{ substr($testimonial->client_name, 0, 1) }}

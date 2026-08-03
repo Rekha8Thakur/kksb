@@ -44,7 +44,7 @@
             <!-- Right Column: Large Landscape Crew Image -->
             <div class="lg:col-span-6" data-aos="fade-left">
                 <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-50 border border-gray-100">
-                    <img src="{{ asset('images/about/crew.png') }}" class="w-full h-auto object-cover" alt="KKSB Crew Production Shoot">
+                    <img src="{{ asset('images/about/crew.png') }}" class="w-full h-auto object-cover" alt="KKSB Crew Production Shoot" loading="lazy">
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                 <!-- Card 1: THEN -->
                 <div class="space-y-4">
                     <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-gray-50 group">
-                        <img src="{{ asset('images/about/then.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Then - A Creator with a Camera">
+                        <img src="{{ asset('images/about/then.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Then - A Creator with a Camera" loading="lazy">
                         <!-- THEN Badge Overlay -->
                         <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             THEN
@@ -100,7 +100,7 @@
                 <!-- Card 2: NOW -->
                 <div class="space-y-4">
                     <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-150 bg-gray-50 group">
-                        <img src="{{ asset('images/about/now.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Now - Creative Studio">
+                        <img src="{{ asset('images/about/now.jpg') }}" class="w-full h-auto transition-transform duration-500 group-hover:scale-105" alt="Now - Creative Studio" loading="lazy">
                         <!-- NOW Badge Overlay -->
                         <div class="absolute bottom-4 left-4 bg-[#111111] text-white text-[10px] font-black tracking-widest px-3 py-1 rounded">
                             NOW
@@ -131,7 +131,7 @@
                     <div class="rounded-[22px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
                         <img src="{{ asset('images/about/founder.jpg') }}" 
                              class="w-full h-full object-cover filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
-                             alt="Founder Portrait">
+                             alt="Founder Portrait" loading="lazy">
                         
                         <!-- Floating Cameraman Badge -->
                         <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
@@ -208,7 +208,7 @@
                     <div class="bg-white p-6 rounded-3xl border border-gray-150 shadow-sm text-center space-y-4 hover:border-[#FF6A00] transition duration-300" data-aos="fade-up">
                         <div class="w-24 h-24 mx-auto rounded-full overflow-hidden bg-gray-100 border border-gray-200">
                             @if($member->avatar)
-                                <img src="{{ asset($member->avatar) }}" class="w-full h-full object-cover" alt="">
+                                <img src="{{ asset($member->avatar) }}" class="w-full h-full object-cover" alt="" loading="lazy">
                             @else
                                 <div class="w-full h-full flex items-center justify-center font-bold text-gray-400 text-2xl uppercase">
                                     {{ substr($member->name, 0, 1) }}
@@ -267,7 +267,7 @@
                     <div class="flex gap-6">
                         @foreach($gallery as $photo)
                             <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0" data-aos="fade-up">
-                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}" loading="lazy">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                         <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
@@ -280,7 +280,7 @@
                     <div class="flex gap-6" aria-hidden="true">
                         @foreach($gallery as $photo)
                             <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 group relative flex-shrink-0">
-                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}">
+                                <img src="{{ asset($photo->image_path) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ $photo->title }}" loading="lazy">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
                                         <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
