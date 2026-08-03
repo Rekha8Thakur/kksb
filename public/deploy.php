@@ -48,8 +48,12 @@ function run_command($cmd) {
 
 echo "<pre>";
 
-// Step 1: Run composer install
-run_command('composer install --no-dev --optimize-autoloader');
+// Step 1: Run composer install (conditional to prevent shared hosting timeout hangs)
+if (isset($_GET['composer']) && ($_GET['composer'] === 'true' || $_GET['composer'] === '1')) {
+    run_command('composer install --no-dev --optimize-autoloader');
+} else {
+    echo "Skipping composer install (pass composer=true to run)\n\n";
+}
 
 // Step 2: Run database migrations
 run_command('php artisan migrate --force');
