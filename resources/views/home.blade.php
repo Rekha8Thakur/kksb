@@ -485,24 +485,24 @@
                 <!-- Services Single Row Layout (6 Cards Side-by-Side) -->
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5">
                     <!-- Service 1: Social Media Management -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50" data-parallax-speed="0.03">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('images/services/social-media-management.webp') }}" 
                                  alt="Social Media Management" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="share-2" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Social Media Management</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Social Media Management</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     Engaging content that connects with your audience and builds your brand organically.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -510,24 +510,24 @@
                     </div>
 
                     <!-- Service 2: Video Production -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.07">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100" data-parallax-speed="0.07">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('images/services/video-production.webp') }}" 
                                  alt="Video Production" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="video" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Video Production</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Video Production</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     High-quality corporate videos, reels, and reels marketing commercials that tell your brand story.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -535,24 +535,24 @@
                     </div>
 
                     <!-- Service 3: Brand Strategy -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150" data-parallax-speed="0.03">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('images/services/brand-strategy.webp') }}" 
                                  alt="Brand Strategy" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="compass" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Brand Strategy</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Brand Strategy</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     Research-driven messaging guides and brand guidelines designed for long-term growth.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -560,24 +560,24 @@
                     </div>
 
                     <!-- Service 4: Digital Campaigns -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200" data-parallax-speed="0.07">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('images/services/digital-campaigns.webp') }}" 
                                  alt="Digital Campaigns" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="trending-up" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Digital Campaigns</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Digital Campaigns</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     Paid acquisition and ad strategy campaigns generating conversions and measurable ROI.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -585,24 +585,24 @@
                     </div>
 
                     <!-- Service 5: Influencer Marketing -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="250" data-parallax-speed="0.03">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="250" data-parallax-speed="0.03">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                             <img src="{{ asset('images/services/influencer-marketing.webp') }}" 
                                  alt="Influencer Marketing" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="users" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Influencer Marketing</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Influencer Marketing</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     Curating, negotiating, and managing creative campaigns with matching regional creators.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -610,24 +610,24 @@
                     </div>
 
                     <!-- Service 6: Websites & Digital Presence -->
-                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.07">
+                    <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-[0_20px_40px_rgba(255,106,0,0.12)] hover:border-[#FF6A00] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300" data-parallax-speed="0.07">
                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+                            <img src="{{ asset('images/services/websites-digital-presence.png') }}" 
                                  alt="Websites & Digital Presence" 
                                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition duration-300"></div>
-                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#111111] p-2 rounded-full shadow-md group-hover:bg-[#FF6A00] group-hover:text-white transition-all duration-300">
                                 <i data-lucide="globe" class="w-4 h-4"></i>
                             </span>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
                             <div class="space-y-2">
-                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">Websites & Digital Presence</h3>
+                                <h3 class="text-[16px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-[#FF6A00] transition-colors duration-300">Websites & Digital Presence</h3>
                                 <p class="text-[12px] text-[#666666] leading-relaxed font-light line-clamp-3">
                                     Designing and developing fast, mobile-friendly landing pages and custom websites.
                                 </p>
                             </div>
-                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] hover:underline group/link pt-1">
+                            <a href="/services" class="inline-flex items-center space-x-1 text-[12px] font-bold text-[#111111] group-hover:text-[#FF6A00] group-hover:underline group/link pt-1 transition-colors duration-300">
                                 <span>Learn More</span>
                                 <span class="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                             </a>
@@ -998,7 +998,7 @@
 
 
         <!-- WHY KKSB STUDIOS -->
-        <section class="pt-8 pb-20 lg:pt-12 lg:pb-28 bg-white relative overflow-hidden">
+        <section id="why-kksb-section" class="pt-8 pb-20 lg:pt-12 lg:pb-28 bg-white relative overflow-hidden">
             <!-- Background Parallax Accent -->
             <div class="absolute bottom-10 left-10 text-[180px] font-black text-gray-900/[0.015] pointer-events-none select-none uppercase -z-10"
                  data-parallax-speed="-0.2">
@@ -1089,7 +1089,7 @@
         </section>
 
         <!-- CINEMATIC PARALLAX BANNER (HIGH VISIBILITY TYPOGRAPHY) -->
-        <section class="relative py-20 lg:py-28 bg-scroll md:bg-fixed bg-cover bg-center overflow-hidden my-10 lg:my-16 shadow-2xl" 
+        <section id="cinematic-banner-section" class="relative py-20 lg:py-28 bg-scroll md:bg-fixed bg-cover bg-center overflow-hidden my-10 lg:my-16 shadow-2xl" 
                  style="background-image: url('{{ asset('images/landing-shoot.jpg') }}');">
             <!-- Ambient Dark Backdrop Mask to make parallax image visible while keeping text readable -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/65 backdrop-blur-[0.5px]"></div>
@@ -1417,5 +1417,36 @@
                 initParallax();
             }
         })();
+    </script>
+
+    <!-- PREVENT REDIRECTION EXCEPT ON 'View All Projects' -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const targetSections = [
+                '#portfolio-section',
+                '#why-kksb-section',
+                '#cinematic-banner-section',
+                '#showreel-section',
+                'footer'
+            ];
+            
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (!link) return;
+                
+                // Check if the link is within any of our target sections
+                const isTargetSection = targetSections.some(selector => link.closest(selector));
+                if (isTargetSection) {
+                    // Check if it's the "View All Projects" link
+                    const text = link.textContent.trim();
+                    if (text.includes('View All Projects')) {
+                        return; // Allow redirect
+                    }
+                    
+                    // Otherwise, prevent redirect
+                    e.preventDefault();
+                }
+            }, true); // Use capture phase to intercept click events early
+        });
     </script>
 </x-frontend-layout>
