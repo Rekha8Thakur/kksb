@@ -105,10 +105,10 @@
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">View Brand Projects Button State</label>
-                        <select name="disable_brand_projects_btn" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
-                            <option value="0" {{ App\Models\Setting::get('disable_brand_projects_btn', '0') == '0' ? 'selected' : '' }}>Enabled (Normal Link)</option>
-                            <option value="1" {{ App\Models\Setting::get('disable_brand_projects_btn', '0') == '1' ? 'selected' : '' }}>Disabled (Show 'No Open Positions' Popup)</option>
+                        <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300">Careers Apply Now Button State (Join Us Page)</label>
+                        <select name="disable_careers_apply_btn" class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2.5 text-sm focus:ring-emerald-500 focus:border-emerald-500">
+                            <option value="0" {{ App\Models\Setting::get('disable_careers_apply_btn', '0') == '0' ? 'selected' : '' }}>Enabled (Normal Link)</option>
+                            <option value="1" {{ App\Models\Setting::get('disable_careers_apply_btn', '0') == '1' ? 'selected' : '' }}>Disabled (Show 'No Open Positions' Popup)</option>
                         </select>
                     </div>
                 </div>

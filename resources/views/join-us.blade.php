@@ -2,7 +2,8 @@
     <!-- Page Container -->
     <div class="relative overflow-hidden selection:bg-[#111111] selection:text-white" x-data="{
         showInfluencerModal: false,
-        showCareerModal: false
+        showCareerModal: false,
+        showNoVacancyModal: false
     }">
         <!-- HERO SECTION -->
         <section class="relative bg-white pt-8 lg:pt-10 pb-8 overflow-hidden">
@@ -153,10 +154,17 @@
                         </div>
 
                         <div class="pt-8">
-                            <a href="{{ route('join-career') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[16px] font-bold h-[58px] px-6 rounded-[14px] transition duration-300 flex items-center justify-center space-x-2 group shadow-sm hover:shadow-md">
-                                <span>Apply Now</span>
-                                <span class="group-hover:translate-x-1 transition-transform duration-200 text-lg">&rarr;</span>
-                            </a>
+                            @if(App\Models\Setting::get('disable_careers_apply_btn', '0') == '1')
+                                <button @click="showNoVacancyModal = true" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[16px] font-bold h-[58px] px-6 rounded-[14px] transition duration-300 flex items-center justify-center space-x-2 group shadow-sm hover:shadow-md">
+                                    <span>Apply Now</span>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-200 text-lg">&rarr;</span>
+                                </button>
+                            @else
+                                <a href="{{ route('join-career') }}" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-[16px] font-bold h-[58px] px-6 rounded-[14px] transition duration-300 flex items-center justify-center space-x-2 group shadow-sm hover:shadow-md">
+                                    <span>Apply Now</span>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-200 text-lg">&rarr;</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
 
@@ -332,6 +340,43 @@
                             Submit Application
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Vacancy Popup Modal -->
+        <div class="fixed inset-0 z-50 overflow-y-auto" x-show="showNoVacancyModal" x-transition x-cloak style="display: none;">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-black/65 backdrop-blur-sm transition-opacity" @click="showNoVacancyModal = false"></div>
+            
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white border border-[#ECECEC] rounded-[24px] max-w-md w-full p-8 relative shadow-2xl z-10 my-auto text-center space-y-6" @click.away="showNoVacancyModal = false">
+                    <!-- Close button -->
+                    <button @click="showNoVacancyModal = false" class="absolute top-5 right-5 text-gray-400 hover:text-[#111111] transition focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-[#FF6A00]/10 rounded-full flex items-center justify-center text-[#FF6A00] mx-auto">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-2xl font-bold text-[#111111]">No Open Positions</h3>
+                        <p class="text-sm text-[#666666] leading-relaxed">
+                            Thank you for your interest in joining us. There are currently no open positions. We encourage you to check back soon for new opportunities.
+                        </p>
+                    </div>
+
+                    <div class="pt-2">
+                        <button @click="showNoVacancyModal = false" class="w-full bg-[#111111] hover:bg-[#222222] text-white text-sm font-bold h-[48px] rounded-xl transition duration-300">
+                            Got it
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
