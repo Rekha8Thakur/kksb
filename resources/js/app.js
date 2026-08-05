@@ -11,7 +11,7 @@ window.Alpine = Alpine;
 // Initialize AOS
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
-        duration: 800,
+        duration: 1200,
         easing: 'ease-in-out',
         once: true,
         mirror: false
