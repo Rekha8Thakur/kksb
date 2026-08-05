@@ -41,7 +41,7 @@
                 <div class="space-y-2">
                     <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300 block">Current Photo Asset</label>
                     @if($gallery->image_path)
-                        <img src="{{ asset($gallery->image_path) }}" class="w-full max-h-48 object-cover rounded-xl border border-gray-200 dark:border-zinc-800 mb-2" alt="" loading="lazy">
+                        <img src="{{ asset($gallery->image_path) }}" onerror="this.onerror=null; this.src='{{ asset('images/gallery/bts-1.jpg') }}';" class="w-full max-h-48 object-cover rounded-xl border border-gray-200 dark:border-zinc-800 mb-2" alt="" loading="lazy">
                     @endif
                     <input type="file" name="image" id="image" accept="image/*"
                            class="w-full bg-gray-50 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-xl px-4 py-2 text-sm text-gray-500 dark:text-zinc-400 file:mr-4 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-zinc-900 file:text-white dark:file:bg-zinc-700">
