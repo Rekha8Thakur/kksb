@@ -897,19 +897,10 @@
                                             <div class="space-y-1 sm:space-y-2">
                                                 <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
                                                 <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
-                                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                                <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-4">
                                                     {{ $project->description }}
                                                 </p>
                                             </div>
-                                            
-                                            @if($project->results)
-                                                <div class="space-y-2 pt-1 sm:pt-2">
-                                                    <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                                        <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                                        <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
-                                                    </div>
-                                                </div>
-                                            @endif
                                         </div>
                                     </a>
                                 </div>
@@ -963,19 +954,10 @@
                                     <div class="space-y-1 sm:space-y-2">
                                         <span class="text-[9px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-widest block">{{ strtoupper($project->client ?: $project->title) }}</span>
                                         <h3 class="text-sm sm:text-[20px] font-bold text-[#111111] tracking-tight leading-snug group-hover:text-black transition">{{ $project->title }}</h3>
-                                        <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-2">
+                                        <p class="text-[11px] sm:text-[13px] text-[#666666] leading-relaxed font-light line-clamp-4">
                                             {{ $project->description }}
                                         </p>
                                     </div>
-                                    
-                                    @if($project->results)
-                                        <div class="space-y-2 pt-1 sm:pt-2">
-                                            <div class="bg-emerald-500/10 border border-emerald-500/20 px-2 py-1.5 sm:px-3.5 sm:py-2.5 rounded-[8px] sm:rounded-[12px] flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                                                <span class="text-[8px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider">Growth Metric</span>
-                                                <span class="text-[11px] sm:text-[13px] font-extrabold text-emerald-700">{{ $project->results }}</span>
-                                            </div>
-                                        </div>
-                                    @endif
                                 </div>
                             </a>
                         @endforeach
