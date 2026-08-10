@@ -890,12 +890,6 @@
                                                 <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
                                             @endif
                                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                                            
-                                            @if($project->category)
-                                                <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                                    {{ $project->category->name }}
-                                                </span>
-                                            @endif
                                         </div>
                                         
                                         <!-- Content -->
@@ -962,12 +956,6 @@
                                         <div class="w-full h-full bg-zinc-200 flex items-center justify-center text-zinc-400">No Image</div>
                                     @endif
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition duration-300"></div>
-                                    
-                                    @if($project->category)
-                                        <span class="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 bg-white/90 backdrop-blur-md text-[9px] sm:text-[10px] font-extrabold text-[#111111] px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm border border-white/50">
-                                            {{ $project->category->name }}
-                                        </span>
-                                    @endif
                                 </div>
                                 
                                 <!-- Content -->

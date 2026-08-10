@@ -1,3 +1,12 @@
+@php
+    $logoPath = public_path('images/logo.png');
+    if (file_exists($logoPath)) {
+        clearstatcache(true, $logoPath);
+        $logoVersion = filemtime($logoPath);
+    } else {
+        $logoVersion = '1.0';
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
@@ -141,7 +150,7 @@
         <div class="max-w-[1440px] mx-auto px-5 lg:px-[90px] h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="/" class="flex items-center space-x-2 group">
-                <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain py-1 transition-transform duration-300 group-hover:scale-105" alt="KKSB Studios Logo">
+                <img src="{{ asset('images/logo.png') }}?v={{ $logoVersion }}" class="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain py-1 transition-transform duration-300 group-hover:scale-105" alt="KKSB Studios Logo">
             </a>
 
             <!-- Desktop Links -->
@@ -208,7 +217,7 @@
             <!-- Col 1: About Brand -->
             <div class="md:col-span-6 space-y-6">
                 <a href="/" class="inline-block group">
-                    <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-12 md:h-16 lg:h-20 w-auto object-contain -ml-2 transition-transform duration-300 group-hover:scale-105 filter invert brightness-200" alt="KKSB Studios Logo">
+                    <img src="{{ asset('images/logo.png') }}?v={{ $logoVersion }}" class="h-12 md:h-16 lg:h-20 w-auto object-contain -ml-2 transition-transform duration-300 group-hover:scale-105 filter invert brightness-200" alt="KKSB Studios Logo">
                 </a>
                 <p class="text-[15px] text-gray-400 leading-relaxed max-w-sm font-light">
                     A creative marketing agency focused on building brands that grow and inspire in the digital world.

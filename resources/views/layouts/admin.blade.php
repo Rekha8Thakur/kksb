@@ -1,3 +1,12 @@
+@php
+    $logoPath = public_path('images/logo.png');
+    if (file_exists($logoPath)) {
+        clearstatcache(true, $logoPath);
+        $logoVersion = filemtime($logoPath);
+    } else {
+        $logoVersion = '1.0';
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: localStorage.getItem('admin-dark') === 'true', sidebarOpen: false }" :class="{ 'dark': darkMode }">
 <head>
@@ -88,7 +97,7 @@
             <!-- Sidebar Header -->
             <div class="h-16 flex-shrink-0 flex items-center justify-between px-6 border-b border-zinc-800">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2">
-                    <img src="{{ asset('images/logo.png') }}?v={{ filemtime(public_path('images/logo.png')) }}" class="h-10 w-auto object-contain invert" alt="KKSB Studios">
+                    <img src="{{ asset('images/logo.png') }}?v={{ $logoVersion }}" class="h-10 w-auto object-contain invert" alt="KKSB Studios">
                     <span class="bg-zinc-800 text-[10px] text-zinc-400 font-semibold px-2 py-0.5 rounded">CMS</span>
                 </a>
                 <button @click="sidebarOpen = false" class="lg:hidden text-zinc-400 hover:text-white">
