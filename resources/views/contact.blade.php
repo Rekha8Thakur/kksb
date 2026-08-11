@@ -80,10 +80,10 @@
 
         <!-- CONTACT FORM SECTION -->
         <div class="max-w-[1440px] mx-auto px-6 lg:px-[90px] w-full relative z-10" data-aos="fade-up" data-aos-duration="1000">
-            <div class="bg-white border border-[#ECECEC] rounded-[16px] sm:rounded-[24px] p-5 sm:p-8 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 shadow-sm">
+            <div class="bg-white border border-zinc-200 rounded-[16px] sm:rounded-[24px] p-5 sm:p-8 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 shadow-md hover:shadow-lg transition-all duration-300">
                 
                 <!-- Left Panel: Trust & Badges -->
-                <div class="lg:col-span-5 flex flex-col justify-between space-y-6 lg:space-y-12">
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6 lg:space-y-12 lg:border-r lg:border-zinc-200 lg:pr-12 pb-8 lg:pb-0 border-b lg:border-b-0 border-zinc-150">
                     <div class="space-y-3 sm:space-y-4">
                         <span class="text-[11px] sm:text-[13px] font-bold text-zinc-500 tracking-[0.2em] uppercase block">
                             TELL US ABOUT YOUR PROJECT
