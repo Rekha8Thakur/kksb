@@ -41,9 +41,9 @@ class AgencyCmsSeeder extends Seeder
         $settings = [
             'site_name' => 'KKSB Studios',
             'site_tagline' => 'Creative & Digital Solutions for Growing Brands',
-            'contact_email' => 'hello@kksbstudios.com',
-            'contact_phone' => '+91 78761 46013',
-            'contact_whatsapp' => '+91 78761 46353',
+            'contact_email' => 'Kksbstudios@gmail.com',
+            'contact_phone' => '+91 80917 10317',
+            'contact_whatsapp' => '+91 80917 10317',
             'contact_address' => 'Solan, Himachal Pradesh 173212',
             'business_hours' => 'Monday - Saturday: 10:00 AM - 7:00 PM',
             'google_map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.380068478426!2d77.10892047628886!3d30.903901976211756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390578ea0eb938df%3A0x6b7dbb8a4f9a0e6c!2sSolan%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',

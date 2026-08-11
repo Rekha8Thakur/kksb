@@ -25,7 +25,7 @@
                     <!-- Contact Card Grid -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                         <!-- WhatsApp Us -->
-                        <a href="https://wa.me/917876149313" target="_blank" class="flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
+                        <a href="https://wa.me/{{ str_replace(['+', ' '], '', App\Models\Setting::get('contact_whatsapp', '918091710317')) }}" target="_blank" class="flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
                             <div class="p-2 sm:p-2.5 bg-[#25D366]/10 text-[#25D366] rounded-[8px] sm:rounded-[10px] group-hover:scale-105 transition duration-300">
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
                                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.277L6.5 19.5l4.411-1.157c.928.51 1.986.779 3.067.781h.003c3.184 0 5.77-2.587 5.772-5.768 0-1.54-.6-2.988-1.689-4.079-1.09-1.091-2.536-1.693-4.033-1.705zm3.454 8.243c-.15.42-.767.76-1.077.81-.31.05-.62.09-2.02-.48-1.69-.69-2.77-2.42-2.85-2.53-.08-.11-.67-.9-.67-1.71 0-.81.42-1.21.57-1.38.15-.17.34-.21.45-.21h.32c.11 0 .26-.04.41.31.15.36.53 1.29.57 1.38.05.09.08.19.01.32-.07.13-.11.21-.22.34-.11.13-.24.29-.34.39-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.58 1.01 1.8 1.12.22.11.35.09.48-.05.13-.15.57-.66.72-.88.15-.22.3-.19.51-.11.21.08 1.34.63 1.57.75.23.11.38.17.44.27.06.11.06.62-.09 1.04z" />
@@ -34,25 +34,25 @@
                             </div>
                             <div class="min-w-0">
                                 <h4 class="text-[10px] sm:text-[12px] font-bold text-gray-800 uppercase tracking-wider">WhatsApp</h4>
-                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">+91 78761 49313</p>
+                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">{{ App\Models\Setting::get('contact_whatsapp', '+91 80917 10317') }}</p>
                             </div>
                         </a>
 
                         <!-- Call Us -->
-                        <a href="tel:+917876149313" class="flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
+                        <a href="tel:{{ str_replace(['+', ' '], '', App\Models\Setting::get('contact_phone', '918091710317')) }}" class="flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
                             <div class="p-2 sm:p-2.5 bg-zinc-100 text-zinc-800 rounded-[8px] sm:rounded-[10px] group-hover:scale-105 transition duration-300">
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.5 19.5 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <h4 class="text-[10px] sm:text-[12px] font-bold text-gray-800 uppercase tracking-wider">Call Us</h4>
-                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">+91 78761 49313</p>
+                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">{{ App\Models\Setting::get('contact_phone', '+91 80917 10317') }}</p>
                             </div>
                         </a>
 
                         <!-- Email Us -->
-                        <a href="mailto:hello@kksbstudios.com" class="col-span-2 sm:col-span-1 flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
+                        <a href="mailto:{{ App\Models\Setting::get('contact_email', 'Kksbstudios@gmail.com') }}" class="col-span-2 sm:col-span-1 flex items-center space-x-2 sm:space-x-3.5 p-3 sm:p-4 bg-white border border-[#ECECEC] rounded-[12px] sm:rounded-[16px] hover:border-zinc-800/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 group">
                             <div class="p-2 sm:p-2.5 bg-blue-500/10 text-blue-500 rounded-[8px] sm:rounded-[10px] group-hover:scale-105 transition duration-300">
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -61,7 +61,7 @@
                             </div>
                             <div class="min-w-0">
                                 <h4 class="text-[10px] sm:text-[12px] font-bold text-gray-800 uppercase tracking-wider">Email Us</h4>
-                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">hello@kksbstudios.com</p>
+                                <p class="text-[9px] sm:text-[11px] text-[#666666] font-light truncate">{{ App\Models\Setting::get('contact_email', 'Kksbstudios@gmail.com') }}</p>
                             </div>
                         </a>
                     </div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="flex-1 flex justify-between items-center text-xs sm:text-[14px]">
                                 <span class="text-gray-500 font-bold">Phone</span>
-                                <span class="text-gray-800 font-semibold">+91 78761 49313</span>
+                                <span class="text-gray-800 font-semibold">{{ App\Models\Setting::get('contact_phone', '+91 80917 10317') }}</span>
                             </div>
                         </div>
 
@@ -269,7 +269,7 @@
                             </div>
                             <div class="flex-1 flex justify-between items-center text-xs sm:text-[14px]">
                                 <span class="text-gray-500 font-bold">Email</span>
-                                <span class="text-gray-800 font-semibold">hello@kksbstudios.com</span>
+                                <span class="text-gray-800 font-semibold">{{ App\Models\Setting::get('contact_email', 'Kksbstudios@gmail.com') }}</span>
                             </div>
                         </div>
 
