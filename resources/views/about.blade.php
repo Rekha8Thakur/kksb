@@ -165,7 +165,7 @@
                                 {{ App\Models\Setting::get('about_founder_name', 'Kuldeep Sharma') }}
                             </h4>
                             <p class="text-xs text-[#FF6A00] font-extrabold uppercase tracking-widest mt-0.5">
-                                {{ App\Models\Setting::get('about_founder_title', 'Founder & Creative Director') }}
+                                Founder & CEO Director
                             </p>
                         </div>
                         
