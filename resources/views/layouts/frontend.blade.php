@@ -45,7 +45,7 @@
         "image": "{{ asset('images/hero-bg.webp') }}",
         "@@id": "{{ url('/') }}",
         "url": "{{ url('/') }}",
-        "telephone": "{{ App\Models\Setting::get('contact_phone', '+91 78761 46013') }}",
+        "telephone": "{{ App\Models\Setting::get('contact_phone', '+91 80917 10317') }}",
         "address": {
             "@@type": "PostalAddress",
             "streetAddress": "Solan",
@@ -249,11 +249,11 @@
                 <div class="flex flex-col space-y-3 text-[14px] text-gray-400">
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="mail" class="w-4 h-4"></i></span>
-                        <a href="mailto:{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_email', 'hello@kksbstudios.com') }}</a>
+                        <a href="mailto:{{ App\Models\Setting::get('contact_email', 'Kksbstudios@gmail.com') }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_email', 'Kksbstudios@gmail.com') }}</a>
                     </p>
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="phone" class="w-4 h-4"></i></span>
-                        <a href="tel:{{ str_replace(' ', '', App\Models\Setting::get('contact_phone', '+917876146013')) }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_phone', '+91 78761 46013') }}</a>
+                        <a href="tel:{{ str_replace(' ', '', App\Models\Setting::get('contact_phone', '+918091710317')) }}" class="hover:text-white transition">{{ App\Models\Setting::get('contact_phone', '+91 80917 10317') }}</a>
                     </p>
                     <p class="flex items-center space-x-2">
                         <span class="text-[#FF6A00]"><i data-lucide="map-pin" class="w-4 h-4"></i></span>

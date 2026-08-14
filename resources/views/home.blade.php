@@ -1287,12 +1287,12 @@
         <!-- MOBILE STICKY BOTTOM BAR -->
         <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECECEC] py-3 px-5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
             <div class="grid grid-cols-3 gap-3">
-                <a href="tel:+917876148313" 
+                <a href="tel:{{ str_replace(['+', ' '], '', App\Models\Setting::get('contact_phone', '918091710317')) }}" 
                    class="flex flex-col items-center justify-center h-[52px] text-[12px] font-semibold text-[#111111] border border-[#ECECEC] rounded-[10px] bg-[#FAFAFA] hover:border-[#111111] transition">
                     <span class="mb-0.5"><i data-lucide="phone" class="w-4 h-4"></i></span>
                     <span>Call</span>
                 </a>
-                <a href="https://wa.me/917876148313" target="_blank"
+                <a href="https://wa.me/{{ str_replace(['+', ' '], '', App\Models\Setting::get('contact_whatsapp', '918091710317')) }}" target="_blank"
                    class="flex flex-col items-center justify-center h-[52px] text-[12px] font-semibold text-[#111111] border border-[#ECECEC] rounded-[10px] bg-[#FAFAFA] hover:border-[#111111] transition">
                     <span class="mb-0.5"><i data-lucide="message-circle" class="w-4 h-4"></i></span>
                     <span>WhatsApp</span>
