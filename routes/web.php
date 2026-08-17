@@ -310,3 +310,37 @@ Route::get('/test-symlink', function () {
         return response()->json(['error' => $e->getMessage()]);
     }
 });
+
+Route::get('/diagnose-uploads', function () {
+    $results = [];
+    
+    $paths = [
+        'public_path' => public_path(),
+        'public_path_uploads' => public_path('uploads'),
+        'public_path_portfolio' => public_path('uploads/portfolio'),
+        'base_path_public_uploads' => base_path('public/uploads'),
+        'storage_path_uploads' => storage_path('app/public/uploads'),
+        'parent_uploads' => dirname(public_path()) . '/uploads',
+    ];
+
+    foreach ($paths as $key => $path) {
+        $results[$key] = [
+            'path' => $path,
+            'exists' => file_exists($path) ? 'yes' : 'no',
+            'is_dir' => is_dir($path) ? 'yes' : 'no',
+            'is_writable' => is_writable($path) ? 'yes' : 'no',
+            'files' => []
+        ];
+        
+        if (file_exists($path) && is_dir($path)) {
+            $files = scandir($path);
+            // Filter out . and ..
+            $results[$key]['files'] = array_values(array_filter($files, function($f) {
+                return $f !== '.' && $f !== '..';
+            }));
+        }
+    }
+    
+    return response()->json($results);
+});
+
