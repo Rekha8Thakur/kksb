@@ -314,6 +314,12 @@ Route::get('/test-symlink', function () {
 Route::get('/diagnose-uploads', function () {
     $results = [];
     
+    try {
+        $results['db_projects'] = \DB::table('projects')->select('id', 'title', 'slug', 'main_image')->get();
+    } catch (\Throwable $dbEx) {
+        $results['db_projects_error'] = $dbEx->getMessage();
+    }
+
     $results['env'] = [
         'APP_ENV' => env('APP_ENV'),
         'APP_URL' => env('APP_URL'),
