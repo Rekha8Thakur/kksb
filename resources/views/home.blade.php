@@ -1407,9 +1407,12 @@
                 // Check if the link is within any of our target sections
                 const isTargetSection = targetSections.some(selector => link.closest(selector));
                 if (isTargetSection) {
-                    // Check if it's the "View All Projects" link
+                    // Allow redirect on specific links
                     const text = link.textContent.trim();
-                    if (text.includes('View All Projects')) {
+                    if (text.includes('View All Projects') || 
+                        text.includes('Meet The Studio Team') || 
+                        text.includes('Explore Portfolio') ||
+                        link.closest('footer')) {
                         return; // Allow redirect
                     }
                     
