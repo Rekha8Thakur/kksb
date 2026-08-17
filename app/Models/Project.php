@@ -51,15 +51,21 @@ class Project extends Model
             return $this->main_image;
         }
 
+        // Normalize path: convert storage/uploads/... to uploads/...
+        $cleanPath = $this->main_image;
+        if (str_starts_with($cleanPath, 'storage/')) {
+            $cleanPath = str_replace('storage/', '', $cleanPath);
+        }
+        $cleanPath = ltrim($cleanPath, '/');
+
         // Check if file exists in public/
-        if (file_exists(public_path($this->main_image))) {
-            return asset($this->main_image);
+        if (file_exists(public_path($cleanPath))) {
+            return asset($cleanPath);
         }
 
         // Check if file exists in storage/app/public/
-        $cleanStoragePath = str_replace('storage/', '', $this->main_image);
-        if (file_exists(storage_path('app/public/' . $cleanStoragePath))) {
-            return asset($this->main_image);
+        if (file_exists(storage_path('app/public/' . $cleanPath))) {
+            return asset($cleanPath);
         }
 
         // Fallback
@@ -76,12 +82,17 @@ class Project extends Model
         foreach ($this->gallery_images as $image) {
             if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
                 $urls[] = $image;
-            } elseif (file_exists(public_path($image))) {
-                $urls[] = asset($image);
             } else {
-                $cleanStoragePath = str_replace('storage/', '', $image);
-                if (file_exists(storage_path('app/public/' . $cleanStoragePath))) {
-                    $urls[] = asset($image);
+                $cleanPath = $image;
+                if (str_starts_with($cleanPath, 'storage/')) {
+                    $cleanPath = str_replace('storage/', '', $cleanPath);
+                }
+                $cleanPath = ltrim($cleanPath, '/');
+
+                if (file_exists(public_path($cleanPath))) {
+                    $urls[] = asset($cleanPath);
+                } elseif (file_exists(storage_path('app/public/' . $cleanPath))) {
+                    $urls[] = asset($cleanPath);
                 }
             }
         }

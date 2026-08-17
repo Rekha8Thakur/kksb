@@ -70,7 +70,7 @@ class ImageService
 
                     imagedestroy($image);
 
-                    return 'storage/uploads/' . $directory . '/' . $filename;
+                    return 'uploads/' . $directory . '/' . $filename;
                 }
             } catch (\Exception $e) {
                 // If anything fails in GD processing, fall back to direct saving below
@@ -82,6 +82,6 @@ class ImageService
         $fallbackFilename = Str::random(20) . '.' . $originalExt;
         $file->move($fullDirectoryPath, $fallbackFilename);
         
-        return 'storage/uploads/' . $directory . '/' . $fallbackFilename;
+        return 'uploads/' . $directory . '/' . $fallbackFilename;
     }
 }

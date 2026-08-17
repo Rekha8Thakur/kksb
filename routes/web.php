@@ -390,4 +390,30 @@ Route::get('/diagnose-uploads', function () {
     return response()->json($results);
 });
 
+// Fail-safe fallback route to serve uploaded assets if they are in storage but requested as public uploads
+Route::get('uploads/{path}', function ($path) {
+    $fullPath = storage_path('app/public/uploads/' . $path);
+    if (!file_exists($fullPath) || is_dir($fullPath)) {
+        // Fallback to public path just in case
+        $publicPath = public_path('uploads/' . $path);
+        if (file_exists($publicPath) && !is_dir($publicPath)) {
+            $fullPath = $publicPath;
+        } else {
+            abort(404);
+        }
+    }
+    
+    try {
+        $mimeType = mime_content_type($fullPath);
+    } catch (\Exception $e) {
+        $mimeType = 'application/octet-stream';
+    }
+
+    return response()->file($fullPath, [
+        'Content-Type' => $mimeType,
+        'Cache-Control' => 'public, max-age=31536000',
+    ]);
+})->where('path', '.*');
+
+
 
