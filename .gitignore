@@ -24,4 +24,5 @@ Homestead.yaml
 Thumbs.db
 *.zip
 /database/*.sqlite
+/storage/app/public/uploads/
 
