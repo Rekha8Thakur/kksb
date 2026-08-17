@@ -46,7 +46,6 @@ Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
 // Standard pages (CMS templates or simple views)
 Route::view('/privacy-policy', 'pages.privacy')->name('privacy');
 Route::view('/terms-conditions', 'pages.terms')->name('terms');
-Route::view('/cookie-policy', 'pages.cookie')->name('cookie');
 
 // One-Click Admin Account Setup Route (For Hostinger deployment)
 Route::get('/init-admin', function () {

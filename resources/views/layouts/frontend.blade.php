@@ -271,7 +271,6 @@
             <div class="flex space-x-6">
                 <a href="/privacy-policy" class="hover:text-gray-300 transition">Privacy Policy</a>
                 <a href="/terms-conditions" class="hover:text-gray-300 transition">Terms & Conditions</a>
-                <a href="/cookie-policy" class="hover:text-gray-300 transition">Cookie Policy</a>
             </div>
         </div>
     </footer>
