@@ -337,44 +337,6 @@ Route::get('uploads/{path}', function ($path) {
     ]);
 })->where('path', '.*');
 
-Route::get('/download-backup', function () {
-    if (request('token') !== 'kksb_backup_2026') {
-        abort(403);
-    }
-    
-    $zipFile = tempnam(sys_get_temp_dir(), 'backup') . '.zip';
-    $zip = new \ZipArchive();
-    if ($zip->open($zipFile, \ZipArchive::CREATE) !== true) {
-        return "Could not create zip";
-    }
-
-    // Add SQLite database
-    $dbPath = database_path('database.sqlite');
-    if (file_exists($dbPath)) {
-        $zip->addFile($dbPath, 'database.sqlite');
-    }
-
-    // Add storage/app/public/uploads
-    $storageUploads = storage_path('app/public/uploads');
-    if (file_exists($storageUploads) && is_dir($storageUploads)) {
-        $files = new \RecursiveIteratorIterator(
-            new \RecursiveDirectoryIterator($storageUploads),
-            \RecursiveIteratorIterator::LEAVES_ONLY
-        );
-        foreach ($files as $name => $file) {
-            if (!$file->isDir()) {
-                $filePath = $file->getRealPath();
-                // Get relative path inside the zip
-                $relativePath = 'uploads/' . substr($filePath, strlen($storageUploads) + 1);
-                $zip->addFile($filePath, $relativePath);
-            }
-        }
-    }
-
-    $zip->close();
-
-    return response()->download($zipFile, 'backup.zip')->deleteFileAfterSend(true);
-});
 
 
 
