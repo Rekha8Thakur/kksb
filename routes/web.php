@@ -323,6 +323,7 @@ Route::get('/diagnose-uploads', function () {
     ];
 
     $paths = [
+        'base_path' => base_path(),
         'public_path' => public_path(),
         'public_path_uploads' => public_path('uploads'),
         'public_path_portfolio' => public_path('uploads/portfolio'),
