@@ -311,3 +311,71 @@ Route::get('/test-symlink', function () {
     }
 });
 
+Route::get('/diagnose-uploads', function () {
+    $results = [];
+    
+    try {
+        $results['db_projects'] = \DB::table('projects')->select('id', 'title', 'slug', 'main_image')->get();
+    } catch (\Throwable $dbEx) {
+        $results['db_projects_error'] = $dbEx->getMessage();
+    }
+
+    $results['env'] = [
+        'APP_ENV' => env('APP_ENV'),
+        'APP_URL' => env('APP_URL'),
+        'DB_CONNECTION' => env('DB_CONNECTION'),
+        'DB_DATABASE' => env('DB_DATABASE'),
+        'FILESYSTEM_DISK' => env('FILESYSTEM_DISK'),
+    ];
+
+    // Scan for all webp, png, jpg, jpeg files on the server under base_path()
+    $imageFiles = [];
+    try {
+        $dirIterator = new \RecursiveDirectoryIterator(base_path());
+        $iterator = new \RecursiveIteratorIterator($dirIterator);
+        foreach ($iterator as $file) {
+            if ($file->isFile() && in_array(strtolower($file->getExtension()), ['webp', 'png', 'jpg', 'jpeg'])) {
+                // Get relative path
+                $path = str_replace(base_path(), '', $file->getPathname());
+                // Skip vendor and node_modules to keep it small
+                if (!str_contains($path, 'vendor') && !str_contains($path, 'node_modules')) {
+                    $imageFiles[] = $path;
+                }
+            }
+        }
+        $results['found_image_files'] = $imageFiles;
+    } catch (\Throwable $e) {
+        $results['scan_error'] = $e->getMessage();
+    }
+
+    $paths = [
+        'base_path' => base_path(),
+        'public_path' => public_path(),
+        'public_path_uploads' => public_path('uploads'),
+        'public_path_portfolio' => public_path('uploads/portfolio'),
+        'base_path_public_uploads' => base_path('public/uploads'),
+        'storage_path_uploads' => storage_path('app/public/uploads'),
+        'parent_uploads' => dirname(public_path()) . '/uploads',
+    ];
+
+    foreach ($paths as $key => $path) {
+        $results[$key] = [
+            'path' => $path,
+            'exists' => file_exists($path) ? 'yes' : 'no',
+            'is_dir' => is_dir($path) ? 'yes' : 'no',
+            'is_writable' => is_writable($path) ? 'yes' : 'no',
+            'files' => []
+        ];
+        
+        if (file_exists($path) && is_dir($path)) {
+            $files = scandir($path);
+            $results[$key]['files'] = array_values(array_filter($files, function($f) {
+                return $f !== '.' && $f !== '..';
+            }));
+        }
+    }
+    
+    return response()->json($results);
+});
+
+
