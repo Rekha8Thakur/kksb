@@ -337,28 +337,6 @@ Route::get('uploads/{path}', function ($path) {
     ]);
 })->where('path', '.*');
 
-Route::get('/diagnose-uploads', function () {
-    $results = [];
-    
-    try {
-        $testPath = storage_path('app/public/uploads/test_mkdir_dir');
-        if (file_exists($testPath)) {
-            rmdir($testPath);
-        }
-        $mkdirRes = mkdir($testPath, 0755, true);
-        $results['mkdir_test'] = [
-            'result' => $mkdirRes ? 'success' : 'failed',
-            'exists_after' => file_exists($testPath) ? 'yes' : 'no'
-        ];
-        if (file_exists($testPath)) {
-            rmdir($testPath);
-        }
-    } catch (\Throwable $mkdirEx) {
-        $results['mkdir_test_error'] = $mkdirEx->getMessage();
-    }
-    
-    return response()->json($results);
-});
 
 
 

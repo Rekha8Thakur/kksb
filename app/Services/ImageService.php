@@ -25,7 +25,9 @@ class ImageService
 
         // Ensure directory exists
         if (!file_exists($fullDirectoryPath)) {
-            mkdir($fullDirectoryPath, 0755, true);
+            if (!mkdir($fullDirectoryPath, 0755, true) && !is_dir($fullDirectoryPath)) {
+                throw new \Exception("Directory '{$fullDirectoryPath}' could not be created.");
+            }
         }
 
         $destinationPath = $fullDirectoryPath . '/' . $filename;
@@ -40,6 +42,8 @@ class ImageService
                     // Get original dimensions
                     $width = imagesx($image);
                     $height = imagesy($image);
+
+                    $saved = false;
 
                     // Resize if maxWidth is specified and image is larger
                     if ($maxWidth && $width > $maxWidth) {
@@ -61,16 +65,20 @@ class ImageService
                         );
 
                         // Save as webp
-                        imagewebp($resizedImage, $destinationPath, $quality);
+                        $saved = imagewebp($resizedImage, $destinationPath, $quality);
                         imagedestroy($resizedImage);
                     } else {
                         // Save original size as webp
-                        imagewebp($image, $destinationPath, $quality);
+                        $saved = imagewebp($image, $destinationPath, $quality);
                     }
 
                     imagedestroy($image);
 
-                    return 'uploads/' . $directory . '/' . $filename;
+                    if ($saved) {
+                        return 'uploads/' . $directory . '/' . $filename;
+                    }
+                    
+                    throw new \Exception("imagewebp failed to write the optimized file.");
                 }
             } catch (\Exception $e) {
                 // If anything fails in GD processing, fall back to direct saving below
