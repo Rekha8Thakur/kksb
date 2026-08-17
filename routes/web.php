@@ -377,6 +377,9 @@ Route::get('/diagnose-uploads', function () {
         'public_path' => public_path(),
         'public_path_uploads' => public_path('uploads'),
         'public_path_portfolio' => public_path('uploads/portfolio'),
+        'storage_path' => storage_path(),
+        'storage_path_app' => storage_path('app'),
+        'storage_path_app_public' => storage_path('app/public'),
         'storage_path_uploads' => storage_path('app/public/uploads'),
     ];
 
