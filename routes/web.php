@@ -328,6 +328,22 @@ Route::get('/diagnose-uploads', function () {
         'FILESYSTEM_DISK' => env('FILESYSTEM_DISK'),
     ];
 
+    // Scan for all webp files on the server under base_path()
+    $webpFiles = [];
+    try {
+        $dirIterator = new \RecursiveDirectoryIterator(base_path());
+        $iterator = new \RecursiveIteratorIterator($dirIterator);
+        foreach ($iterator as $file) {
+            if ($file->isFile() && $file->getExtension() === 'webp') {
+                // Get relative path
+                $webpFiles[] = str_replace(base_path(), '', $file->getPathname());
+            }
+        }
+        $results['found_webp_files'] = $webpFiles;
+    } catch (\Throwable $e) {
+        $results['scan_error'] = $e->getMessage();
+    }
+
     $paths = [
         'base_path' => base_path(),
         'public_path' => public_path(),
