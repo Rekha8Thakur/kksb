@@ -882,8 +882,8 @@
                                         
                                         <!-- Image aspect ratio 4/3 -->
                                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                                            @if($project->main_image)
-                                                <img src="{{ asset($project->main_image) }}" 
+                                            @if($project->main_image_url)
+                                                <img src="{{ $project->main_image_url }}" 
                                                      alt="{{ $project->title }}" 
                                                      class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                                             @else
@@ -939,8 +939,8 @@
                             <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
                                 <!-- Image aspect ratio 4/3 -->
                                 <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
-                                    @if($project->main_image)
-                                        <img src="{{ asset($project->main_image) }}" 
+                                    @if($project->main_image_url)
+                                        <img src="{{ $project->main_image_url }}" 
                                              alt="{{ $project->title }}" 
                                              class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                                     @else

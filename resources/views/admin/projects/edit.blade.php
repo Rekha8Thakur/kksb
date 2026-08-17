@@ -104,9 +104,9 @@
                     <!-- Main image -->
                     <div class="space-y-2">
                         <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300 block">Featured Showcase Image</label>
-                        @if($project->main_image)
+                        @if($project->main_image_url)
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="{{ asset($project->main_image) }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
+                                <img src="{{ $project->main_image_url }}" class="w-14 h-10 object-cover rounded border border-gray-300" alt="" loading="lazy">
                                 <span class="text-xs text-gray-500">Current Image</span>
                             </div>
                         @endif

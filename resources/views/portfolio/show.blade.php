@@ -24,9 +24,9 @@
                 <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-xl bg-black">
                     <iframe class="w-full h-full" src="{{ $project->video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-            @elseif($project->main_image)
+            @elseif($project->main_image_url)
                 <div class="aspect-video w-full rounded-3xl overflow-hidden shadow-md bg-gray-150">
-                    <img src="{{ asset($project->main_image) }}" class="w-full h-full object-cover" alt="{{ $project->title }}" loading="lazy">
+                    <img src="{{ $project->main_image_url }}" class="w-full h-full object-cover" alt="{{ $project->title }}" loading="lazy">
                 </div>
             @endif
 
@@ -67,13 +67,13 @@
             @endif
 
             <!-- Multiple Gallery Images Grid -->
-            @if(!empty($project->gallery_images))
+            @if(!empty($project->gallery_image_urls))
                 <div class="space-y-8 pt-12">
                     <h4 class="font-bold text-center text-[#111111] uppercase tracking-wider text-xs">Project Gallery Gallery</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        @foreach($project->gallery_images as $galImage)
+                        @foreach($project->gallery_image_urls as $galImageUrl)
                             <div class="aspect-video bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
-                                <img src="{{ asset($galImage) }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="" loading="lazy">
+                                <img src="{{ $galImageUrl }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300" alt="" loading="lazy">
                             </div>
                         @endforeach
                     </div>
