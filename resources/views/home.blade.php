@@ -1088,7 +1088,7 @@
                        class="w-full sm:w-auto bg-white/10 border-2 border-white text-white hover:bg-white hover:text-[#111111] font-bold px-9 py-4 rounded-[12px] text-[15px] transition-all duration-300 shadow-xl backdrop-blur-md text-center">
                         Explore Portfolio
                     </a>
-                    <a href="/about" 
+                    <a href="/about#team-section" 
                        class="w-full sm:w-auto bg-white text-[#111111] hover:bg-gray-100 font-extrabold px-9 py-4.5 rounded-[12px] text-[15px] transition duration-300 shadow-2xl flex items-center justify-center space-x-2 group hover:scale-105">
                         <span>Meet The Studio Team</span>
                         <span class="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
