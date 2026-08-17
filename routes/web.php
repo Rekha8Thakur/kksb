@@ -320,6 +320,18 @@ Route::get('/diagnose-uploads', function () {
         $results['db_projects_error'] = $dbEx->getMessage();
     }
 
+    try {
+        $logPath = storage_path('logs/laravel.log');
+        if (file_exists($logPath)) {
+            $logLines = file($logPath);
+            $results['laravel_log'] = array_slice($logLines, -50);
+        } else {
+            $results['laravel_log'] = 'Log file does not exist.';
+        }
+    } catch (\Throwable $logEx) {
+        $results['laravel_log_error'] = $logEx->getMessage();
+    }
+
     $results['env'] = [
         'APP_ENV' => env('APP_ENV'),
         'APP_URL' => env('APP_URL'),
