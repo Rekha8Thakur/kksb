@@ -83,13 +83,53 @@ Route::get('/init-admin', function () {
 
 // Temporary Route to force reset superadmin password without running seeders or migrations
 Route::get('/force-reset-password', function () {
-    $user = \App\Models\User::where('email', 'superadmin@kksb.com')->first();
-    if ($user) {
-        $user->password = \Illuminate\Support\Facades\Hash::make('password');
-        $user->save();
-        return 'Password for superadmin@kksb.com has been successfully reset to "password"!';
+    try {
+        // Ensure roles & permissions are registered
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        
+        // Ensure Super Admin role exists
+        $superAdminRole = \Spatie\Permission\Models\Role::findOrCreate('Super Admin', 'web');
+        
+        // Fetch all permissions and sync them to Super Admin just in case
+        $permissions = [
+            'manage settings',
+            'manage users',
+            'manage roles',
+            'manage services',
+            'manage portfolio',
+            'manage blogs',
+            'manage career jobs',
+            'manage career applications',
+            'manage contact enquiries',
+            'manage newsletter',
+            'manage testimonials',
+            'manage faqs',
+            'manage clients',
+            'manage gallery',
+            'view analytics',
+        ];
+        foreach ($permissions as $permission) {
+            \Spatie\Permission\Models\Permission::findOrCreate($permission, 'web');
+        }
+        $allPermissions = \Spatie\Permission\Models\Permission::where('guard_name', 'web')->get();
+        $superAdminRole->syncPermissions($allPermissions);
+
+        // Update or Create the Super Admin User
+        $user = \App\Models\User::updateOrCreate(
+            ['email' => 'superadmin@kksb.com'],
+            [
+                'name' => 'KKSB Super Admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            ]
+        );
+        
+        // Sync Super Admin role to the user
+        $user->syncRoles([$superAdminRole]);
+        
+        return 'Success: User "superadmin@kksb.com" has been created/updated with password "password" and assigned the "Super Admin" role!';
+    } catch (\Exception $e) {
+        return 'Error occurred: ' . $e->getMessage();
     }
-    return 'Superadmin user not found!';
 });
 
 // Secure One-Click Deployment Helper Route (For pulling latest GitHub updates on Hostinger)
