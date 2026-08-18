@@ -81,6 +81,17 @@ Route::get('/init-admin', function () {
     }
 });
 
+// Temporary Route to force reset superadmin password without running seeders or migrations
+Route::get('/force-reset-password', function () {
+    $user = \App\Models\User::where('email', 'superadmin@kksb.com')->first();
+    if ($user) {
+        $user->password = \Illuminate\Support\Facades\Hash::make('password');
+        $user->save();
+        return 'Password for superadmin@kksb.com has been successfully reset to "password"!';
+    }
+    return 'Superadmin user not found!';
+});
+
 // Secure One-Click Deployment Helper Route (For pulling latest GitHub updates on Hostinger)
 Route::get('/deploy', function () {
     try {
