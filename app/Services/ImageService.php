@@ -21,7 +21,7 @@ class ImageService
     {
         // Generate a unique filename with .webp extension
         $filename = Str::random(20) . '.webp';
-        $fullDirectoryPath = storage_path('app/public/uploads/' . $directory);
+        $fullDirectoryPath = public_path('uploads/' . $directory);
 
         // Ensure directory exists
         if (!file_exists($fullDirectoryPath)) {
