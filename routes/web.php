@@ -69,8 +69,16 @@ Route::get('/init-admin', function () {
             'message' => 'Hostinger Database Migrated, Seeded, and Application Cache Cleared Successfully!',
             'admin_login_url' => url('/login'),
             'credentials' => [
-                'email' => 'superadmin@kksb.com',
-                'password' => 'password'
+                [
+                    'email' => 'kksbstudios@gmail.com',
+                    'password' => 'Welcome#123',
+                    'role' => 'Super Admin'
+                ],
+                [
+                    'email' => 'superadmin@kksb.com',
+                    'password' => 'password',
+                    'role' => 'Super Admin'
+                ]
             ]
         ]);
     } catch (\Exception $e) {
@@ -114,19 +122,32 @@ Route::get('/force-reset-password', function () {
         $allPermissions = \Spatie\Permission\Models\Permission::where('guard_name', 'web')->get();
         $superAdminRole->syncPermissions($allPermissions);
 
-        // Update or Create the Super Admin User
-        $user = \App\Models\User::updateOrCreate(
-            ['email' => 'superadmin@kksb.com'],
+        // Update or Create the Super Admin Users
+        $usersToReset = [
             [
                 'name' => 'KKSB Super Admin',
-                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'email' => 'superadmin@kksb.com',
+                'password' => 'password'
+            ],
+            [
+                'name' => 'KKSB Studios Admin',
+                'email' => 'kksbstudios@gmail.com',
+                'password' => 'Welcome#123'
             ]
-        );
+        ];
+
+        foreach ($usersToReset as $userData) {
+            $user = \App\Models\User::updateOrCreate(
+                ['email' => $userData['email']],
+                [
+                    'name' => $userData['name'],
+                    'password' => \Illuminate\Support\Facades\Hash::make($userData['password']),
+                ]
+            );
+            $user->syncRoles([$superAdminRole]);
+        }
         
-        // Sync Super Admin role to the user
-        $user->syncRoles([$superAdminRole]);
-        
-        return 'Success: User "superadmin@kksb.com" has been created/updated with password "password" and assigned the "Super Admin" role!';
+        return 'Success: Super Admin users ("superadmin@kksb.com" and "kksbstudios@gmail.com") have been created/updated successfully!';
     } catch (\Exception $e) {
         return 'Error occurred: ' . $e->getMessage();
     }

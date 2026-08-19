@@ -126,6 +126,13 @@ class RolesAndPermissionsSeeder extends Seeder
             [
                 'name' => 'KKSB Super Admin',
                 'email' => 'superadmin@kksb.com',
+                'password' => 'password',
+                'role' => 'Super Admin',
+            ],
+            [
+                'name' => 'KKSB Studios Admin',
+                'email' => 'kksbstudios@gmail.com',
+                'password' => 'Welcome#123',
                 'role' => 'Super Admin',
             ],
         ];
@@ -135,13 +142,13 @@ class RolesAndPermissionsSeeder extends Seeder
                 ['email' => $userData['email']],
                 [
                     'name' => $userData['name'],
-                    'password' => Hash::make('password'),
+                    'password' => Hash::make($userData['password']),
                 ]
             );
             $user->syncRoles([$userData['role']]);
         }
 
-        // Delete any other users to keep only the Super Admin
-        User::where('email', '!=', 'superadmin@kksb.com')->delete();
+        // Delete any other users to keep only the Super Admin users
+        User::whereNotIn('email', ['superadmin@kksb.com', 'kksbstudios@gmail.com'])->delete();
     }
 }
