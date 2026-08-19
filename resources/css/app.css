@@ -92,43 +92,26 @@ body {
 
 /* Disable Hover Transform, Scale, Shadow and Border Effects on Mobile & Tablet (< 1024px) */
 @media (max-width: 1023px) {
-  /* Prevent cards translating upward on hover/tap */
-  .hover\:-translate-y-1\.5:hover,
-  .hover\:-translate-y-2:hover,
-  .hover\:-translate-y-0\.5:hover,
-  .group:hover .group-hover\:-translate-y-2,
-  .group:hover .group-hover\:-translate-y-1\.5,
-  .group:hover .group-hover\:-translate-y-0\.5 {
+  /* Prevent cards translating upward or scaling on hover/tap */
+  [class*="hover:"]:hover,
+  .group:hover [class*="group-hover:"] {
     transform: none !important;
     --tw-translate-y: 0px !important;
     translate: var(--tw-translate-x) 0px !important;
-  }
-
-  /* Prevent elements scaling up or rotating on hover/tap */
-  .hover\:scale-105:hover,
-  .hover\:scale-110:hover,
-  .group:hover .group-hover\:scale-105,
-  .group:hover .group-hover\:scale-110,
-  .group:hover .group-hover\:scale-102,
-  .group:hover .group-hover\:rotate-2 {
-    transform: none !important;
     --tw-scale-x: 1 !important;
     --tw-scale-y: 1 !important;
     scale: 1 !important;
   }
 
   /* Prevent extra shadows appearing on hover/tap */
-  .hover\:shadow-2xl:hover,
-  .hover\:shadow-xl:hover,
-  .hover\:shadow-lg:hover {
-    box-shadow: none !important;
+  [class*="hover:shadow"]:hover,
+  .group:hover [class*="group-hover:shadow"] {
+    box-shadow: inherit !important;
   }
 
   /* Prevent border-color changes on hover/tap */
-  .hover\:border-\[\#111111\]:hover,
-  .hover\:border-zinc-400:hover,
-  .hover\:border-zinc-900:hover,
-  .hover\:border-gray-900:hover {
+  [class*="hover:border"]:hover,
+  .group:hover [class*="group-hover:border"] {
     border-color: inherit !important;
   }
 }

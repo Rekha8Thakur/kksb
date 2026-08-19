@@ -74,7 +74,7 @@
             width: max-content;
             animation: marquee 80s linear infinite;
         }
-        @media (hover: hover) {
+        @media (min-width: 1024px) and (hover: hover) {
             .animate-marquee:hover {
                 animation-play-state: paused;
             }
