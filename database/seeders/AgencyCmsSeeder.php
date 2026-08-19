@@ -23,19 +23,7 @@ class AgencyCmsSeeder extends Seeder
      */
     public function run(): void
     {
-        \DB::statement('PRAGMA foreign_keys = OFF');
-        Category::query()->delete();
-        Author::query()->delete();
-        Blog::query()->delete();
-        CareerJob::query()->delete();
-        Client::query()->delete();
-        Faq::query()->delete();
-        Gallery::query()->delete();
-        Project::query()->delete();
-        Service::query()->delete();
-        Testimonial::query()->delete();
-        Setting::query()->delete();
-        \DB::statement('PRAGMA foreign_keys = ON');
+        // Settings are seeded conditionally if the database tables are empty.
 
         // 1. Settings (Global Site CMS)
         $settings = [
@@ -95,35 +83,54 @@ class AgencyCmsSeeder extends Seeder
             ])
         ];
 
-        foreach ($settings as $key => $value) {
-            Setting::set($key, $value);
+        if (Setting::count() === 0) {
+            foreach ($settings as $key => $value) {
+                Setting::set($key, $value);
+            }
         }
 
         // 2. Categories
-        $blogCat1 = Category::create(['name' => 'Marketing', 'slug' => 'marketing', 'type' => 'blog']);
-        $blogCat2 = Category::create(['name' => 'Video Production', 'slug' => 'video-production-blog', 'type' => 'blog']);
-        $blogCat3 = Category::create(['name' => 'Branding', 'slug' => 'branding', 'type' => 'blog']);
+        if (Category::count() === 0) {
+            $blogCat1 = Category::create(['name' => 'Marketing', 'slug' => 'marketing', 'type' => 'blog']);
+            $blogCat2 = Category::create(['name' => 'Video Production', 'slug' => 'video-production-blog', 'type' => 'blog']);
+            $blogCat3 = Category::create(['name' => 'Branding', 'slug' => 'branding', 'type' => 'blog']);
 
-        $portCat1 = Category::create(['name' => 'Hospitality & Tourism', 'slug' => 'hospitality-tourism', 'type' => 'portfolio']);
-        $portCat2 = Category::create(['name' => 'Food & Beverage', 'slug' => 'food-beverage', 'type' => 'portfolio']);
-        $portCat3 = Category::create(['name' => 'Healthcare', 'slug' => 'healthcare', 'type' => 'portfolio']);
-        $portCat4 = Category::create(['name' => 'Retail', 'slug' => 'retail', 'type' => 'portfolio']);
+            $portCat1 = Category::create(['name' => 'Hospitality & Tourism', 'slug' => 'hospitality-tourism', 'type' => 'portfolio']);
+            $portCat2 = Category::create(['name' => 'Food & Beverage', 'slug' => 'food-beverage', 'type' => 'portfolio']);
+            $portCat3 = Category::create(['name' => 'Healthcare', 'slug' => 'healthcare', 'type' => 'portfolio']);
+            $portCat4 = Category::create(['name' => 'Retail', 'slug' => 'retail', 'type' => 'portfolio']);
+        } else {
+            $blogCat1 = Category::where('slug', 'marketing')->first() ?: Category::first();
+            $blogCat2 = Category::where('slug', 'video-production-blog')->first() ?: Category::first();
+            $blogCat3 = Category::where('slug', 'branding')->first() ?: Category::first();
+
+            $portCat1 = Category::where('slug', 'hospitality-tourism')->first() ?: Category::first();
+            $portCat2 = Category::where('slug', 'food-beverage')->first() ?: Category::first();
+            $portCat3 = Category::where('slug', 'healthcare')->first() ?: Category::first();
+            $portCat4 = Category::where('slug', 'retail')->first() ?: Category::first();
+        }
 
         // 3. Authors
-        $author1 = Author::create([
-            'name' => 'Kuldeep Sharma',
-            'bio' => 'Founder of KKSB Studios. Filmmaker and Brand Consultant.',
-            'avatar' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
-            'social_links' => ['instagram' => 'https://instagram.com/kksbstudios', 'linkedin' => 'https://linkedin.com']
-        ]);
-        $author2 = Author::create([
-            'name' => 'Ritika Thakur',
-            'bio' => 'Head of Content and Research at KKSB Studios.',
-            'avatar' => 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop',
-            'social_links' => ['linkedin' => 'https://linkedin.com']
-        ]);
+        if (Author::count() === 0) {
+            $author1 = Author::create([
+                'name' => 'Kuldeep Sharma',
+                'bio' => 'Founder of KKSB Studios. Filmmaker and Brand Consultant.',
+                'avatar' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+                'social_links' => ['instagram' => 'https://instagram.com/kksbstudios', 'linkedin' => 'https://linkedin.com']
+            ]);
+            $author2 = Author::create([
+                'name' => 'Ritika Thakur',
+                'bio' => 'Head of Content and Research at KKSB Studios.',
+                'avatar' => 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop',
+                'social_links' => ['linkedin' => 'https://linkedin.com']
+            ]);
+        } else {
+            $author1 = Author::where('name', 'Kuldeep Sharma')->first() ?: Author::first();
+            $author2 = Author::where('name', 'Ritika Thakur')->first() ?: Author::first();
+        }
 
         // 4. Services
+        if (Service::count() === 0) {
         $services = [
             [
                 'title' => 'Social Media Management',
@@ -266,8 +273,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($services as $service) {
             Service::create($service);
         }
+        }
 
         // 5. Projects (Portfolio)
+        if (Project::count() === 0) {
         $projects = [
             [
                 'title' => 'The Himalayan Resort',
@@ -342,8 +351,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($projects as $project) {
             Project::create($project);
         }
+        }
 
         // 6. Testimonials
+        if (Testimonial::count() === 0) {
         $testimonials = [
             [
                 'client_name' => 'Rajesh Sen',
@@ -366,8 +377,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($testimonials as $t) {
             Testimonial::create($t);
         }
+        }
 
         // 7. FAQs
+        if (Faq::count() === 0) {
         $faqs = [
             [
                 'question' => 'What services do you offer?',
@@ -404,8 +417,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($faqs as $faq) {
             Faq::create($faq);
         }
+        }
 
         // 8. Clients
+        if (Client::count() === 0) {
         $clients = [
             ['name' => 'Bare Bakers', 'logo' => '/images/clients/bare-bakers.png', 'website_url' => null, 'order' => 1],
             ['name' => 'Blackberrys', 'logo' => '/images/clients/blackberrys.png', 'website_url' => null, 'order' => 2],
@@ -433,8 +448,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($clients as $client) {
             Client::create($client);
         }
+        }
 
         // 9. Gallery
+        if (Gallery::count() === 0) {
         $galleries = [
             ['title' => 'Our Design Wall', 'image_path' => '/images/gallery/bts-1.jpg', 'type' => 'behind_the_scenes', 'order' => 1],
             ['title' => 'Meeting Room Setup', 'image_path' => '/images/gallery/bts-2.jpg', 'type' => 'behind_the_scenes', 'order' => 2],
@@ -445,8 +462,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($galleries as $gallery) {
             Gallery::create($gallery);
         }
+        }
 
         // 10. Career Jobs
+        if (CareerJob::count() === 0) {
         $jobs = [
             [
                 'title' => 'Video Editor',
@@ -473,8 +492,10 @@ class AgencyCmsSeeder extends Seeder
         foreach ($jobs as $job) {
             CareerJob::create($job);
         }
+        }
 
         // 11. Blogs
+        if (Blog::count() === 0) {
         $blogs = [
             [
                 'title' => 'How to Grow Your Restaurant Brand in 2026 using Reels',
@@ -508,6 +529,7 @@ class AgencyCmsSeeder extends Seeder
 
         foreach ($blogs as $blog) {
             Blog::create($blog);
+        }
         }
     }
 }
