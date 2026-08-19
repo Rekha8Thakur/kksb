@@ -9,7 +9,7 @@ class ServiceSeeder extends Seeder
 {
     public function run(): void
     {
-        Service::query()->delete();
+        if (Service::count() === 0) {
 
         $services = [
             [
@@ -152,6 +152,7 @@ class ServiceSeeder extends Seeder
 
         foreach ($services as $service) {
             Service::create($service);
+        }
         }
     }
 }

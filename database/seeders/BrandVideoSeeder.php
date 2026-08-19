@@ -50,10 +50,10 @@ class BrandVideoSeeder extends Seeder
             ],
         ];
 
-        BrandVideo::truncate();
-
-        foreach ($videos as $video) {
-            BrandVideo::create($video);
+        if (BrandVideo::count() === 0) {
+            foreach ($videos as $video) {
+                BrandVideo::create($video);
+            }
         }
     }
 }

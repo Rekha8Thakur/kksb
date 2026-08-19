@@ -43,11 +43,10 @@ class OriginalVideoSeeder extends Seeder
             ],
         ];
 
-        // Delete any existing original video records to reset to the clean set of 4 YouTube videos
-        OriginalVideo::truncate();
-
-        foreach ($videos as $video) {
-            OriginalVideo::create($video);
+        if (OriginalVideo::count() === 0) {
+            foreach ($videos as $video) {
+                OriginalVideo::create($video);
+            }
         }
     }
 }
