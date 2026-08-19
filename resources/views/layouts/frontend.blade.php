@@ -98,42 +98,107 @@
 
         /* Disable Hover Transform, Scale, Shadow and Border Effects on Mobile & Tablet (< 1024px) */
         @media (max-width: 1023px), (hover: none) {
-            /* Prevent cards translating upward or scaling on hover/tap/focus/active */
+            /* 1. Prevent cards translating upward or scaling on hover/tap/focus/active */
             body [class*="hover:"]:hover,
             body [class*="hover:"]:active,
             body [class*="hover:"]:focus,
+            body [class*="hover\\:"]:hover,
+            body [class*="hover\\:"]:active,
+            body [class*="hover\\:"]:focus,
             body .group:hover [class*="group-hover:"],
             body .group:active [class*="group-hover:"],
-            body .group:focus [class*="group-hover:"] {
+            body .group:focus [class*="group-hover:"],
+            body .group:hover [class*="group-hover\\:"],
+            body .group:active [class*="group-hover\\:"],
+            body .group:focus [class*="group-hover\\:"],
+            /* Specific Tailwind hover class overrides */
+            body .hover\:-translate-y-2:hover,
+            body .hover\:-translate-y-2:active,
+            body .hover\:-translate-y-1\.5:hover,
+            body .hover\:-translate-y-1\.5:active,
+            body .hover\:-translate-y-0\.5:hover,
+            body .hover\:-translate-y-0\.5:active,
+            body .hover\:scale-105:hover,
+            body .hover\:scale-105:active,
+            body .hover\:scale-110:hover,
+            body .hover\:scale-110:active,
+            body .group:hover .group-hover\:-translate-y-2,
+            body .group:hover .group-hover\:-translate-y-1\.5,
+            body .group:hover .group-hover\:-translate-y-0\.5,
+            body .group:hover .group-hover\:scale-105,
+            body .group:hover .group-hover\:scale-110,
+            body .group:hover .group-hover\:scale-102,
+            body .group:hover .group-hover\:rotate-2 {
                 transform: none !important;
+                -webkit-transform: none !important;
                 --tw-translate-y: 0px !important;
-                translate: var(--tw-translate-x) 0px !important;
+                --tw-translate-x: 0px !important;
+                translate: 0px 0px !important;
                 --tw-scale-x: 1 !important;
                 --tw-scale-y: 1 !important;
                 scale: 1 !important;
+                rotate: 0deg !important;
                 transition: none !important;
+                -webkit-transition: none !important;
             }
 
-            /* Prevent extra shadows appearing on hover/tap/focus/active */
+            /* 2. Prevent extra shadows appearing on hover/tap/focus/active */
             body [class*="hover:shadow"]:hover,
             body [class*="hover:shadow"]:active,
             body [class*="hover:shadow"]:focus,
+            body [class*="hover\\:shadow"]:hover,
+            body [class*="hover\\:shadow"]:active,
+            body [class*="hover\\:shadow"]:focus,
             body .group:hover [class*="group-hover:shadow"],
             body .group:active [class*="group-hover:shadow"],
-            body .group:focus [class*="group-hover:shadow"] {
+            body .group:focus [class*="group-hover:shadow"],
+            body .group:hover [class*="group-hover\\:shadow"],
+            body .group:active [class*="group-hover\\:shadow"],
+            body .group:focus [class*="group-hover\\:shadow"],
+            /* Specific Tailwind shadow class overrides */
+            body .hover\:shadow-2xl:hover,
+            body .hover\:shadow-2xl:active,
+            body .hover\:shadow-xl:hover,
+            body .hover\:shadow-xl:active,
+            body .hover\:shadow-lg:hover,
+            body .hover\:shadow-lg:active,
+            body .group:hover .group-hover\:shadow-2xl,
+            body .group:hover .group-hover\:shadow-xl,
+            body .group:hover .group-hover\:shadow-lg {
                 box-shadow: inherit !important;
                 transition: none !important;
+                -webkit-transition: none !important;
             }
 
-            /* Prevent border-color changes on hover/tap/focus/active */
+            /* 3. Prevent border-color changes on hover/tap/focus/active */
             body [class*="hover:border"]:hover,
             body [class*="hover:border"]:active,
             body [class*="hover:border"]:focus,
+            body [class*="hover\\:border"]:hover,
+            body [class*="hover\\:border"]:active,
+            body [class*="hover\\:border"]:focus,
             body .group:hover [class*="group-hover:border"],
             body .group:active [class*="group-hover:border"],
-            body .group:focus [class*="group-hover:border"] {
+            body .group:focus [class*="group-hover:border"],
+            body .group:hover [class*="group-hover\\:border"],
+            body .group:active [class*="group-hover\\:border"],
+            body .group:focus [class*="group-hover\\:border"],
+            /* Specific Tailwind border class overrides */
+            body .hover\:border-\[\#111111\]:hover,
+            body .hover\:border-\[\#111111\]:active,
+            body .hover\:border-zinc-400:hover,
+            body .hover\:border-zinc-400:active,
+            body .hover\:border-zinc-900:hover,
+            body .hover\:border-zinc-900:active,
+            body .hover\:border-gray-900:hover,
+            body .hover\:border-gray-900:active,
+            body .group:hover .group-hover\:border-\[\#111111\],
+            body .group:hover .group-hover\:border-zinc-400,
+            body .group:hover .group-hover\:border-zinc-900,
+            body .group:hover .group-hover\:border-gray-900 {
                 border-color: inherit !important;
                 transition: none !important;
+                -webkit-transition: none !important;
             }
         }
     </style>
