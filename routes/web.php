@@ -219,6 +219,8 @@ Route::get('/deploy', function () {
             'storage_link' => $storageLinkOutput,
             'migration_output' => $migrationOutput,
             'seeder_output' => $seederOutput,
+            'public_path' => public_path(),
+            'base_path' => base_path(),
             'cache_clear' => 'Laravel View, Config, Cache, and Route Cleared Successfully!'
         ]);
     } catch (\Exception $e) {
