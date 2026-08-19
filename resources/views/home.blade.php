@@ -74,8 +74,10 @@
             width: max-content;
             animation: marquee 80s linear infinite;
         }
-        .animate-marquee:hover {
-            animation-play-state: paused;
+        @media (hover: hover) {
+            .animate-marquee:hover {
+                animation-play-state: paused;
+            }
         }
         [data-parallax-speed] {
             will-change: transform;
