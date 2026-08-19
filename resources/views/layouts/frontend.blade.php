@@ -97,28 +97,43 @@
         }
 
         /* Disable Hover Transform, Scale, Shadow and Border Effects on Mobile & Tablet (< 1024px) */
-        @media (max-width: 1023px) {
-            /* Prevent cards translating upward or scaling on hover/tap */
-            [class*="hover:"]:hover,
-            .group:hover [class*="group-hover:"] {
+        @media (max-width: 1023px), (hover: none) {
+            /* Prevent cards translating upward or scaling on hover/tap/focus/active */
+            body [class*="hover:"]:hover,
+            body [class*="hover:"]:active,
+            body [class*="hover:"]:focus,
+            body .group:hover [class*="group-hover:"],
+            body .group:active [class*="group-hover:"],
+            body .group:focus [class*="group-hover:"] {
                 transform: none !important;
                 --tw-translate-y: 0px !important;
                 translate: var(--tw-translate-x) 0px !important;
                 --tw-scale-x: 1 !important;
                 --tw-scale-y: 1 !important;
                 scale: 1 !important;
+                transition: none !important;
             }
 
-            /* Prevent extra shadows appearing on hover/tap */
-            [class*="hover:shadow"]:hover,
-            .group:hover [class*="group-hover:shadow"] {
+            /* Prevent extra shadows appearing on hover/tap/focus/active */
+            body [class*="hover:shadow"]:hover,
+            body [class*="hover:shadow"]:active,
+            body [class*="hover:shadow"]:focus,
+            body .group:hover [class*="group-hover:shadow"],
+            body .group:active [class*="group-hover:shadow"],
+            body .group:focus [class*="group-hover:shadow"] {
                 box-shadow: inherit !important;
+                transition: none !important;
             }
 
-            /* Prevent border-color changes on hover/tap */
-            [class*="hover:border"]:hover,
-            .group:hover [class*="group-hover:border"] {
+            /* Prevent border-color changes on hover/tap/focus/active */
+            body [class*="hover:border"]:hover,
+            body [class*="hover:border"]:active,
+            body [class*="hover:border"]:focus,
+            body .group:hover [class*="group-hover:border"],
+            body .group:active [class*="group-hover:border"],
+            body .group:focus [class*="group-hover:border"] {
                 border-color: inherit !important;
+                transition: none !important;
             }
         }
     </style>
