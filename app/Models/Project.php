@@ -58,6 +58,11 @@ class Project extends Model
         }
         $cleanPath = ltrim($cleanPath, '/');
 
+        // If it starts with 'uploads/', return the asset link directly to bypass server-side file_exists path mismatches on Hostinger
+        if (str_starts_with($cleanPath, 'uploads/')) {
+            return asset($cleanPath);
+        }
+
         // Check if file exists in public/
         if (file_exists(public_path($cleanPath))) {
             return asset($cleanPath);
@@ -89,7 +94,9 @@ class Project extends Model
                 }
                 $cleanPath = ltrim($cleanPath, '/');
 
-                if (file_exists(public_path($cleanPath))) {
+                if (str_starts_with($cleanPath, 'uploads/')) {
+                    $urls[] = asset($cleanPath);
+                } elseif (file_exists(public_path($cleanPath))) {
                     $urls[] = asset($cleanPath);
                 } elseif (file_exists(storage_path('app/public/' . $cleanPath))) {
                     $urls[] = asset($cleanPath);

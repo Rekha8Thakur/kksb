@@ -25,4 +25,5 @@ Thumbs.db
 *.zip
 /database/*.sqlite
 /storage/app/public/uploads/
+/public/uploads/
 
