@@ -95,6 +95,32 @@
         h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        /* Disable Hover Transform, Scale, Shadow and Border Effects on Mobile & Tablet (< 1024px) */
+        @media (max-width: 1023px) {
+            /* Prevent cards translating upward or scaling on hover/tap */
+            [class*="hover:"]:hover,
+            .group:hover [class*="group-hover:"] {
+                transform: none !important;
+                --tw-translate-y: 0px !important;
+                translate: var(--tw-translate-x) 0px !important;
+                --tw-scale-x: 1 !important;
+                --tw-scale-y: 1 !important;
+                scale: 1 !important;
+            }
+
+            /* Prevent extra shadows appearing on hover/tap */
+            [class*="hover:shadow"]:hover,
+            .group:hover [class*="group-hover:shadow"] {
+                box-shadow: inherit !important;
+            }
+
+            /* Prevent border-color changes on hover/tap */
+            [class*="hover:border"]:hover,
+            .group:hover [class*="group-hover:border"] {
+                border-color: inherit !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-white antialiased selection:bg-[#111111] selection:text-white" x-data="{ mobileMenuOpen: false }">
