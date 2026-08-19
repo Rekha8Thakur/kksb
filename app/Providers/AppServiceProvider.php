@@ -13,11 +13,11 @@ class AppServiceProvider extends ServiceProvider
     {
         // Bind the public path dynamically to point to public_html on Hostinger if it exists
         $siblingPublicHtml = dirname(base_path()) . '/public_html';
-        if (file_exists($siblingPublicHtml)) {
+        if (file_exists($siblingPublicHtml) && realpath($siblingPublicHtml) !== realpath(base_path())) {
             $this->app->usePublicPath($siblingPublicHtml);
         } else {
             $parentPublicHtml = base_path('../public_html');
-            if (file_exists($parentPublicHtml)) {
+            if (file_exists($parentPublicHtml) && realpath($parentPublicHtml) !== realpath(base_path())) {
                 $this->app->usePublicPath($parentPublicHtml);
             }
         }
