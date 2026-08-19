@@ -39,7 +39,12 @@
                     <label class="text-sm font-semibold text-gray-700 dark:text-zinc-300 block">Avatar Image</label>
                     @if($author->avatar)
                         <div class="flex items-center space-x-3 mb-2">
-                            <img src="{{ asset($author->avatar) }}" class="w-10 h-10 rounded-full object-cover border border-gray-300" alt="" loading="lazy">
+                            <div class="w-10 h-10 rounded-full overflow-hidden bg-zinc-150 dark:bg-zinc-800 flex items-center justify-center border border-gray-300">
+                                <img src="{{ asset($author->avatar) }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover" alt="" loading="lazy">
+                                <div class="w-full h-full flex items-center justify-center font-bold text-zinc-500 text-sm uppercase" style="display: none;">
+                                    {{ substr($author->name, 0, 1) }}
+                                </div>
+                            </div>
                             <span class="text-xs text-gray-500">Current Avatar</span>
                         </div>
                     @endif

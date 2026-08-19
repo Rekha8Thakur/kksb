@@ -20,13 +20,14 @@
                 <div class="bg-white dark:bg-zinc-900 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-sm p-6 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center space-x-4 mb-4">
-                            @if($author->avatar)
-                                <img src="{{ asset($author->avatar) }}" class="w-14 h-14 rounded-full object-cover border border-gray-200 dark:border-zinc-700" alt="" loading="lazy">
-                            @else
-                                <div class="w-14 h-14 rounded-full bg-zinc-150 dark:bg-zinc-800 flex items-center justify-center font-bold text-zinc-500 text-lg uppercase">
+                            <div class="w-14 h-14 rounded-full overflow-hidden bg-zinc-150 dark:bg-zinc-800 flex items-center justify-center border border-gray-200 dark:border-zinc-700">
+                                @if($author->avatar)
+                                    <img src="{{ asset($author->avatar) }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover" alt="" loading="lazy">
+                                @endif
+                                <div class="w-full h-full flex items-center justify-center font-bold text-zinc-500 text-lg uppercase" @if($author->avatar) style="display: none;" @endif>
                                     {{ substr($author->name, 0, 1) }}
                                 </div>
-                            @endif
+                            </div>
                             <div>
                                 <h3 class="font-bold text-gray-900 dark:text-white">{{ $author->name }}</h3>
                                 <div class="text-xs text-gray-400">Team Member / Author</div>

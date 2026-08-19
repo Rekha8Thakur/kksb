@@ -206,14 +206,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach($team as $member)
                     <div class="bg-white p-6 rounded-3xl border border-gray-150 shadow-sm text-center space-y-4 hover:border-[#FF6A00] transition duration-300" data-aos="fade-up">
-                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden bg-gray-100 border border-gray-200">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center">
                             @if($member->avatar)
-                                <img src="{{ asset($member->avatar) }}" class="w-full h-full object-cover" alt="" loading="lazy">
-                            @else
-                                <div class="w-full h-full flex items-center justify-center font-bold text-gray-400 text-2xl uppercase">
-                                    {{ substr($member->name, 0, 1) }}
-                                </div>
+                                <img src="{{ asset($member->avatar) }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover" alt="" loading="lazy">
                             @endif
+                            <div class="w-full h-full flex items-center justify-center font-bold text-gray-400 text-2xl uppercase" @if($member->avatar) style="display: none;" @endif>
+                                {{ substr($member->name, 0, 1) }}
+                            </div>
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900 text-base">{{ $member->name }}</h4>
