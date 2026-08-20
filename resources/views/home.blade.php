@@ -1425,59 +1425,124 @@
         });
     </script>
 
-    <!-- DISABLE HOVER EFFECTS ON TOUCH DEVICES FOR HOME PAGE -->
+    <!-- DISABLE HOVER EFFECTS ON TOUCH DEVICES & MOBILE VIEW FOR HOME PAGE -->
     <script>
         (function() {
-            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
-            if (!isTouch) return;
+            let observer = null;
+            let originalClassesMap = new Map();
 
-            function stripHoverClasses(el) {
-                if (!el || !el.classList) return;
-                const classesToRemove = [];
-                for (let i = 0; i < el.classList.length; i++) {
-                    const className = el.classList[i];
-                    if (className.includes('hover:')) {
-                        classesToRemove.push(className);
-                    }
+            function getOriginalClasses(el) {
+                if (originalClassesMap.has(el)) {
+                    return originalClassesMap.get(el);
                 }
-                if (classesToRemove.length > 0) {
-                    el.classList.remove(...classesToRemove);
-                }
+                const classes = Array.from(el.classList);
+                originalClassesMap.set(el, classes);
+                return classes;
             }
 
-            function cleanAllHoverClasses() {
-                document.querySelectorAll('*').forEach(stripHoverClasses);
-            }
-
-            // Clean initial elements
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', cleanAllHoverClasses);
-            } else {
-                cleanAllHoverClasses();
-            }
-
-            // Observe dynamic changes to keep hover classes stripped
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                        stripHoverClasses(mutation.target);
-                    } else if (mutation.type === 'childList') {
-                        mutation.addedNodes.forEach((node) => {
-                            if (node.nodeType === 1) { // Element node
-                                stripHoverClasses(node);
-                                node.querySelectorAll('*').forEach(stripHoverClasses);
+            function updateHoverClasses() {
+                const isMobile = (window.innerWidth < 1024) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+                
+                if (isMobile) {
+                    // Strip hover classes
+                    document.querySelectorAll('*').forEach(el => {
+                        if (!el || !el.classList) return;
+                        const classesToRemove = [];
+                        for (let i = 0; i < el.classList.length; i++) {
+                            const className = el.classList[i];
+                            if (className.includes('hover:')) {
+                                classesToRemove.push(className);
                             }
+                        }
+                        if (classesToRemove.length > 0) {
+                            getOriginalClasses(el);
+                            el.classList.remove(...classesToRemove);
+                        }
+                    });
+
+                    // Start observer if not active
+                    if (!observer) {
+                        observer = new MutationObserver((mutations) => {
+                            mutations.forEach((mutation) => {
+                                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                                    const el = mutation.target;
+                                    observer.disconnect();
+                                    
+                                    const classesToRemove = [];
+                                    for (let i = 0; i < el.classList.length; i++) {
+                                        const className = el.classList[i];
+                                        if (className.includes('hover:')) {
+                                            classesToRemove.push(className);
+                                        }
+                                    }
+                                    if (classesToRemove.length > 0) {
+                                        el.classList.remove(...classesToRemove);
+                                    }
+                                    
+                                    observer.observe(document.documentElement, {
+                                        attributes: true,
+                                        childList: true,
+                                        subtree: true,
+                                        attributeFilter: ['class']
+                                    });
+                                } else if (mutation.type === 'childList') {
+                                    mutation.addedNodes.forEach((node) => {
+                                        if (node.nodeType === 1) {
+                                            const processNode = (el) => {
+                                                const classesToRemove = [];
+                                                for (let i = 0; i < el.classList.length; i++) {
+                                                    const className = el.classList[i];
+                                                    if (className.includes('hover:')) {
+                                                        classesToRemove.push(className);
+                                                    }
+                                                }
+                                                if (classesToRemove.length > 0) {
+                                                    el.classList.remove(...classesToRemove);
+                                                }
+                                            };
+                                            processNode(node);
+                                            node.querySelectorAll('*').forEach(processNode);
+                                        }
+                                    });
+                                }
+                            });
+                        });
+
+                        observer.observe(document.documentElement, {
+                            attributes: true,
+                            childList: true,
+                            subtree: true,
+                            attributeFilter: ['class']
                         });
                     }
-                });
-            });
+                } else {
+                    // Restore original hover classes if we are back on desktop
+                    if (observer) {
+                        observer.disconnect();
+                        observer = null;
+                    }
+                    originalClassesMap.forEach((classes, el) => {
+                        if (el && el.classList) {
+                            classes.forEach(className => {
+                                if (className.includes('hover:') && !el.classList.contains(className)) {
+                                    el.classList.add(className);
+                                }
+                            });
+                        }
+                    });
+                    originalClassesMap.clear();
+                }
+            }
 
-            observer.observe(document.documentElement, {
-                attributes: true,
-                childList: true,
-                subtree: true,
-                attributeFilter: ['class']
-            });
+            // Run initial check
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updateHoverClasses);
+            } else {
+                updateHoverClasses();
+            }
+
+            // Watch for resize events
+            window.addEventListener('resize', updateHoverClasses);
         })();
     </script>
 </x-frontend-layout>
