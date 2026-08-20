@@ -1354,6 +1354,16 @@
                 let ticking = false;
 
                 function updateParallax() {
+                    if (window.innerWidth < 1024) {
+                        parallaxEls.forEach(el => {
+                            if (el.style.transform) {
+                                el.style.transform = '';
+                            }
+                        });
+                        ticking = false;
+                        return;
+                    }
+
                     const viewportHeight = window.innerHeight;
 
                     parallaxEls.forEach(el => {
