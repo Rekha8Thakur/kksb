@@ -1424,4 +1424,60 @@
             }, true); // Use capture phase to intercept click events early
         });
     </script>
+
+    <!-- DISABLE HOVER EFFECTS ON TOUCH DEVICES FOR HOME PAGE -->
+    <script>
+        (function() {
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+            if (!isTouch) return;
+
+            function stripHoverClasses(el) {
+                if (!el || !el.classList) return;
+                const classesToRemove = [];
+                for (let i = 0; i < el.classList.length; i++) {
+                    const className = el.classList[i];
+                    if (className.includes('hover:')) {
+                        classesToRemove.push(className);
+                    }
+                }
+                if (classesToRemove.length > 0) {
+                    el.classList.remove(...classesToRemove);
+                }
+            }
+
+            function cleanAllHoverClasses() {
+                document.querySelectorAll('*').forEach(stripHoverClasses);
+            }
+
+            // Clean initial elements
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', cleanAllHoverClasses);
+            } else {
+                cleanAllHoverClasses();
+            }
+
+            // Observe dynamic changes to keep hover classes stripped
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        stripHoverClasses(mutation.target);
+                    } else if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach((node) => {
+                            if (node.nodeType === 1) { // Element node
+                                stripHoverClasses(node);
+                                node.querySelectorAll('*').forEach(stripHoverClasses);
+                            }
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.documentElement, {
+                attributes: true,
+                childList: true,
+                subtree: true,
+                attributeFilter: ['class']
+            });
+        })();
+    </script>
 </x-frontend-layout>
