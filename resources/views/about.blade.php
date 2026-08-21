@@ -136,7 +136,7 @@
                         <!-- Floating Cameraman Badge -->
                         <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00] animate-pulse"></span>
-                            <span>FOUNDER & DIRECTOR</span>
+                            <span>FOUNDER & CEO</span>
                         </div>
                     </div>
                 </div>
