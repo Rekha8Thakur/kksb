@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 1200,
         easing: 'ease-in-out',
         once: true,
-        mirror: false
+        mirror: false,
+        disable: function() {
+            return window.innerWidth < 1024;
+        }
     });
 });
 

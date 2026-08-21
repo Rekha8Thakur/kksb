@@ -90,28 +90,23 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Disable Hover Transform, Scale, Shadow and Border Effects on Mobile & Tablet (< 1024px) */
+/* Disable CSS Transitions, Animations, and Hover Effects on Mobile & Tablet (< 1024px) */
 @media (max-width: 1023px) {
-  /* Prevent cards translating upward or scaling on hover/tap */
-  [class*="hover:"]:hover,
-  .group:hover [class*="group-hover:"] {
+  /* Disable transitions and keyframe animations globally, excluding Swiper components */
+  *:not(.swiper-wrapper):not(.swiper-slide):not(.swiper-button-prev):not(.swiper-button-next):not(.swiper-pagination-bullet) {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Prevent hover transforms, scaling, and custom hover transitions */
+  *:not(.swiper-wrapper):not(.swiper-slide):hover {
     transform: none !important;
     --tw-translate-y: 0px !important;
-    translate: var(--tw-translate-x) 0px !important;
     --tw-scale-x: 1 !important;
     --tw-scale-y: 1 !important;
     scale: 1 !important;
-  }
-
-  /* Prevent extra shadows appearing on hover/tap */
-  [class*="hover:shadow"]:hover,
-  .group:hover [class*="group-hover:shadow"] {
+    translate: none !important;
     box-shadow: inherit !important;
-  }
-
-  /* Prevent border-color changes on hover/tap */
-  [class*="hover:border"]:hover,
-  .group:hover [class*="group-hover:border"] {
     border-color: inherit !important;
   }
 }
