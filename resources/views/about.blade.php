@@ -244,8 +244,15 @@
                 .animate-marquee-track {
                     animation: marquee 40s linear infinite;
                 }
-                .animate-marquee-track:hover {
-                    animation-play-state: paused;
+                @media (min-width: 1024px) and (hover: hover) {
+                    .animate-marquee-track:hover {
+                        animation-play-state: paused;
+                    }
+                }
+                @media (max-width: 1023px) {
+                    .animate-marquee-track {
+                        animation-play-state: running !important;
+                    }
                 }
                 .gallery-card {
                     width: 180px !important;
@@ -265,12 +272,12 @@
                 }
             </style>
 
-            <div class="relative w-full overflow-hidden">
+            <div class="relative w-full overflow-hidden" data-aos="fade-up">
                 <div class="flex w-max animate-marquee-track gap-6">
                     <!-- Original set -->
                     <div class="flex gap-6">
                         @foreach($gallery as $photo)
-                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] border border-gray-100 overflow-hidden shadow-sm group relative flex-shrink-0" data-aos="fade-up">
+                            <div class="gallery-card bg-gray-100 rounded-[18px] sm:rounded-[24px] border border-gray-100 overflow-hidden shadow-sm group relative flex-shrink-0">
                                 <img src="{{ asset($photo->image_path) }}" onerror="this.onerror=null; this.src='{{ asset('images/gallery/bts-1.jpg') }}';" class="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 ease-out" alt="{{ $photo->title }}" loading="lazy">
                                 @if($photo->title)
                                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">

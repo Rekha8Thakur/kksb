@@ -79,6 +79,11 @@
                 animation-play-state: paused;
             }
         }
+        @media (max-width: 1023px) {
+            .animate-marquee {
+                animation-play-state: running !important;
+            }
+        }
         [data-parallax-speed] {
             will-change: transform;
         }
