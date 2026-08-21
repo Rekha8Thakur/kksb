@@ -16,7 +16,12 @@ class SitemapController extends Controller
     public function sitemap(): Response
     {
         $services = Service::where('is_active', true)->get();
-        $projects = Project::all();
+        $projects = Project::whereNotIn('slug', [
+            'the-himalayan-resort',
+            'the-cafe-project',
+            'bhalla-dental-clinic',
+            'peter-england-solan',
+        ])->get();
         $blogs = Blog::published()->get();
 
         $content = view('sitemap', compact('services', 'projects', 'blogs'))->render();

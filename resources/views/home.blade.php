@@ -72,7 +72,7 @@
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 80s linear infinite;
+            animation: marquee 55s linear infinite;
         }
         @media (min-width: 1024px) and (hover: hover) {
             .animate-marquee:hover {
@@ -879,8 +879,20 @@
                         <!-- Slider Track -->
                         <div x-ref="slider" class="flex overflow-x-auto gap-3 sm:gap-6 no-scrollbar snap-x snap-mandatory scroll-smooth pb-4">
                             @foreach($projects as $index => $project)
+                                @php
+                                    $isDisabled = in_array($project->slug, [
+                                        'the-himalayan-resort',
+                                        'the-cafe-project',
+                                        'bhalla-dental-clinic',
+                                        'peter-england-solan',
+                                    ]);
+                                @endphp
                                 <div class="snap-start shrink-0 w-[calc((100%-12px)/2)] sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-72px)/4)] flex flex-col">
-                                    <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full">
+                                    @if($isDisabled)
+                                        <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full cursor-default">
+                                    @else
+                                        <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full">
+                                    @endif
                                         
                                         <!-- Image aspect ratio 4/3 -->
                                         <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
@@ -904,7 +916,11 @@
                                                 </p>
                                             </div>
                                         </div>
-                                    </a>
+                                    @if($isDisabled)
+                                        </div>
+                                    @else
+                                        </a>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -938,7 +954,19 @@
                     <!-- Grid Layout for 1 to 4 Projects -->
                     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                         @foreach($projects as $index => $project)
-                            <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                            @php
+                                $isDisabled = in_array($project->slug, [
+                                    'the-himalayan-resort',
+                                    'the-cafe-project',
+                                    'bhalla-dental-clinic',
+                                    'peter-england-solan',
+                                ]);
+                            @endphp
+                            @if($isDisabled)
+                                <div class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between cursor-default" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                            @else
+                                <a href="/portfolio/{{ $project->slug }}" class="group border border-[#ECECEC] rounded-[20px] overflow-hidden bg-white hover:shadow-2xl hover:border-[#111111] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                            @endif
                                 <!-- Image aspect ratio 4/3 -->
                                 <div class="relative overflow-hidden aspect-[4/3] bg-gray-100">
                                     @if($project->main_image_url)
@@ -961,7 +989,11 @@
                                         </p>
                                     </div>
                                 </div>
-                            </a>
+                            @if($isDisabled)
+                                </div>
+                            @else
+                                </a>
+                            @endif
                         @endforeach
                     </div>
                 @endif

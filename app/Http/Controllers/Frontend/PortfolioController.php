@@ -33,8 +33,19 @@ class PortfolioController extends Controller
     /**
      * Display a single project case study page.
      */
-    public function show(string $slug): View
+    public function show(string $slug)
     {
+        $disabledSlugs = [
+            'the-himalayan-resort',
+            'the-cafe-project',
+            'bhalla-dental-clinic',
+            'peter-england-solan',
+        ];
+
+        if (in_array($slug, $disabledSlugs)) {
+            return redirect()->route('home');
+        }
+
         $project = Project::with('category')->where('slug', $slug)->firstOrFail();
         $relatedProjects = Project::where('id', '!=', $project->id)
             ->where('category_id', $project->category_id)

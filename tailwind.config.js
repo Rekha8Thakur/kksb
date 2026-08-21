@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import plugin from 'tailwindcss/plugin';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -37,5 +38,14 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        plugin(function({ addVariant }) {
+            // Restrict hover effects to screens 1024px and wider
+            addVariant('hover', '@media (min-width: 1024px) { &:hover }');
+            addVariant('group-hover', '@media (min-width: 1024px) { .group:hover & }');
+            addVariant('peer-hover', '@media (min-width: 1024px) { .peer:hover ~ & }');
+        })
+    ],
 };
+
