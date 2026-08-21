@@ -129,9 +129,10 @@
                 <!-- Portrait Card Frame -->
                 <div class="relative bg-white border border-[#ECECEC] rounded-[32px] p-3 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 ease-out overflow-hidden group">
                     <div class="rounded-[22px] overflow-hidden aspect-[4/5] bg-gray-50 relative">
-                        <img src="{{ asset('images/about/founder.jpg') }}" 
-                             class="w-full h-full object-cover filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
-                             alt="Founder Portrait" loading="lazy">
+                        <img src="{{ App\Models\Setting::get('about_founder_image') ? asset(App\Models\Setting::get('about_founder_image')) : asset('images/about/founder.jpg') }}" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out" 
+                             style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
+                             alt="Founder Portrait" loading="eager" decoding="sync">
                         
                         <!-- Floating Cameraman Badge -->
                         <div class="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-black tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg select-none">
