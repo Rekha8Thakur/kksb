@@ -22,6 +22,11 @@
     @endif
     <link rel="canonical" href="{{ request()->url() }}">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}?v=1" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.png') }}?v=1" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}?v=1" sizes="180x180">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request()->url() }}">
