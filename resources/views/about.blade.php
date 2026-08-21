@@ -121,7 +121,7 @@
         <div class="absolute bottom-0 right-10 w-96 h-96 bg-amber-500/3 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-6 lg:px-[90px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center relative z-10">
-            <!-- Left Column: Portrait -->
+            {{-- Left Column: Portrait (Hidden for now)
             <div class="lg:col-span-5 max-w-[340px] lg:max-w-none mx-auto w-full relative group" data-aos="fade-right">
                 <!-- Background ambient decorative blur -->
                 <div class="absolute -inset-4 bg-gradient-to-tr from-[#FF6A00]/10 to-amber-500/10 rounded-[40px] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -141,12 +141,11 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
+            --}}
 
             <!-- Right Column: Info -->
-            <div class="lg:col-span-7 space-y-6 relative" data-aos="fade-left">
+            <div class="lg:col-span-12 max-w-4xl mx-auto space-y-6 relative" data-aos="fade-left">
 
 
                 <div class="space-y-3">
