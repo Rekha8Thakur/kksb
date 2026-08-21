@@ -1586,5 +1586,8 @@
             // Watch for resize events
             window.addEventListener('resize', updateHoverClasses);
         })();
+
+        // Disable right click on home page
+        document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </x-frontend-layout>
