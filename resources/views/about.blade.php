@@ -272,7 +272,8 @@
                 }
             </style>
 
-            <div class="relative w-full overflow-hidden" data-aos="fade-up">
+            <!-- Mobile/Tablet View: Infinite Horizontal Scrolling Gallery (visible on screens < 1024px) -->
+            <div class="relative w-full overflow-hidden lg:hidden" data-aos="fade-up">
                 <div class="flex w-max animate-marquee-track gap-6">
                     <!-- Original set -->
                     <div class="flex gap-6">
@@ -300,6 +301,22 @@
                             </div>
                         @endforeach
                     </div>
+                </div>
+            </div>
+
+            <!-- Desktop View: Static Grid of Gallery Images (visible on screens >= 1024px) -->
+            <div class="hidden lg:block w-full" data-aos="fade-up">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                    @foreach($gallery as $photo)
+                        <div class="bg-gray-100 rounded-[24px] border border-gray-100 overflow-hidden shadow-sm group relative w-full aspect-[3/2] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_25px_-5px_rgba(255,106,0,0.15),0_10px_10px_-5px_rgba(255,106,0,0.04)] hover:border-[rgba(255,106,0,0.3)]">
+                            <img src="{{ asset($photo->image_path) }}" onerror="this.onerror=null; this.src='{{ asset('images/gallery/bts-1.jpg') }}';" class="w-full h-full object-cover filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 ease-out" alt="{{ $photo->title }}" loading="lazy">
+                            @if($photo->title)
+                                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition duration-300">
+                                    <h4 class="font-bold text-xs sm:text-sm truncate">{{ $photo->title }}</h4>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
