@@ -104,7 +104,7 @@
         /* Disable CSS Transitions, Animations, and Hover Effects on Mobile & Tablet (< 1024px) */
         @media (max-width: 1023px), (hover: none) {
             /* Disable transitions and keyframe animations globally, excluding Swiper components */
-            body *:not(.swiper-wrapper):not(.swiper-slide):not(.swiper-button-prev):not(.swiper-button-next):not(.swiper-pagination-bullet) {
+            body *:not(.swiper-wrapper):not(.swiper-slide):not(.swiper-button-prev):not(.swiper-button-next):not(.swiper-pagination-bullet):not(.animate-marquee):not(.animate-marquee-track) {
                 transition: none !important;
                 animation: none !important;
             }
