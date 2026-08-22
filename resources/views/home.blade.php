@@ -303,8 +303,8 @@
                     </div>
                     
                     <!-- Infinite Horizontal Scrolling Logo Marquee -->
-                    <div class="relative w-full flex items-center overflow-x-hidden">
-                    <div class="animate-marquee flex items-center space-x-8 text-center select-none py-2">
+                    <div class="relative w-full overflow-x-hidden">
+                    <div class="animate-marquee flex items-center space-x-8 text-center select-none py-2 flex-shrink-0">
                         @if($clients->isNotEmpty())
                             @foreach($clients as $client)
                                 <div class="h-20 md:h-24 px-8 py-3 bg-white border border-[#ECECEC] rounded-[20px] flex items-center justify-center shadow-sm hover:shadow-lg hover:border-[#111111] transition duration-300">
